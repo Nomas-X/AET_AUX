@@ -1,7 +1,7 @@
 class CfgPatches {
-    class AET_AUX_Main {
+    class AET_AUX_friendly_fire_notifications {
         author = "$STR_aet_aux_author";
-        name = "AET_AUX_Main";
+        name = "AET_AUX_friendly_fire_notifications";
         url = "$STR_aet_aux_URL";
         units[] = {};
         weapons[] = {};
@@ -10,3 +10,5 @@ class CfgPatches {
         authors[] = {"Nomas / Redwan S. [AET]"};
     };
 };
+
+#include "CfgFunctions.hpp"
