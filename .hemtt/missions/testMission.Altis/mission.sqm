@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14844.291,21.094847,16402.9};
-		dir[]={-0.17298174,-0.30275169,-0.93724698};
-		up[]={-0.054949343,0.95307088,-0.2977263};
-		aside[]={-0.98340261,-4.7264621e-008,0.18150079};
+		pos[]={14836.61,20.811907,16387.742};
+		dir[]={0.40159252,-0.33901763,0.85075879};
+		up[]={0.1447171,0.94078004,0.30657777};
+		aside[]={0.90431213,0,-0.4268719};
 	};
 };
 binarizationWanted=0;
@@ -277,7 +277,7 @@ class Mission
 				};
 			};
 			id=12;
-			atlOffset=-1.9073486e-006;
+			atlOffset=-1.9073486e-06;
 		};
 		class Item3
 		{
@@ -294,7 +294,7 @@ class Mission
 			};
 			id=13;
 			type="B_UNA_APC_Wheeled_02_hmg_lxWS";
-			atlOffset=-1.9073486e-006;
+			atlOffset=-1.9073486e-06;
 		};
 		class Item4
 		{
@@ -314,6 +314,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=18;
 					type="B_soldier_AAR_F";
@@ -342,6 +343,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=20;
 					type="B_soldier_AAR_F";
@@ -370,9 +372,40 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=22;
 					type="B_soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male11ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 			};
 			class Attributes
@@ -398,6 +431,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=24;
 					type="B_soldier_AAR_F";
@@ -426,6 +460,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=26;
 					type="B_soldier_AAR_F";
