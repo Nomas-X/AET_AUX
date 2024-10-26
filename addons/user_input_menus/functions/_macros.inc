@@ -218,7 +218,7 @@
 #define INIT_DISPLAY_INTERNAL	scriptIsInternal = 1;
 
 //--- Code executed on each display where the macro is used. Scripts are pre-compiled at the game start by BIS_fnc_initDisplays
-#define INIT_DISPLAY(NAME,PATH) \
+#define INIT_UIM_DISPLAY(NAME,PATH) \
 	scriptName = ##NAME##;\
 	scriptPath = ##PATH##;\
 	onLoad = ["onLoad",_this,#NAME,'##PATH##'] call INIT_DISPLAY_FUNCTION; \
@@ -236,94 +236,3 @@
 	scriptPath = ##PATH##;\
 	onLoad = ["onLoad",_this,#NAME,'##PATH##',false] call INIT_DISPLAY_FUNCTION; \
 	onUnload = ["onUnload",_this,#NAME,'##PATH##',false] call INIT_DISPLAY_FUNCTION;
-
-#define ADDON DOUBLES(PREFIX,COMPONENT)
-#define MAIN_ADDON DOUBLES(PREFIX,main)
-
-#ifdef SUBCOMPONENT
-    #define SUBADDON DOUBLES(ADDON,SUBCOMPONENT)
-#endif
-
-#ifndef PATHTO_SYS
-    #define PATHTO_SYS(var1,var2,var3) \MAINPREFIX\var1\SUBPREFIX\var2\var3.sqf
-#endif
-#ifndef PATHTOF_SYS
-    #define PATHTOF_SYS(var1,var2,var3) \MAINPREFIX\var1\SUBPREFIX\var2\functions\var3
-#endif
-
-#ifndef PATHTOF2_SYS
-    #define PATHTOF2_SYS(var1,var2,var3) MAINPREFIX\var1\SUBPREFIX\var2\functions\var3
-#endif
-
-#define PATHTO_R(var1) PATHTOF2_SYS(PREFIX,COMPONENT_C,var1)
-#define PATHTO_T(var1) PATHTOF_SYS(PREFIX,COMPONENT_T,var1)
-#define PATHTO_M(var1) PATHTOF_SYS(PREFIX,COMPONENT_M,var1)
-#define PATHTO_S(var1) PATHTOF_SYS(PREFIX,COMPONENT_S,var1)
-#define PATHTO_C(var1) PATHTOF_SYS(PREFIX,COMPONENT_C,var1)
-#define PATHTO_F(var1) PATHTO_SYS(PREFIX,COMPONENT_F,var1)
-
-// Already quoted ""
-#define QPATHTO_R(var1) QUOTE(PATHTO_R(var1))
-#define QPATHTO_T(var1) QUOTE(PATHTO_T(var1))
-#define QPATHTO_M(var1) QUOTE(PATHTO_M(var1))
-#define QPATHTO_S(var1) QUOTE(PATHTO_S(var1))
-#define QPATHTO_C(var1) QUOTE(PATHTO_C(var1))
-#define QPATHTO_F(var1) QUOTE(PATHTO_F(var1))
-
-// *************************************
-// User Functions
-#define CFGSETTINGS CFGSETTINGSS(PREFIX,COMPONENT)
-#define PATHTO(var1) PATHTO_SYS(PREFIX,COMPONENT_F,var1)
-#define PATHTOF(var1) PATHTOF_SYS(PREFIX,COMPONENT,var1)
-#define PATHTOEF(var1,var2) PATHTOF_SYS(PREFIX,var1,var2)
-#define QPATHTOF(var1) QUOTE(PATHTOF(var1))
-#define QPATHTOEF(var1,var2) QUOTE(PATHTOEF(var1,var2))
-
-/* -------------------------------------------
-Macro: PATHTO_FNC()
-
-Description:
-    Defines a function inside CfgFunctions.
-
-    Full file path in addons:
-        '\MAINPREFIX\PREFIX\SUBPREFIX\COMPONENT\fnc_<FNC>.sqf'
-    Define 'RECOMPILE' to enable recompiling.
-    Define 'SKIP_FUNCTION_HEADER' to skip adding function header.
-
-Parameters:
-    FUNCTION NAME - Name of the function, unquoted <STRING>
-
-Examples:
-    (begin example)
-        // file name: fnc_addPerFrameHandler.sqf
-        class CfgFunctions {
-            class CBA {
-                class Misc {
-                    PATHTO_FNC(addPerFrameHandler);
-                };
-            };
-        };
-        // -> CBA_fnc_addPerFrameHandler
-    (end)
-
-Author:
-    dixon13, commy2
- ------------------------------------------- */
-#ifdef RECOMPILE
-    #undef RECOMPILE
-    #define RECOMPILE recompile = 1
-#else
-    #define RECOMPILE recompile = 0
-#endif
-// Set function header type: -1 - no header; 0 - default header; 1 - system header.
-#ifdef SKIP_FUNCTION_HEADER
-    #define CFGFUNCTION_HEADER headerType = -1
-#else
-    #define CFGFUNCTION_HEADER headerType = 0
-#endif
-
-#define PATHTO_FNC(func) class func {\
-    file = QPATHTOF(DOUBLES(fnc,JOIN(display,func)).sqf);\
-    CFGFUNCTION_HEADER;\
-    RECOMPILE;\
-}
