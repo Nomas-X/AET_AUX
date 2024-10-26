@@ -25,9 +25,9 @@
 #endif
 
 #ifdef DISPLAY_NAME
-    #define THIS_DISPLAY DISPLAY(DISPLAY_NAME)
-    #define DISPLAY(name) uiNamespace getVariable [QUOTE(name),displayNull]
-    #define USE_DISPLAY(display) private _display = display
+    #define THIS_DISPLAY UIM_DISPLAY(DISPLAY_NAME)
+    #define UIM_DISPLAY(name) uiNamespace getVariable [QUOTE(name),displayNull]
+    #define USE_UIM_DISPLAY(display) private _display = display
     #define USE_CTRL(ctrl,idc) private ctrl = _display displayCtrl idc
 #endif
 
