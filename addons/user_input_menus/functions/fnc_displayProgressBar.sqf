@@ -10,10 +10,11 @@
 
 #include "_macros.inc"
 #include "_defines.inc"
+#include "script_component.hpp"
 
 #define VAR(suffix) QUOTE(JOIN(DISPLAY_NAME,JOIN(_,suffix)))
-#define SVAR(n,v) _parentDisplay setVariable [VAR(n),v]
-#define GVAR(n,v) (_parentDisplay getVariable [VAR(n),v])
+#define UIM_SVAR(n,v) _parentDisplay setVariable [VAR(n),v]
+#define UIM_GVAR(n,v) (_parentDisplay getVariable [VAR(n),v])
 
 params [
 	["_parameters",[],[[]]],
@@ -68,38 +69,38 @@ if _overlay then {
 
 	_ctrlButton ctrlAddEventHandler ["ButtonClick",{
 		private _parentDisplay = ctrlParent(_this#0);
-		1 call GVAR(exit,{});
+		1 call UIM_GVAR(exit,{});
 	}];
 };
 
 _parentDisplay displayAddEventHandler ["Unload",{
 	params ["_parentDisplay","_code"];
-	if (_code == 2) then {1 call GVAR(exit,{})};
+	if (_code == 2) then {1 call UIM_GVAR(exit,{})};
 }];
 
 // Define exit function
 private _exit = {
-	USE_DISPLAY(THIS_DISPLAY);
+	USE_UIM_DISPLAY(THIS_DISPLAY);
 	private _parentDisplay = ctrlParent _display;
 
-	private _args = GVAR(args,[]);
-	private _code = GVAR(code,{});
+	private _args = UIM_GVAR(args,[]);
+	private _code = UIM_GVAR(code,{});
 
-	removeMissionEventHandler ["EachFrame",GVAR(eachFrameID,-1)];
-	if GVAR(overlay,true) then {
+	removeMissionEventHandler ["EachFrame",UIM_GVAR(eachFrameID,-1)];
+	if UIM_GVAR(overlay,true) then {
 		ctrlDelete _display;
 		// wipe variables from parent display because we aren't closing it
-		SVAR(args,nil);
-		SVAR(code,nil);
-		SVAR(arguments,nil);
-		SVAR(condition,nil);
-		SVAR(onProgress,nil);
-		SVAR(exit,nil);
-		SVAR(title,nil);
-		SVAR(duration,nil);
-		SVAR(startTick,nil);
-		SVAR(overlay,nil);
-		SVAR(eachFrameID,nil);
+		UIM_SVAR(args,nil);
+		UIM_SVAR(code,nil);
+		UIM_SVAR(arguments,nil);
+		UIM_SVAR(condition,nil);
+		UIM_SVAR(onProgress,nil);
+		UIM_SVAR(exit,nil);
+		UIM_SVAR(title,nil);
+		UIM_SVAR(duration,nil);
+		UIM_SVAR(startTick,nil);
+		UIM_SVAR(overlay,nil);
+		UIM_SVAR(eachFrameID,nil);
 	} else {
 		_parentDisplay closeDisplay 0;
 	};
@@ -113,32 +114,32 @@ private _exit = {
 };
 
 // Save data to parent display
-SVAR(args,_args);
-SVAR(code,_code);
-SVAR(arguments,_arguments);
-SVAR(condition,_condition);
-SVAR(onProgress,_onProgress);
-SVAR(exit,_exit);
-SVAR(title,_title);
-SVAR(duration,_duration);
-SVAR(startTick,diag_tickTime);
-SVAR(overlay,_overlay);
+UIM_SVAR(args,_args);
+UIM_SVAR(code,_code);
+UIM_SVAR(arguments,_arguments);
+UIM_SVAR(condition,_condition);
+UIM_SVAR(onProgress,_onProgress);
+UIM_SVAR(exit,_exit);
+UIM_SVAR(title,_title);
+UIM_SVAR(duration,_duration);
+UIM_SVAR(startTick,diag_tickTime);
+UIM_SVAR(overlay,_overlay);
 
 // Add update event
 private _eachFrameID = addMissionEventHandler ["EachFrame",{
 	disableSerialization;
-	USE_DISPLAY(THIS_DISPLAY);
+	USE_UIM_DISPLAY(THIS_DISPLAY);
 	private _parentDisplay = ctrlParent _display;
 
 	// canProgress if condition returns nil or true
-	private _canProgress = [GVAR(arguments,[]),GVAR(condition,{})] call {
+	private _canProgress = [UIM_GVAR(arguments,[]),UIM_GVAR(condition,{})] call {
 		// Wiping inherited local variables from scope
 		private ["_display","_parentDisplay"];
 		(_this#0) call (_this#1);
 	};
-	if (!isNil "_canProgress" && {!(_canProgress isEqualType true) || {!_canProgress}}) exitWith {1 call GVAR(exit,{})};
+	if (!isNil "_canProgress" && {!(_canProgress isEqualType true) || {!_canProgress}}) exitWith {1 call UIM_GVAR(exit,{})};
 
-	GVAR(onProgress,{}) call {
+	UIM_GVAR(onProgress,{}) call {
 		// Wiping inherited local variables from scope
 		private ["_display","_parentDisplay","_canProgress"];
 		[] call _this;
@@ -146,7 +147,7 @@ private _eachFrameID = addMissionEventHandler ["EachFrame",{
 
 	// Calculate progress value.
 	// _duration default is diag_tickTime to avoid zero divisor errors, and assume progress is complete if the variables are nil
-	private _progress = ((diag_tickTime - GVAR(startTick,0))/GVAR(duration,diag_tickTime)) min 1;
+	private _progress = ((diag_tickTime - UIM_GVAR(startTick,0))/UIM_GVAR(duration,diag_tickTime)) min 1;
 
 	// Update controls
 	private _ctrlBackground = _display getVariable ["ctrlBackground",controlNull];
@@ -155,9 +156,9 @@ private _eachFrameID = addMissionEventHandler ["EachFrame",{
 
 	_ctrlBar ctrlSetPositionW ((ctrlPosition _ctrlBackground # 2)*_progress);
 	_ctrlBar ctrlCommit 0;
-	_ctrlText ctrlSetText format["%1 (%2%3)",GVAR(title,"Progress"),ceil(_progress*100),"%"];
+	_ctrlText ctrlSetText format["%1 (%2%3)",UIM_GVAR(title,"Progress"),ceil(_progress*100),"%"];
 
 	// Exit if complete
-	if (_progress == 1) then {0 call GVAR(exit,{})};
+	if (_progress == 1) then {0 call UIM_GVAR(exit,{})};
 }];
-SVAR(eachFrameID,_eachFrameID);
+UIM_SVAR(eachFrameID,_eachFrameID);

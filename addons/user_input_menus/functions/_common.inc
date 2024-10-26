@@ -7,7 +7,7 @@
 └──────────────────────────────────────────────────────*/
 
 // Common code used by all functions (saves copy pasting)
-USE_DISPLAY(THIS_DISPLAY);
+USE_UIM_DISPLAY(THIS_DISPLAY);
 USE_CTRL(_ctrlBackground,IDC_BACKGROUND);
 USE_CTRL(_ctrlTitle,IDC_TITLE);
 USE_CTRL(_ctrlFooter,IDC_FOOTER);
@@ -34,7 +34,7 @@ if (_button2 isEqualType 0) then {
 
 if _ctrlButtonLShown then {
 	_ctrlButtonL ctrlAddEventHandler ["ButtonClick",{
-		USE_DISPLAY(ctrlParent(_this#0));
+		USE_UIM_DISPLAY(ctrlParent(_this#0));
 		[_display,true] call (_display getVariable ["return",{}]);
 	}];
 };

@@ -1011,7 +1011,7 @@ Author:
 #endif
 
 #define PATHTO_FNC(func) class func {\
-    file = QPATHTOF(DOUBLES(fnc,func).sqf);\
+    file = QPATHTOF(functions\DOUBLES(fnc,JOIN(display,func)).sqf);\
     CFGFUNCTION_HEADER;\
     RECOMPILE;\
 }

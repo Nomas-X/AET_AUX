@@ -10,6 +10,7 @@
 
 #include "_macros.inc"
 #include "_defines.inc"
+#include "script_component.hpp"
 
 params [
 	["_parameters",[],[[]]],

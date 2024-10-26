@@ -18,6 +18,7 @@ class CfgPatches {
     };
 };
 
+#include "functions\script_component.hpp"
 #include "functions\_macros.inc"
 #include "functions\_defines.inc"
 
