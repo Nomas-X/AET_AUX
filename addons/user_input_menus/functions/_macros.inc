@@ -236,3 +236,9 @@
 	scriptPath = ##PATH##;\
 	onLoad = ["onLoad",_this,#NAME,'##PATH##',false] call INIT_DISPLAY_FUNCTION; \
 	onUnload = ["onUnload",_this,#NAME,'##PATH##',false] call INIT_DISPLAY_FUNCTION;
+
+#define UIM_PATHTO_FNC(func) class func {\
+    file = QPATHTOF(functions\DOUBLES(fnc,JOIN(display,func)).sqf);\
+    CFGFUNCTION_HEADER;\
+    RECOMPILE;\
+}
