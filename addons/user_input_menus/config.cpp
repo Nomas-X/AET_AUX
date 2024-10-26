@@ -18,6 +18,7 @@ class CfgPatches {
     };
 };
 
+#include "\x\cba\addons\main\script_macros_common.hpp"
 #include "functions\_macros.inc"
 #include "functions\_defines.inc"
 

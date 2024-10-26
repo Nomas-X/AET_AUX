@@ -7,10 +7,8 @@
 └──────────────────────────────────────────────────────*/
 
 // ~ Operations
-#define QUOTE(a) #a
+// #define QUOTE(a) #a
 #define JOIN(a,b) a##b
-#define DOUBLES(a,b) a##_##b
-#define TRIPLES(a,b,c) a##_##b##_##c
 
 #ifndef COMPONENT
     #define COMPONENT user_input_menus
