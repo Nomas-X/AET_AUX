@@ -9,6 +9,7 @@
 #define DISPLAY_NAME CAU_UserInputMenus_displaySlider
 
 #include "_defines.inc"
+#include "script_component.hpp"
 
 params [
 	["_parameters",[],[[]]],
@@ -51,7 +52,7 @@ _ctrlTitle setVariable ["title",_title];
 _ctrlTitle setVariable ["format",[_formatVal,{_position}] select (str _formatVal == "{}")];
 _ctrlInput setVariable ["sliderPosChanged",{
 	params ["_ctrlInput","_position"];
-	USE_DISPLAY(ctrlParent _ctrlInput);
+	USE_UIM_DISPLAY(ctrlParent _ctrlInput);
 	USE_CTRL(_ctrlTitle,IDC_TITLE);
 
 	private _title = _ctrlTitle getVariable ["title","Slider position"];

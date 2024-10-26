@@ -7,10 +7,11 @@
 └──────────────────────────────────────────────────────*/
 
 #define DISPLAY_NAME CAU_UserInputMenus_displayColorPicker
-#define FUNC(a) ((THIS_DISPLAY) getVariable [a,{}])
+#define UIM_FUNC(a) ((THIS_DISPLAY) getVariable [a,{}])
 
 #include "_macros.inc"
 #include "_defines.inc"
+#include "script_component.hpp"
 
 #define VAL_GRID_START_IDC 100
 #define VAL_HEX_TABLE [\
@@ -61,7 +62,7 @@ private _return = {
 	private _code = _display getVariable ["code",{}];
 
 	private _colorRGBA1 = _display getVariable ["selectedColor",[0,0,0,1]];
-	private _colorRGBA256 = _colorRGBA1 call FUNC("RGBA1toRGBA256");
+	private _colorRGBA256 = _colorRGBA1 call UIM_FUNC("RGBA1toRGBA256");
 	private _colorHTML = if ((_colorRGBA1#3) == 1) then {
 		_colorRGBA1 call BIS_fnc_colorRGBtoHTML;
 	} else {
@@ -79,7 +80,7 @@ private _return = {
 
 [
 	["createGrid",{
-		USE_DISPLAY(THIS_DISPLAY);
+		USE_UIM_DISPLAY(THIS_DISPLAY);
 		USE_CTRL(_ctrlGroup,IDC_COLOR_GROUP_GRID);
 
 		private _x = 0;
@@ -94,7 +95,7 @@ private _return = {
 				PX_WA(VAL_CELL_SIZE),
 				PX_HA(VAL_CELL_SIZE)
 			];
-			_ctrl ctrlAddEventHandler ["ButtonClick",{_this call FUNC("gridClicked")}];
+			_ctrl ctrlAddEventHandler ["ButtonClick",{_this call UIM_FUNC("gridClicked")}];
 			_ctrl ctrlCommit 0;
 
 			_y = _y + 1;
@@ -108,7 +109,7 @@ private _return = {
 		};
 	}],
 	["updateGridColor",{
-		USE_DISPLAY(THIS_DISPLAY);
+		USE_UIM_DISPLAY(THIS_DISPLAY);
 		USE_CTRL(_ctrlTitle,IDC_COLOR_GROUP_GRID);
 		USE_CTRL(_ctrlGroup,IDC_COLOR_GROUP_GRID);
 		USE_CTRL(_ctrlSliderR,IDC_COLOR_SLIDER_R);
@@ -122,7 +123,7 @@ private _return = {
 		private _ctrlSliderBPos = sliderPosition _ctrlSliderB;
 		private _ctrlSliderAPos = sliderPosition _ctrlSliderA;
 
-		[[_ctrlSliderRPos,_ctrlSliderGPos,_ctrlSliderBPos,_ctrlSliderAPos]] call FUNC("updateTitleBar");
+		[[_ctrlSliderRPos,_ctrlSliderGPos,_ctrlSliderBPos,_ctrlSliderAPos]] call UIM_FUNC("updateTitleBar");
 
 		private _x = 0;
 		private _y = 0;
@@ -156,7 +157,7 @@ private _return = {
 		};
 	}],
 	["updateEdit",{
-		USE_DISPLAY(THIS_DISPLAY);
+		USE_UIM_DISPLAY(THIS_DISPLAY);
 		USE_CTRL(_ctrlToolboxMode,IDC_COLOR_TOOLBOX_MODE);
 		USE_CTRL(_ctrlEditR,IDC_COLOR_EDIT_INPUT_R);
 		USE_CTRL(_ctrlEditG,IDC_COLOR_EDIT_INPUT_G);
@@ -176,8 +177,8 @@ private _return = {
 		];
 
 		(switch _mode do {
-			case 0:{_color call FUNC("outputRGBA1")};
-			case 1:{_color call FUNC("RGBA1toRGBA256")};
+			case 0:{_color call UIM_FUNC("outputRGBA1")};
+			case 1:{_color call UIM_FUNC("RGBA1toRGBA256")};
 			case 2:{
 				private _hex = _color call BIS_fnc_colorRGBAtoHTML;
 				[
@@ -196,7 +197,7 @@ private _return = {
 		_ctrlEditA ctrlSetText format["%1",_a];
 	}],
 	["updateSlider",{
-		USE_DISPLAY(THIS_DISPLAY);
+		USE_UIM_DISPLAY(THIS_DISPLAY);
 		USE_CTRL(_ctrlToolboxMode,IDC_COLOR_TOOLBOX_MODE);
 		USE_CTRL(_ctrlEditR,IDC_COLOR_EDIT_INPUT_R);
 		USE_CTRL(_ctrlEditG,IDC_COLOR_EDIT_INPUT_G);
@@ -216,9 +217,9 @@ private _return = {
 		];
 
 		(switch _mode do {
-			case 0:{(_color apply {parseNumber _x}) call FUNC("outputRGBA1")};
-			case 1:{(_color apply {parseNumber _x}) call FUNC("RGBA256toRGBA1")};
-			case 2:{[_color#3,_color#0,_color#1,_color#2] call FUNC("htmlToRGBA1")};
+			case 0:{(_color apply {parseNumber _x}) call UIM_FUNC("outputRGBA1")};
+			case 1:{(_color apply {parseNumber _x}) call UIM_FUNC("RGBA256toRGBA1")};
+			case 2:{[_color#3,_color#0,_color#1,_color#2] call UIM_FUNC("htmlToRGBA1")};
 			default {[1,1,1,1]};
 		}) params ["_r","_g","_b","_a"];
 
@@ -228,14 +229,14 @@ private _return = {
 		_ctrlSliderA sliderSetPosition _a;
 	}],
 	["updateTitleBar",{
-		USE_DISPLAY(THIS_DISPLAY);
+		USE_UIM_DISPLAY(THIS_DISPLAY);
 		USE_CTRL(_ctrlTitle,IDC_TITLE);
 		params [["_color",[0,0,0,1],[[]],4]];
 		_ctrlTitle ctrlSetBackgroundColor _color;
 		_display setVariable ["selectedColor",_color];
 	}],
 	["editKeyUp",{
-		USE_DISPLAY(THIS_DISPLAY);
+		USE_UIM_DISPLAY(THIS_DISPLAY);
 		USE_CTRL(_ctrlToolboxMode,IDC_COLOR_TOOLBOX_MODE);
 
 		private _mode = lbCurSel _ctrlToolboxMode;
@@ -254,23 +255,23 @@ private _return = {
 			};
 			_ctrl ctrlSetText _validText;
 		};
-		[] call FUNC("updateSlider");
-		[] call FUNC("updateGridColor");
+		[] call UIM_FUNC("updateSlider");
+		[] call UIM_FUNC("updateGridColor");
 	}],
 	["sliderPosChanged",{
 		params ["_ctrl"];
-		USE_DISPLAY(ctrlParent _ctrl);
+		USE_UIM_DISPLAY(ctrlParent _ctrl);
 		USE_CTRL(_ctrlSliderR,IDC_COLOR_SLIDER_R);
 		USE_CTRL(_ctrlSliderG,IDC_COLOR_SLIDER_G);
 		USE_CTRL(_ctrlSliderB,IDC_COLOR_SLIDER_B);
 		USE_CTRL(_ctrlSliderA,IDC_COLOR_SLIDER_A);
 
-		[] call FUNC("updateEdit");
-		[] call FUNC("updateGridColor");
+		[] call UIM_FUNC("updateEdit");
+		[] call UIM_FUNC("updateGridColor");
 	}],
 	["gridClicked",{
 		params ["_ctrl"];
-		USE_DISPLAY(ctrlParent _ctrl);
+		USE_UIM_DISPLAY(ctrlParent _ctrl);
 		USE_CTRL(_ctrlSliderR,IDC_COLOR_SLIDER_R);
 		USE_CTRL(_ctrlSliderG,IDC_COLOR_SLIDER_G);
 		USE_CTRL(_ctrlSliderB,IDC_COLOR_SLIDER_B);
@@ -283,8 +284,8 @@ private _return = {
 		_ctrlSliderB sliderSetPosition (_color#2);
 		_ctrlSliderA sliderSetPosition (_color#3);
 
-		[] call FUNC("updateEdit");
-		[_color] call FUNC("updateTitleBar");
+		[] call UIM_FUNC("updateEdit");
+		[_color] call UIM_FUNC("updateTitleBar");
 	}],
 	["outputRGBA1",{
 		// round to nearest 3 decimal places
@@ -326,10 +327,10 @@ USE_CTRL(_ctrlSliderA,IDC_COLOR_SLIDER_A);
 	_ctrlToolboxMode lbAdd _x;
 } forEach ["RGBA 0-1","RGBA 0-255","HTML #"];
 _ctrlToolboxMode lbSetCurSel 0;
-_ctrlToolboxMode ctrlAddEventHandler ["ToolBoxSelChanged",{[] call FUNC("updateEdit")}];
+_ctrlToolboxMode ctrlAddEventHandler ["ToolBoxSelChanged",{[] call UIM_FUNC("updateEdit")}];
 
 {
-	_x ctrlAddEventHandler ["KeyUp",{[] call FUNC("editKeyUp")}];
+	_x ctrlAddEventHandler ["KeyUp",{[] call UIM_FUNC("editKeyUp")}];
 } forEach [_ctrlEditR,_ctrlEditG,_ctrlEditB,_ctrlEditA];
 
 private _startColorType = 0;
@@ -346,11 +347,11 @@ private _startColor = if (count _color > 0) then {
 			_color select [6,2]
 		];
 		_split = _split - [""];
-		_split call FUNC("htmlToRGBA1");
+		_split call UIM_FUNC("htmlToRGBA1");
 	} else {
 		if ((_color findIf {_x > 1}) > -1) then {
 			_startColorType = 1;
-			_color call FUNC("RGBA256toRGBA1");
+			_color call UIM_FUNC("RGBA256toRGBA1");
 		} else {_color};
 	};
 } else {
@@ -364,7 +365,7 @@ _ctrlToolboxMode lbSetCurSel _startColorType;
 	_ctrl sliderSetRange [0,1];
 	_ctrl sliderSetSpeed [1/256,0.1];
 	_ctrl sliderSetPosition _pos;
-	_ctrl ctrlAddEventHandler ["SliderPosChanged",{_this call FUNC("sliderPosChanged")}];
+	_ctrl ctrlAddEventHandler ["SliderPosChanged",{_this call UIM_FUNC("sliderPosChanged")}];
 } forEach [
 	[_ctrlSliderR,_startColor#0],
 	[_ctrlSliderG,_startColor#1],
@@ -372,6 +373,6 @@ _ctrlToolboxMode lbSetCurSel _startColorType;
 	[_ctrlSliderA,_startColor#3]
 ];
 
-[] call FUNC("createGrid");
-[] call FUNC("updateGridColor");
-[] call FUNC("updateEdit");
+[] call UIM_FUNC("createGrid");
+[] call UIM_FUNC("updateGridColor");
+[] call UIM_FUNC("updateEdit");

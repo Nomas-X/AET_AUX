@@ -9,6 +9,7 @@
 #define DISPLAY_NAME CAU_UserInputMenus_displayListbox
 
 #include "_defines.inc"
+#include "script_component.hpp"
 
 params [
 	["_parameters",[],[[]]],
