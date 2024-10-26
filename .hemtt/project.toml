@@ -53,6 +53,7 @@ parameters = [
     "-window",
     "-noPause",
     "-noPauseAudio",
+    "-debug"
 ]
 
 [hemtt.launch.Altis]
