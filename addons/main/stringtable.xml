@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project name="AET_AUX">
     <Package name="Main">
-        <Key ID="STR_aet_aux_author">
-            <English>Antistasi Event Team</English>
-        </Key>
         <Key ID="STR_aet_aux_URL">
             <English>https://github.com/Nomas-X/AET_AUX/</English>
+        </Key>
+        <Key ID="STR_aet_aux_author">
+            <English>Antistasi Event Team</English>
         </Key>
     </Package>
 </Project>

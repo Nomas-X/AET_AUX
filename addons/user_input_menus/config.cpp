@@ -11,8 +11,7 @@ class CfgPatches {
         name="UserInputMenus";
         author="ConnorAU";
         url="https://github.com/ConnorAU/A3UserInputMenus";
-
-        requiredVersion=0.01;
+        requiredVersion=2.16;
         requiredAddons[]={"A3_3DEN"};
         units[]={};
         weapons[]={};

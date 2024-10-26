@@ -13,14 +13,14 @@
 #define TRIPLES(a,b,c) a##_##b##_##c
 
 #ifndef COMPONENT
-    #define COMPONENT main
+    #define COMPONENT user_input_menus
 #endif
 
 #ifndef MAINPREFIX
     #define MAINPREFIX z
 #endif
 
-#define PREFIX uim
+#define PREFIX aet_aux
 
 #ifndef SUBPREFIX
     #define SUBPREFIX addons
