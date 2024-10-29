@@ -19,7 +19,8 @@ include = [
     "logo_co.paa",
 	"AETLogo.paa",
 	"/assets/*.paa",
-    "*.bikey"
+    "*.bikey",
+    "DiscordRichPresence*.dll"
 ]
 exclude = [
     "*.psd",        # By default this list is empty
