@@ -10,6 +10,6 @@ class CfgDiscordRichPresence {
 	defaultLargeImageText="";                                                            // Large image hover text
 	defaultSmallImageKey="arma_3_logo";                                                  // Small image
 	defaultSmallImageText="";                                                            // Small image hover text
-	defaultButtons[]={"Antistasi Discord", "https://discord.com/invite/QddpFx3AUJ"};   // Button texts and urls
+	defaultButtons[]={"Our Discord", "https://discord.com/invite/QddpFx3AUJ"};   // Button texts and urls
 	useTimeElapsed=1;                                                                    // Show time elapsed since the player connected (1 - true, 0 - false)
 };
