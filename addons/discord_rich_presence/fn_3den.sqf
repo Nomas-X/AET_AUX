@@ -30,12 +30,8 @@ switch _this do {
 		[] spawn {
 			isNil {
 				[
-					["UpdateDetails",if (briefingName == "") then {
-						"Eden 3D Editor"
-					} else {
-						"Eden 3D Editor: " + briefingName
-					}],
-					["UpdateState",getText(configFile >> "CfgWorlds" >> worldName >> "description")]
+					["UpdateDetails", "Antistasi Event Team"],
+					["UpdateState", getText(configFile >> "CfgWorlds" >> worldName >> "description")]
 				] call DiscordRichPresence_fnc_update;
 			};
 		};
