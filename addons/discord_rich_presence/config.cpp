@@ -22,7 +22,6 @@ class CfgFunctions {
 			class init {
 				preInit=1;
 			};
-			class 3den {};
 			class update {};
 		};
 	};
@@ -46,16 +45,5 @@ class CfgMods {
 		logoOver="\z\aet_aux\addons\discord_rich_presence\discord.paa";
 		logoSmall="\z\aet_aux\addons\discord_rich_presence\discord.paa";
 		picture="\z\aet_aux\addons\discord_rich_presence\discord.paa";
-	};
-};
-class Cfg3DEN {
-	class EventHandlers {
-		class CAU_DiscordRichPresence {
-			onTerrainNew="'onTerrainNew' call DiscordRichPresence_fnc_3den";
-			onMissionPreviewEnd="'onMissionPreviewEnd' call DiscordRichPresence_fnc_3den";
-			onMissionLoad="'onMissionLoad' call DiscordRichPresence_fnc_3den";
-			onMissionNew="'onMissionNew' call DiscordRichPresence_fnc_3den";
-			onMissionSave="'onMissionSave' call DiscordRichPresence_fnc_3den";
-		};
 	};
 };
