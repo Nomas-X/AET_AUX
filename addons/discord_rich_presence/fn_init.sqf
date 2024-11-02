@@ -19,16 +19,18 @@ Return:
 private _manuallyDisabled = profileNamespace getVariable ["DiscordRichPresence_disabled",false];
 if _manuallyDisabled exitWith {};
 
+// Exit init if the server isn't Antistasi Community Event Server
+if (serverName isNotEqualTo "Antistasi Community Event Server") exitWith {};
+
 private _isExitingMission = _this isEqualTo 0;
 
 // Use mission file settings if they exist, otherwise configFile settings, otherwise default values.
 private _cfgDirs = [
-	missionConfigFile >> "CfgDiscordRichPresence",
 	configFile >> "CfgDiscordRichPresence"
 ];
 
-// Force configFile settings if exiting a mission or is 3den
-private _index = if (_isExitingMission || is3DEN) then {1} else {_cfgDirs findIf {isClass _x}};
+// Force configFile settings if exiting a mission
+private _index = if (_isExitingMission) then {1} else {_cfgDirs findIf {isClass _x}};
 private _cfgDir = _cfgDirs param [_index,configNull];
 private _cfgDirExists = isClass _cfgDir;
 
@@ -111,8 +113,8 @@ if _curLoadSuccess then {
 	uiNamespace setVariable ["DiscordRichPresence_ApplicationID",_applicationID];
 
 	private _isMainMenu = false;
-	if (!_cfgDirExists && !is3DEN) then {
-		// Main Menu check (if using default values and not in 3den)
+	if (!_cfgDirExists) then {
+		// Main Menu check (if using default values)
 		private _mission = toLower format["%1.%2",missionName,worldName];
 		private _mainMenuMissions = "true" configClasses (configFile >> "CfgMissions" >> "CutScenes");
 		_isMainMenu = _mainMenuMissions findIf {_mission in toLower getText(_x >> "directory")} > -1;
@@ -122,6 +124,13 @@ if _curLoadSuccess then {
 	if (_isMainMenu || _isExitingMission) then {
 		_defaultDetails = "Main Menu";
 		_defaultState = "";
+		_defaultLargeImageText = "";
+	};
+
+	// Check if the mission is still running?
+	if !(_isExitingMission) then {
+		_defaultDetails = briefingName;
+		_defaultState = getText(configFile >> "CfgWorlds" >> worldName >> "description");
 		_defaultLargeImageText = "";
 	};
 
@@ -143,7 +152,7 @@ if _curLoadSuccess then {
 	[] spawn {
 		private _display = displayNull;
 		waitUntil {
-			_display = if is3DEN then {findDisplay 313} else {findDisplay 46};
+			_display = findDisplay 46;
 			!isNull _display
 		};
 
