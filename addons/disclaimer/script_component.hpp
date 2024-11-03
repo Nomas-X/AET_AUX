@@ -1,5 +1,7 @@
 #define COMPONENT disclaimer
-#define COMPONENT_BEAUTIFIED Disclaimer       // This is being used for the Addon's Name and can be "My Addon Template Framework"
+
+// This is being used for the Addon's Name and can be "My Addon Template Framework"
+#define COMPONENT_BEAUTIFIED Disclaimer
 
 
 #include "\z\aet_aux\addons\main\script_mod.hpp"
