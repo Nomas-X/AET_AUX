@@ -3,7 +3,7 @@
 private _code = {
 	if (hasInterface && SET(enabled)) then {
 		
-		["AET_disclaimer_request", ["REQUEST", player]] call CBA_fnc_serverEvent;
+		[QGVAR(EH_request), ["REQUEST", player]] call CBA_fnc_serverEvent;
 	};
 };
 

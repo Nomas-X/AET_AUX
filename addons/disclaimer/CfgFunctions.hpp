@@ -1,16 +1,16 @@
 class CfgFunctions
 {
-	class AET
+	class ADDON
 	{
-		class disclaimer
+		class COMPONENT
 		{
 			file = PATH_TO_FUNC;
 
-			class disclaimer_preInit { preInit = 1; };
-			class disclaimer_postInit { postInit = 1; };
+			class preInit { preInit = 1; };
+			class postInit { postInit = 1; };
 
-			class disclaimer_serverCheck {};
-			class disclaimer_play {};
+			class serverCheck {};
+			class play {};
 		};
 	};
 };
