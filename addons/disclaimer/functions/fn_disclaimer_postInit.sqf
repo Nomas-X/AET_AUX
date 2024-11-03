@@ -1,3 +1,5 @@
+#include "../script_component.hpp"
+
 private _code = {
 	if (hasInterface && SET(enabled)) then {
 		
