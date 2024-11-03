@@ -15,7 +15,7 @@ class CfgFunctions
 			class ValidateObjects {};
 		};
 	};
-	class AET
+	class ADDON
 	{
 		class DOUBLES(COMPONENT,Players)
 		{
@@ -47,3 +47,4 @@ class CfgFunctions
 		};
 	};
 };
+

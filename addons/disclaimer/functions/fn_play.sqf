@@ -32,7 +32,7 @@ if !(hasInterface) exitWith {};
     sleep 12;
 
     if (SET(enabled_logo)) then {
-        "disclaimerLayer_Sponsor" cutText ["<img size='8' shadow='0' image='Images\opengroup_sponsor.paa'/>", "PLAIN DOWN", 5, true, true];
+        "disclaimerLayer_Sponsor" cutText ["<img size='8' shadow='0' image='data\opengroup_sponsor.paa'/>", "PLAIN DOWN", 5, true, true];
     };
     "disclaimerLayer_Text" cutText  ["<t size='2'>Disclaimer: This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</t>", "PLAIN", 5, true, true];
     
@@ -70,11 +70,11 @@ if !(hasInterface) exitWith {};
     sleep 5;
     // at the end if this function, this needs to be here
     
-    ["AET_disclaimer_request", ["DONE", player]] call CBA_fnc_serverEvent;
-    ["AET_disclaimer_done", []] call CBA_fnc_localEvent;
+    [QGVAR(EH_request), ["DONE", player]] call CBA_fnc_serverEvent;
+    [QGVAR(EH_done), []] call CBA_fnc_localEvent;
 };
 
-["AET_disclaimer_done", {
+[QGVAR(EH_done), {
     "dynamicBlur" ppEffectEnable false; ppEffectDestroy "dynamicBlur";
     // Gun safety off once disclaimer is done.
     { [ACE_player, _x, false] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player);
