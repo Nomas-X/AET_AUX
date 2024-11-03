@@ -1,0 +1,24 @@
+
+[default]
+workshop = [
+    "450814997",  # CBA_A3's Workshop ID
+    "463939057",  # ACE3
+    "2369477168", # Advanced Developer Tools
+    "1779063631", # ZEN
+	"623475643",  # 3den Enhanced ## I dont think you wanna load that to avoid some unintended dependencies.
+]
+
+dlc = []
+optionals = []
+
+parameters = [
+    "-window",
+    "-noPause",
+    "-noPauseAudio",
+    "-debug"
+]
+
+[Altis]
+extends = "default"
+dlc = ["ws","rf"]
+mission = "testMission.Altis"

@@ -4,22 +4,22 @@ class CfgFunctions
 	{
 		class Create
 		{
-			file = "z\aet_aux\addons\common\functions\create";
+			file = PATH_TO_FUNC_SUB(create);
 			
 			class LGAirstrike {};
 		};
 		class Utility
 		{
-			file = "z\aet_aux\addons\common\functions\utility";
+			file = PATH_TO_FUNC_SUB(utility);
 
 			class ValidateObjects {};
 		};
 	};
 	class AET
 	{
-		class Players
+		class DOUBLES(COMPONENT,Players)
 		{
-			file = "z\aet_aux\addons\common\functions\players";
+			file = PATH_TO_FUNC_SUB(players);
 			
 			class basicEquipment {};
 			class antiFlubber {};
@@ -27,16 +27,16 @@ class CfgFunctions
 			class setFaces {};
 			class startInVehicle {};
 		};
-		class AI
+		class DOUBLES(COMPONENT,AI)
 		{
-			file = "z\aet_aux\addons\common\functions\ai";
+			file = PATH_TO_FUNC_SUB(ai);
 
 			class disableLayerAI {};
 			class enableLayerAI {};
 		};
-		class Utility
+		class DOUBLES(COMPONENT,Utility)
 		{
-			file = "z\aet_aux\addons\common\functions\utility";
+			file = PATH_TO_FUNC_SUB(utility);
 
 
 			class markTriggersInLayer {};

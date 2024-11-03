@@ -1,5 +1,7 @@
+#include "../script_component.hpp"
+
 private _code = {
-	if (hasInterface && aet_aux_disclaimer_enabled) then {
+	if (hasInterface && SET(enabled)) then {
 		
 		["AET_disclaimer_request", ["REQUEST", player]] call CBA_fnc_serverEvent;
 	};
