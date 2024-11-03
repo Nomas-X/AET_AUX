@@ -15,7 +15,7 @@ class CfgFunctions
 			class ValidateObjects {};
 		};
 	};
-	class AET
+	class AET   // replace AET with ADDON
 	{
 		class DOUBLES(COMPONENT,Players)
 		{
