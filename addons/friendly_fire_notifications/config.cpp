@@ -1,8 +1,8 @@
 class CfgPatches {
-    class AET_AUX_friendly_fire_notifications {
-        author = "$STR_aet_aux_author";
-        name = "AET_AUX_friendly_fire_notifications";
-        url = "$STR_aet_aux_URL";
+    class aet_friendly_fire_notifications {
+        author = "$STR_aet_author";
+        name = "aet_friendly_fire_notifications";
+        url = "$STR_aet_URL";
         units[] = {};
         weapons[] = {};
         requiredAddons[] = {};

@@ -4,7 +4,7 @@ class CfgFunctions
 	{
 		class Punishment
 		{
-			file = "z\aet_aux\addons\friendly_fire_notifications\functions\punishment";
+			file = "z\aet\addons\friendly_fire_notifications\functions\punishment";
 
 			class punishment_FF_init { postInit = 1; };
 
@@ -18,12 +18,12 @@ class CfgFunctions
 		};
 		class UI
 		{
-			file = "z\aet_aux\addons\friendly_fire_notifications\functions\ui";
+			file = "z\aet\addons\friendly_fire_notifications\functions\ui";
 			class customHint {};
 		};
 		class Utility
 		{
-			file = "z\aet_aux\addons\friendly_fire_notifications\functions\utility";
+			file = "z\aet\addons\friendly_fire_notifications\functions\utility";
 			class getAdmin {};
 			class log {};
 		};

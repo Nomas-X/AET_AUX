@@ -6,10 +6,10 @@ class CfgPatches {
         // Meta information for editor
 		name = ADDON_NAME;
 
-        author = "$STR_aet_aux_author";
+        author = "$STR_aet_author";
         authors[] = {"Nomas / Redwan S. [AET]", "OverlordZorn [CVO]"};
         
-        url = "$STR_aet_aux_URL";
+        url = "$STR_aet_URL";
 
 		VERSION_CONFIG;
 
