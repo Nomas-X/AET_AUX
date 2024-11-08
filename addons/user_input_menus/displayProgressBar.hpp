@@ -43,7 +43,7 @@ class CAU_UserInputMenus_displayProgressBar: CAU_UserInputMenus_ctrlControlsGrou
         };
         class text: CAU_UserInputMenus_ctrlStaticTitle {
             onLoad = "(ctrlParentControlsGroup(_this#0)) setVariable ['ctrlText',_this#0]";
-            sizeEx = "(4.32 * (1 / (getResolution select 3)) * pixelGrid * 0.5) * (SIZE_XL / SIZE_M)";
+            sizeEx = QUOTE((4.32 * (1 / (getResolution select 3)) * pixelGrid * 0.5) * (SIZE_XL / SIZE_M));
 
             colorBackground[] = {0, 0, 0, 0};
 
