@@ -19,14 +19,18 @@
 
 // params [ ["_varName",        "defaultValue",         ["acceptedDataTypes"]       ]];
 
-#define CACHETIME	1*60
+#define CACHETIME	(1*60)
+
+
+
+// Check for a flag on the player
+// true -> Always access, false -> always denied, "404" not defined, means no further checks will be made
+private _alwaysAllowed = player getVariable [QGVAR(_alwaysAllowed), "404"];
+if (_alwaysAllowed isNotEqualTo "404") exitWith { _alwaysAllowed };
 
 // Check for Cached result
+// Cache Format: [bool, timestamp];
 private _cached = missionNamespace getVariable [QGVAR(cached_condition), "404"];
-
-
-// returns 
-
 
 private _return = false;
 
@@ -36,14 +40,22 @@ if (_cached isEqualTo "404") then {
 
 
 
-
-
 	//return the result and store it in the cache
-	_cached = _return;
-	missionNamespace setVariable [QGVAR(cached_condition)];
+	_cached = [_return, (CBA_MissionTime + CACHETIME)];
+	missionNamespace setVariable [QGVAR(cached_condition), _cached];
+
+	// nil the cache after X
+	// clean cache
+	_condition = {
+		_cache = missionNamespace getVariable [QGVAR(cached_condition), "404"];
+		if (_cache isEqualTo "404") exitWith {false};
+		CBA_MissionTime > (_cache#1)
+	};
+
+	[_condition, { missionNamespace setVariable [QGVAR(cached_condition), nil]; }, [], CACHETIME] call CBA_fnc_waitUntilAndExecute;
 } else {
 	// return the cached result
-	_return = _cached;
+	_return = _cached#0;
 };
 
 

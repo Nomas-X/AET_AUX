@@ -28,10 +28,21 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QSET(channelSelector),
+	"LIST",
+	["Import Channel", "The channel the plan would be imported to. ""Selector"" allows the user to choose from all channel."],
+	["AET Plan Importer"],
+	[[-1, 0, 1, 2, 3, 4],["Selector", "Global", "Side", "Command", "Group", "Vehicle"], 0],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
 	QSET(groupLeaders_enabled),
 	"CHECKBOX",
 	["Enable For Group Leaders", "Allows group leaders to access the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
-	["AET Plan Importer"],
+	["AET Plan Importer", "Conditions"],
 	true,
 	1,
 	{},
@@ -42,31 +53,20 @@
 	QSET(admin_enabled),
 	"CHECKBOX",
 	["Enable For Admin", "Allows the admin to access the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
-	["AET Plan Importer"],
+	["AET Plan Importer", "Conditions"],
 	true,
 	1,
 	{},
 	false
-] call CBA_fnc_addSetting;
+] call CBA_fnc_addSetting; // is this needed? it feels like admin should always have access to fix issues when needed.
 
 [
 	QSET(rankBased_mode),
 	"LIST",
 	["Enable For The Following Rank And Above", "Allows the selected rank and other ranks higher than it to access the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
-	["AET Plan Importer"],
+	["AET Plan Importer", "Conditions"],
 	[[0, 1, 2, 3, 4, 5, 6, 7],["Disabled", "Private", "Corporal", "Sergeant", "Lieutenant", "Captain", "Major", "Colonel"], 0],
 	1,
 	{},
 	true
-] call CBA_fnc_addSetting;
-
-[
-	QSET(channelSelector),
-	"LIST",
-	["Import Channel", "The channel the plan would be imported to. ""Selector"" allows the user to choose from all channel."],
-	["AET Common", "Plan Importer"],
-	[[-1, 0, 1, 2, 3, 4],["Selector", "Global", "Side", "Command", "Group", "Vehicle"], 0],
-	1,
-	{},
-	false
 ] call CBA_fnc_addSetting;
