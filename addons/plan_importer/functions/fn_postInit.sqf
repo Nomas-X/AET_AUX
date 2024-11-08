@@ -1,7 +1,7 @@
 #include "../script_component.hpp"
 
 private _code = {
-	if (hasInterface && {SET(mode) != "NO_ONE"}) then {
+	if (SET(enabled) && {hasInterface}) then {
 
 		[] call FUNC(addActions);
 	};

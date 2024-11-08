@@ -2,7 +2,7 @@
 
 params ["_checkType"];
 
-if (SET(mode) == "SQUAD_LEADERS" && {leader player == player}) then {
+if (SET(mode) == "GROUP_LEADERS" && {leader player == player}) then {
 
 	switch (_checkType) do {
 		case "IMPORT": {

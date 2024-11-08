@@ -17,11 +17,44 @@
 */
 
 [
-	QSET(mode),
+	QSET(enabled),
+	"CHECKBOX",
+	["Enable PLANOPS Plan Importer", "Adds the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
+	["AET Plan Importer"],
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(groupLeaders_enabled),
+	"CHECKBOX",
+	["Enable For Group Leaders", "Allows group leaders to access the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
+	["AET Plan Importer"],
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(admin_enabled),
+	"CHECKBOX",
+	["Enable For Admin", "Allows the admin to access the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
+	["AET Plan Importer"],
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(rankBased_mode),
 	"LIST",
-	["Who Can Import A Plan", "An ""Import Plan"" action is added to the selected group to import plans from the https://maps.plan-ops.fr website."],
-	["AET Common", "Plan Importer"],
-	[["NO_ONE", "SQUAD_LEADERS"],["No One", "Squad Leaders"], 1],
+	["Enable For The Following Rank And Above", "Allows the selected rank and other ranks higher than it to access the ""Import Plan"" and ""Delete Plan"" actions to import and delete plans from the https://maps.plan-ops.fr website."],
+	["AET Plan Importer"],
+	[[0, 1, 2, 3, 4, 5, 6, 7],["Disabled", "Private", "Corporal", "Sergeant", "Lieutenant", "Captain", "Major", "Colonel"], 0],
 	1,
 	{},
 	true
