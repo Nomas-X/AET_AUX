@@ -25,7 +25,7 @@
 
 // Check for a flag on the player
 // true -> Always access, false -> always denied, "404" not defined, means no further checks will be made
-private _alwaysAllowed = player getVariable [QGVAR(_alwaysAllowed), "404"];
+private _alwaysAllowed = player getVariable [QGVAR(alwaysAllowed), "404"];
 if (_alwaysAllowed isNotEqualTo "404") exitWith { _alwaysAllowed };
 
 // Check for Cached result
@@ -35,37 +35,36 @@ private _cached = missionNamespace getVariable [QGVAR(cached_condition), "404"];
 private _return = false;
 
 if (_cached isEqualTo "404") then {
-	// run the normal checks
-	_return = ...;
+	// No Cache Found
+	// -> Evaluate
 
+	_return = switch (true) do {
+		case (SET(groupLeaders_enabled) && {leader player == player}): {true};
+		case (SET(admin_enabled) && {[] call BIS_fnc_admin > 0}): {true};
+		case (SET(rankBased_mode) < rankId player): {true};
+		default {false};
+	};
 
-
-	//return the result and store it in the cache
+	//Store Result in Cache
 	_cached = [_return, (CBA_MissionTime + CACHETIME)];
 	missionNamespace setVariable [QGVAR(cached_condition), _cached];
 
-	// nil the cache after X
-	// clean cache
-	_condition = {
+	//Clear Cache once Timeout
+	private _condition = {
 		_cache = missionNamespace getVariable [QGVAR(cached_condition), "404"];
 		if (_cache isEqualTo "404") exitWith {false};
 		CBA_MissionTime > (_cache#1)
 	};
+	private _code = { missionNamespace setVariable [QGVAR(cached_condition), nil]; };
 
-	[_condition, { missionNamespace setVariable [QGVAR(cached_condition), nil]; }, [], CACHETIME] call CBA_fnc_waitUntilAndExecute;
+	[_condition, _code, [], CACHETIME, _code] call CBA_fnc_waitUntilAndExecute;
 } else {
-	// return the cached result
+	// Cache Found
+	// -> Return Cache
 	_return = _cached#0;
 };
 
 
-
-switch (true) do {
-	case (SET(groupLeaders_enabled) && {leader player == player}): {true};
-	case (SET(admin_enabled) && {[] call BIS_fnc_admin > 0}): {true};
-	case (SET(rankBased_mode) < rankId player): {true};
-	default {false};
-};
 
 // End of function
 _return
