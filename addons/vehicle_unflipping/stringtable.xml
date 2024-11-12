@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="vet_unflipping">
+    <Package name="vet_unflipping">
+        <Key ID="STR_vet_unflipping_act">
+            <Original>Unflip</Original>
+            <French>Retournement</French>
+            <Spanish>Voltear</Spanish>
+            <Polish>Obróć</Polish>
+            <Russian>Перевернуть</Russian>
+            <German>Aufrichten</German>
+            <Chinesesimp>翻正</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_doing">
+            <Original>Unfliping...</Original>
+            <French>Retournement...</French>
+            <Spanish>Volteando...</Spanish>
+            <Polish>Obracanie...</Polish>
+            <Russian>Переворачиваем...</Russian>
+            <German>Aufrichten...</German>
+            <Chinesesimp>翻正中...</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_need_more">
+            <Original>You need more people.</Original>
+            <French>Vous avez besoin de plus de monde.</French>
+            <Spanish>Se necesitan más personas</Spanish>
+            <Polish>Potrzeba więcej osób.</Polish>
+            <Russian>Вам нужно больше людей</Russian>
+            <German>Du benötigst mehr Leute.</German>
+            <Chinesesimp>你需要更多的人手。</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_require_serviceVehicle">
+            <Original>Require repair vehicle to unflip vehicle</Original>
+            <French>Nécessite un véhicule de réparation pour l'action de retournement</French>
+            <Polish>Wymagaj pojazdu naprawczego do odwracania pojazdów</Polish>
+        </Key>
+        <Key ID="STR_vet_unflipping_require_toolkit">
+            <Original>It requires a ToolKit to unflip a vehicle</Original>
+            <French>Il faut une trousse à outil pour retourner un véhicule</French>
+            <Spanish>Un kit de herramientas es requerido para voltear vehículos</Spanish>
+            <Polish>Wymagaj zestawu naprawczego do odwracania pojazdów</Polish>
+            <Russian>Требуется набор инструментов для переворота транспорта</Russian>
+            <German>Ein Werkzeugkasten wird zum Aufrichten benötigt</German>
+            <Chinesesimp>需要携带工具包才能翻正载具</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_required">
+            <Original>Required people to unflip: %1</Original>
+            <French>Nombre de personnes pour retourner : %1</French>
+            <Spanish>Gente necesaria para voltear: %1</Spanish>
+            <Polish>Liczba osób potrzebna aby obrócić: %1</Polish>
+            <Russian>Для переворота нужно: %1 чел.</Russian>
+            <German>Benötigte Einheiten zum aufrichten: %1</German>
+            <Chinesesimp>需要 %1 人才能翻正载具</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_time">
+            <Original>Unflipping time</Original>
+            <French>Temps de retournement</French>
+            <Spanish>Tiempo para voltear</Spanish>
+            <Polish>Czas odwracania</Polish>
+            <Russian>Время переворота</Russian>
+            <German>Aufrichtzeit</German>
+            <Chinesesimp>翻正时间</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_time_desc">
+            <Original>Defines how long it will take to unflip the vehicle.</Original>
+            <French>Définit le temps qu'il faudra pour retourner le véhicule.</French>
+            <Spanish>Define cuánto tiempo tomará voltear el vehículo.</Spanish>
+            <Polish>Określa jak długo będzie trwało obracanie pojazdu.</Polish>
+            <Russian>Время, необходимое для переворота техники</Russian>
+            <German>Legt fest, wie lange das Aufrichten eines Fahrzeugs dauert.</German>
+            <Chinesesimp>设定翻正载具要消耗多长时间。</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_to_heavy">
+            <Original>To heavy</Original>
+            <French>Trop lourd</French>
+            <Spanish>Demasiado pesado</Spanish>
+            <Polish>Za ciężkie</Polish>
+            <Russian>Слишком тяжелый</Russian>
+            <German>Zu schwer</German>
+            <Chinesesimp>过重</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_unit_man_limit">
+            <Original>Man limit</Original>
+            <French>Limite d'hommes</French>
+            <Spanish>Límite de hombres</Spanish>
+            <Polish>Limit osób</Polish>
+            <Russian>Необходимое кол-во людей</Russian>
+            <German>Einheitenlimit</German>
+            <Chinesesimp>人数限制</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_unit_man_limit_desc">
+            <Original>Defines maximal amount of people that can be needed for unflip.</Original>
+            <French>Définit le nombre maximum de personnes qui peuvent être nécessaires pour retourner.</French>
+            <Spanish>Define la cantidad máxima de personas que pueden necesitarse para voltear.</Spanish>
+            <Polish>Określa maksymalną liczbe osób jaka może być potrzebna do obrócenia pojazdu.</Polish>
+            <Russian>Необходимое количество игроков для переворота техники</Russian>
+            <German>Legt fest, wie viele Einheiten/Soldaten maximal zum aufrichten nötig werden können.</German>
+            <Chinesesimp>设定单次翻正操作的最大操作人数限制。</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_unit_mass_limit">
+            <Original>Unit mass limit</Original>
+            <French>Limite de masse individuelle</French>
+            <Spanish>Límite de masa de unidad</Spanish>
+            <Polish>Limit masy na jednostke</Polish>
+            <Russian>Предел массы техники</Russian>
+            <German>Massenbegrenzung</German>
+            <Chinesesimp>单位质量限制</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_unit_mass_limit_desc">
+            <Original>Defines how much mass can be unflipped by single unit.
+				Default value should allow single unit to unflip most of small vehicles.</Original>
+            <French>Définit le poid pouvant être retourné par une seule unité. La valeur par défaut devrait permettre à une seule unité de retourner la plupart des petits véhicules.</French>
+            <Spanish>Define cuánta masa puede ser volteada por una sola unidad.
+				El valor por defecto debería permitir a un hombre voltear la mayoría de vehículos pequeños.</Spanish>
+            <Polish>Określa jak cięzki obiekt może być obrócony przez jedną jednostke.
+				Domyślna wartość powinna pozwolić na obrócenie większości małych pojazdów.</Polish>
+            <Russian>Масса техники, которую может перевернуть один игрок.
+				Дефолтное значение позволяет перевернуть одному игроку небольшой транспорт.</Russian>
+            <German>Legt fest, wie viel Masse von einer einzelnen Einheit aufgerichtet werden kann.
+				Der Standardwert erlaubt es einzelnen Einheiten die meisten kleinen Fahrzeuge aufzurichten.</German>
+            <Chinesesimp>设定一个单位可以翻正的物体的最大质量。
+				默认值可使一个单位翻正大多数小型载具。</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_vehicle_mass_limit">
+            <Original>Maximum unflip weight</Original>
+            <French>Poids maximum de retournement</French>
+            <Spanish>Peso máximo para voltear</Spanish>
+            <Polish>Maksymalna masa odwracanego pojazdu</Polish>
+            <Russian>Максимальный вес</Russian>
+            <German>Maximale Masse</German>
+            <Chinesesimp>最大翻正重量</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_vehicle_mass_limit_desc">
+            <Original>Vehicles with weight above this limit will be not unflippable.</Original>
+            <French>Les véhicules dont le poids est supérieur à cette limite ne seront pas retournable.</French>
+            <Spanish>Vehículos con un peso mayor a este límite no pueden voltearse</Spanish>
+            <Polish>Pojazdy z masą powyżej tego limitu nie będą mogły być obrócone.</Polish>
+            <Russian>Транспорт с весом, превышающим этот предел, не смогут перевернуть.</Russian>
+            <German>Fahrzeuge über diesem Maximalwert können nicht aufgerichtet werden.</German>
+            <Chinesesimp>无法翻正大于此重量的载具。</Chinesesimp>
+        </Key>
+        <Key ID="STR_vet_unflipping_waiting">
+            <Original>Not enough people. Waiting...</Original>
+            <French>Pas assez de gens. En attente...</French>
+            <Spanish>No hay suficientes personas. Esperando...</Spanish>
+            <Polish>Brak wystarczającej ilości osób. Oczekiwanie...</Polish>
+            <Russian>Не хватает людей! Ожидайте или отмените действие...</Russian>
+            <German>Nicht genug Leute. Warte...</German>
+            <Chinesesimp>人手不够, 等待中...</Chinesesimp>
+        </Key>
+    </Package>
+</Project>
