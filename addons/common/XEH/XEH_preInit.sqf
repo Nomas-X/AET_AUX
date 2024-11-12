@@ -15,3 +15,14 @@
 	false									//    _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_fnc_addSetting;
 */
+
+[
+	QSET(antiBounceSmokeGL_enabled),
+	"CHECKBOX",
+	["Enable Smoke GLs Anti-Bounce", "This only works if the description or tooltip of the magazine includes the word ""Smoke""."],
+	["AET Common", "Common"],
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;

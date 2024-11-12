@@ -4,10 +4,10 @@ class CfgPatches {
     class ADDON {
         name = ADDON_NAME;
         
-        author = "$STR_aet_aux_author";
+        author = "$STR_aet_author";
         authors[] = {"Nomas / Redwan S. [AET]"};
         
-        url = "$STR_aet_aux_URL";
+        url = "$STR_aet_URL";
         
         VERSION_CONFIG;
         

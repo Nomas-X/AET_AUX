@@ -18,7 +18,7 @@ class CfgFunctions {
 	class CAU_DiscordRichPresence {
 		tag="DiscordRichPresence";
 		class Scripts {
-			file = "\z\aet_aux\addons\discord_rich_presence";
+			file = "\z\aet\addons\discord_rich_presence";
 			class init {
 				preInit=1;
 			};
@@ -41,9 +41,9 @@ class CfgMods {
 		hidePicture=0;
 		dlcColor[]={0.45,0.54,0.85,1};
 
-		logo="\z\aet_aux\addons\discord_rich_presence\discord.paa";
-		logoOver="\z\aet_aux\addons\discord_rich_presence\discord.paa";
-		logoSmall="\z\aet_aux\addons\discord_rich_presence\discord.paa";
-		picture="\z\aet_aux\addons\discord_rich_presence\discord.paa";
+		logo="\z\aet\addons\discord_rich_presence\discord.paa";
+		logoOver="\z\aet\addons\discord_rich_presence\discord.paa";
+		logoSmall="\z\aet\addons\discord_rich_presence\discord.paa";
+		picture="\z\aet\addons\discord_rich_presence\discord.paa";
 	};
 };
