@@ -10,9 +10,11 @@ class CfgFunctions
             class postInit { postInit = 1; };
 
 			class addActions {};
-			class isUserAllowed {};
+			class removeActions {};
+			class showActionsCondition {};
 			class selectChannel {}; 
 			class importPlan {};
+			class createMarkers {};
 			class deletePlan {};
         };
     };

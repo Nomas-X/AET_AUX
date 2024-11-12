@@ -1,48 +1,45 @@
 #include "../script_component.hpp"
-
 /*
 Author: Redwan S / Nomas
 
 Description:
-    This function is used to allow a player to import their plan from https://maps.plan-ops.fr to the game.
+    This function is used to call for a select menu to allow the players to choose the plan import channel if the CBA setting allows it.
 
 Arguments:
-	0. <Object> Unit to execute the function on
+	N/A
 
-	1. <Array> Includes the list of units <Object> that a unit must be in to get the ACE action
-
-	2. <Number> (Optional) - The channel ID that the plan will be imported into, default is 0
-
-Return Value: <nil>
+Return Value:
+	<Nil>
 
 Example:
-	private _importPlanPlayerList = ["Z_1", "Z_2", "P_1"] call HR_fnc_ValidateObjects;
-	[player, _importPlanPlayerList, 0] call AET_fnc_importPlan;
+	[] call AET_plan_importer_fnc_selectChannel;
 */
 
-[
+if (SET(importChannel) == -1) then {
 	[
 		[
-			[["Global Chat", [1.00, 1.00, 1.00, 1.00]], [], [], [], "Import plan to Global chat", "", 0], 
-			[["Side Chat", [0.00, 0.30, 0.60, 1.00]], [], [], [], "Import plan to Side chat", "", 1],
-			[["Command Chat", [0.85, 0.85, 0.00, 1.00]], [], [], [], "Import plan to Command chat", "", 2],
-			[["Group Chat", [0.00, 0.80, 0.00, 1.00]], [], [], [], "Import plan to Group chat", "", 3],
-			[["Vehicle Chat", [0.70, 0.60, 0.00, 1.00]], [], [], [], "Import plan to Vehicle chat", "", 4]
+			[
+				[["Global Chat", [1.00, 1.00, 1.00, 1.00]], [], [], [], "Import plan to Global chat", "", 0], 
+				[["Side Chat", [0.13, 0.77, 1.00, 1.00]], [], [], [], "Import plan to Side chat", "", 1],
+				[["Command Chat", [1, 0.96, 0.4, 1.00]], [], [], [], "Import plan to Command chat", "", 2]
+			],
+			0,
+			false
 		],
-		0,
-		false
-	],
-	"Import Channel Selection",
-	[
-		{
-			if (_confirmed) then {
-				[_value] call FUNC(importPlan);
-			} else {
-				systemChat "Plan import cancelled";
-			};
-		},
-		[]
-	],
-	"Confirm Channel", // reverts to default
-	"Cancel"  // reverts to default, disable cancel option
-] call CAU_UserInputMenus_fnc_listbox;
+		"Import Channel Selection",
+		[
+			{
+				if (_confirmed) then {
+					[_value] call FUNC(importPlan);
+				} else {
+					systemChat "Plan import cancelled";
+				};
+			},
+			[]
+		],
+		"Confirm Channel", // reverts to default
+		"Cancel"  // reverts to default, disable cancel option
+	] call CAU_UserInputMenus_fnc_listbox;
+} else {
+	[SET(importChannel)] call FUNC(importPlan);
+};

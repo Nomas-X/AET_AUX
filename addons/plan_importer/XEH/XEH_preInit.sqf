@@ -28,11 +28,11 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QSET(channelSelector),
+	QSET(importChannel),
 	"LIST",
 	["Import Channel", "The channel the plan would be imported to. ""Selector"" allows the user to choose from all channel."],
 	["AET Plan Importer"],
-	[[-1, 0, 1, 2, 3, 4],["Selector", "Global", "Side", "Command", "Group", "Vehicle"], 0],
+	[[-1, 0, 1, 2],["Channel Selector", "Global", "Side", "Command"], 0],
 	1,
 	{},
 	false
