@@ -28,7 +28,6 @@ class CfgFunctions
 			file = PATH_TO_FUNC_SUB(players);
 			
 			class antiBounceSmokeGL {};
-			class basicEquipment {}; // Move me and break me a part into a proper addon
 			class setFaces {};
 			class startInVehicle {};
 		};
