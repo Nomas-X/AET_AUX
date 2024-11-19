@@ -24,7 +24,7 @@ private _code = {
 
 ["CBA_SettingChanged", {
     params ["_setting", "_value"];
-	if (_value) then { [] call FUNC(addActions) } else { [] call FUNC(removeActions) }
+	if ( _setting == QSET(enabled) && {_value}) then { [] call FUNC(addActions) } else { [] call FUNC(removeActions) }
 }] call CBA_fnc_addEventHandler;
 
 if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
