@@ -37,3 +37,14 @@
 	{},
 	false
 ] call CBA_fnc_addSetting;
+
+[
+	QSET(disable_on_editor),
+	"CHECKBOX",
+	"Disabled in Editor",
+	"AET Disclaimer",
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
