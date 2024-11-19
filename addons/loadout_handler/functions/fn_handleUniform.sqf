@@ -5,8 +5,7 @@ params ["_unit"];
 private _unitUniform = uniformContainer _unit;
 if (isNull _unitUniform) exitWith {};
 
-
-private _uniformItemsArray = parseSimpleArray SET(uniformLoadoutHandler);
+private _uniformItemsArray = parseSimpleArray SET(uniformInventory);
 
 // Enhance the array with the mass of the requested class
 _uniformItemsArray apply { 

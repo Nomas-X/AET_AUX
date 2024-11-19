@@ -203,14 +203,14 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QSET(uniformLoadoutHandler),
+	QSET(uniformInventory),
 	"EDITBOX",
 	["Uniform Equipment To Add", "The provided array of item classnames and numbers is what will be used to add to the player's uniform post initilization. The uniform's space will be increased to accomdate the adition of all new items. This space increase will be special to the worn uniform item only, and will not be applied if a new uniform is used."],
 	["AET Loadout Handler", "Inventory Handling"],
 	"[
 		[""ACE_EarPlugs"", 1],
 		[""ACE_Flashlight_XL50"", 1],
-		[""ACE_MapTools"", 5],
+		[""ACE_MapTools"", 1],
 		[""ACE_CableTie"", 2],
 		[""ACE_Canteen"", 1],
 		[""acex_intelitems_notepad"", 1],
