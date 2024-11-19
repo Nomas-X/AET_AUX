@@ -6,13 +6,11 @@ private _unitUniform = uniformContainer _unit;
 if (isNull _unitUniform) exitWith {};
 
 
-private _uniformItemsArray = parseSimpleArray SET(uniformLoadoutHandler);
-
-// AET_Some = _uniformItemsArray;
+private _uniformItemsArray = parseSimpleArray SET(uniformInventory);
 
 
 // Enhance the array with the mass of the requested class
-_uniformItemsArray = _uniformItemsArray apply { 
+_uniformItemsArray apply { 
 	private _mass = getNumber (configFile >> "CfgWeapons" >> (_x#0) >> "ItemInfo" >> "mass");
 	if (_mass == 0) then { _mass = getNumber (configFile >> "CfgMagazines" >> (_x#0) >> "mass") };
 	if (_mass == 0) then { _mass = _mass max 0.1 };
