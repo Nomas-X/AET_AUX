@@ -5,9 +5,7 @@ params ["_unit"];
 private _unitUniform = uniformContainer _unit;
 if (isNull _unitUniform) exitWith {};
 
-
 private _uniformItemsArray = parseSimpleArray SET(uniformInventory);
-
 
 // Enhance the array with the mass of the requested class
 _uniformItemsArray apply { 
@@ -17,13 +15,13 @@ _uniformItemsArray apply {
 	_x set [2, _mass];
 };
 
+
 // Establish total mass needed and if the current Container Limit is big enough or not
 private _totalMass = 0;
 private _itemsToAdd = [];
 {
 	_x params ["_classname", "_quantity", "_itemMass"];
 	_totalMass = _totalMass + _quantity * _itemMass;
-
 	for "_i" from 1 to (_quantity) do { _itemsToAdd pushBack _classname };
 
 } forEach _uniformItemsArray;
@@ -46,7 +44,7 @@ private _params = [_unit, _itemsToAdd, _neededMaxLimit];
 private _code = { { _this#0 addItemToUniform _x } forEach (_this#1); };
 
 if (_needsBiggerUniform) then {
-	[{ (maxLoad uniformContainer (_this#0)) == (_this#2) }, _code, _params, 10,_code] call CBA_fnc_waitUntilAndExecute;
+	[{ ( maxLoad uniformContainer (_this#0) ) == (_this#2) }, _code, _params, 10,_code] call CBA_fnc_waitUntilAndExecute;
 } else {
 	_params call _code;
 };
