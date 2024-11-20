@@ -3,7 +3,7 @@
 Author: Redwan S. / Nomas
 
 Description:
-    This function is used post initialization when the player joins to decide add the the "Import Plan" and "Delete Plan" actions if the CBA setting allows it.
+    This function is used post initialization when the player joins to decide add the the "Import Plan" and "Delete Plan" actions if the CBA setting allows it. Additionally it adds the event handler that will remove or add the actions in case the main setting of the addon is turned off or on.
 
 Arguments:
 	N/A
