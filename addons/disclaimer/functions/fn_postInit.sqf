@@ -1,5 +1,24 @@
 #include "../script_component.hpp"
 
+/*
+Authors:
+	Redwan S / Nomas
+	OverlordZorn
+
+Description:
+    This function is used to initialize the disclaimer after CBA setting initialization if the CBA settings allows it.
+
+Arguments:
+	N/A
+
+Return Value:
+	<Nil>
+
+Example:
+	[] call AET_disclaimer_fnc_postInit;
+*/
+
+
 private _code = {
 	private _cond = hasInterface && { SET(enabled) && { !( SET(disable_on_editor) && { is3DENPreview } ) }};
 	

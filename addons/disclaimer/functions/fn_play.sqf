@@ -1,18 +1,21 @@
 #include "../script_component.hpp"
 
 /*
-* Author: Zorn
-* [Description]
-*
-* Arguments:
-*
-* Return Value:
-* None
-*
-* Example:
-* ['something', player] call prefix_component_fnc_functionname
-*
-* Public: No
+Authors:
+	OverlordZorn
+	Redwan S. / Nomas
+
+Description:
+    This function will play the Antistasi Event Team desclaimer screen and show the sponsor logo if the CBA setting allows it.
+
+Arguments:
+	N/A
+
+Return Value:
+	<Nil>
+
+Example:
+	[] call AET_disclaimer_fnc_play;
 */
 
 if !(hasInterface) exitWith {};

@@ -1,3 +1,5 @@
+// HEAVILY WORK IN PROGRESS
+
 private _arrayMaster = (loadFile "AET_dont_touch\master_cba_settings.sqf") regexFind ["^[^\r\n]+"];
 private _arrayMission = (loadFile "cba_settings.sqf") regexFind ["^[^\r\n]+"];
 

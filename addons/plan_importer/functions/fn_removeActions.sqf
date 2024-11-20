@@ -1,5 +1,5 @@
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
    This function is used to remove the "Import Plan" and "Delete Plan" actions in case of CBA setting change.

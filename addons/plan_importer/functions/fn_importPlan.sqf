@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function calls a text box that is used to allow a player to import their plan from https://maps.plan-ops.fr to the game. It would parse through the provided text to ensure it matches the import pattern and reject any abnormal patterns to avoid code injection.

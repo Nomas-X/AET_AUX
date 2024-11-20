@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function is used post initialization when the player joins to decide add the the "Import Plan" and "Delete Plan" actions if the CBA setting allows it.

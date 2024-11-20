@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function is used as the condition to show the "Import Plan" and "Delete Plan" functions.

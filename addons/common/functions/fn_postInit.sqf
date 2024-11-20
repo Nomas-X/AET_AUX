@@ -1,5 +1,21 @@
 #include "../script_component.hpp"
 
+/*
+Author: Redwan S / Nomas
+
+Description:
+    This function is used to initialize certain scripts and functions after CBA setting initialization, namely the antiBounceSmokeGL function.
+
+Arguments:
+	N/A
+
+Return Value:
+	<Nil>
+
+Example:
+	[] call AET_common_fnc_postInit;
+*/
+
 private _code = {
 	if (SET(antiBounceSmokeGL_enabled)) then {
 
