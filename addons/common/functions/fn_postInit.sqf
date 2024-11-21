@@ -21,6 +21,10 @@ private _code = {
 
 		call FUNC(antiBounceSmokeGL);
 	};
+	
+	if (hasInterface) then {
+		player createDiarySubject ["AntistasiEventTeam","Antistasi Event Team"];
+	};
 };
 
 if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
