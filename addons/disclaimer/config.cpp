@@ -17,7 +17,7 @@ class CfgPatches {
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.
-        requiredAddons[] = {"cba_main", QPVAR(main)};
+        requiredAddons[] = {"cba_main", "ace_safemode", QPVAR(main)};
 
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups)
         units[] = {};
