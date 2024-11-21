@@ -4,7 +4,7 @@
 Author: Redwan S / Nomas
 
 Description:
-    This function is used to initialize certain scripts and functions after CBA setting initialization, namely the antiBounceSmokeGL function.
+    This function is used to initialize certain scripts and functions after CBA setting initialization, namely the antiBounceSmokeGL function and the compareAddonOptions function.
 
 Arguments:
 	N/A
@@ -23,7 +23,9 @@ private _code = {
 	};
 	
 	if (hasInterface) then {
+		
 		player createDiarySubject ["AntistasiEventTeam","Antistasi Event Team"];
+		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Request", "<execute expression='[player] call AET_common_fnc_compareAddonOptions;'>Execute!</execute>"]];
 	};
 };
 
