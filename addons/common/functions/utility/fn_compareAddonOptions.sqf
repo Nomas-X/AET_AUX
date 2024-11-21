@@ -26,8 +26,10 @@ private _arrayMission = ((loadFile "cba_settings.sqf") regexReplace ["\/\/ END O
 _arrayMaster = flatten _arrayMaster select {typeName _x == "STRING"};
 _arrayMission = flatten _arrayMission select {typeName _x == "STRING"};
 
-if (count _arrayMaster isNotEqualTo count _arrayMission ) exitWith {AET_ARRA = _arrayMission; systemChat "ARRAYS NOT EQUAL NUMBER!"; };
-systemChat "ARRAYS ARE EQUAL NUMBER!";
+if (count _arrayMaster isNotEqualTo count _arrayMission ) exitWith {
+	_unit createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Result", "Files line count does not match!<br/>Major diffirence detected, alert Event Team Lead(s)!"]];
+	_unit removeDiaryRecord ["AntistasiEventTeam", GVAR(settingsDiary)];
+};
 
 private _diaryString = "";
 private _differenceCounter = 0;
