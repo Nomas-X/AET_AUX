@@ -9,7 +9,7 @@ Arguments: <nil>
 Return Value: <nil>
 
 Example:
-	[] call AET_fnc_antiBounceSmokeGL;
+	[] call AET_common_fnc_antiBounceSmokeGL;
 */
 
 if (hasInterface) then	// Run on all clients with an interface. Not the server(if dedicated) and not on headless clients.

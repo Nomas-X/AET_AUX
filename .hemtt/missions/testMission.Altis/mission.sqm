@@ -12,14 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=46;
+		nextID=59;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class Camera
 	{
-		pos[]={14840.93,32.867847,16392.807};
-		dir[]={0.22645544,-0.66582143,0.71092039};
-		up[]={0.20208554,0.74610788,0.6344167};
-		aside[]={0.95283139,2.3283064e-08,-0.30351305};
+		pos[]={14838.986,35.058201,16389.07};
+		dir[]={0.43562773,-0.57619166,0.69154304};
+		up[]={0.30710945,0.81731457,0.48752502};
+		aside[]={0.84611607,1.4901161e-08,-0.5329988};
 	};
 };
 binarizationWanted=0;
@@ -44,13 +48,15 @@ addons[]=
 	"ace_grenades",
 	"A3_Weapons_F_Mark",
 	"ace_reload",
-	"A3_Weapons_F_Mark_Acc"
+	"A3_Weapons_F_Mark_Acc",
+	"A3_Ui_F",
+	"A3_Air_F_Beta_Heli_Transport_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=14;
+		items=16;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -149,6 +155,20 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item14
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="A3_Air_F_Beta";
+			name="Arma 3 Beta - Aircraft";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -206,7 +226,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=11;
+		items=15;
 		class Item0
 		{
 			dataType="Trigger";
@@ -748,6 +768,392 @@ class Mission
 			{
 			};
 			id=44;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={14699.598,17.91,16732.697};
+			name="marker_0";
+			text="LZ";
+			type="mil_end";
+			id=46;
+		};
+		class Item12
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=8;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12347.273,11.270065,14277.731};
+						angles[]={0,0.89299774,0};
+					};
+					side="West";
+					flags=6;
+					class Attributes
+					{
+						name="AET_HELI_1D";
+					};
+					id=49;
+					type="B_Helipilot_F";
+					atlOffset=0.00075721741;
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12346.356,13.167753,14277.364};
+						angles[]={0,0.89299774,0};
+					};
+					side="West";
+					class Attributes
+					{
+					};
+					id=50;
+					type="B_Helipilot_F";
+					atlOffset=5.9996681;
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12346.356,13.167753,14277.364};
+						angles[]={0,0.89299774,0};
+					};
+					side="West";
+					class Attributes
+					{
+						name="AET_HELI_1G";
+					};
+					id=51;
+					type="B_helicrew_F";
+					atlOffset=5.9996681;
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12346.356,13.167753,14277.364};
+						angles[]={0,0.89299774,0};
+					};
+					side="West";
+					class Attributes
+					{
+					};
+					id=52;
+					type="B_helicrew_F";
+					atlOffset=5.9996681;
+				};
+				class Item4
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={14706.494,17.91,16714.453};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=53;
+					type="Move";
+				};
+				class Item5
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={15355.138,16.936222,17308.172};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=54;
+					type="Move";
+				};
+				class Item6
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={12655.062,17.076799,14394.262};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=55;
+					type="Move";
+				};
+				class Item7
+				{
+					dataType="Waypoint";
+					loiterAltitude=-3.4028235e+38;
+					position[]={12537.837,13.926806,14366.918};
+					class Effects
+					{
+					};
+					showWP="NEVER";
+					id=56;
+					type="Cycle";
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=4;
+				};
+				class Links
+				{
+					items=4;
+					class Item0
+					{
+						linkID=0;
+						item0=49;
+						item1=48;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+					class Item1
+					{
+						linkID=1;
+						item0=50;
+						item1=48;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={0};
+						};
+					};
+					class Item2
+					{
+						linkID=2;
+						item0=51;
+						item1=48;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={1};
+						};
+					};
+					class Item3
+					{
+						linkID=3;
+						item0=52;
+						item1=48;
+						class CustomData
+						{
+							role=2;
+							turretPath[]={2};
+						};
+					};
+				};
+			};
+			id=47;
+			atlOffset=68.552002;
+		};
+		class Item13
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12321.674,77.686119,14257.339};
+				angles[]={0,0.89299774,0};
+			};
+			side="West";
+			flags=2;
+			class Attributes
+			{
+				name="AET_HELI_1";
+			};
+			id=48;
+			type="B_Heli_Transport_01_F";
+			atlOffset=68.552002;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""arifle_MXC_F"",""FirstAidKit"",""Medikit""],[2,8,1]],[[""SmokeShell"",""SmokeShellBlue"",""30Rnd_65x39_caseless_mag""],[2,2,4]],[[""ToolKit"",""ItemGPS""],[1,1]],[[""B_Parachute""],[8]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item14
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14859.731,17.941439,16413.43};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="this allowDamage false;";
+						name="P_2";
+						description="START IN VEHICLE TEST";
+						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="arifle_MX_ACO_pointer_F";
+								optics="optic_Aco";
+								flashlight="acc_pointer_IR";
+								firemode="arifle_MX_ACO_pointer_F:Single";
+								class primaryMuzzleMag
+								{
+									name="30Rnd_65x39_caseless_mag";
+									ammoLeft=30;
+								};
+							};
+							class handgun
+							{
+								name="hgun_P07_F";
+								class primaryMuzzleMag
+								{
+									name="16Rnd_9x21_Mag";
+									ammoLeft=17;
+								};
+							};
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam_tshirt";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="ACE_M14";
+										count=10;
+										ammoLeft=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_Chestrig_rgr";
+								isBackpack=0;
+							};
+							class backpack
+							{
+								typeName="B_Kitbag_rgr_AAR";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="100Rnd_65x39_caseless_mag";
+										count=2;
+										ammoLeft=100;
+									};
+									class Item1
+									{
+										name="100Rnd_65x39_caseless_mag_Tracer";
+										count=2;
+										ammoLeft=100;
+									};
+									class Item2
+									{
+										name="130Rnd_338_Mag";
+										count=2;
+										ammoLeft=130;
+									};
+								};
+								class ItemCargo
+								{
+									items=4;
+									class Item0
+									{
+										name="optic_tws_mg";
+										count=1;
+									};
+									class Item1
+									{
+										name="bipod_01_F_snd";
+										count=1;
+									};
+									class Item2
+									{
+										name="muzzle_snds_338_sand";
+										count=1;
+									};
+									class Item3
+									{
+										name="muzzle_snds_H";
+										count=1;
+									};
+								};
+							};
+							hmd="NVGoggles";
+							headgear="H_HelmetB_light";
+						};
+					};
+					id=58;
+					type="B_soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male05ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.01;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=57;
 		};
 	};
 };

@@ -9,8 +9,8 @@ Arguments:
 Return Value: <nil>
 
 Example:
-	[_Triggers] call AET_fnc_markTriggersInLayer;
-	[[_layer], "AET_fnc_getLayer", [], "AET_fnc_markTriggersInLayer"] remoteExec ["AET_fnc_useRemoteReturn", 2];
+	[_Triggers] call AET_common_fnc_markTriggersInLayer;
+	[[_layer], "AET_common_fnc_getLayer", [], "AET_common_fnc_markTriggersInLayer"] remoteExec ["AET_common_fnc_useRemoteReturn", 2];
 */
 params ["_layer"];
 

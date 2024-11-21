@@ -17,32 +17,51 @@ Return Value: <nil>
 
 Example:
 	private _listOfPlayers_1 = ["P_1", "P_2", "P_3"] call HR_fnc_ValidateObjects;
-	[player, _listOfPlayers_1, HELI_1, "LZ"] call AET_fnc_startInVehicle;
+	[player, _listOfPlayers_1, HELI_1, "LZ"] call AET_common_fnc_startInVehicle;
 */
+
 params ["_unit", "_listOfPlayers", "_vehicle", ["_altPos", false]];
 
-if (_unit in _listOfPlayers) then {
-	if !(isNil {_vehicle}) then {
-		if (alive _vehicle && _vehicle emptyPositions "Cargo" > 0) then {
-			_unit moveInCargo _vehicle;
+_code = {
+
+	params ["_unit", "_listOfPlayers", "_vehicle", "_altPos"];
+
+	if (_unit in _listOfPlayers) then {
+
+		if !(isNil {_vehicle}) then {
+
+			if (alive _vehicle && _vehicle emptyPositions "Cargo" > 0) then {
+
+				_unit moveInCargo _vehicle;
+			} else {
+
+				if (!(_altPos isEqualType false)) then {
+
+					if (_altPos isEqualType "") then {
+
+						_unit setPos (getMarkerPos _altPos);
+					};
+					if (_altPos isEqualType objNull) then {
+
+						_unit setPosATL (getPosATL _altPos);
+					};
+				};
+			};
 		} else {
+
 			if (!(_altPos isEqualType false)) then {
+
 				if (_altPos isEqualType "") then {
+
 					_unit setPos (getMarkerPos _altPos);
 				};
 				if (_altPos isEqualType objNull) then {
+					
 					_unit setPosATL (getPosATL _altPos);
 				};
 			};
 		};
-	} else {
-		if (!(_altPos isEqualType false)) then {
-			if (_altPos isEqualType "") then {
-				_unit setPos (getMarkerPos _altPos);
-			};
-			if (_altPos isEqualType objNull) then {
-				_unit setPosATL (getPosATL _altPos);
-			};
-		};
 	};
 };
+
+[{CBA_missionTime > 0}, _code, [_unit, _listOfPlayers, _vehicle, _altPos]] call CBA_fnc_waitUntilAndExecute;
