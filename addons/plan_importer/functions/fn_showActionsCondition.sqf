@@ -15,4 +15,4 @@ Example:
 	[] call AET_plan_importer_fnc_showActionsCondition;
 */
 
-( SET(groupLeaders_enabled) && { leader player == player } ) || { ( SET(admin_enabled) && { serverCommandAvailable "#kick" } ) || { ( SET(rankBased_mode) < rankId player ) } || { ( player getVariable [QGVAR(alwaysAllowed), false] ) } }
+( SET(groupLeaders_enabled) && { leader player == player } ) || { ( SET(admin_enabled) && { IS_ADMIN } ) || { ( SET(rankBased_mode) < rankId player ) } || { ( player getVariable [QGVAR(alwaysAllowed), false] ) } }

@@ -17,14 +17,16 @@ Example:
 */
 
 private _code = {
+
+	player createDiarySubject ["AntistasiEventTeam","Antistasi Event Team"];
+
 	if (SET(antiBounceSmokeGL_enabled)) then {
 
 		call FUNC(antiBounceSmokeGL);
 	};
 	
-	if (hasInterface) then {
+	if (hasInterface && { SET(compareAddonOptions_mode) == "ANYONE" || { IS_ADMIN } }) then {
 		
-		player createDiarySubject ["AntistasiEventTeam","Antistasi Event Team"];
 		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Request", "<execute expression='[player] call AET_common_fnc_compareAddonOptions;'>Execute!</execute>"]];
 	};
 };

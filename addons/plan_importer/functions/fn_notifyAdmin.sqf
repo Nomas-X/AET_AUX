@@ -21,6 +21,6 @@ params ["_player", "_plan"];
 
 diag_log format["Parsing error triggered by: %1 | ID64: %2 | Using: %3", name _player, getPlayerUID _player, _plan];
 
-if (serverCommandAvailable "#kick") then {
+if (IS_ADMIN) then {
 	hint format["%1 has encountered a parsing error when attempting a plan import!", name _player];
 };
