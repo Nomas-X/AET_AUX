@@ -74,7 +74,8 @@ params ["_channelSelection"];
 						[_channelSelection, _plan] call FUNC(createMarkers);
 					} else {
 						systemChat "Invalid input, a parsing error has occursed!";
-						[format["Parsing error triggered by: %1 | ID64: %2 | Using: %3", name player, getPlayerUID player, _plan]] remoteExec ["diag_log", 2, false];
+					
+						[QGVAR(EH_parsingError), [player, _plan]] call CBA_fnc_globalEvent;
 					};
 				} else {
 					systemChat "Invalid input, data pattern does not match!";
