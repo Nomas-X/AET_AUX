@@ -14,6 +14,8 @@ Return Value:
 Example:
 	[_Triggers] call AET_common_fnc_getLayer;
 */
+if !(isServer) exitWith {};
+
 params ["_layer"];
 
 getMissionLayerEntities _layer;

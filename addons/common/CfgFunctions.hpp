@@ -45,6 +45,7 @@ class CfgFunctions
 
 			class markTriggersInLayer {};
 			class markTriggersInMission {};
+            class triggerToMarker {};
 			class useRemoteReturn {};
 			class getLayer {};
 			class compareAddonOptions {};

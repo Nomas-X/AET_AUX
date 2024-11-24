@@ -23,7 +23,7 @@ if !(hasInterface) exitWith {};
 2 fadeRadio 0;
 2 fadeSound 0;
 
-[] spawn {
+[] spawn { // uwägh
     "disclaimerLayer_Background" cutText ["", "BLACK FADED", 999, true, false];
 
     waitUntil{sleep 1; !(isNil "BIS_fnc_init")};

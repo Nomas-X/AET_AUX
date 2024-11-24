@@ -29,9 +29,7 @@ private _playerSide = side player;
 _deletingMarkers = [_playerSide] call FUNC(deletePlan);
 
 private _code = {
-	private _channelSelection = _this # 0;
-	private _plan = _this # 1;
-	private _playerSide = _this # 2;
+	params ["_channelSelection", "_plan", "_playerSide", "_deletingMarkers"];
 	_plan params ['_icons', '_poly', '_metis'];
 
 	private _markersVariableNames = [QGVAR(allMarkers) + "_" + str(_playerSide), QGVAR(metisMarkers) + "_" + str(_playerSide)];
@@ -41,7 +39,7 @@ private _code = {
 	{
 		_x params ['_id', '_points', '_color'];
 		_points params ['_x', '_y'];
-		private _marker = createMarkerLocal [ format ['_USER_DEFINED #%1/planops%2/%3', clientOwner, _id, _channelSelection], [_x, _y], 0];
+		private _marker = createMarkerLocal [ format ['_USER_DEFINED #%1/planops%2/%3', clientOwner, _id, _channelSelection], [_x, _y], 0];		// Why call it _user_defined?
 		_marker setMarkerShapeLocal 'polyline';
 		_marker setMarkerPolylineLocal _points;
 		_marker setMarkerColor _color;
@@ -50,7 +48,7 @@ private _code = {
 
 	{
 		_x params ['_id', '_x', '_y', '_icon', '_color', '_text', '_rotate',['_scale',1]];
-		private _marker = createMarkerLocal [ format ['_USER_DEFINED #%1/planops%2/%3', clientOwner, _id, _channelSelection], [_x, _y], 0];
+		private _marker = createMarkerLocal [ format ['_USER_DEFINED #%1/planops%2/%3', clientOwner, _id, _channelSelection], [_x, _y], 0];		// Why call it _user_defined?
 		_marker setMarkerShapeLocal 'ICON';
 		_marker setMarkerDirLocal _rotate;
 		_marker setMarkerColorLocal _color; 
@@ -75,4 +73,4 @@ private _code = {
 	systemChat "Plan was imported successfully!";
 };
 
-[{_this # 3 == false}, _code, [_channelSelection, _plan, _playerSide, _deletingMarkers], 60] call CBA_fnc_waitUntilAndExecute;
+[{_this#3 == false}, _code, [_channelSelection, _plan, _playerSide, _deletingMarkers], 60] call CBA_fnc_waitUntilAndExecute;
