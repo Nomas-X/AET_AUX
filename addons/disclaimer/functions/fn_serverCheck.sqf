@@ -5,7 +5,7 @@ Authors:
 	OverlordZorn
 
 Description:
-    This function is used to to handle requests to play the disclaimer on the server. If the player has already seen the disclaimer (is in the arrayServer) then it will not show it to him. If it is a new player then it will show it to him. Once the disclaimer is done playing it will send a "DONE" request which adds the player to the (arrayServer).
+    This function is used to handle requests to play the disclaimer on the server. If the player has already seen the disclaimer (is in the arrayServer) then it will not show it to him. If it is a new player then it will show it to him. Once the disclaimer is done playing it will send a "DONE" request which adds the player to the (arrayServer).
 
 Arguments:
 	0. <String> Request Mode. Expected values are either "REQUEST" or "DONE".

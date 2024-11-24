@@ -6,7 +6,7 @@ Authors:
 	OverlordZorn
 
 Description:
-    This function is used to to add the custom CBA event handlers used by the disclaimer.
+    This function is used to add the custom CBA event handlers used by the disclaimer.
 
 Arguments:
 	N/A

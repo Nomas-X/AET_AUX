@@ -5,7 +5,7 @@ Authors:
 	Redwan S / Nomas
 
 Description:
-    This function is used to to add the custom CBA event handlers used by the importPlan function.
+    This function is used to add the custom CBA event handlers used by the importPlan function.
 
 Arguments:
 	N/A

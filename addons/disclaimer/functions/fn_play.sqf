@@ -23,10 +23,6 @@ if !(hasInterface) exitWith {};
 2 fadeRadio 0;
 2 fadeSound 0;
 
-// Gun safety on safety script
-{ [ACE_player, _x, true] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player);
-
-
 [] spawn {
     "disclaimerLayer_Background" cutText ["", "BLACK FADED", 999, true, false];
 
@@ -80,6 +76,8 @@ if !(hasInterface) exitWith {};
 [QGVAR(EH_done), {
     "dynamicBlur" ppEffectEnable false;
     // Gun safety off once disclaimer is done.
-    { [ACE_player, _x, false] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player);
-
+	if (SET(disablesafety_mode) == "DISCLAIMER_END") then {
+    	
+		[false] call FUNC(handlesafety);
+	};
 }] call CBA_fnc_addEventHandler;

@@ -20,9 +20,15 @@ Example:
 
 
 private _code = {
-	private _cond = hasInterface && { SET(enabled) && { !( SET(disable_on_editor) && { is3DENPreview } ) }};
+	private _cond = hasInterface && { SET(enabled) && { !( SET(disable_in_editor) && { is3DENPreview } ) }};
 	
-	if _cond then { [QGVAR(EH_request), ["REQUEST", player]] call CBA_fnc_serverEvent; 	};
+	if _cond then { 
+		[QGVAR(EH_request), ["REQUEST", player]] call CBA_fnc_serverEvent; 
+		
+		if (SET(disablesafety_mode) != "NO_safety") then {
+			[true] call FUNC(handlesafety);
+		}
+	};
 
 };
 

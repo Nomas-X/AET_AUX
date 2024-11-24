@@ -5,7 +5,7 @@ Authors:
 	OverlordZorn
 
 Description:
-    This function is used to to add the custom CBA event handlers used by the loadout handling functions.
+    This function is used to add the custom CBA event handlers used by the loadout handling functions.
 
 Arguments:
 	N/A
