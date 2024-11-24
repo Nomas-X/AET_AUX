@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function is used as the condition to show the "Import Plan" and "Delete Plan" functions.
@@ -15,4 +15,4 @@ Example:
 	[] call AET_plan_importer_fnc_showActionsCondition;
 */
 
-( SET(groupLeaders_enabled) && { leader player == player } ) || { ( SET(admin_enabled) && { [] call BIS_fnc_admin > 0 } ) || { ( SET(rankBased_mode) < rankId player ) } || { ( player getVariable [QGVAR(alwaysAllowed), false] ) } }
+( SET(groupLeaders_enabled) && { leader player == player } ) || { ( SET(admin_enabled) && { IS_ADMIN } ) || { ( SET(rankBased_mode) < rankId player ) } || { ( player getVariable [QGVAR(alwaysAllowed), false] ) } }

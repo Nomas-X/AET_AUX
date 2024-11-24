@@ -1529,13 +1529,12 @@ zen_faction_filter_3_gm_fc_gc_civ = true;
 zen_faction_filter_3_gm_fc_ge_civ = true;
 zen_faction_filter_3_UK3CB_ADC_C = true;
 zen_faction_filter_3_UK3CB_CHC_C = true;
-zen_faction_filter_3_UK3CB_MEC_C = false;
-zen_faction_filter_3_UK3CB_TKC_C = true;
+zen_faction_filter_3_UK3CB_MEC_C = true;
+zen_faction_filter_3_UK3CB_TKC_C = false;
 
 // END OF AET FILE
 
-ace_advanced_fatigue_fadeStaminaBar
-asdfasdfasdf
+sdfasfasf
 
-
-asfasdfasdf
+asdfasdfasdfasd
+asdfasdfa

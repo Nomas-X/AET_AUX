@@ -1,12 +1,31 @@
 #include "../script_component.hpp"
 
+/*
+Authors:
+	Redwan S. / Nomas
+	OverlordZorn
+
+Description:
+    This function is used to add items into a unit's uniform container based on the CBA setting. The items will get added even if the uniform's original inventory size is not enough. The function will increase the space availble in the uniform until it can fit the needed items but not more.
+
+	It should be possible to take out and put items back in.
+
+Arguments:
+	0. <Object> The unit that will have its uniform container handled.
+
+Return Value:
+	<Nil>
+
+Example:
+	[] call AET_loadout_handler_fnc_handleUniform;
+*/
+
 params ["_unit"];
 
 private _unitUniform = uniformContainer _unit;
 if (isNull _unitUniform) exitWith {};
 
-
-private _uniformItemsArray = parseSimpleArray SET(uniformLoadoutHandler);
+private _uniformItemsArray = parseSimpleArray SET(uniformInventory);
 
 // Enhance the array with the mass of the requested class
 _uniformItemsArray apply { 

@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function is used to delete an imported plan on a certain side.

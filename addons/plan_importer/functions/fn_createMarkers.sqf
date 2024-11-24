@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function is used to create the markers after the input has been parsed by the AET_plan_importer_fnc_importPlan function.

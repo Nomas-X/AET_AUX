@@ -1,6 +1,6 @@
 #include "../script_component.hpp"
 /*
-Author: Redwan S / Nomas
+Author: Redwan S. / Nomas
 
 Description:
     This function calls a text box that is used to allow a player to import their plan from https://maps.plan-ops.fr to the game. It would parse through the provided text to ensure it matches the import pattern and reject any abnormal patterns to avoid code injection.
@@ -74,7 +74,8 @@ params ["_channelSelection"];
 						[_channelSelection, _plan] call FUNC(createMarkers);
 					} else {
 						systemChat "Invalid input, a parsing error has occursed!";
-						[format["Parsing error triggered by: %1 | ID64: %2 | Using: %3", name player, getPlayerUID player, _plan]] remoteExec ["diag_log", 2, false];
+					
+						[QGVAR(EH_parsingError), [player, _plan]] call CBA_fnc_globalEvent;
 					};
 				} else {
 					systemChat "Invalid input, data pattern does not match!";

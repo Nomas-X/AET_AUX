@@ -8,7 +8,7 @@ Arguments: <nil>
 Return Value: <nil>
 
 Example:
-	[] call AET_fnc_markTriggersInMission;
+	[] call AET_common_fnc_markTriggersInMission;
 */
 private _allMissionTriggers = allMissionObjects "EmptyDetector";
 private _counter = 1;

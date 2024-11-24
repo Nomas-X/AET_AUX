@@ -1,5 +1,22 @@
 #include "../script_component.hpp"
 
+/*
+Authors:
+	Redwan S. / Nomas
+
+Description:
+    This function is used to add the basic equipment to the player if the CBA settings allow it. The items added are also based on the CBA settings. The function does not replace any existing equipment in the slots and will only act as a fail safe in case nothing is in a slot when it should be.
+
+Arguments:
+	0. <Object> The unit that will have its basic equipment checked and added if need be.
+
+Return Value:
+	<Nil>
+
+Example:
+	[] call AET_loadout_handler_fnc_basicEquipment;
+*/
+
 params ["_unit"];
 
 private _tfarCompatibleRadios = parseSimpleArray SET(TFARCompatibleRadios);

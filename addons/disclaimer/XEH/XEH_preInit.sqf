@@ -19,8 +19,8 @@
 [
 	QSET(enabled),
 	"CHECKBOX",
-	"Enable Disclaimer",
-	"AET Disclaimer",
+	["Enable Disclaimer", "Controls if the disclaimer is shown."],
+	["AET Disclaimer", "Disclaimer"],
 	true,
 	1,
 	{},
@@ -30,8 +30,8 @@
 [
 	QSET(enabled_logo),
 	"CHECKBOX",
-	"Enable Sponsor Logo",
-	"AET Disclaimer",
+	["Enable Sponsor Logo", "Controls if the sponsor logo is shown during the disclaimer."],
+	["AET Disclaimer", "Disclaimer"],
 	true,
 	1,
 	{},
@@ -39,11 +39,44 @@
 ] call CBA_fnc_addSetting;
 
 [
-	QSET(disable_on_editor),
+	QSET(disable_in_editor),
 	"CHECKBOX",
-	"Disabled in Editor",
-	"AET Disclaimer",
+	["Disabled In Editor Preview", "Controls if the disclaimer is shown in the editor preview."],
+	["AET Disclaimer", "Disclaimer"],
 	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(disablesafety_mode),
+	"LIST",
+	["Disable Weapon safety Based On", "Controls the mode the safety is handled with if any."],
+	["AET Disclaimer", "Weapon Safety"],
+	[["NO_safety", "DISCLAIMER_END", "TIME", "DISTANCE"],["No safety", "Disclaimer End", "Time In Minutes", "Distance In Meters"],1],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(disablesafety_time),
+	"TIME",
+	["Time based safety removal (Mission Time)", "Sets the needed time to pass before safety is removed automatically if mode is set to Time."],
+	["AET Disclaimer", "Weapon Safety"],
+	[0, 1200, 600],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(disablesafety_distance),
+	"SLIDER",
+	["Distance based safety removal (In Meters)", "Sets the needed distance the player must be away from his spawn point before safety is removed automatically if mode is set to Distance."],
+	["AET Disclaimer", "Weapon Safety"],
+	[0, 500, 250, 0, false],
 	1,
 	{},
 	false

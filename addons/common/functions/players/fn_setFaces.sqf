@@ -16,7 +16,7 @@ Return Value: <nil>
 Example:
 	private _listOfPlayers_1 = ["P_1", "P_2", "P_3"] call HR_fnc_ValidateObjects;
 	private _listOfFaces_1 = ["PersianHead_A3_04_a", "PersianHead_A3_04_l", "PersianHead_A3_04_sa"];
-	[player, _listOfPlayers_1, _listOfFaces_1] call AET_fnc_setFaces;
+	[player, _listOfPlayers_1, _listOfFaces_1] call AET_common_fnc_setFaces;
 */
 params ["_unit", "_listOfPlayers", "_listOfFaces"];
 

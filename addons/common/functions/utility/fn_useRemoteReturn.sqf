@@ -14,8 +14,8 @@ Arguments:
 Return Value: <nil>
 
 Example:
-	[[_var1, _var2], "my_fn_remote", [_var3], "my_fnc_local"] remoteExec ["AET_fnc_useRemoteReturn", P_11];
-	[[_layer], "AET_fnc_getLayer", [], "AET_fnc_markTriggersInLayer"] remoteExec ["AET_fnc_useRemoteReturn", 2];
+	[[_var1, _var2], "my_fn_remote", [_var3], "my_fnc_local"] remoteExec ["AET_common_fnc_useRemoteReturn", P_11];
+	[[_layer], "AET_common_fnc_getLayer", [], "AET_common_fnc_markTriggersInLayer"] remoteExec ["AET_common_fnc_useRemoteReturn", 2];
 */
 
 params ["_params", "_function", "_callbackParams", "_callback", ["_target", remoteExecutedOwner]];

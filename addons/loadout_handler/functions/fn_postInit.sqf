@@ -1,9 +1,11 @@
 #include "../script_component.hpp"
+
 /*
-Author: Redwan S / Nomas
+Authors:
+	Redwan S / Nomas
 
 Description:
-    This function is used 
+    This function is used to initialize the loadout handling after CBA setting initialization if the CBA settings allows it.
 
 Arguments:
 	N/A
