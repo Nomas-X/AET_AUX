@@ -1,0 +1,23 @@
+Copyright (c) 2021 ConnorAU
+    Github: https://github.com/ConnorAU
+    Discord: https://discord.gg/DMkxetD
+
+1. You are permitted to:
+    a. Reverse engineer the material for educational purposes
+	b. Use this material on monetized servers, as long as this material itself is not restricted behind a paywall
+		i. To elaborate: You may restrict access to content displayed using this mod (eg. VIP images), however you may not restrict access to this mod's functionalities (ie. non-vip players must still be able to use this mod in some fasion)
+	c. Redistribute the material as part of a mod pack via any medium excluding Steam Workshop as specified in 2c
+		i. For example: You may include the material in an Arma3Sync repository
+
+2. You are not permitted to:
+    a. Modify the material in any way
+	b. Redistribute the material on its own via any medium
+    c. Redistribute the material via Steam Workshop
+		i. You may include the original workshop item in your own workshop mod pack by using the "Required Items" and "Collections" features on Steam Workshop
+
+3. Conditions of use:
+    a. A copy of this license must be included with all distributions of the material
+    b. All credit attribution to the original author must remain unmodified
+
+4. Disclaimer:
+    a. This material is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the material or the use or other dealings in the material.
