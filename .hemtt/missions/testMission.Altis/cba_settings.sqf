@@ -1533,8 +1533,3 @@ zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = false;
 
 // END OF AET FILE
-
-sdfasfasf
-
-asdfasdfasdfasd
-asdfasdfa

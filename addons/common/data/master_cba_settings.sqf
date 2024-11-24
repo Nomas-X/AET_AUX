@@ -1533,9 +1533,3 @@ zen_faction_filter_3_UK3CB_MEC_C = false;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
 // END OF AET FILE
-
-ace_advanced_fatigue_fadeStaminaBar
-asdfasdfasdf
-
-
-asfasdfasdf
