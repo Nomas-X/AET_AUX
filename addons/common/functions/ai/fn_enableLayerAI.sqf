@@ -12,7 +12,7 @@ Description:
 	["Layer 1", "TARGET"] call AET_common_fnc_enableLayerAI;
 */
 
-params [["_layer", "", ["asd"]], ["_ai", "", ["asd"]]];
+params [["_layer", "", [""]], ["_ai", "", [""]]];
 private _ais = ["all", "aimingerror", "anim", "autocombat", "autotarget", "checkvisible", "cover", "fsm", "lights", "minedetection", "move", "nvg", "path", "radioprotocol", "suppression", "target", "teamswitch", "weaponaim"];
 private _units = (getMissionLayerEntities _layer) select 0;
 
