@@ -20,7 +20,13 @@ Example:
 params ["_safetyStatus"];
 
 // Applying the requested safety status. false means safety off, true means safety on.
-[{CBA_missionTime > 0}, { { [ACE_player, _x, _this # 0] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player); }, [_safetyStatus]] call CBA_fnc_waitUntilAndExecute;
+[
+	{ CBA_missionTime > 0 },	// Condition
+	{
+		{ [ACE_player, _x, _this] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player);
+	},	// Statement
+	_safetyStatus
+] call CBA_fnc_waitUntilAndExecute;
 
 // Exit script if the requested safety status is false
 if (!_safetyStatus) exitWith {};
@@ -33,9 +39,16 @@ switch (SET(disablesafety_mode)) do {
 	};
 	case ("DISTANCE"): {
 		
-		[{CBA_missionTime > 0 }, {
-			private _spawnPos = getPosASL player;
-			[{player distance2D _this # 0 >= SET(disablesafety_distance)}, { [false] call FUNC(handlesafety) }, [_spawnPos]] call CBA_fnc_waitUntilAndExecute;
-		}] call CBA_fnc_waitUntilAndExecute;
+		[
+			{CBA_missionTime > 0 },
+			{
+				private _spawnPos = getPosASL player;
+				[
+					{ (player distance2D _this) >= SET(disablesafety_distance)},	// Condition
+					{ [false] call FUNC(handlesafety) },							// Statement
+					_spawnPos
+				] call CBA_fnc_waitUntilAndExecute;
+			}
+		] call CBA_fnc_waitUntilAndExecute;
 	};
 };
