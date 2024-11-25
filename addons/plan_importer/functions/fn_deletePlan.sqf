@@ -47,4 +47,4 @@ private _deleteMarkersCode = format [
 systemChat "Current plan deleted";
 [format["Plan deletion done by: %1 | ID64: %2 | Side: %3", name player, getPlayerUID player, _side]] remoteExec ["diag_log", 2, false];
 
-false;	// why return false when it never returns true otherwise
+false;

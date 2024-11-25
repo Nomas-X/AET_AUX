@@ -24,7 +24,7 @@ params ["_channelSelection"];
 		if _confirmed then {
 
 			private _channelSelection = _this select 0;
-			[_text, _channelSelection] spawn {	// Disgusting
+			[_text, _channelSelection] spawn {
 				params ["_text", "_channelSelection"];
 				[format["Plan import attempt by: %1 | ID64: %2 | Import Channel: %3 | Import text: %4", name player, getPlayerUID player, _channelSelection, _text]] remoteExec ["diag_log", 2, false];
 				_plan = _text regexFind ["private _data = \[.*\]; \n \n_/"];

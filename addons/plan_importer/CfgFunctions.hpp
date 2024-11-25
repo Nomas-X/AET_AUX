@@ -11,7 +11,6 @@ class CfgFunctions
 			class preInit { preInit = 1; };
 
 			class addActions {};
-			class removeActions {};
 			class showActionsCondition {};
 			class selectChannel {}; 
 			class importPlan {};
