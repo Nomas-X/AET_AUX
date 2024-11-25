@@ -30,7 +30,7 @@ _marker_area setMarkerDirLocal (_triggerAreaInfo # 2);
 _marker_area setMarkerColorLocal "ColorCIV";
 _marker_area setMarkerBrushLocal "DiagGrid";
 
-private _shape = if (_triggerAreaInfo # 3) then { "RECTANGLE" } else { "ELLIPSE" };
+private _shape = ["ELLIPSE", "RECTANGLE"] select (_triggerAreaInfo # 3);
 _marker_area setMarkerShapeLocal _shape;
 
 

@@ -258,6 +258,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						rank="SERGEANT";
 						init="this allowDamage false;";
 						isPlayer=1;
 					};

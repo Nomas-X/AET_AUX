@@ -1,3 +1,5 @@
+#include "../../script_component.hpp"
+
 /*
 Author: Redwan S. / Nomas
 Description:

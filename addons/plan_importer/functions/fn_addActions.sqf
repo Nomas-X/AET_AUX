@@ -20,8 +20,8 @@ private _parentAction = [
 	"AET_Plan_Actions",
 	"Plan Actions",
 	"",
-	{},                     // could just check for the main setting here: < missionNamespace getVariable [QSET(enabled), false]; > - no need for any of the add/remove action stuff.
-	{true}
+	{},
+	{SET(enabled)}
 ] call ace_interact_menu_fnc_createAction;
 
 [player, 1,["ACE_SelfActions"], _parentAction] call ace_interact_menu_fnc_addActionToObject;
