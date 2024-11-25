@@ -1,3 +1,5 @@
+#include "../../script_component.hpp"
+
 /*
 Author: Redwan S. / Nomas
 Description:
@@ -15,10 +17,6 @@ Example:
 params ["_layer"];
 
 private _Triggers = _layer # 0 # 0;
-
-private _counter = 1; // Why use counter when you can use _forEachIndex within the for each loop
-
-
 
 // getMissionLayerEntities
 { [_x, _forEachIndex, "inLayer"] call FUNC(triggerToMarker) } forEach _Triggers;
