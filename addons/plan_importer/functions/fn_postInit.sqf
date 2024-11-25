@@ -16,7 +16,7 @@ Example:
 */
 
 private _code = {
-	if (SET(enabled) && {hasInterface}) then {
+	if (hasInterface) then {
 
 		[] call FUNC(addActions);
 	};
