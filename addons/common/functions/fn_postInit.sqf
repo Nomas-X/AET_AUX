@@ -18,6 +18,7 @@ Example:
 
 private _code = {
 
+	player createDiarySubject ["AntistasiEventTeamActions","Antistasi Event Team Actions"];
 	player createDiarySubject ["AntistasiEventTeam","Antistasi Event Team"];
 
 	if (SET(antiBounceSmokeGL_enabled)) then {
@@ -25,9 +26,10 @@ private _code = {
 		call FUNC(antiBounceSmokeGL);
 	};
 	
-	if (hasInterface && { SET(compareAddonOptions_mode) == "ANYONE" || { IS_ADMIN } }) then {
+	if (hasInterface) then {
 		
-		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Request", "<execute expression='[player] call AET_common_fnc_compareAddonOptions;'>Execute!</execute>"]];
+		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Request", "<execute expression='[player] call" + QFUNC(compareAddonOptions) + ";'>Execute!</execute>"]];
+		GVAR(triggerMarkingDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call" + QFUNC(markTriggers) + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call" + QFUNC(demarkTriggers) + ";'>Remove Trigger Markers!</execute>"]];
 	};
 };
 

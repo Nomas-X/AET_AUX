@@ -40,3 +40,25 @@ https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
 	{},
 	false
 ] call CBA_fnc_addSetting;
+
+[
+	QSET(triggerMarking_enable),
+	"CHECKBOX",
+	["Trigger Marking Mode", "Specifies the trigger marking mode. Mission will mark all triggers in present on mission start."],
+	["AET Common", "Trigger Marking"],
+	true,
+	1,
+	{},
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QSET(triggerMarking_visibilityMode),
+	"LIST",
+	["Mark Triggers For", "Only marks the triggers for the specified group."],
+	["AET Common", "Trigger Marking"],
+	[["ADMIN", "ZEUS", "EVERYONE"], ["Admin", "Zeus", "Everyone"], 1],
+	1,
+	{},
+	true
+] call CBA_fnc_addSetting;
