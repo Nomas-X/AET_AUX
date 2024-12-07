@@ -58,7 +58,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		class LadderCivilUpLoop;
 		class PLP_LTR_LadderCivilUpLoop: LadderCivilUpLoop
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderUpCiv.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderUpCiv.rtm";
 			speed="-(25/30)";
 			InterpolateTo[]=
 			{
@@ -77,7 +77,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderCivilDownLoop: LadderCivilUpLoop
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderDownCiv.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderDownCiv.rtm";
 			speed="-(25/30)/1.1111";
 			InterpolateTo[]=
 			{
@@ -96,7 +96,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderRifleUpLoop: LadderCivilUpLoop
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderUpRfl.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderUpRfl.rtm";
 			speed="-(25/30)/1.1111";
 			InterpolateTo[]=
 			{
@@ -116,7 +116,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderRifleDownLoop: PLP_LTR_LadderRifleUpLoop
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderDownRfl.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderDownRfl.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -134,7 +134,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderCivilStatic: LadderCivilStatic
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderStaticCiv.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderStaticCiv.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -149,7 +149,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderRifleStatic: LadderRifleStatic
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderStaticRfl.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderStaticRfl.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -164,7 +164,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderCivilSlide: LadderCivilStatic
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderSlideCiv.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderSlideCiv.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -176,7 +176,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		};
 		class PLP_LTR_LadderRifleSlide: LadderRifleStatic
 		{
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderSlideRfl.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderSlideRfl.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -190,7 +190,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		{
 			looped=0;
 			speed="-(37/30)";
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderSlideEndCiv.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderSlideEndCiv.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -204,7 +204,7 @@ class CfgMovesMaleSdr: CfgMovesBasic
 		{
 			looped=0;
 			speed="-(37/30)";
-			file="z\aet\addons\PLP_ladderTweakRemastered\data\ladderSlideEndRfl.rtm";
+			file="z\aet\addons\plp_ladder_tweak_remastered\data\ladderSlideEndRfl.rtm";
 			InterpolateTo[]=
 			{
 				"Unconscious",
@@ -262,7 +262,7 @@ class CfgFunctions
 		{
 			class LTR_ladderSlideDown
 			{
-				file="z\aet\addons\PLP_ladderTweakRemastered\fn_ladderSlideDown.sqf";
+				file="z\aet\addons\plp_ladder_tweak_remastered\fn_ladderSlideDown.sqf";
 			};
 		};
 	};
