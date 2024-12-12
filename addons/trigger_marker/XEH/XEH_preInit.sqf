@@ -15,3 +15,25 @@
 	false									//    _needRestart - Setting will be marked as needing mission restart after being changed. (optional, default false) <BOOL>
 ] call CBA_fnc_addSetting;
 */
+
+[
+	QSET(triggerMarking_enable),
+	"CHECKBOX",
+	["Trigger Marking Mode", "Specifies the trigger marking mode. Mission will mark all triggers in present on mission start."],
+	["AET Common", "Trigger Marking"],
+	true,
+	1,
+	{},
+	true
+] call CBA_fnc_addSetting;
+
+[
+	QSET(triggerMarking_visibilityMode),
+	"LIST",
+	["Mark Triggers For", "Only marks the triggers for the specified group."],
+	["AET Common", "Trigger Marking"],
+	[["ADMIN", "ZEUS", "EVERYONE"], ["Admin", "Zeus", "Everyone"], 1],
+	1,
+	{},
+	true
+] call CBA_fnc_addSetting;
