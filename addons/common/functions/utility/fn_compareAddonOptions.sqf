@@ -20,7 +20,7 @@ Example:
 
 params ["_player"];
 
-if (SET(compareAddonOptions_mode) == "ANYONE" || { IS_ADMIN }) exitWith {hint "Must be admin to use the addon option comparison function!";};
+if (SET(compareAddonOptions_mode) == "ANYONE" || { IS_ADMIN }) exitWith {systemChat "Must be admin to use the addon option comparison function!";};
 
 private _arrayMaster = ((loadFile PATH_TO_ADDON_2(data,master_cba_settings.sqf)) regexReplace ["\/\/ END OF AET FILE[\s\S]*", "END OF AET FILE"]) regexFind ["^[^\r\n]*"];
 private _arrayMission = ((loadFile "cba_settings.sqf") regexReplace ["\/\/ END OF AET FILE[\s\S]*", "END OF AET FILE"]) regexFind ["^[^\r\n]*"];
