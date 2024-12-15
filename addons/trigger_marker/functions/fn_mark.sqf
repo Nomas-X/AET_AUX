@@ -1,19 +1,4 @@
-#include "../../script_component.hpp"
-
-/*
-* Author: Zorn
-* code to actually do the marker
-*
-* Arguments:
-*
-* Return Value:
-* None
-*
-* Example:
-* ['something', player] call prefix_component_fnc_functionname
-*
-* Public: No
-*/
+#include "../script_component.hpp"
 
 /*
 Authors:
@@ -30,9 +15,10 @@ Return Value:
 	<Nil>
 
 Example:
-	[] call AET_plan_common_fnc_markTriggers;
+	[] call AET_trigger_marker_fnc_mark;
 */
 
+if !([] call FUNC(checkCondition)) exitWith {systemChat "You do not have the required permission to use this action!"};
 
 GVAR(triggerMarkers) = [] call FUNC(demarkTriggers);
 
@@ -65,5 +51,10 @@ private _triggersArray = 8 allObjects 7;
 	if (_triggerText == "") then { _triggerText = ["Trigger",_tag,_forEachIndex + 1] joinString "_" };
 	_pointMarker setMarkerTextLocal _triggerText;
 
-	GVAR(triggerMarkers) pushBack [_areaMarker, _pointMarker];
+	GVAR(triggerMarkers) pushBack _areaMarker;
+	GVAR(triggerMarkers) pushBack _pointMarker;
 } forEach _triggersArray;
+
+systemChat str(QGVAR(triggerMarkers));
+
+QGVAR(triggerMarkers);

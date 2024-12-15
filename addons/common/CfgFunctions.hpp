@@ -42,8 +42,6 @@ class CfgFunctions
 		{
 			file = PATH_TO_FUNC_SUB(utility);
 
-			class markTriggers {};
-			class demarkTriggers {};
 			class compareAddonOptions {};
 		};
 	};

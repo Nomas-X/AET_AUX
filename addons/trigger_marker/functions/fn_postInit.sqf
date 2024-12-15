@@ -13,15 +13,14 @@ Return Value:
 	<Nil>
 
 Example:
-	[] call AET_common_fnc_postInit;
+	[] call AET_trigger_marker_fnc_postInit;
 */
 
 private _code = {
 	
-	if (hasInterface) then {
+	if (SET(enable) && {hasInterface}) then {
 		
-		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Request", "<execute expression='[player] call" + QFUNC(compareAddonOptions) + ";'>Execute!</execute>"]];
-		GVAR(triggerMarkingDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call" + QFUNC(markTriggers) + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call" + QFUNC(demarkTriggers) + ";'>Remove Trigger Markers!</execute>"]];
+		GVAR(triggerMarkingDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call " + QFUNC(mark) + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call " + QFUNC(demark) + ";'>Remove Trigger Markers!</execute>"]];
 	};
 };
 
