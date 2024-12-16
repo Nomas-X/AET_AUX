@@ -18,9 +18,9 @@ Example:
 	[] call AET_common_fnc_compareAddonOptions;
 */
 
-params ["_unit"];
+params ["_player"];
 
-if (SET(compareAddonOptions_mode) == "ANYONE" || { IS_ADMIN }) exitWith {hint "Must be admin to use the addon option comparison function!";};
+if (SET(compareAddonOptions_mode) == "ANYONE" || { IS_ADMIN }) exitWith {systemChat "Must be admin to use the addon option comparison function!";};
 
 private _arrayMaster = ((loadFile PATH_TO_ADDON_2(data,master_cba_settings.sqf)) regexReplace ["\/\/ END OF AET FILE[\s\S]*", "END OF AET FILE"]) regexFind ["^[^\r\n]*"];
 private _arrayMission = ((loadFile "cba_settings.sqf") regexReplace ["\/\/ END OF AET FILE[\s\S]*", "END OF AET FILE"]) regexFind ["^[^\r\n]*"];
@@ -29,8 +29,8 @@ _arrayMaster = flatten _arrayMaster select {typeName _x == "STRING"};
 _arrayMission = flatten _arrayMission select {typeName _x == "STRING"};
 
 if (count _arrayMaster isNotEqualTo count _arrayMission ) exitWith {
-	_unit createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Result", "Files line count does not match!<br/>Major diffirence detected, alert Event Team Lead(s)!"]];
-	_unit removeDiaryRecord ["AntistasiEventTeam", GVAR(settingsDiary)];
+	_player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Result", "Files line count does not match!<br/>Major diffirence detected, alert Event Team Lead(s)!"]];
+	_player removeDiaryRecord ["AntistasiEventTeamActions", GVAR(settingsDiary)];
 };
 
 private _diaryString = "";
@@ -48,9 +48,9 @@ for "_line" from 0 to (count _arrayMission) do {
 };
 
 if (_differenceCounter == 0) then {
-	_unit createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Result", "No differences in settings found!"]];
-	_unit removeDiaryRecord ["AntistasiEventTeam", GVAR(settingsDiary)];
+	_player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Result", "No differences in settings found!"]];
+	_player removeDiaryRecord ["AntistasiEventTeamActions", GVAR(settingsDiary)];
 } else {
-	_unit createDiaryRecord ["AntistasiEventTeam", ["CBA Settings Comparison Result", _diaryString]];
-	_unit removeDiaryRecord ["AntistasiEventTeam", GVAR(settingsDiary)];
+	_player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Result", _diaryString]];
+	_player removeDiaryRecord ["AntistasiEventTeamActions", GVAR(settingsDiary)];
 };

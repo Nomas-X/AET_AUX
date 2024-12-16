@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=59;
+		nextID=68;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14780.188,92.317932,16403.297};
-		dir[]={0.056797057,-0.44794607,0.89227152};
-		up[]={0.028456442,0.8940621,0.44704399};
-		aside[]={0.99799484,1.1903467e-08,-0.063527726};
+		pos[]={14817.648,166.56496,16338.688};
+		dir[]={0.28997198,-0.42181429,0.85906363};
+		up[]={0.13490309,0.90668201,0.39966044};
+		aside[]={0.94748008,1.3154931e-08,-0.31981644};
 	};
 };
 binarizationWanted=0;
@@ -50,13 +50,15 @@ addons[]=
 	"ace_reload",
 	"A3_Weapons_F_Mark_Acc",
 	"A3_Ui_F",
-	"A3_Air_F_Beta_Heli_Transport_01"
+	"A3_Air_F_Beta_Heli_Transport_01",
+	"A3_Modules_F",
+	"ace_spectator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -169,6 +171,20 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item16
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item17
+		{
+			className="ace_spectator";
+			name="ACE3 - Spectator";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
@@ -226,7 +242,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=15;
+		items=23;
 		class Item0
 		{
 			dataType="Trigger";
@@ -1155,6 +1171,102 @@ class Mission
 			{
 			};
 			id=57;
+		};
+		class Item15
+		{
+			dataType="Trigger";
+			position[]={14859.085,17.91,16600.197};
+			class Attributes
+			{
+				name="T_3";
+				sizeA=0;
+				sizeB=0;
+			};
+			id=59;
+			type="EmptyDetector";
+		};
+		class Item16
+		{
+			dataType="Trigger";
+			position[]={15002.502,18.338135,16618.537};
+			class Attributes
+			{
+				name="T_1";
+			};
+			id=60;
+			type="EmptyDetectorAreaR50";
+		};
+		class Item17
+		{
+			dataType="Trigger";
+			position[]={15390.175,18.298065,17261.08};
+			class Attributes
+			{
+				sizeA=250;
+				sizeB=250;
+			};
+			id=61;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-9.9182129e-05;
+		};
+		class Item18
+		{
+			dataType="Trigger";
+			position[]={14625.263,15.73374,17181.861};
+			class Attributes
+			{
+				name="T_2";
+				sizeA=173.991;
+				sizeB=129.819;
+				sizeC=64.148003;
+				isRectangle=1;
+			};
+			id=62;
+			type="EmptyDetectorArea10x10";
+		};
+		class Item19
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={15566.069,17.171808,16576.477};
+			};
+			id=63;
+			type="Logic";
+			atlOffset=2.4795532e-05;
+		};
+		class Item20
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={15658.684,15.11388,16612.934};
+			};
+			id=64;
+			type="Curator_F";
+			atlOffset=5.7220459e-05;
+		};
+		class Item21
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={15692.502,13.71983,16541.322};
+			};
+			id=65;
+			type="MiscLock_F";
+			atlOffset=-9.2506409e-05;
+		};
+		class Item22
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={15667.846,14.047778,16479.348};
+			};
+			id=66;
+			type="ace_spectator_virtual";
+			atlOffset=0.00010681152;
 		};
 	};
 };

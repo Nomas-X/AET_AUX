@@ -42,12 +42,6 @@ class CfgFunctions
 		{
 			file = PATH_TO_FUNC_SUB(utility);
 
-
-			class markTriggersInLayer {};
-			class markTriggersInMission {};
-            class triggerToMarker {};
-			class useRemoteReturn {};
-			class getLayer {};
 			class compareAddonOptions {};
 		};
 	};
