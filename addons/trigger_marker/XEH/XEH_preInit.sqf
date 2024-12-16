@@ -17,27 +17,12 @@
 */
 
 [
-	QSET(enable),
-	"CHECKBOX",
-	["Trigger Marking Mode", "Specifies the trigger marking mode. Mission will mark all triggers in present on mission start."],
-	["AET Common", "Trigger Marking"],
-	true,
-	1,
-	{},
-	true
-] call CBA_fnc_addSetting;
-
-[
 	QSET(visibilityMode),
 	"LIST",
 	["Mark Triggers For", "Only marks the triggers for the specified group."],
 	["AET Common", "Trigger Marking"],
 	[["ADMIN", "ZEUS", "EVERYONE"], ["Admin", "Zeus & Admin", "Everyone"], 1],
 	1,
-	{
-		["CATCHMEIFYOUCAN"] remoteExec ["diag_log", 0];
-		[getClientState] remoteExec ["diag_log", 0];
-		[str(_this)] remoteExec ["diag_log", 0];
-	},
+	{},
 	true
 ] call CBA_fnc_addSetting;

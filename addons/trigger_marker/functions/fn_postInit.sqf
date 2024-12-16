@@ -18,7 +18,7 @@ Example:
 
 private _code = {
 	
-	if (SET(enable) && {hasInterface}) then {
+	if (hasInterface) then {
 		
 		GVAR(triggerMarkingDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call " + QFUNC(mark) + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call " + QFUNC(demark) + ";'>Remove Trigger Markers!</execute>"]];
 	};

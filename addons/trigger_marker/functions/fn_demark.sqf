@@ -20,5 +20,3 @@ Example:
 {
 	deleteMarkerLocal _x;
 } forEach GVAR(triggerMarkers);
-
-[];

@@ -20,7 +20,9 @@ Example:
 
 if !([] call FUNC(checkCondition)) exitWith {systemChat "You do not have the required permission to use this action!"};
 
-GVAR(triggerMarkers) = [] call FUNC(demarkTriggers);
+[] call FUNC(demarkTriggers);
+
+GVAR(triggerMarkers) = [];
 
 private _triggersArray = 8 allObjects 7;
 
@@ -54,7 +56,3 @@ private _triggersArray = 8 allObjects 7;
 	GVAR(triggerMarkers) pushBack _areaMarker;
 	GVAR(triggerMarkers) pushBack _pointMarker;
 } forEach _triggersArray;
-
-systemChat str(QGVAR(triggerMarkers));
-
-QGVAR(triggerMarkers);
