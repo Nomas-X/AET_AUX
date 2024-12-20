@@ -1,6 +1,6 @@
 // class CfgFunctions
 // {
-//     class SOG_MODIFICATIONS
+//     class ADDON
 //     {
 //         class COMPONENT
 //         {
