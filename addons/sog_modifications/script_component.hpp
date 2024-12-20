@@ -4,5 +4,5 @@
 #define COMPONENT_BEAUTIFIED SOG Modifications
 
 
-#include "\z\aet_aux\addons\main\script_mod.hpp"
-#include "\z\aet_aux\addons\main\script_macros.hpp"
+#include "\z\aet\addons\main\script_mod.hpp"
+#include "\z\aet\addons\main\script_macros.hpp"
