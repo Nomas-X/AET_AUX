@@ -26,7 +26,7 @@ if (isServer && hasInterface) then { FFPP_admin = player; };
 if (isNil "FFPP_admin") then {FFPP_admin = objNull};
 if (admin owner FFPP_admin isEqualTo 0 && !hasInterface) then {
     private _allPlayers = (allUnits + allDeadMen);
-    private _adminIndex = _allPlayers findIf {!(admin owner _x isEqualTo 0)};
+    private _adminIndex = _allPlayers findIf {(admin owner _x isNotEqualTo 0)};
     FFPP_admin = if (_adminIndex isEqualTo -1) then { objNull } else { _allPlayers # _adminIndex };
 };
 FFPP_admin;
