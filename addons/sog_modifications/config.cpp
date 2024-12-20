@@ -1,14 +1,14 @@
 #include "script_component.hpp"
 
 class CfgPatches {
-	class SOG_MODIFICATIONS {
+	class ADDON {
 
         // Meta information for editor
 		name = ADDON_NAME;
 
         author = "$STR_aet_author";
-        authors[] = {"Nomas / Redwan S. [AET]", "OverlordZorn [CVO]"};
-        
+        authors[] = {"Nomas / Redwan S. [AET]", "Esmeray [AET]"};
+
         url = "$STR_aet_URL";
 
 		VERSION_CONFIG;
