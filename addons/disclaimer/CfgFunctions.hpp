@@ -10,6 +10,7 @@ class CfgFunctions
 			class postInit { postInit = 1; };
 
 			class serverCheck {};
+			class handlesafety {};
 			class play {};
 		};
 	};

@@ -18,7 +18,7 @@
     #define MAINPREFIX z
 #endif
 
-#define PREFIX aet_aux
+#define PREFIX aet
 
 #ifndef SUBPREFIX
     #define SUBPREFIX addons

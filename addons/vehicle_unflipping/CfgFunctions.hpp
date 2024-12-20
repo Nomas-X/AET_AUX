@@ -5,7 +5,7 @@ class CfgFunctions
     {
         class functions
         {
-            file = "z\aet_aux\addons\vehicle_unflipping\functions";
+            file = "z\aet\addons\vehicle_unflipping\functions";
 
             class addUnflipActionLocal {};
             class canUnflipLocal {};
@@ -19,7 +19,7 @@ class CfgFunctions
 
         class debug
         {
-            file = "z\aet_aux\addons\vehicle_unflipping\functions\debug";
+            file = "z\aet\addons\vehicle_unflipping\functions\debug";
 
             class debug {};
         };

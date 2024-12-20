@@ -1,7 +1,7 @@
 mainprefix = "z"
-prefix = "aet_aux"
+prefix = "aet"
 
-name = "AET_AUX"
+name = "AET Auxiliaries Mod"
 
 [properties]
 author = "Antistasi Event Team"

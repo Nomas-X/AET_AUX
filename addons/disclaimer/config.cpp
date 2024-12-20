@@ -4,10 +4,10 @@ class CfgPatches {
     class ADDON {
         name = ADDON_NAME;
         
-        author = "$STR_aet_aux_author";
+        author = "$STR_aet_author";
         authors[] = {"Nomas / Redwan S. [AET]"};
         
-        url = "$STR_aet_aux_URL";
+        url = "$STR_aet_URL";
         
         VERSION_CONFIG;
         
@@ -17,7 +17,7 @@ class CfgPatches {
 
         // Required addons, used for setting load order.
         // When any of the addons is missing, pop-up warning will appear when launching the game.
-        requiredAddons[] = {"cba_main", QPVAR(main)};
+        requiredAddons[] = {"cba_main", "ace_safemode", QPVAR(main)};
 
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups)
         units[] = {};

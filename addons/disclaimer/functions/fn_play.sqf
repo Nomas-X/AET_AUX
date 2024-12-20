@@ -1,28 +1,27 @@
 #include "../script_component.hpp"
 
 /*
-* Author: Zorn
-* [Description]
-*
-* Arguments:
-*
-* Return Value:
-* None
-*
-* Example:
-* ['something', player] call prefix_component_fnc_functionname
-*
-* Public: No
+Authors:
+	OverlordZorn
+	Redwan S. / Nomas
+
+Description:
+    This function will play the Antistasi Event Team desclaimer screen and show the sponsor logo if the CBA setting allows it.
+
+Arguments:
+	N/A
+
+Return Value:
+	<Nil>
+
+Example:
+	[] call AET_disclaimer_fnc_play;
 */
 
 if !(hasInterface) exitWith {};
 
 2 fadeRadio 0;
 2 fadeSound 0;
-
-// Gun safety on safety script
-{ [ACE_player, _x, true] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player);
-
 
 [] spawn {
     "disclaimerLayer_Background" cutText ["", "BLACK FADED", 999, true, false];
@@ -32,7 +31,7 @@ if !(hasInterface) exitWith {};
     sleep 12;
 
     if (SET(enabled_logo)) then {
-        "disclaimerLayer_Sponsor" cutText ["<img size='8' shadow='0' image='data\opengroup_sponsor.paa'/>", "PLAIN DOWN", 5, true, true];
+        "disclaimerLayer_Sponsor" cutText ["<img size='8' shadow='0' image='z\aet\addons\disclaimer\data\opengroup_sponsor.paa'/>", "PLAIN DOWN", 5, true, true];
     };
     "disclaimerLayer_Text" cutText  ["<t size='2'>Disclaimer: This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</t>", "PLAIN", 5, true, true];
     
@@ -75,8 +74,10 @@ if !(hasInterface) exitWith {};
 };
 
 [QGVAR(EH_done), {
-    "dynamicBlur" ppEffectEnable false; ppEffectDestroy "dynamicBlur";
+    "dynamicBlur" ppEffectEnable false;
     // Gun safety off once disclaimer is done.
-    { [ACE_player, _x, false] call ace_safemode_fnc_setWeaponSafety; } forEachReversed (weapons ACE_player);
-
+	if (SET(disablesafety_mode) == "DISCLAIMER_END") then {
+    	
+		[false] call FUNC(handlesafety);
+	};
 }] call CBA_fnc_addEventHandler;
