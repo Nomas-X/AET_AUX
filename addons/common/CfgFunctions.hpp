@@ -29,7 +29,6 @@ class CfgFunctions
 			
 			class antiBounceSmokeGL {};
 			class setFaces {};
-			class startInVehicle {};
 		};
 		class AI
 		{
@@ -37,6 +36,7 @@ class CfgFunctions
 
 			class disableLayerAI {};
 			class enableLayerAI {};
+			class lockAISeats {};
 		};
 		class Utility
 		{

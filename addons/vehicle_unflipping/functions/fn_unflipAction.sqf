@@ -51,7 +51,7 @@ if !(PLAYER in UNFLIPPING_UNITS) exitWith {
         15,
         {
             _this#0 params ["_vehicle"];
-            !(UNFLIPPING_UNITS isEqualTo [])
+            (UNFLIPPING_UNITS isNotEqualTo [])
             && alive PLAYER
         },
         // onSuccess

@@ -22,5 +22,10 @@ parameters = [
 
 [Altis]
 extends = "default"
-dlc = ["ws","rf"]
 mission = "testMission.Altis"
+
+
+[AltisPlus]
+extends = "default"
+dlc = ["ws","rf"]
+mission = "testMissionRF.Altis"

@@ -8,8 +8,18 @@ class CfgFunctions
             file = PATH_TO_FUNC;
 
 			class preInit { preInit = 1; };
-            class postInit { postInit = 1; };
 
+			class init {};
+			class moveInto {};
+
+        };
+
+        class QUEUE
+        {
+            file = PATH_TO_FUNC_SUB(queue);
+
+			class request_add {};
+            class request_iterate {};
         };
     };
 };
