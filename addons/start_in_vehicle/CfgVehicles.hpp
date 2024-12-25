@@ -53,7 +53,7 @@ class CfgVehicles
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(module,startInVehicle,units)));
 				displayName = "Apply to (units)";
-				tooltip = "The synchronized units will be affected by the module. Note that ""Objects in synchronized triggers"" is currently not working.";
+				tooltip = "The synchronized units will be affected by the module.";
 			};
 
 			class Vehicle : Edit
@@ -124,7 +124,7 @@ class CfgVehicles
 		// Module description (must inherit from base class, otherwise pre-defined entities won't be available)
 		class ModuleDescription : ModuleDescription
 		{
-			description = "This module is used to start players in a vehicle at mission start. To set up the module simply do the following:<br/>1. Synchronize the module to all units that should be affected.<br/>2. Provide the vehicle variable name to the module.<br/>3. Provide the LZ marker variable name or a position array if needed.<br/>4. Configure the rest of the settings to your liking.<br/><br/>IMPORTANT NOTE:<br/>""Objects in synchronized triggers"" will not work.";	// Short description, will be formatted as structured text
+			description = "This module is used to start players in a vehicle at mission start. To set up the module simply do the following:<br/>1. Synchronize the module to all units that should be affected.<br/>2. Provide the vehicle variable name to the module.<br/>3. Provide the LZ marker variable name or a position array if needed.<br/>4. Configure the rest of the settings to your liking.<br/><br/>Tooltips are visible when you hover over each attribute.";	// Short description, will be formatted as structured text
 			sync[] = { "LocationArea_F"};				// Array of synced entities (can contain base classes)
 		};
 	};
