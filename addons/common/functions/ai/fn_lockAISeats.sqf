@@ -28,6 +28,8 @@ if (isNull _vehicle) exitWith {};
 if !(local _vehicle) exitWith { [_unit] remoteExecCall [QFUNC(lockAISeats), _vehicle, false] };
 
 // Get all Units inside Vehicle
+// https://community.bistudio.com/wiki/fullCrew
+
 
 // Identify NON Player Units
 
