@@ -27,5 +27,3 @@ class CfgPatches {
 
     };
 };
-
-#include "CfgFactionClasses.hpp"
