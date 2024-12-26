@@ -21,3 +21,6 @@ The following content is subject to different licenses, either included with dir
     * [user_input_menus](https://github.com/Nomas-X/AET_AUX/tree/nomas_dev/addons/user_input_menus)
 
     * [vehicle_unflipping](https://github.com/Nomas-X/AET_AUX/tree/nomas_dev/addons/vehicle_unflipping)
+
+3. **Media**
+	* [startInVehicle.paa](https://github.com/Nomas-X/AET_AUX/tree/nomas_dev/addons/start_in_vehicle/data/startInVehicle.paa)
