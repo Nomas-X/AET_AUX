@@ -7,36 +7,39 @@ Authors:
 
 Description:
 
-    This Function will take the provided vehicle, scan all seats that are occupied by AI and locks those to be not accessed by players.
+    This Function will take the provided vehicle, scan all seats that are occupied by AI and locks those to be not accessed by players. When unlocking seats the function will unlock all seats.
 
 Arguments:
-    N/A
+    0. <Object> The vehicle that the function will handle.
 
 Return Value:
     <Nil>
 
 Example:
-    [] call AET_common_fnc_lockAISeats;
+    [AET_HELI, true] call AET_common_fnc_lockAISeats;
 */
 
 // TODO
 
-params [["_vehicle", objNull, [objNull]]];
+params [
+	["_vehicle", objNull, [objNull]],
+	["_lockState", true, [true]]
+];
 
 if (isNull _vehicle) exitWith {};
 
-if !(local _vehicle) exitWith { [_unit] remoteExecCall [QFUNC(lockAISeats), _vehicle, false] };
+if !(local _vehicle) exitWith { [_vehicle] remoteExecCall [QFUNC(lockAISeats), _vehicle, false] };
 
-// Get all Units inside Vehicle
-// https://community.bistudio.com/wiki/fullCrew
+// If unit is not a player then enter the switch and check the unit's info to lock seat accordingly.
+private _crew = fullCrew [_vehicle, "", !_lockState];
 
-
-// Identify NON Player Units
-
-// Identify Seats of Non Player Units
-
-// Lock seats that that have non Player AI Units (Execpt Cargo and Fire From Vehicle I guess?)
-
-// https://community.bistudio.com/wiki/lockDriver -> Needs to be local to the Vehicle 
-// https://community.bistudio.com/wiki/lockTurret -> Needs to be local to the Vehicle
-// https://community.bistudio.com/wiki/lockCargo -> Needs to be local to the Vehicle
+{
+	if !(isPlayer _x # 0 ) then {
+		switch (_x # 1) do {
+			case ("driver"): {_vehicle lockDriver _lockState;};
+			case ("cargo"): {_vehicle lockCargo [_x # 2, _lockState]};
+			case ("commander");
+			case ("turret"): {_vehicle lockTurret [_x # 3, _lockState]};
+		};
+	};
+} forEach _crew;
