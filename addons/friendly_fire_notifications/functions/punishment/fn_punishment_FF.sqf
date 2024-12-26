@@ -94,7 +94,7 @@ private _exemption = "";
 if (_victim isKindOf "Man") then {
         _exemption = switch (true) do {
         case (_vehicle isEqualTo (vehicle _victim)):                        {"IN SAME VEHICLE"};  // Also fulfils role of checking whether the instigator and victim is same person.
-        case (!((side group _victim) isEqualTo (side group _instigator))):  {call _logPvP; "DIFFERENT GROUP SIDES"};
+        case (((side group _victim) isNotEqualTo (side group _instigator))):  {call _logPvP; "DIFFERENT GROUP SIDES"};
         default                                                             {_exemption};
     };
 };
@@ -105,7 +105,7 @@ _exemption = switch (true) do {  // ~0.012 ms for all false cases
     case (!(isPlayer _instigator)):             {"FF BY AI"};
     default                                     {_exemption};
 };
-if (!(_exemption isEqualTo "")) exitWith {
+if (_exemption isNotEqualTo "") exitWith {
     format["NOT FF, %1", _exemption];
 };
 
@@ -119,7 +119,7 @@ if (_isCollision) then {
 
 /////////Checks for important roles/////////
 _exemption = switch (true) do {
-    case (!(admin owner _instigator isEqualTo 0) || player isEqualTo _instigator): {  // Local host included.
+    case ((admin owner _instigator isNotEqualTo 0) || player isEqualTo _instigator): {  // Local host included.
         ["You damaged a friendly as admin."] call _notifyInstigator; // Admin not reported to victim in case of Zeus remote control.
         format ["ADMIN, %1", ["Server","Voted","Logged"] select (admin owner _instigator)];
     };
@@ -130,7 +130,7 @@ _exemption = switch (true) do {
     };
     case (
         isNumber (configFile >> "CfgVehicles" >> _vehicleType >> "artilleryScanner") &&
-        {!(getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "artilleryScanner") isEqualTo 0)}
+        {(getNumber (configFile >> "CfgVehicles" >> _vehicleType >> "artilleryScanner") isNotEqualTo 0)}
     ): {
         call _notifyVictim;
         ["You damaged a friendly as arty support."] call _notifyInstigator;
@@ -141,7 +141,7 @@ _exemption = switch (true) do {
         // Without above: Your AI will be prosecuted for FF. Upon leaving UAV you will be punished. If you have debug console you can self forgive.
     default {""};
 };
-if (!(_exemption isEqualTo "")) exitWith {
+if (_exemption isNotEqualTo "") exitWith {
     private _UID = getPlayerUID _instigator;
     ([_UID,[["offenceTotal",0]]] call FFPP_fnc_punishment_dataGet) params ["_offenceTotal"];
     _offenceTotal = _offenceTotal + 1;

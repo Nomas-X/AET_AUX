@@ -40,7 +40,7 @@ if (!(_unit isKindOf "Man")) exitWith {
     false;
 };
 
-private _isAI = !isPlayer _unit || !hasInterface || {!(_unit isEqualTo player)}; // Avoiding adding fired handlers for Ai. Needs to be local for ace, self punishment, and checkStatus.
+private _isAI = !isPlayer _unit || !hasInterface || {(_unit isNotEqualTo player)}; // Avoiding adding fired handlers for Ai. Needs to be local for ace, self punishment, and checkStatus.
 
 if (_isAI && !_addToAI) exitWith {true};
 
