@@ -10,7 +10,7 @@
 * None
 *
 * Example:
-* ['something', player] call prefix_component_fnc_functionname
+* [] call AET_start_in_vehicle_fnc_request_iterate
 *
 * Public: No
 */

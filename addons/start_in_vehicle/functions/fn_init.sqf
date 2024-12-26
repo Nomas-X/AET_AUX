@@ -4,16 +4,20 @@ Authors:
 	Redwan S. / Nomas
 
 Description:
-    This function is used to add the "Import Plan" and "Delete Plan" actions under the parent action "Plan Actions".
+    This function is used on module initialization to activate the module. 
 
 Arguments:
-	N/A
+	1. <Object> The module logic which is used to get synchronized units from and other information such as move options.
+
+	2. <Array> The list of units passed by the module if the "Objects in synchronized triggers" is not selected. Otherwise it will return an empty array and unit fetching will be done inside this function.
+
+	3. <Boolean> True when the module was activated, false when it is deactivated (i.e., synced triggers are no longer active)
 
 Return Value:
 	<Nil>
 
 Example:
-	[] call AET_plan_importer_fnc_addActions;
+	[] call AET_start_in_vehicle_fnc_init;
 */
 
 params [
@@ -60,7 +64,7 @@ private _code = {
 
 	if (isServer) then {
 		if ( _logic getVariable ["AllowDamage", false] ) then { _vehicle allowDamage false };
-		if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle] call EFUNC(common,lockAISeats) };
+		if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle, true] call EFUNC(common,lockAISeats) };
 	};
 };
 

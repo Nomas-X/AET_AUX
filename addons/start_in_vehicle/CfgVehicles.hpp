@@ -81,7 +81,7 @@ class CfgVehicles
 			class Commander : Checkbox
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(module,startInVehicle,Commander)));
-				displayName = "Use commander seats (vehicle)";
+				displayName = "Use commander seat (vehicle)";
 				tooltip = "Should units be moved into commander seats?";
 				defaultValue = 0;
 			};
@@ -97,7 +97,7 @@ class CfgVehicles
 			class Driver : Checkbox
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(module,startInVehicle,Driver)));
-				displayName = "Use driver seats (vehicle)";
+				displayName = "Use driver seat (vehicle)";
 				tooltip = "Should units be moved into driver seats?";
 				defaultValue = 0;
 			};
