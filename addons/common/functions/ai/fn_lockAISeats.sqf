@@ -26,7 +26,7 @@ params [
 
 if (isNull _vehicle) exitWith {};
 
-if !(local _vehicle) exitWith { [_vehicle] remoteExecCall [QFUNC(lockAISeats), _vehicle, false] };
+if !(local _vehicle) exitWith { [_vehicle, _lockState] remoteExecCall [QFUNC(lockAISeats), _vehicle, false] };
 
 // If unit is not a player then enter the switch and check the unit's info to lock seat accordingly.
 private _crew = fullCrew [_vehicle, "", !_lockState];
