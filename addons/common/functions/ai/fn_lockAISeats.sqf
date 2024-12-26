@@ -19,8 +19,6 @@ Example:
     [AET_HELI, true] call AET_common_fnc_lockAISeats;
 */
 
-// TODO
-
 params [
 	["_vehicle", objNull, [objNull]],
 	["_lockState", true, [true]]
