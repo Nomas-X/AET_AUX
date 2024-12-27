@@ -26,6 +26,16 @@ private _code = {
 		call FUNC(antiBounceSmokeGL);
 	};
 
+	if (isServer && {SET(dynamicGroups)}) then {
+
+		["Initialize", [true]] call BIS_fnc_dynamicGroups;
+	};
+	
+	if (hasInterface && {SET(dynamicGroups)}) then {
+
+		["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;
+	};
+
 	if (hasInterface) then {
 		
 		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Request", "<execute expression='[player] call " + QFUNC(compareAddonOptions) + ";'>Execute!</execute>"]];

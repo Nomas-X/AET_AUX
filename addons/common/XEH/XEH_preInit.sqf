@@ -40,3 +40,14 @@ https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
 	{},
 	false
 ] call CBA_fnc_addSetting;
+
+[
+	QSET(dynamicGroups),
+	"CHECKBOX",
+	["Enable Dynamic Groups Menu", "This setting controls whether the dynamic groups menu is enabled or not."],
+	["AET Common", "Common"],
+	true,
+	1,
+	{},
+	true
+] call CBA_fnc_addSetting;
