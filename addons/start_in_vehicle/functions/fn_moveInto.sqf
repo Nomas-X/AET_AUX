@@ -24,6 +24,8 @@ Arguments:
 
 		1.6. <Boolean> Use driver seat
 
+		1.7. <String> The module deletion condition. Unused in this fucntion.
+
 Return Value:
 	<Nil>
 
@@ -44,7 +46,8 @@ _moduleInfo params [
 	["_cargo", true, [true]],
 	["_commander", false, [false]],
 	["_gunner", false, [false]],
-	["_driver", false, [false]]
+	["_driver", false, [false]],
+	["_terminateCondition", "", [""]]
 ];
 
 // Defining Fallback Code: If LZ is defined, TP to LZ - if false or boolean, leave player where they are

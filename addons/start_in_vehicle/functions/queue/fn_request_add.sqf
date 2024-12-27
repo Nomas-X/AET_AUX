@@ -18,6 +18,8 @@
 * 		1.5. <Boolean> Use gunner seats
 * 
 * 		1.6. <Boolean> Use driver seat
+*		
+*		1.7. <String> The module deletion condition. Unused in this fucntion.
 *
 * Return Value:
 * None

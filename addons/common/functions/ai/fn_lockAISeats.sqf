@@ -32,7 +32,7 @@ if !(local _vehicle) exitWith { [_vehicle, _lockState] remoteExecCall [QFUNC(loc
 private _crew = fullCrew [_vehicle, "", !_lockState];
 
 {
-	if !(isPlayer _x # 0 ) then {
+	if !(isPlayer (_x # 0) ) then {
 		switch (_x # 1) do {
 			case ("driver"): {_vehicle lockDriver _lockState;};
 			case ("cargo"): {_vehicle lockCargo [_x # 2, _lockState]};

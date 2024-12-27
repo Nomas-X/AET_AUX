@@ -1,5 +1,5 @@
 #define MAINPREFIX z
-#define PREFIX aet
+#define PREFIX AET
 
 #define PREFIX_BEAUTIFIED AET Auxiliaries
 
