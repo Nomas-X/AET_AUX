@@ -29,9 +29,7 @@ params [
 // Module specific behavior. Function can extract arguments from logic and use them.
 if !(_activated) exitWith {false};
 
-
 // Attribute values are saved in module's object space under their class names
-
 private _code = {
 	private _vehicle = missionNamespace getVariable [(_logic getVariable ["Vehicle", ""]), "404"];
 	if (_vehicle isEqualTo "404") exitWith {systemChat "FUCKING IDIOT DIDNT DEFINE THE VHEICLE PROPPER"};
@@ -63,13 +61,23 @@ private _code = {
 	] call CBA_fnc_serverEvent;
 
 	if (isServer) then {
+		private _condition = _logic getVariable ["TerminateCondition", false];
 		if ( _logic getVariable ["AllowDamage", false] ) then { _vehicle allowDamage false };
 		if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle, true] call EFUNC(common,lockAISeats) };
+		if (_condition isNotEqualTo "") then {
+			if (_condition select [0, 1] isEqualTo "{") then {
+				_condition = call compile _condition;
+			} else {
+				_condition = call compile ("{" + _condition + "}");
+			};
+			[
+				_condition,
+				{deleteVehicle (_this # 0);},
+				[_logic]
+			] call CBA_fnc_waitUntilAndExecute;
+		};
 	};
 };
-
-
-
 
 if (player in _units) then {
 	call _code;
