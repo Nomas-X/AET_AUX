@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14900.414,74.700386,16316.268};
-		dir[]={-0.57112914,-0.53863829,0.61941946};
-		up[]={-0.36512578,0.84253711,0.39599803};
-		aside[]={0.73518354,0,0.67786825};
+		pos[]={14831.871,19.715313,16407.896};
+		dir[]={-0.13195889,-0.5351814,-0.83437884};
+		up[]={-0.083603218,0.84473002,-0.52862376};
+		aside[]={-0.98773217,3.8009603e-07,0.15621196};
 	};
 };
 binarizationWanted=0;
@@ -471,6 +471,49 @@ class Mission
 					};
 					id=35;
 					type="B_soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="B_female_bun_03";
+								};
+							};
+						};
+						nAttributes=3;
+					};
 				};
 			};
 			class Attributes

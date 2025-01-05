@@ -21,7 +21,8 @@ include = [
 	"AETLogo.paa",
 	"/assets/*.paa",
     "*.bikey",
-    "DiscordRichPresence*.dll"
+    "DiscordRichPresence*.dll",
+	"/addons/*.pbo"
 ]
 exclude = [
     "*.psd",        # By default this list is empty
