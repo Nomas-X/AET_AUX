@@ -4,6 +4,8 @@
 This is the Antistasi Event Team [AET] Auxiliaries mod. It contains addons, functions, scripts and tools used by AET in our operations.
 
 The mod can also be found on the [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=3349453883).
+### User Guide
+The following [Guide](https://github.com/Nomas-X/AET_AUX/blob/main/GUIDE.md) contains details to help users utilize the mod and set it up as well as explains features in greater details.
 ### Bug Reporting & Feature Request
 If you would like to report a bug or suggest a new feature then please do so using Github Issues [github.com](https://github.com/Nomas-X/AET_AUX).
 ### Addons & Key Features
