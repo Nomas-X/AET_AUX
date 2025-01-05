@@ -7,20 +7,20 @@ The mod can also be found on the [Steam Workshop](https://steamcommunity.com/sha
 ### Bug Reporting & Feature Request
 If you would like to report a bug or suggest a new feature then please do so using Github Issues [github.com](https://github.com/Nomas-X/AET_AUX).
 ### Addons & Key Features
-* **common:** This addon contains functions and other content that does not need its own category such as anti-bounce function for smoke grenade launchers.
-* **disclaimer:** This addon contains the functions and scripts for the disclaimer shown when the player first joins a mission as well as the weapon saftey feature.
-* **discord_rich_presence:** This addon contains the functions and scripts used to handle our custom Discord rich presence when are on our server. For more details check out their [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=1493485159) page or [Github](https://gist.github.com/ConnorAU/b44448714e7ac46715d6959be8dd4240).
-* **friendly_fire_notifications:** This addon contains the A3-FF-Punishment-Phantom friendly fire notification system.
-* **loadout_handler:** This addon contains the functions and options used to handle player loadouts on mission start and respawn.
-* **main:** This addon contains and handles the macros and main stringtable.
-* **plan_importer:** This addon contains the functions that allows the importing of plans from [PLANOPS](https://plan-ops.fr).
-* **sog_modifications:** This addon contains modifications or addtions for the [Arma 3 Creator DLC: S.O.G. Prairie Fire](https://store.steampowered.com/app/1227700/Arma_3_Creator_DLC_SOG_Prairie_Fire/) such as larger size belts for the MG42.
-* **start_in_vehicle:** This addon contains the module and functions that handles starting the player in vehicle on mission start, or later into the mission.
-* **trigger_marker:** This addon contains the functions that allows admins and game masters (Zeus) to mark trigger names, locations and areas on their map.
-* **A3_female_heads:** This addon contains female heads made by Ice for Task Force Timber Wolf. For more details check out their [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2021778690) page.
-* **cau.userinputmenus:** This addon contains different user input menus and options that are used by our addons such as the `plan_importer` addon. For more details check out their [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=1673595418) page or [Github](https://github.com/ConnorAU/A3UserInputMenus).
-* **PLP_LadderTweakRemastered:** This addon changes the ladder movement speed and also offers you to slide down ladders. For more details check out their [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2969350304) page.
-* **vet_unflipping:** This addon allows players to preform unflip on vehicles that are on their side or upside down. For more details check out their [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1703187116) page or [Github](https://github.com/veteran29/vet_unflipping?tab=readme-ov-file).
+* **common:** This addon contains functions and other content that does not need its own category such as anti-bounce function for smoke grenade launchers.<br/><br/>
+* **disclaimer:** This addon contains the functions and scripts for the disclaimer shown when the player first joins a mission as well as the weapon saftey feature.<br/><br/>
+* **discord_rich_presence:** This addon contains the functions and scripts used to handle our custom Discord rich presence when are on our server. For more details check out their [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=1493485159) page or [Github](https://gist.github.com/ConnorAU/b44448714e7ac46715d6959be8dd4240).<br/><br/>
+* **friendly_fire_notifications:** This addon contains the A3-FF-Punishment-Phantom friendly fire notification system. For more details check out their [Github](https://github.com/official-antistasi-community/A3-FF-Punishment-Phantom).<br/><br/>
+* **loadout_handler:** This addon contains the functions and options used to handle player loadouts on mission start and respawn.<br/><br/>
+* **main:** This addon contains and handles the macros and main stringtable.<br/><br/>
+* **plan_importer:** This addon contains the functions that allows the importing of plans from [PLANOPS](https://plan-ops.fr).<br/><br/>
+* **sog_modifications:** This addon contains modifications or addtions for the [Arma 3 Creator DLC: S.O.G. Prairie Fire](https://store.steampowered.com/app/1227700/Arma_3_Creator_DLC_SOG_Prairie_Fire/) such as larger size belts for the MG42.<br/><br/>
+* **start_in_vehicle:** This addon contains the module and functions that handles starting the player in vehicle on mission start, or later into the mission.<br/><br/>
+* **trigger_marker:** This addon contains the functions that allows admins and game masters (Zeus) to mark trigger names, locations and areas on their map.<br/><br/>
+* **A3_female_heads:** This addon contains female heads made by Ice for Task Force Timber Wolf. For more details check out their [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2021778690) page.<br/><br/>
+* **cau.userinputmenus:** This addon contains different user input menus and options that are used by our addons such as the `plan_importer` addon. For more details check out their [Steam Workshop](https://steamcommunity.com/workshop/filedetails/?id=1673595418) page or [Github](https://github.com/ConnorAU/A3UserInputMenus).<br/><br/>
+* **PLP_LadderTweakRemastered:** This addon changes the ladder movement speed and also offers you to slide down ladders. For more details check out their [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=2969350304) page.<br/><br/>
+* **vet_unflipping:** This addon allows players to preform unflip on vehicles that are on their side or upside down. For more details check out their [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails/?id=1703187116) page or [Github](https://github.com/veteran29/vet_unflipping?tab=readme-ov-file).<br/><br/>
 ## Credits
 #### [Håkon](https://github.com/HakonRydland)
 - Provided [fn_ValidateObjects.sqf](https://github.com/Nomas-X/AET_AUX/blob/main/addons/common/functions/utility/fn_ValidateObjects.sqf) and [fn_LGAirstrike.sqf](https://github.com/Nomas-X/AET_AUX/blob/main/addons/common/functions/create/fn_LGAirstrike.sqf).
