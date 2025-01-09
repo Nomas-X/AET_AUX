@@ -14,16 +14,12 @@ Arguments:
 Return Value: <nil>
 
 Example:
-	private _listOfPlayers_1 = ["P_1", "P_2", "P_3"] call HR_fnc_ValidateObjects;
-	private _listOfFaces_1 = ["PersianHead_A3_04_a", "PersianHead_A3_04_l", "PersianHead_A3_04_sa"];
-	[player, _listOfPlayers_1, _listOfFaces_1] call AET_common_fnc_setFaces;
+	[player, ["PersianHead_A3_04_a", "PersianHead_A3_04_l", "PersianHead_A3_04_sa"]] call AET_common_fnc_setFaces;
 */
-params ["_unit", "_listOfPlayers", "_listOfFaces"];
+params ["_unit", "_listOfFaces"];
 
 //sets face
-if (_unit in _listOfPlayers) then {
-	if (!((face _unit) in _listOfFaces)) then {
-		private _face = selectRandom _listOfFaces;
-		[_unit, _face] remoteExec ["setFace", 0, _unit];
-	};
+if (!((face _unit) in _listOfFaces)) then {
+	private _face = selectRandom _listOfFaces;
+	[_unit, _face] remoteExec ["setFace", 0, _unit];
 };
