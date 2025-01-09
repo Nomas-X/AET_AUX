@@ -15,7 +15,7 @@ Public: Yes
 Dependencies:
 
 Example:
-["P_1", "P_2"] call HR_fnc_validateObjects;
+private _listOfPlayers = ["P_1", "P_2"] call HR_fnc_validateObjects;
 
 License: MIT License
 */
