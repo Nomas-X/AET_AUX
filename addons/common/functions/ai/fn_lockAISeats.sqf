@@ -12,6 +12,8 @@ Description:
 Arguments:
     0. <Object> The vehicle that the function will handle.
 
+	1. <Boolean> The lock state to be applied
+
 Return Value:
     <Nil>
 
