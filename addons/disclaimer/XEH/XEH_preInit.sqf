@@ -41,7 +41,7 @@
 [
 	QSET(disable_in_editor),
 	"CHECKBOX",
-	["Disabled In Editor Preview", "Controls if the disclaimer is shown in the editor preview."],
+	["Disable In Editor Preview", "Controls if the disclaimer is shown in the editor preview."],
 	["AET Disclaimer", "Disclaimer"],
 	true,
 	1,
@@ -52,9 +52,9 @@
 [
 	QSET(disablesafety_mode),
 	"LIST",
-	["Disable Weapon safety Based On", "Controls the mode the safety is handled with if any."],
+	["Disable Weapon Safety Based On", "Controls the mode the safety is handled with if any. For ""Custom"" check the github wiki."],
 	["AET Disclaimer", "Weapon Safety"],
-	[["NO_safety", "DISCLAIMER_END", "TIME", "DISTANCE"],["No safety", "Disclaimer End", "Time In Minutes", "Distance In Meters"],1],
+	[["NO_safety", "DISCLAIMER_END", "TIME", "DISTANCE", "CUSTOM"],["No Safety", "Disclaimer End", "Time", "Distance", "Custom"],1],
 	1,
 	{},
 	false
@@ -63,7 +63,7 @@
 [
 	QSET(disablesafety_time),
 	"TIME",
-	["Time based safety removal (Mission Time)", "Sets the needed time to pass before safety is removed automatically if mode is set to Time."],
+	["Time Based Safety Removal", "Sets the needed time to pass before safety is removed automatically if mode is set to Time."],
 	["AET Disclaimer", "Weapon Safety"],
 	[0, 1200, 600],
 	1,
@@ -74,7 +74,7 @@
 [
 	QSET(disablesafety_distance),
 	"SLIDER",
-	["Distance based safety removal (In Meters)", "Sets the needed distance the player must be away from his spawn point before safety is removed automatically if mode is set to Distance."],
+	["Distance Based Safety Removal (In Meters)", "Sets the needed distance the player must be away from his spawn point before safety is removed automatically if mode is set to Distance."],
 	["AET Disclaimer", "Weapon Safety"],
 	[0, 500, 250, 0, false],
 	1,
