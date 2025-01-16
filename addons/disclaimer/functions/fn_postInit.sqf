@@ -25,9 +25,15 @@ private _code = {
 	if _cond then { 
 		[QGVAR(EH_request), ["REQUEST", player]] call CBA_fnc_serverEvent; 
 		
-		if (SET(disablesafety_mode) != "NO_safety") then {
+		if (SET(disableSafetymode) != "NO_SAFETY") then {
 			[true] call FUNC(handlesafety);
 		}
+	} else {
+
+		if (SET(disableSafetymode) != "DISCLAIMER_END" && { SET(disableSafetymode) != "NO_SAFETY" }) then {
+
+			[true] call FUNC(handlesafety);
+		};
 	};
 
 };
