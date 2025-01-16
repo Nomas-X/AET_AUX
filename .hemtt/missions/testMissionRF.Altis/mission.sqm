@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=154;
+		nextID=158;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14853.783,104.06649,16342.018};
-		dir[]={-0.075533092,-0.55120307,0.83100808};
-		up[]={-0.049896125,0.83436656,0.54895329};
-		aside[]={0.995947,7.8353332e-07,0.09052445};
+		pos[]={14837.486,50.094624,16378.215};
+		dir[]={0.019278163,-0.66552794,0.74612397};
+		up[]={0.017190006,0.74637288,0.66530591};
+		aside[]={0.99966633,0,-0.025829127};
 	};
 };
 binarizationWanted=0;
@@ -251,7 +251,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=24;
+		items=26;
 		class Item0
 		{
 			dataType="Group";
@@ -264,7 +264,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14844.733,17.931438,16410.945};
+						position[]={14842.569,17.931103,16409.729};
 					};
 					side="West";
 					flags=7;
@@ -1654,6 +1654,150 @@ class Mission
 			};
 			id=87;
 			type="EmptyDetectorArea10x10";
+		};
+		class Item24
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14846.451,17.936003,16451.994};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						name="AET_AIDummy_1";
+					};
+					id=155;
+					type="B_soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ENH_disableAI_path";
+							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=154;
+		};
+		class Item25
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={14848.418,17.942444,16449.848};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						name="AET_AIDummy_2";
+					};
+					id=157;
+					type="B_soldier_AAR_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male10ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ENH_disableAI_path";
+							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=156;
 		};
 	};
 	class Connections
