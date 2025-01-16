@@ -32,10 +32,15 @@ params ["_safetyStatus"];
 if (!_safetyStatus) exitWith {};
 
 // If the requested safety status is true, then handle its removal based on time or distance. Disclaimer is handled in fn_play.
-switch (SET(disablesafety_mode)) do {
+switch (SET(disableSafetymode)) do {
 	case ("TIME"): {
 
-		[{ [false] call FUNC(handlesafety) }, [], SET(disablesafety_time)] call CBA_fnc_waitAndExecute;
+		[
+			{CBA_missionTime > SET(disableSafetytime) },
+			{
+				[false] call FUNC(handlesafety)
+			}
+		] call CBA_fnc_waitUntilAndExecute;
 	};
 	case ("DISTANCE"): {
 		
@@ -44,7 +49,7 @@ switch (SET(disablesafety_mode)) do {
 			{
 				private _spawnPos = getPosASL player;
 				[
-					{ (player distance2D _this) >= SET(disablesafety_distance)},	// Condition
+					{ (player distance2D _this) >= SET(disableSafetydistance)},	// Condition
 					{ [false] call FUNC(handlesafety) },							// Statement
 					_spawnPos
 				] call CBA_fnc_waitUntilAndExecute;
