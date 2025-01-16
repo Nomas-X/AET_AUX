@@ -31,9 +31,10 @@ if !(hasInterface) exitWith {};
     sleep 12;
 
     if (SET(enabled_logo)) then {
-        "disclaimerLayer_Sponsor" cutText ["<img size='8' shadow='0' image='z\aet\addons\disclaimer\data\opengroup_sponsor.paa'/>", "PLAIN DOWN", 5, true, true];
+        "disclaimerLayer_Sponsor" cutText [SET(logoPath), "PLAIN DOWN", 5, true, true];
     };
-    "disclaimerLayer_Text" cutText  ["<t size='2'>Disclaimer: This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</t>", "PLAIN", 5, true, true];
+	
+    "disclaimerLayer_Text" cutText  [SET(text), "PLAIN", 5, true, true];
     
     sleep 12;
     
@@ -53,6 +54,11 @@ if !(hasInterface) exitWith {};
         "disclaimerLayer_Sponsor" cutFadeOut 0.5;
     };
     sleep 3;
+
+	if (fileExists SET(customIntro_path)) then {
+		
+		[] call compile preprocessFileLineNumbers SET(customIntro_path);
+	};
 
     "disclaimerLayer_Background" cutText ["", "BLACK FADED", -1, true, false];
     "disclaimerLayer_Background" cutFadeOut 5;
@@ -76,8 +82,8 @@ if !(hasInterface) exitWith {};
 [QGVAR(EH_done), {
     "dynamicBlur" ppEffectEnable false;
     // Gun safety off once disclaimer is done.
-	if (SET(disablesafety_mode) == "DISCLAIMER_END") then {
-    	
+	if (SET(disableSafetymode) == "DISCLAIMER_END") then {
+    
 		[false] call FUNC(handlesafety);
 	};
 }] call CBA_fnc_addEventHandler;
