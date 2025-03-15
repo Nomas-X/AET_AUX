@@ -53,21 +53,21 @@ class CfgVehicles
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,units)));
 				displayName = "Apply to (units)";
-				tooltip = "The synchronized units will be affected by the module.";
+				tooltip = "The units will be affected by the module.";
 			};
 
 			class Vehicle : Edit
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,vehicle)));
-				displayName = "Move to (vehicle)";
-				tooltip = "The vehicle that synchronized units will be moved into. Variable name of the vehicle is expected.";
+				displayName = "Move into (vehicle)";
+				tooltip = "The vehicle that the units will be moved into. Expected data type is a variable name of the vehicle.";
 			};
 
 			class BackupLZ : Edit
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,backupLZ)));
 				displayName = "Move to (backup LZ)";
-				tooltip = "Optional backup LZ that the synchronized units will be moved to if the vehicle is full or no longer availble. Variable name of the LZ marker, a possition array ASL, or empty.";
+				tooltip = "The optional backup LZ that the units will be moved to if the vehicle is full or no longer available. Expected data type is a variable name of the LZ marker, an ASL position array, or empty.";
 			};
 
 			class Cargo : Checkbox
@@ -82,7 +82,7 @@ class CfgVehicles
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,Commander)));
 				displayName = "Use commander seat (vehicle)";
-				tooltip = "Should units be moved into commander seats?";
+				tooltip = "Should units be moved into the commander seat?";
 				defaultValue = 0;
 			};
 
@@ -98,7 +98,7 @@ class CfgVehicles
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,Driver)));
 				displayName = "Use driver seat (vehicle)";
-				tooltip = "Should units be moved into driver seats?";
+				tooltip = "Should units be moved into the driver seat?";
 				defaultValue = 0;
 			};
 
@@ -106,7 +106,7 @@ class CfgVehicles
 			{
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,lockAISeats)));
 				displayName = "Lock AI seats (vehicle)";
-				tooltip = "Should vehicle seats with AI in them be locked?";
+				tooltip = "Should the vehicle seats with AI in them be locked?";
 				defaultValue = 1;
 			};
 
@@ -123,8 +123,8 @@ class CfgVehicles
 				control = "EditCodeMulti5";
 				property = QUOTE(DOUBLES(PREFIX,TRIPLES(Module,startInVehicle,TerminateCondition)));
 				displayName = "Terminate condition (module)";
-				tooltip = "Once the condition is met, the module will be deleted automatically. The output of the statement must be a boolean.";
-				defaultValue = "";
+				tooltip = "Once the condition is met, the module will be deleted automatically. The output of the statement must be a Boolean.";
+				defaultValue = "false";
 			};
 
 			class ModuleDescription : ModuleDescription {}; // Module description should be shown last
