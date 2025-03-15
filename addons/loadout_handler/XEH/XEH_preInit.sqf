@@ -51,7 +51,7 @@
 [	
 	QSET(radiosInNeedOfProgrammer),
 	"EDITBOX",
-	["TFAR Compatible Radios List", "The provided array will be used to verify whether a radio needs a programmer or not. Must already be included in the previous setting's array."],
+	["Radios In Need Of Programmer", "The provided array will be used to verify whether a radio needs a programmer or not. Must already be included in the previous setting's array."],
 	["AET Loadout Handler", "Basic Equipment"],
 	"[""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]",
 	1,
@@ -224,6 +224,7 @@
 		[""ACE_packingBandage"", 10],
 		[""ACE_epinephrine"", 2],
 		[""ACE_morphine"", 2],
+		[""ACE_painkillers"", 1],
 		[""ACE_splint"", 2],
 		[""ACE_tourniquet"", 2]
 	]",
