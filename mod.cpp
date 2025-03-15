@@ -20,7 +20,7 @@ actionName      = "Discord";                                                    
 overviewPicture = "img\AntistasiEventTeam_2048x1024.paa";
 overviewText = "Antistasi Event Team Auxiliaries Mod";
 
-overviewFootnote = "Antistasi Event Team Auxiliaries Modd";
+overviewFootnote = "Antistasi Event Team Auxiliaries Mod";
 
 
 // Color used for DLC stripes and backgrounds (RGBA)
