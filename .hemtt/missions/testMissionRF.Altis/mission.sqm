@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14861.791,46.296661,16444.186};
-		dir[]={-0.59542143,-0.38434044,-0.70551807};
-		up[]={-0.24788418,0.92319149,-0.29371929};
-		aside[]={-0.76421648,0,0.64495993};
+		pos[]={14888.409,68.821846,16373.294};
+		dir[]={-0.5953846,-0.72492599,0.34641171};
+		up[]={-0.62658674,0.68882573,0.36456653};
+		aside[]={0.50290138,-1.0058284e-07,0.86434531};
 	};
 };
 binarizationWanted=0;
@@ -467,7 +467,6 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=35;
 					type="B_soldier_AAR_F";
@@ -533,19 +532,44 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14842.591,17.931438,16413.609};
+						position[]={14842.59,17.931438,16413.611};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=43;
 					type="B_soldier_AAR_F";
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						class Attribute2
 						{
 							property="ENH_disableAI_path";
 							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
@@ -558,7 +582,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						nAttributes=3;
 					};
 				};
 				class Item1
@@ -572,13 +596,38 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=37;
 					type="B_soldier_AAR_F";
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male06ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
 						{
 							property="ENH_disableAI_path";
 							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
@@ -591,7 +640,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						nAttributes=3;
 					};
 				};
 				class Item2
@@ -599,13 +648,12 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={14845.601,17.931438,16413.547};
+						position[]={14845.6,17.931438,16413.547};
 					};
 					side="West";
 					flags=5;
 					class Attributes
 					{
-						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=39;
 					type="B_soldier_AAR_F";
@@ -664,13 +712,38 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="[this,true] call FFPP_fnc_punishment_FF_addEH;";
 					};
 					id=41;
 					type="B_soldier_AAR_F";
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
 						{
 							property="ENH_disableAI_path";
 							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
@@ -683,7 +756,7 @@ class Mission
 								};
 							};
 						};
-						nAttributes=1;
+						nAttributes=3;
 					};
 				};
 			};
