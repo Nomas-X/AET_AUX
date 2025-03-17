@@ -29,8 +29,7 @@ _arrayMaster = flatten _arrayMaster select {typeName _x == "STRING"};
 _arrayMission = flatten _arrayMission select {typeName _x == "STRING"};
 
 if (count _arrayMaster isNotEqualTo count _arrayMission ) exitWith {
-	_player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Result", "Files line count does not match!<br/>Major diffirence detected, alert Event Team Lead(s)!"]];
-	_player removeDiaryRecord ["AntistasiEventTeamActions", GVAR(settingsDiary)];
+	_player setDiaryRecordText [["AntistasiEventTeamActions", GVAR(settingsDiary)], ["CBA Settings Comparison Result", "Files line count does not match!<br/>Major diffirence detected, alert Event Team Lead(s)!"]];
 };
 
 private _diaryString = "";
@@ -48,9 +47,7 @@ for "_line" from 0 to (count _arrayMission) do {
 };
 
 if (_differenceCounter == 0) then {
-	_player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Result", "No differences in settings found!"]];
-	_player removeDiaryRecord ["AntistasiEventTeamActions", GVAR(settingsDiary)];
+	_player setDiaryRecordText [["AntistasiEventTeamActions", GVAR(settingsDiary)], ["CBA Settings Comparison Result", "No differences in settings found!"]];
 } else {
-	_player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Result", _diaryString]];
-	_player removeDiaryRecord ["AntistasiEventTeamActions", GVAR(settingsDiary)];
+	_player setDiaryRecordText [["AntistasiEventTeamActions", GVAR(settingsDiary)], ["CBA Settings Comparison Result", _diaryString]];
 };
