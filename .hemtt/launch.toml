@@ -5,9 +5,10 @@ workshop = [
     "463939057",  # ACE3
 	"1508091616", # Metis Marker
 	"894678801",  # TFAR BETA
+	"1673595418", # User Input Menus
     "2369477168", # Advanced Developer Tools
     "1779063631", # ZEN
-	"623475643",  # 3den Enhanced ## I dont think you wanna load that to avoid some unintended dependencies.
+	"623475643",  # 3den Enhanced
 ]
 
 dlc = []
@@ -17,7 +18,8 @@ parameters = [
     "-window",
     "-noPause",
     "-noPauseAudio",
-    "-debug"
+	"-debug",
+	"-showScriptErrors",
 ]
 
 [Altis]
