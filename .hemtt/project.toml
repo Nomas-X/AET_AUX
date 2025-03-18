@@ -22,7 +22,8 @@ include = [
 	"/assets/*.paa",
     "*.bikey",
     "DiscordRichPresence*.dll",
-	"/addons/*.pbo"
+	"/addons/*.pbo",
+	"addons/*.bisign"
 ]
 exclude = [
     "*.psd",        # By default this list is empty
