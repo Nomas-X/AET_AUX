@@ -16,14 +16,6 @@ The following content is subject to different licenses, either included with dir
 
     * [discord_rich_presence](https://github.com/Nomas-X/AET_AUX/tree/main/addons/discord_rich_presence) is subject to a custom license that can be found [here](https://github.com/Nomas-X/AET_AUX/tree/main/addons/discord_rich_presence/Licenses).
 
-    * [friendly_fire_notifications](https://github.com/Nomas-X/AET_AUX/tree/main/addons/friendly_fire_notifications) is subject to the MIT license as per [link](https://github.com/Nomas-X/AET_AUX/blob/ab75aa3211c38787b999f89443740d521b1af764/addons/friendly_fire_notifications/LICENSE).
-
-    * [cau.userinputmenus](https://github.com/Nomas-X/AET_AUX/tree/main/addons/cau.userinputmenus.pbo) is subject to a custom license that can be found [here](https://github.com/ConnorAU/A3UserInputMenus/blob/d557520f38011a78551f1b8b613b6bf4a0c4c1c0/LICENSE).
-
-    * [vet_unflipping](https://github.com/Nomas-X/AET_AUX/tree/main/addons/vet_unflipping.pbo) is subject to the GPL-3.0 license as per [link](https://github.com/veteran29/vet_unflipping/blob/1c40d5a8d8536788c320ee2c8a6eda1e25c3dd95/LICENSE).
-
-	* [A3_female_heads](https://github.com/Nomas-X/AET_AUX/tree/main/addons/A3_female_heads.pbo) is subject to a custom license that can be found [here](https://steamcommunity.com/sharedfiles/filedetails/?id=2021778690).
-
 3. **Media**
 	* [startInVehicle.paa](https://github.com/Nomas-X/AET_AUX/tree/main/addons/start_in_vehicle/data/startInVehicle.paa) is subject to a custom license that can be found [here](https://thenounproject.com/legal/).
 
