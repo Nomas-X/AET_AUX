@@ -24,62 +24,55 @@ params ["_channelSelection"];
 		if _confirmed then {
 
 			private _channelSelection = _this select 0;
-			[_text, _channelSelection] spawn {
-				params ["_text", "_channelSelection"];
-				[format["Plan import attempt by: %1 | ID64: %2 | Import Channel: %3 | Import text: %4", name player, getPlayerUID player, _channelSelection, _text]] remoteExec ["diag_log", 2, false];
-				_plan = _text regexFind ["private _data = \[.*\]; \n \n_/"];
 
-				if (count _plan >= 1) then {
+			[format["Plan import attempt by: %1 | ID64: %2 | Import Channel: %3 | Import text: %4", name player, getPlayerUID player, _channelSelection, _text]] remoteExec ["diag_log", 2, false];
+			_plan = _text regexFind ["private _data = \[.*\]; \n \n_/"];
 
-					_plan = (((_plan select 0) select 0) select 0) regexFind ["\[.*\]/"];
+			if (count _plan >= 1) then {
 
-					private _errorHandler = -1;
-					player setVariable ["AET_importPlan_parseFlag", -1, false];
+				_plan = (((_plan select 0) select 0) select 0) regexFind ["\[.*\]/"];
 
-					private _errorHandler = addMissionEventHandler ["ScriptError", {
-						params ["_errorText", "_sourceFile", "_lineNumber", "_errorPos", "_content", "_stackTraceOutput"];
-						if (_errorText == "parseSimpleArray format error") then {
-							player setVariable ["AET_importPlan_parseFlag", 1, false];
-						};
-					}];
+				private _errorHandler = -1;
+				GVAR(parseFlag) = -1;
 
-					waitUntil {sleep 0.1; _errorHandler != -1};
-					
-					_plan = parseSimpleArray (((_plan select 0) select 0) select 0);
-					[
-						[
-							3,"",
-							false,
-							[],
-							{(player getVariable "AET_importPlan_parseFlag" != 1)},
-							{}
-						],
-						"Importing plan...",
-						{
-							if _completed then {
-								player setVariable ["AET_importPlan_parseFlag", 0, false];
-							} else {
-								systemChat "Plan import aborted";
-							};
-						},
-						displayNull
-					] call CAU_UserInputMenus_fnc_progressBar;
+				private _errorHandler = addMissionEventHandler ["ScriptError", {
+					params ["_errorText", "_sourceFile", "_lineNumber", "_errorPos", "_content", "_stackTraceOutput"];
 
-					waitUntil {sleep 0.1; (player getVariable "AET_importPlan_parseFlag") != -1};
-
-					removeMissionEventHandler ["ScriptError", _errorHandler];
-
-					if ((player getVariable "AET_importPlan_parseFlag" == 0)) then {
-
-						[_channelSelection, _plan] call FUNC(createMarkers);
-					} else {
-						systemChat "Invalid input, a parsing error has occursed!";
-					
-						[QGVAR(EH_parsingError), [player, _plan]] call CBA_fnc_globalEvent;
+					if (_errorText == "parseSimpleArray format error" && {_sourceFile == "z\AET\addons\plan_importer\functions\fn_importPlan.sqf"}) then {
+						GVAR(parseFlag) = 1;
 					};
-				} else {
-					systemChat "Invalid input, data pattern does not match!";
-				};
+				}];
+
+				[
+					{_this#0 != -1},
+					{
+						params ["_errorHandler", "_plan", "_channelSelection"];
+
+						[_errorHandler, _plan, _channelSelection] spawn {
+							params ["_errorHandler", "_plan", "_channelSelection"];
+							
+							systemChat "Parsing...";
+							_plan = parseSimpleArray (((_plan select 0) select 0) select 0);
+
+							uiSleep 3;
+							systemChat "Done parsing...";
+
+							if (GVAR(parseFlag) == 1) then {
+
+								systemChat "Invalid input, a parsing error has occursed!";
+								[QGVAR(EH_parsingError), [player, _plan]] call CBA_fnc_globalEvent;
+								removeMissionEventHandler ["ScriptError", _errorHandler];
+							} else {
+								removeMissionEventHandler ["ScriptError", _errorHandler];
+								[_channelSelection, _plan] call FUNC(createMarkers);
+							};
+						};
+
+					},
+					[_errorHandler, _plan, _channelSelection]
+				] call CBA_fnc_waitUntilAndExecute;
+			} else {
+				systemChat "Invalid input, data pattern does not match!";
 			};
 		} else {
 			systemChat "Plan import cancelled";

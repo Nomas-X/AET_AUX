@@ -10,8 +10,7 @@ class CfgFunctions
             class postInit { postInit = 1; };
 			class preInit { preInit = 1; };
 
-			class addActions {};
-			class showActionsCondition {};
+			class useActionCondition {};
 			class selectChannel {}; 
 			class importPlan {};
 			class createMarkers {};
