@@ -27,7 +27,7 @@ class EditorData
 	};
 };
 binarizationWanted=0;
-sourceName="testmissionrf";
+sourceName="testMissionRF";
 addons[]=
 {
 	"A3_Characters_F",
@@ -208,7 +208,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0

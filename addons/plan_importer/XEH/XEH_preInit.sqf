@@ -19,7 +19,7 @@
 [
 	QSET(enabled),
 	"CHECKBOX",
-	["Enable PLANOPS Plan Importer", "Adds the ""Import Plan"" and ""Delete Plan"" actions to the diary to import and delete plans from the https://maps.plan-ops.fr website."],
+	["Enable PLANOPS Plan Importer", "Allows the use of the ""Import Plan"" and ""Delete Plan"" actions in the diary to import and delete plans from the https://maps.plan-ops.fr website."],
 	["AET Plan Importer"],
 	true,
 	1,
