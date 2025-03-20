@@ -232,3 +232,51 @@
 	{},
 	false
 ] call CBA_fnc_addSetting;
+
+[
+	QSET(medicLoadout),
+	"EDITBOX",
+	["Medic Equipment To Add", "The provided array of item classnames and numbers is what will be used to add to any medic's loadout post initilization. The container's (decided by ""Medic Loadout Container"" CBA setting) space will be increased to accomdate the adition of all new items. This space increase will be special to the worn uniform item only, and will not be applied if a new container is used."],
+	["AET Loadout Handler", "Inventory Handling"],
+	"[
+		[""ACE_fieldDressing"", 0],
+		[""ACE_elasticBandage"", 25],
+		[""ACE_packingBandage"", 25],
+		[""ACE_quikclot"", 0],
+		[""ACE_bloodIV"", 5],
+		[""ACE_bloodIV_500"", 5],
+		[""ACE_bloodIV_250"", 5],
+		[""ACE_plasmaIV"", 0],
+		[""ACE_plasmaIV_500"", 0],
+		[""ACE_plasmaIV_250"", 0],
+		[""ACE_salineIV"", 0],
+		[""ACE_salineIV_500"", 0],
+		[""ACE_salineIV_250"", 0],
+		[""ACE_adenosine"", 0],
+		[""ACE_epinephrine"", 10],
+		[""ACE_morphine"", 10],
+		[""ACE_painkillers"", 0],
+		[""ACE_splint"", 5],
+		[""ACE_tourniquet"", 5],
+		[""ACE_personalAidKit"", 4],
+		[""ACE_surgicalKit"", 1],
+		[""ACE_suture"", 0],
+		[""ACE_bodyBag"", 0],
+		[""ACE_bodyBag_blue"", 0],
+		[""ACE_bodyBag_white"", 0]
+	]",
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(medicLoadoutContainer),
+	"LIST",
+	["Medic Loadout Container", "The medic's equipment / loadout based on the ""Medic Equipment To Add"" CBA setting will added to the chosen container."],
+	["AET Loadout Handler", "Inventory Handling"],
+	[["UNIFORM", "VEST", "BACKPACK"], ["Uniform", "Vest", "Backpack"], 2],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
