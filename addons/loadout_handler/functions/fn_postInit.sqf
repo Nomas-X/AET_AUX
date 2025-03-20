@@ -22,6 +22,7 @@ private _code = {
 
 		[player] call FUNC(basicEquipment);
 		[player] call FUNC(handleUniform);
+		[player] call FUNC(MedicEquipment);
 
 		player addEventHandler ["Respawn", {
 			params ["_unit", "_corpse"];
@@ -29,6 +30,7 @@ private _code = {
 			if (SET(enableOnRespawn)) then {
 				[_unit] call FUNC(basicEquipment);
 				[_unit] call FUNC(handleUniform);
+				[_unit] call FUNC(MedicEquipment);
 			};
 		}];
 	};
