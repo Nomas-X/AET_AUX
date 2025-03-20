@@ -59,7 +59,6 @@ if (_needsBiggerUniform) then {
 
 
 // Add the Items to the uniform, ether now or WUAE
-
 private _params = [_unit, _itemsToAdd, _neededMaxLimit];
 private _code = { { _this#0 addItemToUniform _x } forEach (_this#1); };
 
