@@ -20,14 +20,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14958.618,51.409065,17097.012};
-		dir[]={0.22976595,-0.037634771,0.9725275};
-		up[]={0.0086549092,0.99929154,0.036633153};
-		aside[]={0.97321886,-4.9453229e-07,-0.22992842};
+		pos[]={15109.66,51.409065,17237.061};
+		dir[]={0.77904391,-0.42609817,0.45995605};
+		up[]={0.36692107,0.90467626,0.21663409};
+		aside[]={0.50842059,-7.9255551e-07,-0.86112869};
 	};
 };
 binarizationWanted=0;
-sourceName="testMissionRF";
+sourceName="testmissionrf";
 addons[]=
 {
 	"A3_Characters_F",
@@ -208,7 +208,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0

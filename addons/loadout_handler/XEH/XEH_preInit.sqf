@@ -275,7 +275,7 @@
 	"LIST",
 	["Medic Loadout Container", "The medic's equipment / loadout based on the ""Medic Equipment To Add"" CBA setting will added to the chosen container."],
 	["AET Loadout Handler", "Inventory Handling"],
-	[["UNIFORM", "VEST", "BACKPACK"], ["Uniform", "Vest", "Backpack"], 2],
+	[["Uniform", "Vest", "Backpack"], ["Uniform", "Vest", "Backpack"], 2],
 	1,
 	{},
 	false
