@@ -41,7 +41,7 @@ params [
 if ( _unit isEqualTo objNull || { _moduleInfo isEqualTo "404" } ) exitWith {};
 
 _moduleInfo params [
-	["_vehicle", objNull, [ objNull]],
+	["_vehicle", objNull, [objNull]],
 	["_backupLZ", false, [[], false]],
 	["_cargo", true, [true]],
 	["_commander", false, [false]],
