@@ -25,63 +25,68 @@ Example:
 */
 
 params [
-	["_unit", objNull, [objNull]],
-	["_containerType", "BACKPACK", [""]]
+    ["_unit", objNull, [objNull]],
+    ["_containerType", "Backpack", [""]]
 ];
 
 if (SET(medicLoadout) isEqualTo "") exitWith {};
 
-if (_unit getUnitTrait "medic" && {_unit getVariable [QGVAR(excludeMedicEquipment), false]}) then {
+// Only apply to medics who are NOT excluded
+if (!(_unit getUnitTrait "medic") || {_unit getVariable [QGVAR(excludeMedicEquipment), false]}) exitWith {};
 
-	private _unitContainer = call compile format ["%1Container _unit", toLower(_containerType)];
-	if (isNull _unitContainer) exitWith {};
+// Ensure valid container type and prepare command
+private _containerCommand = switch (_containerType) do {
+	case ("Backpack"): { "addItemToBackpack" };
+	case ("Vest"): { "addItemToVest" };
+	case ("Uniform"): { "addItemToUniform" };
+	default {"addItemToBackpack"};
+};
+private _unitContainer = call compile format ["%1Container _unit", _containerType];
 
-	private _containerItemsArray = parseSimpleArray SET(medicLoadout);
+if (isNull _unitContainer) exitWith {};
 
-	// Enhance the array with the mass of the requested class
-	_containerItemsArray apply { 
-		private _mass = getNumber (configFile >> "CfgWeapons" >> (_x#0) >> "ItemInfo" >> "mass");
-		if (_mass == 0) then { _mass = getNumber (configFile >> "CfgMagazines" >> (_x#0) >> "mass") };
-		if (_mass == 0) then { _mass = _mass max 0.1 };
-		_x set [2, _mass];
-	};
+// Retrieve and process the medic loadout
+private _containerItemsArray = parseSimpleArray SET(medicLoadout);
+{
+    private _mass = getNumber (configFile >> "CfgWeapons" >> (_x#0) >> "ItemInfo" >> "mass");
+    if (_mass == 0) then { _mass = getNumber (configFile >> "CfgMagazines" >> (_x#0) >> "mass") };
+    _x set [2, _mass max 0.1];
+} forEach _containerItemsArray;
 
-	// Establish total mass needed and if the current Container Limit is big enough or not
-	private _totalMass = 0;
-	private _itemsToAdd = [];
-	{
-		_x params ["_classname", "_quantity", "_itemMass"];
-		_totalMass = _totalMass + _quantity * _itemMass;
-		for "_i" from 1 to (_quantity) do { _itemsToAdd pushBack _classname };
+// Compute required mass
+private _totalMass = 0;
+private _itemsToAdd = [];
+{
+    _x params ["_classname", "_quantity", "_itemMass"];
+    _totalMass = _totalMass + _quantity * _itemMass;
+    for "_i" from 1 to _quantity do { _itemsToAdd pushBack _classname };
+} forEach _containerItemsArray;
 
-	} forEach _containerItemsArray;
+// Check load capacity
+private _currentMaxLimit = maxLoad _unitContainer;
+private _currentLoad = loadAbs _unitContainer;
+private _neededMaxLimit = _currentLoad + _totalMass;
 
-	private _currentMaxLimit = maxLoad _unitContainer;
-	private _currentLoad = loadAbs _unitContainer;
-	private _neededMaxLimit = _currentLoad + _totalMass;
-
-	// Establish if Uniform Container needs to be bigger - if so, request it on the server.
-	private _needsBiggerContainer = _neededMaxLimit > _currentMaxLimit;
-	if (_needsBiggerContainer) then {
-		[" + QGVAR(EH_setMaxLoad) + ", [_unitContainer, _neededMaxLimit]] call CBA_fnc_serverEvent;
-	};
-
-	// Add the Items to the uniform, ether now or WUAE
-	private _params = [_unit, _itemsToAdd, _neededMaxLimit];
-	private _code = { { _this#0 addItemTo%2 _x } forEach (_this#1); };
-
-	if (_needsBiggerContainer) then {
-		[{ ( maxLoad %1Container (_this#0) ) == (_this#2) }, _code, _params, 10,_code] call CBA_fnc_waitUntilAndExecute;
-	} else {
-		_params call _code;
-	};
+// Request bigger container if needed
+if (_neededMaxLimit > _currentMaxLimit) then {
+    [QGVAR(EH_setMaxLoad), [_unitContainer, _neededMaxLimit]] call CBA_fnc_serverEvent;
 };
 
-// uniformContainer
-// vestContainer
-// backpackContainer
+// Function to add items to the container
+private _addItemsFunc = {
+    params ["_unit", "_items", "_command"];
+    {
+		_unit call compile format ["%1 %2", _command, _x]
+	} forEach _items;
+};
 
-private _compilableString = toString { systemChat "it works!" };
-systemChat _compilableString;
-sleep 2;
-call compile _compilableString;
+// If container size change is needed, wait until it updates before adding items
+if (_neededMaxLimit > _currentMaxLimit) then {
+    [{
+        (maxLoad (_this select 0)) == (_this select 2)
+    }, {
+        (_this select 0) call (_this select 3) select [1, _this select 1];
+    }, [_unit, _itemsToAdd, _neededMaxLimit, _addItemsFunc, _containerCommand], 10] call CBA_fnc_waitUntilAndExecute;
+} else {
+    [_unit, _itemsToAdd, _containerCommand] call _addItemsFunc;
+};
