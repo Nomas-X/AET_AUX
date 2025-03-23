@@ -57,3 +57,5 @@ if (SET(compassesForEveryone_enabled) && {_unit getSlotItemName 609 == ""}) then
 
 	_unit linkItem SET(compassesForEveryone_className);
 };
+
+GVAR(orderOfFunctions) = 1;
