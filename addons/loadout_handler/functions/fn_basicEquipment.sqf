@@ -19,6 +19,8 @@ Example:
 
 params ["_unit"];
 
+if (_unit getVariable [QGVAR(excludeBasicEquipment), false]) exitWith {};
+
 private _tfarCompatibleRadios = parseSimpleArray SET(TFARCompatibleRadios);
 private _programmerRequiredRadios = parseSimpleArray SET(radiosInNeedOfProgrammer);
 

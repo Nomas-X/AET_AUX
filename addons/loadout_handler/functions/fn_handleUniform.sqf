@@ -27,6 +27,8 @@ params ["_unit"];
 	{
 		params ["_unit"];
 
+		if (_unit getVariable [QGVAR(excludeHandleUniform), false]) exitWith {};
+
 		private _unitUniform = uniformContainer _unit;
 		if (isNull _unitUniform) exitWith {};
 
