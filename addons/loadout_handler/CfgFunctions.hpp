@@ -11,7 +11,7 @@ class CfgFunctions
             class postInit { postInit = 1; };
 			
 			class basicEquipment {};
-			class MedicEquipment {};
+			class medicEquipment {};
 			class handleUniform {};
 
         };
