@@ -12,7 +12,14 @@ class CfgFunctions
 			
 			class basicEquipment {};
 			class medicEquipment {};
+			class engineerEquipment {};
+			class eodEquipment {};
+			
 			class handleUniform {};
+			class handleVest {};
+			class handleBackpack {};
+
+			class handleFullLoadout {};
 
         };
     };
