@@ -38,8 +38,6 @@ private _code = {
 
 	if (hasInterface) then {
 
-		player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call " + "AET_trigger_marker_fnc_mark" + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call " + "AET_trigger_marker_fnc_demark" + ";'>Remove Trigger Markers!</execute>"]];
-
 		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Request", "<execute expression='[player] call " + QFUNC(compareAddonOptions) + ";'>Execute!</execute>"]];
 	};
 };
