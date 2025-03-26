@@ -11,10 +11,8 @@ class CfgFunctions
             class postInit { postInit = 1; };
 			
 			class basicEquipment {};
-			class medicEquipment {};
-			class engineerEquipment {};
-			class eodEquipment {};
-			
+			class traitBasedEquipment {};
+
 			class handleUniform {};
 			class handleVest {};
 			class handleBackpack {};
