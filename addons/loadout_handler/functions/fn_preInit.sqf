@@ -18,4 +18,3 @@ Example:
 */
 
 [QGVAR(EH_setMaxLoad), { _this#0 setMaxLoad _this#1 } ] call CBA_fnc_addEventHandler;
-
