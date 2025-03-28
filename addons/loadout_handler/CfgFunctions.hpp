@@ -10,14 +10,12 @@ class CfgFunctions
             class preInit { preInit = 1; };
             class postInit { postInit = 1; };
 			
+			class addItems {};
+
 			class basicEquipment {};
+			class containerBasedEquipment {};
 			class traitBasedEquipment {};
-
-			class handleUniform {};
-			class handleVest {};
-			class handleBackpack {};
-
-			class handleFullLoadout {};
+			class fullLoadout {};
 
         };
     };
