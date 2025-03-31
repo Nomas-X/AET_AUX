@@ -19,20 +19,23 @@ Example:
 
 private _code = {
 	if (SET(enabled) && {hasInterface}) then {
-		
-		GVAR(orderOfFunctions) = 0; // This variable is used to make sure that the loadout functions do not start adding items at the same time to avoid issues with the container space / size calculation.
+		// This variable is used to make sure that the loadout functions do not start adding items at the same time to avoid issues with the container space / size calculation.
+		GVAR(orderOfFunctions) = 0; 
 
 		[player] call FUNC(basicEquipment);
-		[player] call FUNC(handleUniform);
-		[player] call FUNC(MedicEquipment);
+		[player] call FUNC(containerBasedEquipment);
+		[player] call FUNC(traitBasedEquipment);
 
 		player addEventHandler ["Respawn", {
 			params ["_unit", "_corpse"];
 		
 			if (SET(enableOnRespawn)) then {
+
+				GVAR(orderOfFunctions) = 0;
+				
 				[_unit] call FUNC(basicEquipment);
-				[_unit] call FUNC(handleUniform);
-				[_unit] call FUNC(MedicEquipment);
+				[_unit] call FUNC(containerBasedEquipment);
+				[_unit] call FUNC(traitBasedEquipment);
 			};
 		}];
 	};

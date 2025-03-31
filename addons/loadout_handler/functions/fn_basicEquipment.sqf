@@ -17,9 +17,11 @@ Example:
 	[] call AET_loadout_handler_fnc_basicEquipment;
 */
 
-params ["_unit"];
+params [
+	["_unit", objNull, [objNull]]
+];
 
-if (_unit getVariable [QGVAR(excludeBasicEquipment), false]) exitWith {};
+if (_unit getVariable [QGVAR(excludeBasicEquipment), false]) exitWith {GVAR(orderOfFunctions) = 1;};
 
 private _tfarCompatibleRadios = parseSimpleArray SET(TFARCompatibleRadios);
 private _programmerRequiredRadios = parseSimpleArray SET(radiosInNeedOfProgrammer);
