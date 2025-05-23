@@ -5,16 +5,22 @@ Authors:
 	Redwan S. / Nomas
 
 Description:
-    This function is used to handle trait based equipment based on the relevant CBA settings.
+	This function applies trait-based equipment to a unit based on configured CBA settings.
+
+	If the unit has a supported trait (Medic, Engineer, or ExplosiveSpecialist), the function adds the corresponding items to the designated container (uniform, vest, or backpack). The container’s capacity is temporarily increased if necessary to fit all items.
+
+	The selected container type and items are defined in the associated CBA settings (e.g., "Medic Loadout Container").
 
 Arguments:
-	0. <Object> Unit to add equipment to based on traits.
+	0. <Object> The unit that will receive trait-based equipment.
+
+	1. <Boolean> (Optional) Whether to ignore the enforced function order check. Default is false.
 
 Return Value:
 	<Nil>
 
 Example:
-	[player] call AET_loadout_handler_traitBasedEquipment;
+	[player] call AET_loadout_handler_fnc_traitBasedEquipment;
 */
 
 params [
@@ -39,12 +45,12 @@ params [
 				||
 				{ (isNull _unitContainer)
 				||
-				{ (_loadoutArray isNotEqualTo "") } } }
+				{ (_loadoutArray isEqualTo "") } } }
 			) then {
 				continue;
 			};
 
-			[_unitContainer, _containerType, _loadoutArray] call FUNC(addItems);
+			[_unit, _unitContainer, _containerType, _loadoutArray] call FUNC(addItems);
 			
 		} forEach ["Medic", "Engineer", "ExplosiveSpecialist"];
 
