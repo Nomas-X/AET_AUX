@@ -6,18 +6,20 @@ Authors:
 	OverlordZorn
 
 Description:
-    This function is used to add items into a unit's container based on the CBA setting. The items will get added even if the container's original inventory size is not enough. The function will increase the space availble in the container until it can fit the needed items but not more.
+	This function applies inventory loadouts to a unit's containers (uniform, vest, backpack) based on CBA settings.
 
-	It should be possible to take out and put items back in.
+	It ensures that all items are added, even if the container’s default capacity is insufficient. If needed, the container's max load is increased just enough to accommodate all items. This modification is specific to the currently equipped container and resets when the container is changed.
 
 Arguments:
-	0. <Object> The unit that will have its container handled.
+	0. <Object> The unit whose containers will receive the configured inventory items.
+	
+	1. <Boolean> (Optional) Whether to ignore the enforced function order check. Default is false.
 
 Return Value:
 	<Nil>
 
 Example:
-	[] call AET_loadout_handler_fnc_containerBasedEquipment;
+	[player] call AET_loadout_handler_fnc_containerBasedEquipment;
 */
 
 params [
@@ -29,7 +31,6 @@ params [
 	{GVAR(orderOfFunctions) == 1 || _this#1},
 	{
 		params ["_unit", "_ignoreOrderOfFunctions"];
-
 		{
 			private _isExcludedVariableName = format [QGVAR(exclude%1Equipment), _x];
 			private _loadoutArray = call compile format[QSET(%1Inventory), toLower(_x)];
@@ -40,12 +41,12 @@ params [
 				||
 				{ (isNull _unitContainer)
 				||
-				{ (_loadoutArray isNotEqualTo "") } }
+				{ (_loadoutArray isEqualTo "") } }
 			) then {
 				continue;
 			};
 
-			[_unitContainer, _x, _loadoutArray] call FUNC(addItems);
+			[_unit, _unitContainer, _x, _loadoutArray] call FUNC(addItems);
 			
 		} forEach ["Uniform", "Vest", "Backpack"];
 

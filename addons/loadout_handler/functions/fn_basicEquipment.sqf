@@ -14,7 +14,7 @@ Return Value:
 	<Nil>
 
 Example:
-	[] call AET_loadout_handler_fnc_basicEquipment;
+	[player] call AET_loadout_handler_fnc_basicEquipment;
 */
 
 params [

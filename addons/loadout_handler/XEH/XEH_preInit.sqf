@@ -205,8 +205,8 @@
 [
 	QSET(uniformInventory),
 	"EDITBOX",
-	["Uniform Equipment To Add", "The provided array of item classnames and numbers is what will be used to add to the player's uniform post initilization. The uniform's space will be increased to accomdate the adition of all new items. This space increase will be special to the worn uniform item only, and will not be applied if a new uniform is used."],
-	["AET Loadout Handler", "Inventory Handling"],
+	["Uniform Equipment To Add", "The provided array of item class names and numbers is what will be used to add to the player's uniform post initialization. The uniform's space will be increased to accommodate the addition of all new items. This space increase will be special to the worn uniform item only, and will not be applied if a new uniform is used."],
+	["AET Loadout Handler", "General Inventory Handling"],
 	"[
 		[""ACE_EarPlugs"", 1],
 		[""ACE_Flashlight_XL50"", 1],
@@ -234,10 +234,38 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QSET(vestInventory),
+	"EDITBOX",
+	["Vest Equipment To Add", "The provided array of item class names and numbers is what will be used to add to the player's vest post initialization. The vest's space will be increased to accommodate the addition of all new items. This space increase will be special to the worn vest item only, and will not be applied if a new vest is used."],
+	["AET Loadout Handler", "General Inventory Handling"],
+	"[
+		[""SmokeShell"", 0],
+		[""HandGrenade"", 0]
+	]",
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(backpackInventory),
+	"EDITBOX",
+	["Backpack Equipment To Add", "The provided array of item class names and numbers is what will be used to add to the player's Backpack post initialization. The Backpack's space will be increased to accommodate the addition of all new items. This space increase will be special to the worn Backpack item only, and will not be applied if a new Backpack is used."],
+	["AET Loadout Handler", "General Inventory Handling"],
+	"[
+		[""ACE_EntrenchingTool"", 0],
+		[""ACE_IR_Strobe_Item"", 0]
+	]",
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
 	QSET(medicLoadout),
 	"EDITBOX",
-	["Medic Equipment To Add", "The provided array of item classnames and numbers is what will be used to add to any medic's loadout post initilization. The container's (decided by ""Medic Loadout Container"" CBA setting) space will be increased to accomdate the adition of all new items. This space increase will be special to the worn uniform item only, and will not be applied if a new container is used."],
-	["AET Loadout Handler", "Inventory Handling"],
+	["Medic Equipment To Add", "The provided array of item class names and numbers is what will be used to add to any medic's loadout post initialization. The container's (decided by ""Medic Loadout Container"" CBA setting) space will be increased to accommodate the addition of all new items. This space increase will be special to the worn container item only, and will not be applied if a new container is used."],
+	["AET Loadout Handler", "Trait Based Inventory Handling"],
 	"[
 		[""ACE_fieldDressing"", 0],
 		[""ACE_elasticBandage"", 25],
@@ -271,11 +299,73 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QSET(engineerLoadout),
+	"EDITBOX",
+	["Engineer Equipment To Add", "The provided array of item class names and numbers is what will be used to add to any engineer's loadout post initialization. The container's (decided by ""Engineer Loadout Container"" CBA setting) space will be increased to accommodate the addition of all new items. This space increase will be special to the worn container item only, and will not be applied if a new container is used."],
+	["AET Loadout Handler", "Trait Based Inventory Handling"],
+	"[
+		[""ToolKit"", 1],
+		[""ACE_wirecutter"", 1]
+	]",
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(explosiveSpecialistLoadout),
+	"EDITBOX",
+	["Explosive Specialist Equipment To Add", "The provided array of item class names and numbers is what will be used to add to any explosive specialist's loadout post initialization. The container's (decided by ""Explosive Specialist Loadout Container"" CBA setting) space will be increased to accommodate the addition of all new items. This space increase will be special to the worn container item only, and will not be applied if a new container is used."],
+	["AET Loadout Handler", "Trait Based Inventory Handling"],
+	"[
+		[""ACE_DefusalKit"", 1],
+		[""ace_marker_flags_green"", 10],
+		[""ace_marker_flags_red"", 10]
+	]",
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
 	QSET(medicLoadoutContainer),
 	"LIST",
 	["Medic Loadout Container", "The medic's equipment / loadout based on the ""Medic Equipment To Add"" CBA setting will added to the chosen container."],
-	["AET Loadout Handler", "Inventory Handling"],
+	["AET Loadout Handler", "Trait Based Inventory Handling"],
 	[["Uniform", "Vest", "Backpack"], ["Uniform", "Vest", "Backpack"], 2],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(engineerLoadoutContainer),
+	"LIST",
+	["Engineer Loadout Container", "The engineer's equipment / loadout based on the ""Engineer Equipment To Add"" CBA setting will added to the chosen container."],
+	["AET Loadout Handler", "Trait Based Inventory Handling"],
+	[["Uniform", "Vest", "Backpack"], ["Uniform", "Vest", "Backpack"], 2],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(explosiveSpecialistLoadoutContainer),
+	"LIST",
+	["Explosive Specialist Loadout Container", "The explosive specialist's equipment / loadout based on the ""Explosive Specialist Equipment To Add"" CBA setting will added to the chosen container."],
+	["AET Loadout Handler", "Trait Based Inventory Handling"],
+	[["Uniform", "Vest", "Backpack"], ["Uniform", "Vest", "Backpack"], 2],
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
+	QSET(allowArsenalOverfilling),
+	"CHECKBOX",
+	["Allow Overfill On Container Switch (ACE Arsenal)", "If enabled the player's container (uniform, vest, backpack) in the arsenal will have its space increased when switching from a larger container to a smaller container to fit all items currently in the container."],
+	["AET Loadout Handler", "Other"],
+	true,
 	1,
 	{},
 	false

@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15109.66,51.409065,17237.061};
-		dir[]={0.77904391,-0.42609817,0.45995605};
-		up[]={0.36692107,0.90467626,0.21663409};
-		aside[]={0.50842059,-7.9255551e-07,-0.86112869};
+		pos[]={14847.623,38.481964,16428.201};
+		dir[]={-0.27224478,-0.64570951,-0.71340179};
+		up[]={-0.23021859,0.76358306,-0.60327458};
+		aside[]={-0.93428165,1.4901161e-08,0.35653585};
 	};
 };
 binarizationWanted=0;
@@ -272,6 +272,7 @@ class Mission
 					{
 						rank="SERGEANT";
 						init="this allowDamage false;";
+						name="P_1";
 						isPlayer=1;
 					};
 					id=29;
@@ -279,6 +280,32 @@ class Mission
 					class CustomAttributes
 					{
 						class Attribute0
+						{
+							property="ENH_unitTraits_medic";
+							expression="[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ENH_unitTraits_engineer";
+							expression="[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
 						{
 							property="speaker";
 							expression="_this setspeaker _value;";
@@ -291,7 +318,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute1
+						class Attribute3
 						{
 							property="pitch";
 							expression="_this setpitch _value;";
@@ -304,7 +331,20 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute4
+						{
+							property="ENH_unitTrait_explosiveSpecialist";
+							expression="[_this, ['ExplosiveSpecialist', _value]] remoteExec ['setUnitTrait', _this]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=1;
+								};
+							};
+						};
+						nAttributes=5;
 					};
 				};
 			};

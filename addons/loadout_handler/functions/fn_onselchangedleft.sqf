@@ -2,9 +2,11 @@
 #include "\a3\ui_f\hpp\defineResincl.inc"
 #include "\z\ace\addons\arsenal\defines.hpp"
 
+
 /*
- * Author: Alganthe, johnb43
+ * Author: Alganthe, johnb43, Redwan S.
  * Handles selection changes on the left panel.
+ * Modification done by Redwan S. overwrites the overfill prevention and adds other mechanics special to the Antistasi Event Team.
  *
  * Arguments:
  * 0: Left panel control <CONTROL>
@@ -70,6 +72,7 @@ switch (GVAR(currentLeftPanel)) do {
             if (_item != _currentWeapon) then {
                 // Get magazines that are compatible with the new weapon
                 private _compatibleMags = compatibleMagazines _item;
+				["diwako_unknownwp_addWeapon", _item] call CBA_fnc_serverEvent;
 
                 // Remove all magazines from the current weapon that aren't compatible with the new one
                 call _fnc_clearCurrentWeaponMags;
@@ -145,6 +148,7 @@ switch (GVAR(currentLeftPanel)) do {
             if (_item != _currentWeapon) then {
                 // Get magazines that are compatible with the new weapon
                 private _compatibleMags = compatibleMagazines _item;
+				["diwako_unknownwp_addWeapon", _item] call CBA_fnc_serverEvent;
 
                 // Remove all magazines from the current weapon that aren't compatible with the new one
                 call _fnc_clearCurrentWeaponMags;
@@ -222,6 +226,7 @@ switch (GVAR(currentLeftPanel)) do {
             if (_item != _currentWeapon) then {
                 // Get magazines that are compatible with the new weapon
                 private _compatibleMags = compatibleMagazines _item;
+				["diwako_unknownwp_addWeapon", _item] call CBA_fnc_serverEvent;
 
                 // Remove all magazines from the current weapon that aren't compatible with the new one
                 call _fnc_clearCurrentWeaponMags;
@@ -342,6 +347,24 @@ switch (GVAR(currentLeftPanel)) do {
                 // Remove any items that can't fit in the container (this prevents overloading)
 				if !(AET_loadout_handler_SET_allowArsenalOverfilling) then {
 	                [GVAR(center), uniformContainer GVAR(center)] call FUNC(preventOverfilling);
+				} else {
+					private _unitContainer = uniformContainer GVAR(center);
+					private _currentMaxLimit = maxLoad _unitContainer;
+					private _currentLoad = loadAbs _unitContainer;
+
+					if (_currentLoad > _currentMaxLimit) then {
+						["AET_loadout_handler_EH_setMaxLoad", [_unitContainer, _currentLoad]] call CBA_fnc_serverEvent;
+						[
+							{
+								(maxLoad (_this select 0)) == (_this select 2)
+							},
+							{
+								[] call ace_arsenal_fnc_refresh;
+							},
+							[GVAR(center), _currentLoad]
+						] call CBA_fnc_waitUntilAndExecute;
+						
+					};
 				};
 
                 GVAR(currentItems) set [IDX_CURR_UNIFORM, _item];
@@ -379,6 +402,24 @@ switch (GVAR(currentLeftPanel)) do {
                 // Remove any items that can't fit in the container (this prevents overloading)
 				if !(AET_loadout_handler_SET_allowArsenalOverfilling) then {
 	                [GVAR(center), vestContainer GVAR(center)] call FUNC(preventOverfilling);
+				} else {
+					private _unitContainer = vestContainer GVAR(center);
+					private _currentMaxLimit = maxLoad _unitContainer;
+					private _currentLoad = loadAbs _unitContainer;
+
+					if (_currentLoad > _currentMaxLimit) then {
+						["AET_loadout_handler_EH_setMaxLoad", [_unitContainer, _currentLoad]] call CBA_fnc_serverEvent;
+						[
+							{
+								(maxLoad (_this select 0)) == (_this select 2)
+							},
+							{
+								[] call ace_arsenal_fnc_refresh;
+							},
+							[GVAR(center), _currentLoad]
+						] call CBA_fnc_waitUntilAndExecute;
+						
+					};
 				};
 				
                 GVAR(currentItems) set [IDX_CURR_VEST, _item];
@@ -416,6 +457,24 @@ switch (GVAR(currentLeftPanel)) do {
                 // Remove any items that can't fit in the container (this prevents overloading)
 				if !(AET_loadout_handler_SET_allowArsenalOverfilling) then {
                 	[GVAR(center), backpackContainer GVAR(center)] call FUNC(preventOverfilling);
+				} else {
+					private _unitContainer = backpackContainer GVAR(center);
+					private _currentMaxLimit = maxLoad _unitContainer;
+					private _currentLoad = loadAbs _unitContainer;
+
+					if (_currentLoad > _currentMaxLimit) then {
+						["AET_loadout_handler_EH_setMaxLoad", [_unitContainer, _currentLoad]] call CBA_fnc_serverEvent;
+						[
+							{
+								(maxLoad (_this select 0)) == (_this select 2)
+							},
+							{
+								[] call ace_arsenal_fnc_refresh;
+							},
+							[GVAR(center), _currentLoad]
+						] call CBA_fnc_waitUntilAndExecute;
+						
+					};
 				};
 
                 GVAR(currentItems) set [IDX_CURR_BACKPACK, _item];
