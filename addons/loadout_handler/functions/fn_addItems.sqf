@@ -5,23 +5,39 @@ Authors:
 	Redwan S. / Nomas
 
 Description:
-    This function is used to handle adding the items to a container and ensuring that there is enough space by increasing max load of the container.
+    This function is used to handle adding the items to a container and ensuring that there is enough space by increasing max load of the container if the initial space is not enough.
 
 Arguments:
-	0. <Object> The container that items will be added to and max load of will be increase
+	0. <Object> The unit that items will be added to its container.
 
-	1. <String> 
+	1. <Object> The container that items will be added to and max load of will be increase.
+
+	2. <String> The container that the item will be added to, can be "Uniform", "Vest", or "Backpack".
+
+	3. <Array> Contains arrays of the items to be added and the amount of each item.
+
+		3.0. <Array>
+		
+			3.0.0. <String> Class name of the item to be added.
+
+			3.0.1. <Number> Amount of the item to be added.
 Return Value:
 	<Nil>
 
 Example:
-	[player] call AET_loadout_handler_addItems;
+	[
+		player,
+		uniformContainer player,
+		"Uniform",
+		[["ACE_EarPlugs", 1], ["ACE_elasticBandage", 10], ["HandGrenade", 3]]
+	] call AET_loadout_handler_addItems;
 */
 
 params [
+	["_unit", objNull, [objNull]],
 	["_unitContainer", objNull, [objNull]],
 	["_containerType", "Backpack", [""]],
-	["_loadoutArray", [], [[]]]
+	["_loadoutArray", "", [""]]
 ];
 
 private _containerCommand = switch (_containerType) do {
@@ -57,21 +73,24 @@ if (_neededMaxLimit > _currentMaxLimit) then {
 	[QGVAR(EH_setMaxLoad), [_unitContainer, _neededMaxLimit]] call CBA_fnc_serverEvent;
 };
 
+AET_TEST = [_unit, _itemsToAdd, _containerCommand];
+
 // Function to add items to the container
 private _addItemsFunc = {
 	params ["_unit", "_items", "_command"];
 	{
-		_unit call compile format ["%1 %2", _command, _x]
+		call compile format ["_unit %1 ""%2""", _command, _x];
 	} forEach _items;
 };
 
 // If container size change is needed, wait until it updates before adding items
 if (_neededMaxLimit > _currentMaxLimit) then {
 	[{
-		(maxLoad (_this select 0)) == (_this select 2)
+		maxLoad (_this#1) == (_this#5)
 	}, {
-		(_this select 0) call (_this select 3) select [1, _this select 1];
-	}, [_unit, _itemsToAdd, _neededMaxLimit, _addItemsFunc, _containerCommand], 10] call CBA_fnc_waitUntilAndExecute;
+		params ["_unit", "_unitContainer", "_containerCommand", "_itemsToAdd", "_addItemsFunc", "_neededMaxLimit"];
+		[_this#0, _this#3, _this#2] call _this#4;
+	}, [_unit, _unitContainer, _containerCommand, _itemsToAdd, _addItemsFunc, _neededMaxLimit], 10] call CBA_fnc_waitUntilAndExecute;
 } else {
 	[_unit, _itemsToAdd, _containerCommand] call _addItemsFunc;
 };
