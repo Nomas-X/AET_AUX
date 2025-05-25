@@ -20,7 +20,7 @@ Example:
 
 
 private _code = {
-	private _cond = hasInterface && { SET(enabled) && { !( SET(disable_in_editor) && { is3DENPreview } ) }};
+	private _cond = hasInterface && { SET(enabled) && { !( SET(disable_in_editor) && { is3DENPreview } ) && { (call BIS_fnc_admin) isEqualTo 0 }}};
 	
 	if _cond then { 
 		[QGVAR(EH_request), ["REQUEST", player]] call CBA_fnc_serverEvent; 
