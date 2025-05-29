@@ -38,7 +38,7 @@ jobs:
             itemId: '3349453883'
             contentPath: './@AET_AUX-${{ env.VERSION }}'
             changelog: |
-              https://github.com/Nomas-X/AET_AUX/releases/tag/v${{ env.VERSION }}
+              https://github.com/Nomas-X/AET_AUX/releases/tag/${{ env.VERSION }}
 
               ${{ github.event.release.body }}
           env:
