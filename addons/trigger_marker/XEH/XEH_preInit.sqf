@@ -19,7 +19,7 @@
 [
 	QSET(visibilityMode),
 	"LIST",
-	["Mark Triggers For", "Only marks the triggers for the specified group."],
+	["Allow Trigger Marker For", "Only marks the triggers if the user is in the specified group."],
 	["AET Trigger Marker"],
 	[["ADMIN", "ZEUS", "EVERYONE"], ["Admin", "Zeus & Admin", "Everyone"], 1],
 	1,
