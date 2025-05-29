@@ -73,8 +73,6 @@ if (_neededMaxLimit > _currentMaxLimit) then {
 	[QGVAR(EH_setMaxLoad), [_unitContainer, _neededMaxLimit]] call CBA_fnc_serverEvent;
 };
 
-AET_TEST = [_unit, _itemsToAdd, _containerCommand];
-
 // Function to add items to the container
 private _addItemsFunc = {
 	params ["_unit", "_items", "_command"];
