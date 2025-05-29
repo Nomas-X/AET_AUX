@@ -19,8 +19,13 @@ Example:
 private _code = {
 	
 	if (hasInterface) then {
-		
-		GVAR(triggerMarkingDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call " + QFUNC(mark) + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call " + QFUNC(demark) + ";'>Remove Trigger Markers!</execute>"]];
+		[
+			{player diarySubjectExists "AntistasiEventTeamActions"},
+			{
+				GVAR(triggerMarkingDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["Trigger Marking Request", "<execute expression='[] call " + QFUNC(mark) + ";'>Show / Update Trigger Markers!</execute><br/><br/><execute expression='[] call " + QFUNC(demark) + ";'>Remove Trigger Markers!</execute>"]];
+			},
+			[]
+		] call CBA_fnc_waitUntilAndExecute;
 	};
 };
 
