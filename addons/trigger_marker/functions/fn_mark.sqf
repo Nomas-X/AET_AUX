@@ -20,7 +20,7 @@ Example:
 
 if !([] call FUNC(checkCondition)) exitWith {systemChat "You do not have the required permission to use this action!"};
 
-[] call FUNC(demarkTriggers);
+[] call FUNC(demark);
 
 GVAR(triggerMarkers) = [];
 
