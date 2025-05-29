@@ -49,6 +49,17 @@
 ] call CBA_fnc_addSetting;
 
 [
+	QSET(disable_for_admin),
+	"CHECKBOX",
+	["Disable For Admin", "Controls if the disclaimer is shown for the admin."],
+	["AET Disclaimer", "Disclaimer"],
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
+
+[
 	QSET(text),
 	"EDITBOX",
 	["Disclaimer Text", "This is the string used with the cutText command in the disclaimer."],
