@@ -15,7 +15,6 @@ If you would like to report a bug or suggest a new feature then please do so usi
 * **friendly_fire_notifications:** This addon contains the A3-FF-Punishment-Phantom friendly fire notification system. For more details check out their [Github](https://github.com/official-antistasi-community/A3-FF-Punishment-Phantom).<br/><br/>
 * **loadout_handler:** This addon contains the functions and options used to handle player loadouts on mission start and respawn.<br/><br/>
 * **main:** This addon contains and handles the macros and main stringtable.<br/><br/>
-* **plan_importer:** This addon contains the functions that allows the importing of plans from [PLANOPS](https://plan-ops.fr).<br/><br/>
 * **sog_modifications:** This addon contains modifications or addtions for the [Arma 3 Creator DLC: S.O.G. Prairie Fire](https://store.steampowered.com/app/1227700/Arma_3_Creator_DLC_SOG_Prairie_Fire/) such as larger size belts for the MG42.<br/><br/>
 * **start_in_vehicle:** This addon contains the module and functions that handles starting the player in vehicle on mission start, or later into the mission.<br/><br/>
 * **trigger_marker:** This addon contains the functions that allows admins and game masters (Zeus) to mark trigger names, locations and areas on their map.<br/><br/>
