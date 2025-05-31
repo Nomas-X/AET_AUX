@@ -62,7 +62,7 @@ private _code = {
 
 	if (isServer) then {
 		private _condition = _logic getVariable ["TerminateCondition", false];
-		if ( _logic getVariable ["AllowDamage", false] ) then { _vehicle allowDamage false };
+		if ( _logic getVariable ["AllowDamage", false] ) then { [_vehicle, false] remoteExec ["allowDamage", 0] };
 		if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle, true] call EFUNC(common,lockAISeats) };
 		if (_condition isNotEqualTo "") then {
 			if (_condition select [0, 1] isEqualTo "{") then {
