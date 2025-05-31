@@ -1,7 +1,7 @@
 class Headgear_Base_F;
 class a3a_g_headgear_base: Headgear_Base_F
 {
-    author=AUTHOR;
+    author = "Tiny [AET] - dustypeek [A3A-DEV]";
     scope = 0;
     ScopeArsenal = 0;
     ScopeCurator = 0;

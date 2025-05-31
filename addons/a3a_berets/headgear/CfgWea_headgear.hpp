@@ -18,7 +18,7 @@ class H_Beret_02: H_Beret_blk
 
 class a3a_g_beret_01: H_Beret_02
 {
-	author=AUTHOR;
+	author = "Tiny [AET] - dustypeek [A3A-DEV]";
 	scope = 2;
 	ScopeArsenal = 2;
 	ScopeCurator = 0;
@@ -30,7 +30,7 @@ class a3a_g_beret_01: H_Beret_02
 
 class a3a_g_beret_02: H_Beret_02
 {
-	author=AUTHOR;
+	author = "Tiny [AET] - dustypeek [A3A-DEV]";
 	scope = 2;
 	ScopeArsenal = 2;
 	ScopeCurator = 0;
@@ -42,7 +42,7 @@ class a3a_g_beret_02: H_Beret_02
 
 class a3a_g_beret_03: H_Beret_02
 {
-	author=AUTHOR;
+	author = "Tiny [AET] - dustypeek [A3A-DEV]";
 	scope = 2;
 	ScopeArsenal = 2;
 	ScopeCurator = 0;
@@ -54,7 +54,7 @@ class a3a_g_beret_03: H_Beret_02
 
 class a3a_g_beret_04: H_Beret_02
 {
-	author=AUTHOR;
+	author = "Tiny [AET] - dustypeek [A3A-DEV]";
 	scope = 2;
 	ScopeArsenal = 2;
 	ScopeCurator = 0;
