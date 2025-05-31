@@ -33,13 +33,13 @@ params [
 	{
 		params ["_unit", "_ignoreOrderOfFunctions"];
 		{
-			private _isExcludedVariableName = format [QGVAR(exclude%1Equipment), _x];
-			private _loadoutArray = call compile format[QSET(%1Loadout), toLower(_x)];
+			private _isExcludedVariableName = format [QGVAR(exclude%1Equipment), _x#0];
+			private _loadoutArray = call compile format[QSET(%1Loadout), toLower(_x#0)];
 			private _containerType = call compile format [QSET(%1LoadoutContainer), toLower(_x)];
 			private _unitContainer = call compile format ["%1Container _unit", _containerType];
 
 			if (
-				!(_unit getUnitTrait _x)
+				!(_unit getUnitTrait _x#0 || { _unit getVariable [_x#1, 0] > 0 })
 				||
 				{ (_unit getVariable [_isExcludedVariableName, false])
 				||
@@ -52,7 +52,7 @@ params [
 
 			[_unit, _unitContainer, _containerType, _loadoutArray] call FUNC(addItems);
 			
-		} forEach ["Medic", "Engineer", "ExplosiveSpecialist"];
+		} forEach [["Medic", "ace_medical_medicClass "], ["Engineer", "ace_isEngineer "], ["ExplosiveSpecialist", "ace_isEOD "]];
 
 		if !(_ignoreOrderOfFunctions) then {
 			GVAR(orderOfFunctions) = 3;
