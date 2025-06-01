@@ -35,7 +35,7 @@ params [
 		{
 			private _isExcludedVariableName = format [QGVAR(exclude%1Equipment), _x#0];
 			private _loadoutArray = call compile format[QSET(%1Loadout), toLower(_x#0)];
-			private _containerType = call compile format [QSET(%1LoadoutContainer), toLower(_x)];
+			private _containerType = call compile format [QSET(%1LoadoutContainer), toLower(_x#0)];
 			private _unitContainer = call compile format ["%1Container _unit", _containerType];
 
 			if (
