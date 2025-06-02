@@ -40,7 +40,7 @@ private _crew = fullCrew [_vehicle, "", !_lockState];
 			case ("cargo"): {_vehicle lockCargo [_x # 2, _lockState]};
 			case ("commander");
 			case ("turret");
-			case ("gunner"); {_vehicle lockTurret [_x # 3, _lockState]};
+			case ("gunner"): {_vehicle lockTurret [_x # 3, _lockState]};
 		};
 	};
 } forEach _crew;
