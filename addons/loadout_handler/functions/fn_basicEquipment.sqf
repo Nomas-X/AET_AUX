@@ -31,7 +31,7 @@ if (SET(radiosForEveryone_enabled) && {(_tfarCompatibleRadios findIf {_x in (_un
 	_unit linkItem SET(radiosForEveryone_className);
 };
 
-if (SET(radioProgrammersIfNeeded_enabled) && {(_programmerRequiredRadios findIf {_x in (_unit getSlotItemName 611)}) == -1}) then {
+if (SET(radioProgrammersIfNeeded_enabled) && {(_programmerRequiredRadios findIf {_x isEqualTo (_unit getSlotItemName 611)}) != -1}) then {
 
 	_unit linkItem "TFAR_microdagr";
 } else {
