@@ -31,6 +31,7 @@ if !(_activated) exitWith {false};
 
 // Attribute values are saved in module's object space under their class names
 private _code = {
+	systemChat "FIRED!";
 	private _vehicle = missionNamespace getVariable [(_logic getVariable ["Vehicle", ""]), "404"];
 	if (_vehicle isEqualTo "404") exitWith {systemChat "[Start In Vehicle] Vehicle not defined!"};
 	
