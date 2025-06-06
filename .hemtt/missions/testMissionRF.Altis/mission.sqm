@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14830.856,34.021046,16375.431};
-		dir[]={0.41211918,-0.41052905,0.81340253};
-		up[]={0.18554296,0.91184747,0.36620745};
-		aside[]={0.89203787,1.4901161e-08,-0.45196059};
+		pos[]={14836.558,22.146603,16407.014};
+		dir[]={0.30885142,-0.39321625,0.86602068};
+		up[]={0.1320854,0.91944599,0.37036803};
+		aside[]={0.94189394,7.4505806e-09,-0.33591032};
 	};
 };
 binarizationWanted=0;
@@ -31,9 +31,6 @@ sourceName="testmissionrf";
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Modules_F_Curator_Curator",
-	"Characters_f_lxWS",
-	"vehicles_1_F_lxWS_APC_Wheeled_02",
 	"A3_Weapons_F_Rifles_MX",
 	"A3_Weapons_F_Acc",
 	"ace_realisticnames",
@@ -45,10 +42,17 @@ addons[]=
 	"A3_Weapons_F_Pistols_P07",
 	"ace_nightvision",
 	"ace_hearing",
-	"ace_grenades",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"ace_attach",
+	"ace_chemlights",
 	"A3_Weapons_F_Mark",
 	"ace_reload",
 	"A3_Weapons_F_Mark_Acc",
+	"A3_Modules_F_Curator_Curator",
+	"Characters_f_lxWS",
+	"vehicles_1_F_lxWS_APC_Wheeled_02",
+	"ace_grenades",
 	"A3_Ui_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Modules_F",
@@ -60,7 +64,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=22;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -70,124 +74,145 @@ class AddonsMetaData
 		};
 		class Item1
 		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="Characters_f_lxWS";
-			name="Arma 3 Creator DLC: Western Sahara - Characters and Clothing";
-			author="Rotators Collective";
-			url="https://sahara.rotators.net/";
-		};
-		class Item3
-		{
-			className="Vehicles_F_lxWS";
-			name="Arma 3 Creator DLC: Western Sahara - Vehicles";
-			author="Rotators Collective";
-			url="https://sahara.rotators.net/";
-		};
-		class Item4
-		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item2
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item6
+		class Item3
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item7
+		class Item4
 		{
 			className="ace_smallarms";
 			name="ACE3 - Small Arms";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item8
+		class Item5
 		{
 			className="ace_ballistics";
 			name="ACE3 - Ballistics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item9
+		class Item6
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item7
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item8
 		{
-			className="ace_grenades";
-			name="ACE3 - Grenades";
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item9
+		{
+			className="ace_attach";
+			name="ACE3 - Attach";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item10
+		{
+			className="ace_chemlights";
+			name="ACE3 - Chemlights";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item11
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
+		class Item13
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 		class Item14
+		{
+			className="Characters_f_lxWS";
+			name="Arma 3 Creator DLC: Western Sahara - Characters and Clothing";
+			author="Rotators Collective";
+			url="https://sahara.rotators.net/";
+		};
+		class Item15
+		{
+			className="Vehicles_F_lxWS";
+			name="Arma 3 Creator DLC: Western Sahara - Vehicles";
+			author="Rotators Collective";
+			url="https://sahara.rotators.net/";
+		};
+		class Item16
+		{
+			className="ace_grenades";
+			name="ACE3 - Grenades";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item17
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item18
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item19
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item20
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item21
 		{
 			className="AET_start_in_vehicle";
 			name="AET Auxiliaries Start in Vehicle";
@@ -198,8 +223,8 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"ws",
-	"Mark"
+	"Mark",
+	"ws"
 };
 randomSeed=1951784;
 class ScenarioData
@@ -274,6 +299,166 @@ class Mission
 						init="this allowDamage false;";
 						name="P_1";
 						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="arifle_MX_ACO_pointer_F";
+								optics="optic_Aco";
+								flashlight="acc_pointer_IR";
+								firemode="arifle_MX_ACO_pointer_F:Single";
+								class primaryMuzzleMag
+								{
+									name="30Rnd_65x39_caseless_mag";
+									ammoLeft=30;
+								};
+							};
+							class handgun
+							{
+								name="hgun_P07_F";
+								class primaryMuzzleMag
+								{
+									name="16Rnd_9x21_Mag";
+									ammoLeft=17;
+								};
+							};
+							class binocular
+							{
+								name="Rangefinder";
+							};
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam_tshirt";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=2;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_Chestrig_rgr";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=7;
+									class Item0
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=5;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="16Rnd_9x21_Mag";
+										count=2;
+										ammoLeft=17;
+									};
+									class Item2
+									{
+										name="HandGrenade";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="B_IR_Grenade";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item5
+									{
+										name="SmokeShellGreen";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item6
+									{
+										name="Chemlight_green";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_Kitbag_mcamo";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="100Rnd_65x39_caseless_mag";
+										count=2;
+										ammoLeft=100;
+									};
+									class Item1
+									{
+										name="100Rnd_65x39_caseless_mag_Tracer";
+										count=2;
+										ammoLeft=100;
+									};
+									class Item2
+									{
+										name="130Rnd_338_Mag";
+										count=2;
+										ammoLeft=130;
+									};
+								};
+								class ItemCargo
+								{
+									items=4;
+									class Item0
+									{
+										name="optic_tws_mg";
+										count=1;
+									};
+									class Item1
+									{
+										name="bipod_01_F_snd";
+										count=1;
+									};
+									class Item2
+									{
+										name="muzzle_snds_338_sand";
+										count=1;
+									};
+									class Item3
+									{
+										name="muzzle_snds_H";
+										count=1;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							hmd="NVGoggles";
+							headgear="H_HelmetB_light";
+						};
 					};
 					id=29;
 					type="B_soldier_AAR_F";
@@ -281,27 +466,27 @@ class Mission
 					{
 						class Attribute0
 						{
-							property="ENH_unitTraits_medic";
-							expression="[_this, ['Medic', _value]] remoteExec ['setUnitTrait', _this]";
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
 							class Value
 							{
 								class data
 								{
-									singleType="BOOL";
+									singleType="SCALAR";
 									value=1;
 								};
 							};
 						};
 						class Attribute1
 						{
-							property="ENH_unitTraits_engineer";
-							expression="[_this, ['Engineer', _value]] remoteExec ['setUnitTrait', _this]";
+							property="ace_isEngineer";
+							expression="if !(_value == ([0, 1] select (_this getUnitTrait 'engineer')) || {_value == -1}) then {_this setVariable ['ace_isEngineer', _value, true]}";
 							class Value
 							{
 								class data
 								{
-									singleType="BOOL";
-									value=1;
+									singleType="SCALAR";
+									value=2;
 								};
 							};
 						};
@@ -333,8 +518,8 @@ class Mission
 						};
 						class Attribute4
 						{
-							property="ENH_unitTrait_explosiveSpecialist";
-							expression="[_this, ['ExplosiveSpecialist', _value]] remoteExec ['setUnitTrait', _this]";
+							property="ace_isEOD";
+							expression="_this setVariable ['ACE_isEOD', _value, true]";
 							class Value
 							{
 								class data
@@ -609,20 +794,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_disableAI_path";
-							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item1
@@ -667,20 +839,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_disableAI_path";
-							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item2
@@ -725,20 +884,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_disableAI_path";
-							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 				class Item3
@@ -783,20 +929,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_disableAI_path";
-							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 			};
@@ -1818,20 +1951,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_disableAI_path";
-							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 			};
@@ -1890,20 +2010,7 @@ class Mission
 								};
 							};
 						};
-						class Attribute2
-						{
-							property="ENH_disableAI_path";
-							expression="if _value then {[_this, 'PATH'] remoteExec ['disableAI', _this]}";
-							class Value
-							{
-								class data
-								{
-									singleType="BOOL";
-									value=1;
-								};
-							};
-						};
-						nAttributes=3;
+						nAttributes=2;
 					};
 				};
 			};
