@@ -33,26 +33,57 @@ params [
 	{
 		params ["_unit", "_ignoreOrderOfFunctions"];
 		{
-			private _isExcludedVariableName = format [QGVAR(exclude%1Equipment), _x#0];
-			private _loadoutArray = call compile format[QSET(%1Loadout), toLower(_x#0)];
-			private _containerType = call compile format [QSET(%1LoadoutContainer), toLower(_x#0)];
-			private _unitContainer = call compile format ["%1Container _unit", _containerType];
+			private _loadoutArray = "[]";
+			private _unitContainer = objNull;
+			private _containerType = "";
+			private _hasTrait = false;
+			private _isExcludedVariableName = format [QGVAR(exclude%1Equipment), _x];
+			
+			switch (_x) do {
+				case "Medic": {
+					_loadoutArray = SET(medicLoadout);
+					_containerType = SET(medicLoadoutContainer);
+					_hasTrait = [_unit] call ace_common_fnc_isMedic;
+				};
+				case "Engineer": {
+					_loadoutArray = SET(engineerLoadout);
+					_containerType = SET(engineerLoadoutContainer);
+					_hasTrait = [_unit] call ace_common_fnc_isEngineer;
+				};
+				case "explosiveSpecialist": {
+					_loadoutArray = SET(explosiveSpecialistLoadout);
+					_containerType = SET(explosiveSpecialistLoadoutContainer);
+					_hasTrait = [_unit] call ace_common_fnc_isEOD;
+				};
+			};
+
+			switch (_containerType) do {
+				case "Backpack": {_unitContainer = backpackContainer _unit;};
+				case "Vest": {_unitContainer = vestContainer _unit;};
+				case "Uniform": {_unitContainer = uniformContainer _unit;};
+			};
 
 			if (
-				!(_unit getUnitTrait _x#0 || { _unit getVariable [_x#1, 0] > 0 })
+				!(_hasTrait)
 				||
-				{ (_unit getVariable [_isExcludedVariableName, false])
-				||
-				{ (isNull _unitContainer)
-				||
-				{ (_loadoutArray isEqualTo "") } } }
+				{
+					(_unit getVariable [_isExcludedVariableName, false])
+					||
+					{
+						(isNull _unitContainer)
+						||
+						{
+							(_loadoutArray isEqualTo "" || {_loadoutArray isEqualTo "[]"})
+						}
+					}
+				}
 			) then {
 				continue;
 			};
 
 			[_unit, _unitContainer, _containerType, _loadoutArray] call FUNC(addItems);
 			
-		} forEach [["Medic", "ace_medical_medicClass "], ["Engineer", "ace_isEngineer "], ["ExplosiveSpecialist", "ace_isEOD "]];
+		} forEach ["Medic", "Engineer", "explosiveSpecialist"];
 
 		if !(_ignoreOrderOfFunctions) then {
 			GVAR(orderOfFunctions) = 3;
