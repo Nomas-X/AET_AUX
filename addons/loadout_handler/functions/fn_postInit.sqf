@@ -24,7 +24,6 @@ private _code = {
 
 		[player] call FUNC(basicEquipment);
 		[player] call FUNC(containerBasedEquipment);
-		[player] call FUNC(traitBasedEquipment);
 
 		player addEventHandler ["Respawn", {
 			params ["_unit", "_corpse"];
@@ -35,7 +34,6 @@ private _code = {
 				
 				[_unit] call FUNC(basicEquipment);
 				[_unit] call FUNC(containerBasedEquipment);
-				[_unit] call FUNC(traitBasedEquipment);
 			};
 		}];
 	};
