@@ -27,23 +27,12 @@ params [
 ];
 
 // Module specific behavior. Function can extract arguments from logic and use them.
-if !(_activated) exitWith {[format ["Module Activated: %1 | Units: %2 | Logic: %3 | For: %4", _activated, _units, _logic, player]] remoteExec ["diag_log"]; false};
+if !(_activated) exitWith {false};
 
 // Attribute values are saved in module's object space under their class names
 private _code = {
-	[format ["Code is called for: %1", player]] remoteExec ["diag_log"];
 	private _vehicle = missionNamespace getVariable [(_logic getVariable ["Vehicle", ""]), "404"];
-	if (_vehicle isEqualTo "404") exitWith {["[Start In Vehicle] Vehicle not defined!"] remoteExec ["systemChat"]};
-	
-	private _backupLZ = _logic getVariable ["BackupLZ", -1];
-	private _gvarReturn = missionNamespace getVariable [_backupLZ, "404"];
-	
-	_backupLZ = switch (true) do {
-		case ( _gvarReturn isNotEqualTo "404" ) : { getPosASL _gvarReturn };
-		case ( [0,0,0] isNotEqualTo getMarkerPos _backupLZ ) : { ATLToASL getMarkerPos _backupLZ };
-		case ( call compile _gvarReturn isEqualType [] ) : { call compile _backupLZ };
-		default { false };
-	};
+	if (_vehicle isEqualTo "404") exitWith {systemChat "[Start In Vehicle] Vehicle not defined!"};
 
 	if (isServer) then {
 		private _condition = _logic getVariable ["TerminateCondition", false];
@@ -57,11 +46,23 @@ private _code = {
 			};
 			[
 				_condition,
-				{deleteVehicle (_this # 0);[format ["Module Deleted"]] remoteExec ["diag_log"];},
+				{deleteVehicle (_this # 0);},
 				[_logic]
 			] call CBA_fnc_waitUntilAndExecute;
 		};
-	} else {
+	};
+	if (hasInterface) then {
+
+		private _backupLZ = _logic getVariable ["BackupLZ", -1];
+		private _gvarReturn = missionNamespace getVariable [_backupLZ, "404"];
+		
+		_backupLZ = switch (true) do {
+			case ( _gvarReturn isNotEqualTo "404" ) : { getPosASL _gvarReturn };
+			case ( [0,0,0] isNotEqualTo getMarkerPos _backupLZ ) : { ATLToASL getMarkerPos _backupLZ };
+			case ( call compile _gvarReturn isEqualType [] ) : { call compile _backupLZ };
+			default { false };
+		};
+		
 		[
 			QGVAR(EH_request),
 			[
