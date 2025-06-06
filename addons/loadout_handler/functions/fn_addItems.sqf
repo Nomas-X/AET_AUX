@@ -40,12 +40,6 @@ params [
 	["_loadoutArray", "", [""]]
 ];
 
-private _containerCommand = switch (_containerType) do {
-	case ("Backpack"): { "addItemToBackpack" };
-	case ("Vest"): { "addItemToVest" };
-	case ("Uniform"): { "addItemToUniform" };
-};
-
 // Retrieve and process the loadout
 private _containerItemsArray = parseSimpleArray _loadoutArray;
 {
@@ -75,20 +69,20 @@ if (_neededMaxLimit > _currentMaxLimit) then {
 
 // Function to add items to the container
 private _addItemsFunc = {
-	params ["_unit", "_items", "_command"];
+	params ["_unitContainer", "_items"];
 	{
-		call compile format ["_unit %1 ""%2""", _command, _x];
+		[_unitContainer, _x] call CBA_fnc_addItemCargo;
 	} forEach _items;
 };
 
 // If container size change is needed, wait until it updates before adding items
 if (_neededMaxLimit > _currentMaxLimit) then {
 	[{
-		maxLoad (_this#1) == (_this#5)
+		maxLoad (_this#0) == (_this#3)
 	}, {
 		params ["_unit", "_unitContainer", "_containerCommand", "_itemsToAdd", "_addItemsFunc", "_neededMaxLimit"];
-		[_this#0, _this#3, _this#2] call _this#4;
-	}, [_unit, _unitContainer, _containerCommand, _itemsToAdd, _addItemsFunc, _neededMaxLimit], 10] call CBA_fnc_waitUntilAndExecute;
+		[_this#0, _this#1] call _this#2;
+	}, [_unitContainer, _itemsToAdd, _addItemsFunc, _neededMaxLimit], 10] call CBA_fnc_waitUntilAndExecute;
 } else {
-	[_unit, _itemsToAdd, _containerCommand] call _addItemsFunc;
+	[_unitContainer, _itemsToAdd] call _addItemsFunc;
 };

@@ -20,7 +20,7 @@ Example:
 private _code = {
 	if (SET(enabled) && {hasInterface}) then {
 		// This variable is used to make sure that the loadout functions do not start adding items at the same time to avoid issues with the container space / size calculation.
-		GVAR(orderOfFunctions) = 0; 
+		GVAR(orderOfFunctions) = 0;
 
 		[player] call FUNC(basicEquipment);
 		[player] call FUNC(containerBasedEquipment);
