@@ -14,7 +14,6 @@ class CfgFunctions
 
 			class basicEquipment {};
 			class containerBasedEquipment {};
-			class traitBasedEquipment {};
 
         };
     };
