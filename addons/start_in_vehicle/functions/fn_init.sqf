@@ -27,14 +27,13 @@ params [
 ];
 
 // Module specific behavior. Function can extract arguments from logic and use them.
-if !(_activated) exitWith {false};
+if !(_activated) exitWith {[format ["Module Activated: %1 | Units: %2 | Logic: %3 | For: %4", _activated, _units, _logic, player]] remoteExec ["diag_log"]; false};
 
 // Attribute values are saved in module's object space under their class names
 private _code = {
-	systemChat "FIRED!";
+	[format ["Code is called for: %1", player]] remoteExec ["diag_log"];
 	private _vehicle = missionNamespace getVariable [(_logic getVariable ["Vehicle", ""]), "404"];
-	if (_vehicle isEqualTo "404") exitWith {systemChat "[Start In Vehicle] Vehicle not defined!"};
-	
+	if (_vehicle isEqualTo "404") exitWith {["[Start In Vehicle] Vehicle not defined!"] remoteExec ["systemChat"]};
 	
 	private _backupLZ = _logic getVariable ["BackupLZ", -1];
 	private _gvarReturn = missionNamespace getVariable [_backupLZ, "404"];
@@ -45,21 +44,6 @@ private _code = {
 		case ( call compile _gvarReturn isEqualType [] ) : { call compile _backupLZ };
 		default { false };
 	};
-
-	[
-		QGVAR(EH_request),
-		[
-			player,
-			[
-				_vehicle,
-				_backupLZ,
-				_logic getVariable ["Cargo", -1],
-				_logic getVariable ["Commander", -1],
-				_logic getVariable ["Gunner", -1],
-				_logic getVariable ["Driver", -1]
-			]
-		]
-	] call CBA_fnc_serverEvent;
 
 	if (isServer) then {
 		private _condition = _logic getVariable ["TerminateCondition", false];
@@ -73,10 +57,25 @@ private _code = {
 			};
 			[
 				_condition,
-				{deleteVehicle (_this # 0);},
+				{deleteVehicle (_this # 0);[format ["Module Deleted"]] remoteExec ["diag_log"];},
 				[_logic]
 			] call CBA_fnc_waitUntilAndExecute;
 		};
+	} else {
+		[
+			QGVAR(EH_request),
+			[
+				player,
+				[
+					_vehicle,
+					_backupLZ,
+					_logic getVariable ["Cargo", -1],
+					_logic getVariable ["Commander", -1],
+					_logic getVariable ["Gunner", -1],
+					_logic getVariable ["Driver", -1]
+				]
+			]
+		] call CBA_fnc_serverEvent;
 	};
 };
 
