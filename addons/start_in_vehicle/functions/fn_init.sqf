@@ -27,7 +27,7 @@ params [
 ];
 
 // Module specific behavior. Function can extract arguments from logic and use them.
-ZRN_LOG_MSG_2(Module Fired,_logic,_activated)
+ZRN_LOG_MSG_2(Module Fired,_logic,_activated);
 if !(_activated) exitWith {false};
 
 // Attribute values are saved in module's object space under their class names
@@ -36,7 +36,7 @@ if (_vehicle isEqualTo "404") exitWith {systemChat "[Start In Vehicle] Vehicle n
 
 if (isServer) then {
 	private _condition = _logic getVariable ["TerminateCondition", false];
-	ZRN_LOG_MSG_2(Server Check Entered,_logic,_condition)
+	ZRN_LOG_MSG_2(Server Check Entered,_logic,_condition);
 	if ( _logic getVariable ["AllowDamage", false] ) then { [_vehicle, false] remoteExec ["allowDamage", 0] };
 	if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle, true] call EFUNC(common,lockAISeats) };
 	if (_condition isNotEqualTo "") then {
@@ -55,7 +55,7 @@ if (isServer) then {
 
 
 if (hasInterface) then {
-	ZRN_LOG_MSG_2(Interface Check Entered,_logic, player)
+	ZRN_LOG_MSG_2(Interface Check Entered,_logic,player);
 	private _code = {
 		private _backupLZ = _logic getVariable ["BackupLZ", -1];
 		private _gvarReturn = missionNamespace getVariable [_backupLZ, "404"];
@@ -85,7 +85,7 @@ if (hasInterface) then {
 	
 	if (player in _units) then {
 		call _code;
-		ZRN_LOG_MSG_2(Player In Units,_logic,player)
+		ZRN_LOG_MSG_2(Player In Units,_logic,player);
 	} else {
 		// This is being done as a work around since the "Objects in synchronized triggers" is not working for whatever reason
 		if (_logic getVariable ["Units", -1] == "2") then {
