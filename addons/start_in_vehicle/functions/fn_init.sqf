@@ -27,32 +27,36 @@ params [
 ];
 
 // Module specific behavior. Function can extract arguments from logic and use them.
+ZRN_LOG_MSG_2(Module Fired,_logic,_activated)
 if !(_activated) exitWith {false};
 
 // Attribute values are saved in module's object space under their class names
-private _code = {
-	private _vehicle = missionNamespace getVariable [(_logic getVariable ["Vehicle", ""]), "404"];
-	if (_vehicle isEqualTo "404") exitWith {systemChat "[Start In Vehicle] Vehicle not defined!"};
+private _vehicle = missionNamespace getVariable [(_logic getVariable ["Vehicle", ""]), "404"];
+if (_vehicle isEqualTo "404") exitWith {systemChat "[Start In Vehicle] Vehicle not defined!"};
 
-	if (isServer) then {
-		private _condition = _logic getVariable ["TerminateCondition", false];
-		if ( _logic getVariable ["AllowDamage", false] ) then { [_vehicle, false] remoteExec ["allowDamage", 0] };
-		if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle, true] call EFUNC(common,lockAISeats) };
-		if (_condition isNotEqualTo "") then {
-			if (_condition select [0, 1] isEqualTo "{") then {
-				_condition = call compile _condition;
-			} else {
-				_condition = call compile ("{" + _condition + "}");
-			};
-			[
-				_condition,
-				{deleteVehicle (_this # 0);},
-				[_logic]
-			] call CBA_fnc_waitUntilAndExecute;
+if (isServer) then {
+	private _condition = _logic getVariable ["TerminateCondition", false];
+	ZRN_LOG_MSG_2(Server Check Entered,_logic,_condition)
+	if ( _logic getVariable ["AllowDamage", false] ) then { [_vehicle, false] remoteExec ["allowDamage", 0] };
+	if ( _logic getVariable ["LockAISeats", false] ) then { [_vehicle, true] call EFUNC(common,lockAISeats) };
+	if (_condition isNotEqualTo "") then {
+		if (_condition select [0, 1] isEqualTo "{") then {
+			_condition = call compile _condition;
+		} else {
+			_condition = call compile ("{" + _condition + "}");
 		};
+		[
+			_condition,
+			{deleteVehicle (_this # 0);},
+			[_logic]
+		] call CBA_fnc_waitUntilAndExecute;
 	};
-	if (hasInterface) then {
+};
 
+
+if (hasInterface) then {
+	ZRN_LOG_MSG_2(Interface Check Entered,_logic, player)
+	private _code = {
 		private _backupLZ = _logic getVariable ["BackupLZ", -1];
 		private _gvarReturn = missionNamespace getVariable [_backupLZ, "404"];
 		
@@ -78,24 +82,26 @@ private _code = {
 			]
 		] call CBA_fnc_serverEvent;
 	};
-};
+	
+	if (player in _units) then {
+		call _code;
+		ZRN_LOG_MSG_2(Player In Units,_logic,player)
+	} else {
+		// This is being done as a work around since the "Objects in synchronized triggers" is not working for whatever reason
+		if (_logic getVariable ["Units", -1] == "2") then {
 
-if (player in _units) then {
-	call _code;
-} else {
-	// This is being done as a work around since the "Objects in synchronized triggers" is not working for whatever reason
-	if (_logic getVariable ["Units", -1] == "2") then {
-
-		private _synchronizedTriggers = synchronizedObjects _logic;
-		{
-			if (_x isKindOf "EmptyDetector" && {player inArea _x}) then {
-				
-				call _code;
-				break;
-			};
-		} forEach _synchronizedTriggers;
+			private _synchronizedTriggers = synchronizedObjects _logic;
+			{
+				if (_x isKindOf "EmptyDetector" && {player inArea _x}) then {
+					
+					call _code;
+					break;
+				};
+			} forEach _synchronizedTriggers;
+		};
 	};
 };
+
 
 // Module function is executed by spawn command, so returned value is not necessary, but it is good practice.
 true;
