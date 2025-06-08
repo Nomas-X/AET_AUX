@@ -18,7 +18,21 @@ Example:
 	[] call AET_trigger_marker_fnc_mark;
 */
 
-if !([] call FUNC(checkCondition)) exitWith {systemChat "You do not have the required permission to use this action!"};
+if !(
+	( SET(visibilityMode) == 2 )
+	||
+	{ 
+		( SET(visibilityMode) == 1 && { !isNull ( getAssignedCuratorLogic player ) } )
+		||
+		{
+			( SET(visibilityMode) <= 1 && { IS_ADMIN } ) 
+			||
+			{ 
+				( player getVariable [QGVAR(alwaysAllowed), false] ) 
+			}
+		}
+	}
+) exitWith {systemChat "You do not have the required permission to use this action!"};
 
 [] call FUNC(demark);
 
