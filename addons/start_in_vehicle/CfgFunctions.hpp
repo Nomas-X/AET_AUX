@@ -8,8 +8,7 @@ class CfgFunctions
             file = PATH_TO_FUNC;
 
 			class preInit { preInit = 1; };
-
-			class init {};
+			
 			class moveInto {};
 
         };
