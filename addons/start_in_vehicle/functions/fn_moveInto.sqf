@@ -35,19 +35,18 @@ Example:
 
 params [
 	["_unit", objNull, [objNull]],
-	["_moduleInfo", "404", [[]]]
+	["_moveOptions", "404", [[]]]
 ];
 
-if ( _unit isEqualTo objNull || { _moduleInfo isEqualTo "404" } ) exitWith {};
+if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {};
 
-_moduleInfo params [
+_moveOptions params [
 	["_vehicle", objNull, [objNull]],
 	["_backupLZ", false, [[], false]],
 	["_cargo", true, [true]],
 	["_commander", false, [false]],
 	["_gunner", false, [false]],
-	["_driver", false, [false]],
-	["_terminateCondition", "", [""]]
+	["_driver", false, [false]]
 ];
 
 // Defining Fallback Code: If LZ is defined, TP to LZ - if false or boolean, leave player where they are
