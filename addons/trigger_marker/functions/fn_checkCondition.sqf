@@ -18,9 +18,15 @@ Example:
 */
 
 ( SET(visibilityMode) == "EVERYONE" )
+||
+{ 
+	( SET(visibilityMode) == "ZEUS" && { !isNull ( getAssignedCuratorLogic player ) } )
 	||
-{ ( SET(visibilityMode) == "ZEUS" && { !isNull ( getAssignedCuratorLogic player ) } )
-	||
-{ ( SET(visibilityMode) == "ADMIN" && { IS_ADMIN } ) 
-	||
-{ ( player getVariable [QGVAR(alwaysAllowed), false] ) } } }
+	{
+		( SET(visibilityMode) == "ADMIN" && { IS_ADMIN } ) 
+		||
+		{ 
+			( player getVariable [QGVAR(alwaysAllowed), false] ) 
+		}
+	}
+}
