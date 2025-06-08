@@ -18,8 +18,6 @@ Arguments:
  		1.5. <Boolean> Use gunner seats.
  
  		1.6. <Boolean> Use driver seat.
-		
-		1.7. <String> The module deletion condition. Unused in this function.
 
 Return Value:
 	None
@@ -43,7 +41,7 @@ Example:
 */
 params [
 	["_unit", objNull, [objNull]],
-	["_moduleInfo", [], [[]]]
+	["_moveOptions", [], [[]]]
 ];
 
 private _queue = missionNamespace getVariable [QGVAR(queue), "404"];
@@ -54,6 +52,6 @@ if (_queue isEqualTo "404") then {
 	ZRN_LOG_MSG(QUEUE Established and iteration requested);
 };
 
-_queue pushBack [_unit, _moduleInfo];
+_queue pushBack [_unit, _moveOptions];
 
-ZRN_LOG_MSG_2(ADDED TO QUEUE,_unit,_moduleInfo);
+ZRN_LOG_MSG_2(ADDED TO QUEUE,_unit,_moveOptions);
