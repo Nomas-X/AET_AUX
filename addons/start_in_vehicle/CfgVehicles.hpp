@@ -31,8 +31,8 @@ class CfgVehicles
 
 		function = QFUNC(init);	// Name of function triggered once conditions are met
 		functionPriority = 1;				// Execution priority, modules with lower number are executed first. 0 is used when the attribute is undefined
-		isGlobal = 1;						// 0 for server only execution, 1 for global execution, 2 for persistent global execution
-		isTriggerActivated = 1;				// 1 for module waiting until all synced triggers are activated
+		isGlobal = 2;						// 0 for server only execution, 1 for global execution, 2 for persistent global execution
+		isTriggerActivated = 0;				// 1 for module waiting until all synced triggers are activated
 		isDisposable = 0;					// 1 if modules is to be disabled once it is activated (i.e. repeated trigger activation will not work)
 		is3DEN = 0;							// 1 to run init function in Eden Editor as well
 		curatorCanAttach = 0;				// 1 to allow Zeus to attach the module to an entity
