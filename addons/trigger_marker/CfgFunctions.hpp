@@ -9,7 +9,6 @@ class CfgFunctions
 
             class postInit { postInit = 1; };
 
-			class checkCondition {};
 			class mark {};
 			class demark {};
 
