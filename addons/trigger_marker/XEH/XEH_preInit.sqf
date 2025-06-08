@@ -21,7 +21,7 @@
 	"LIST",
 	["Allow Trigger Marker For", "Only marks the triggers if the user is in the specified group."],
 	["AET Trigger Marker"],
-	[["ADMIN", "ZEUS", "EVERYONE"], ["Admin", "Zeus & Admin", "Everyone"], 1],
+	[[0, 1, 2], ["Admin", "Zeus & Admin", "Everyone"], 1],
 	1,
 	{},
 	true
