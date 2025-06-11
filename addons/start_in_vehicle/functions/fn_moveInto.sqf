@@ -53,7 +53,17 @@ _moveOptions params [
 private _fallback = { if !( _backupLZ isEqualType false ) then { _unit setPosASL _backupLZ; }; };
 
 // Check if Vehicle exists and is not destroyed.
-if ((isNull _vehicle) || {!alive _vehicle}) then _fallback else {
+if (
+	isNil "_vehicle"
+	||
+	{
+		isNull _vehicle
+		||
+		{
+			!alive _vehicle
+		}
+	}
+) then _fallback else {
 
 	// Check if we want and if we can move a unit in a seat, if not, check next, if nothing, use fallback.
 	switch (true) do {
