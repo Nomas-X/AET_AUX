@@ -38,7 +38,7 @@ params [
 	["_moveOptions", "404", [[]]]
 ];
 
-if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {};
+if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {[FUNC(request_iterate)] call CBA_fnc_execNextFrame;};
 
 _moveOptions params [
 	["_vehicle", objNull, [objNull]],
