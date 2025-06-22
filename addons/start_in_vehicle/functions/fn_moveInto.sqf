@@ -50,7 +50,11 @@ _moveOptions params [
 ];
 
 // Defining Fallback Code: If LZ is defined, TP to LZ - if false or boolean, leave player where they are
-private _fallback = { if !( _backupLZ isEqualType false ) then { _unit setPosASL _backupLZ; }; };
+private _fallback = { if !( _backupLZ isEqualType false ) then { 
+	_unit allowDamage false;
+	_unit setPosASL _backupLZ;
+	_unit allowDamage true; 
+}; };
 
 // Check if Vehicle exists and is not destroyed.
 if (

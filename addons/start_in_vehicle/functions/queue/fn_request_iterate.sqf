@@ -24,17 +24,7 @@ if (count _queue == 0) exitWith { missionNamespace setVariable [QGVAR(queue), ni
 private _unit = _queue#0#0;
 private _vehicle = _queue#0#1#0;
 
-if !(
-		!(isNull _vehicle)
-		||
-		{
-			_unit in _vehicle
-			||
-			{
-				isNull _unit
-			}
-		}
-	) exitWith { (_queue # 0) call FUNC(moveInto); };
+if !(_unit in _vehicle || {isNull _unit}) exitWith { (_queue # 0) call FUNC(moveInto); };
 
 _queue deleteAt 0;
 
