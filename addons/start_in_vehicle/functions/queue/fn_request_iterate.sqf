@@ -20,7 +20,6 @@ private _queue = missionNamespace getVariable [QGVAR(queue),"404"];
 if (_queue isEqualTo "404") exitWith {};
 if (count _queue == 0) exitWith { missionNamespace setVariable [QGVAR(queue), nil] };
 
-
 private _unit = _queue#0#0;
 private _vehicle = _queue#0#1#0;
 
