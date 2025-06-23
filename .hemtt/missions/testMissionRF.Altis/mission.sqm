@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14935.98,53.02195,16444.758};
-		dir[]={-0.62870216,-0.4552983,-0.63044143};
-		up[]={-0.32150078,0.89033908,-0.32239014};
-		aside[]={-0.7080912,-2.2165477e-07,0.70613575};
+		pos[]={14917.022,53.02195,16442.084};
+		dir[]={-0.88006693,-0.45838365,-0.1240461};
+		up[]={-0.45389885,0.88875461,-0.063977376};
+		aside[]={-0.13957447,-1.557637e-07,0.99022263};
 	};
 };
 binarizationWanted=0;
@@ -57,14 +57,13 @@ addons[]=
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Modules_F",
 	"ace_spectator",
-	"Vehicles_F_lxWS_APC_Wheeled_01",
-	"aet_start_in_vehicle"
+	"Vehicles_F_lxWS_APC_Wheeled_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=21;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -212,13 +211,6 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item21
-		{
-			className="AET_start_in_vehicle";
-			name="AET Auxiliaries Start in Vehicle";
-			author="Antistasi Event Team";
-			url="https://github.com/Nomas-X/aet/";
-		};
 	};
 };
 dlcs[]=
@@ -276,7 +268,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=26;
+		items=25;
 		class Item0
 		{
 			dataType="Group";
@@ -1725,154 +1717,6 @@ class Mission
 		};
 		class Item21
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={14830.261,17.92,16404.162};
-				angles[]={0,0.08726646,0};
-			};
-			name="AET_MOD";
-			areaSize[]={5,5,5};
-			areaIsRectangle=1;
-			id=80;
-			type="AET_Module_startInVehicle";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="AET_Module_startInVehicle_Commander";
-					expression="_this setVariable ['Commander',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="AET_Module_startInVehicle_lockAISeats";
-					expression="_this setVariable ['LockAISeats',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="AET_Module_startInVehicle_vehicle";
-					expression="_this setVariable ['Vehicle',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="AET_HELI_1";
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="AET_Module_startInVehicle_allowDamage";
-					expression="_this setVariable ['AllowDamage',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="AET_Module_startInVehicle_TerminateCondition";
-					expression="_this setVariable ['TerminateCondition',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="CBA_missionTime > 1500;";
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="AET_Module_startInVehicle_Cargo";
-					expression="_this setVariable ['Cargo',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="AET_Module_startInVehicle_backupLZ";
-					expression="_this setVariable ['BackupLZ',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="AET_LZ1";
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="AET_Module_startInVehicle_Gunner";
-					expression="_this setVariable ['Gunner',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="AET_Module_startInVehicle_Driver";
-					expression="_this setVariable ['Driver',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="AET_Module_startInVehicle_units";
-					expression="_this setVariable ['Units',_value,true];";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="2";
-						};
-					};
-				};
-				nAttributes=10;
-			};
-		};
-		class Item22
-		{
 			dataType="Trigger";
 			position[]={14845.96,17.93,16411.619};
 			class Attributes
@@ -1886,7 +1730,7 @@ class Mission
 			id=86;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item23
+		class Item22
 		{
 			dataType="Trigger";
 			position[]={14856.101,17.938726,16410.441};
@@ -1901,7 +1745,7 @@ class Mission
 			id=87;
 			type="EmptyDetectorArea10x10";
 		};
-		class Item24
+		class Item23
 		{
 			dataType="Group";
 			side="West";
@@ -1960,7 +1804,7 @@ class Mission
 			};
 			id=154;
 		};
-		class Item25
+		class Item24
 		{
 			dataType="Group";
 			side="West";
@@ -2018,37 +1862,6 @@ class Mission
 			{
 			};
 			id=156;
-		};
-	};
-	class Connections
-	{
-		class LinkIDProvider
-		{
-			nextID=2;
-		};
-		class Links
-		{
-			items=2;
-			class Item0
-			{
-				linkID=0;
-				item0=80;
-				item1=86;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item1
-			{
-				linkID=1;
-				item0=80;
-				item1=87;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
 		};
 	};
 };
