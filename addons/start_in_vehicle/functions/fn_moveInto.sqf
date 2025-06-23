@@ -38,9 +38,6 @@ params [
 	["_moveOptions", "404", [[]]]
 ];
 
-private _queue = missionNamespace getVariable [QGVAR(queue),"404"];
-_queue deleteAt 0;
-
 if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {
 
 	[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
