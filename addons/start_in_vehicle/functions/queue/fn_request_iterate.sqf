@@ -15,16 +15,25 @@
 * Public: No
 */
 
+params [["_isDoneMoving", false, [false]]];
+
 private _queue = missionNamespace getVariable [QGVAR(queue),"404"];
 
 if (_queue isEqualTo "404") exitWith {};
 if (count _queue == 0) exitWith { missionNamespace setVariable [QGVAR(queue), nil] };
+if (_isDoneMoving == true) exitWith {
+	_queue deleteAt 0;
+	[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
+};
 
 private _unit = _queue#0#0;
 private _vehicle = _queue#0#1#0;
+diag_log format ["ITERATION ATTEMPT: %1 | %2 | %3", _queue, _unit, _vehicle];
 
-if !(_unit in _vehicle || {isNull _unit}) exitWith { _queue deleteAt 0; (_queue # 0) call FUNC(moveInto); };
+if !(_unit in _vehicle || {isNull _unit}) exitWith { (_queue#0) call FUNC(moveInto); };
 
 _queue deleteAt 0;
+
+diag_log format ["QUEUE REMOVAL: %1 | %2 | %3", _queue, _unit, _vehicle];
 
 [FUNC(request_iterate)] call CBA_fnc_execNextFrame;

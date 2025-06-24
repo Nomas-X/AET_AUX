@@ -39,8 +39,7 @@ params [
 ];
 
 if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {
-
-	[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
+	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
 };
 
 _moveOptions params [
@@ -82,4 +81,6 @@ if (
 	};
 };
 
-[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
+[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
+
+diag_log format ["PLAYER MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
