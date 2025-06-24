@@ -43,13 +43,19 @@ if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {
 };
 
 _moveOptions params [
-	["_vehicle", objNull, [objNull]],
+	["_vehicle", "objNull", [""]],
 	["_backupLZ", false, [[], false]],
 	["_cargo", true, [true]],
 	["_commander", false, [false]],
 	["_gunner", false, [false]],
 	["_driver", false, [false]]
 ];
+
+if (isNil _vehicle) exitWith {
+	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
+};
+
+_vehicle = call compile _x;
 
 // Defining Fallback Code: If LZ is defined, TP to LZ - if false or boolean, leave player where they are
 private _fallback = { if !( _backupLZ isEqualType false ) then { 
@@ -60,14 +66,10 @@ private _fallback = { if !( _backupLZ isEqualType false ) then {
 
 // Check if Vehicle exists and is not destroyed.
 if (
-	isNil "_vehicle"
+	isNull _vehicle
 	||
 	{
-		isNull _vehicle
-		||
-		{
-			!alive _vehicle
-		}
+		!alive _vehicle
 	}
 ) then _fallback else {
 
