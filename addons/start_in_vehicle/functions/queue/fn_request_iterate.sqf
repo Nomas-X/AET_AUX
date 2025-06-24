@@ -30,7 +30,7 @@ private _unit = _queue#0#0;
 private _vehicle = _queue#0#1#0;
 diag_log format ["ITERATION ATTEMPT: %1 | %2 | %3", _queue, _unit, _vehicle];
 
-if !(_unit in _vehicle || {isNull _unit}) exitWith { (_queue#0) call FUNC(moveInto); };
+if !(isNull _unit) exitWith { (_queue#0) call FUNC(moveInto); };
 
 _queue deleteAt 0;
 
