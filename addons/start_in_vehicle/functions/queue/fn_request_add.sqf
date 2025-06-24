@@ -7,7 +7,7 @@ Arguments:
 	0. <Object> Unit to be added to the queue.
 
  	1. <Array>
- 		1.1. <Object> Vehicle that the unit will be moved into.
+ 		1.1. <String> Variable of the vehicle that the unit will be moved into.
  
  		1.2. <Array> or <Boolean> Position of the location the player will be teleported to incase it was not possible to move him into the vehicle or if the value is boolean then the player will not be teleported anywhere in that case.
  
@@ -26,7 +26,7 @@ Example:
 	[
 		player,
 		[
-			AET_HELI_1,
+			"AET_HELI_1",
 			[0,0,0],
 			true,
 			false,
