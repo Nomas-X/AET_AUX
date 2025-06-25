@@ -62,7 +62,7 @@ private _fallback = { if !( _backupLZ isEqualType false ) then {
 };};
 
 if (isNil _vehicle) exitWith {
-	call _feedback;
+	call _fallback;
 	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
 	diag_log format ["VAR DOES NOT EXIST: %1 | %2", _unit, _moveOptions];
 };

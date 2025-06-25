@@ -21,7 +21,7 @@ private _queue = missionNamespace getVariable [QGVAR(queue),"404"];
 
 if (_queue isEqualTo "404") exitWith {};
 if (count _queue == 0) exitWith { missionNamespace setVariable [QGVAR(queue), nil] };
-if (_isDoneMoving == true) exitWith {
+if (_isDoneMoving) exitWith {
 	_queue deleteAt 0;
 	[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
 };
