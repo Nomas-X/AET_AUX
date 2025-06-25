@@ -38,6 +38,8 @@ params [
 	["_moveOptions", "404", [[]]]
 ];
 
+diag_log format ["PLAYER MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
+
 if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {
 	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
 };
@@ -56,12 +58,16 @@ private _fallback = { if !( _backupLZ isEqualType false ) then {
 	_unit allowDamage false;
 	_unit setPosASL _backupLZ;
 	_unit allowDamage true; 
+	diag_log format ["FALLBACK!! FALLBACK!!: %1 | %2", _unit, _moveOptions];
 };};
 
 if (isNil _vehicle) exitWith {
 	call _feedback;
 	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
+	diag_log format ["VAR DOES NOT EXIST: %1 | %2", _unit, _moveOptions];
 };
+
+diag_log format ["VAR EXISTS....: %1 | %2", _unit, _moveOptions];
 
 _vehicle = call compile _vehicle;
 
@@ -75,6 +81,7 @@ if (
 	}
 ) then _fallback else {
 
+	diag_log format ["ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
 	// Check if we want and if we can move a unit in a seat, if not, check next, if nothing, use fallback.
 	switch (true) do {
 		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):    { moveOut _unit; [ _unit, _vehicle ] remoteExec ["moveInDriver", _unit, false]; };		
@@ -86,5 +93,3 @@ if (
 };
 
 [{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
-
-diag_log format ["PLAYER MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
