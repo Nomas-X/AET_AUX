@@ -51,18 +51,20 @@ _moveOptions params [
 	["_driver", false, [false]]
 ];
 
-if (isNil _vehicle) exitWith {
-	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
-};
-
-_vehicle = call compile _vehicle;
-
 // Defining Fallback Code: If LZ is defined, TP to LZ - if false or boolean, leave player where they are
 private _fallback = { if !( _backupLZ isEqualType false ) then { 
 	_unit allowDamage false;
 	_unit setPosASL _backupLZ;
 	_unit allowDamage true; 
-}; };
+};};
+
+if (isNil _vehicle) exitWith {
+	call _feedback;
+	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
+};
+
+_vehicle = call compile _vehicle;
+
 
 // Check if Vehicle exists and is not destroyed.
 if (
