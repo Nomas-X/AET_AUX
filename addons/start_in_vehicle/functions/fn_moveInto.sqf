@@ -12,7 +12,7 @@ Arguments:
 	0. <Object> Unit to be moved into the vehicle.
 
 	1. <Array>
-		1.1. <Object> Vehicle that the unit will be moved into.
+		1.1. <String> Variable of the vehicle that the unit will be moved into.
 
 		1.2. <Array> or <Boolean> Position of the location the player will be teleported to incase it was not possible to move him into the vehicle or if the value is boolean then the player will not be teleported anywhere in that case.
 
@@ -55,7 +55,7 @@ if (isNil _vehicle) exitWith {
 	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
 };
 
-_vehicle = call compile _x;
+_vehicle = call compile _vehicle;
 
 // Defining Fallback Code: If LZ is defined, TP to LZ - if false or boolean, leave player where they are
 private _fallback = { if !( _backupLZ isEqualType false ) then { 
