@@ -23,7 +23,7 @@ private _ais = ["all", "aimingerror", "anim", "autocombat", "autotarget", "check
 private _units = (getMissionLayerEntities _layer) select 0;
 
 if (!((toLower _ai) in _ais)) exitWith {
-	systemChat "Failed to enable AI: incorrect AI value";
+	["Failed to enable AI: incorrect AI value"] remoteExec ["systemChat"];
 };
 
 {
