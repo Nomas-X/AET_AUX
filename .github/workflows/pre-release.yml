@@ -43,12 +43,12 @@ jobs:
       - name: Update to Steam Workshop (pre-release)
         uses: arma-actions/workshop-upload@v1
         with:
-          itemId: '3349453883'
+          itemId: '3519308685'
           contentPath: "./@AET_AUX-${{ github.event.release.tag_name }}"
           changelog: |
             https://github.com/Nomas-X/AET_AUX/releases/tag/${{ github.event.release.tag_name }}
 
             ${{ github.event.release.body }}
         env:
-          STEAM_USERNAME: ${{ secrets.STEAM_DEV_USERNAME }}
-          STEAM_PASSWORD: ${{ secrets.STEAM_DEV_PASSWORD }}
+          STEAM_USERNAME: ${{ secrets.STEAM_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_PASSWORD }}
