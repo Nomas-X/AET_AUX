@@ -1,0 +1,54 @@
+name: Pre-Release
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: write
+
+jobs:
+  release-addon:
+    if: ${{ github.event.release.prerelease }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set VERSION env
+        run: echo VERSION=${GITHUB_REF#refs/tags/} >> $GITHUB_ENV
+
+      - name: Checkout the source code
+        uses: actions/checkout@v2
+
+      - name: Setup HEMTT
+        uses: arma-actions/hemtt@v1
+
+      - name: Run HEMTT build
+        run: hemtt release --no-archive
+
+      - name: Move release to releases folder
+        run: |
+          version="${{ github.event.release.tag_name }}"
+          mv .hemttout/release "@AET_AUX-${version}"
+
+      - name: Zip release
+        run: zip -r "@AET_AUX-${{ github.event.release.tag_name }}.zip" "./@AET_AUX-${{ github.event.release.tag_name }}"
+
+      - name: Update Release with Files
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "./@AET_AUX-${{ github.event.release.tag_name }}.zip"
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update to Steam Workshop (pre-release)
+        uses: arma-actions/workshop-upload@v1
+        with:
+          itemId: '3349453883'
+          contentPath: "./@AET_AUX-${{ github.event.release.tag_name }}"
+          changelog: |
+            https://github.com/Nomas-X/AET_AUX/releases/tag/${{ github.event.release.tag_name }}
+
+            ${{ github.event.release.body }}
+        env:
+          STEAM_USERNAME: ${{ secrets.STEAM_DEV_USERNAME }}
+          STEAM_PASSWORD: ${{ secrets.STEAM_DEV_PASSWORD }}
