@@ -33,7 +33,7 @@ https://github.com/CBATeam/CBA_A3/wiki/CBA-Settings-System
 [
 	QSET(compareAddonOptions_mode),
 	"LIST",
-	["Who can use the compare addon options function?", "This decides if the addon comparison command is executable and if so by who."],
+	["Who Can Use The Compare Addon Options Function?", "This decides if the addon comparison command is executable and if so by who."],
 	["AET Common", "Common"],
 	[["ADMIN", "ANYONE"], ["Admin Only", "Anyone"], 0],
 	1,
