@@ -86,7 +86,7 @@
 	"EDITBOX",
 	["Custom Intro File Path", "This is the file path used to call your script within the disclaimer. Safety, removal of black screen and more is all already handled, this is done to allow you to add your own text, images, or more. The file will be executed in a scheduled environment."],
 	["AET Disclaimer", "Disclaimer"],
-	"AET_Scripts\customIntro.sqf",
+	"AET_Scripts\AET_customIntro.sqf",
 	1,
 	{},
 	false
