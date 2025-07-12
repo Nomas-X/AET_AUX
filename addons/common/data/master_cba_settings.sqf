@@ -891,7 +891,7 @@ force AET_disclaimer_SET_disableSafetytime = 30;
 force AET_disclaimer_SET_enabled = true;
 force AET_disclaimer_SET_enabled_logo = true;
 force AET_disclaimer_SET_logoPath = "<img size='8' shadow='0' image='z\aet\addons\disclaimer\data\opengroup_sponsor.paa'/>";
-force AET_disclaimer_SET_text = "<t size='2'>Disclaimer: ThiSSSSs is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</t>";
+force AET_disclaimer_SET_text = "<t size='2'>Disclaimer: This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</t>";
 
 // AET Loadout Handler
 force AET_loadout_handler_SET_allowArsenalOverfilling = true;
