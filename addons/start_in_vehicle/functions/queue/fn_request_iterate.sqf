@@ -26,29 +26,14 @@ if (_isDoneMoving) exitWith {
 	[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
 };
 
-[
-	{!(isNull _this#0#0#0)},
-	{
-		params ["_queue"];
-		private _unit = _queue#0#0;
-		private _vehicle = _queue#0#1#0;
-		diag_log format ["ITERATION ATTEMPT: %1 | %2 | %3", _queue, _unit, _vehicle];
+private _unit = _queue#0#0;
+private _vehicle = _queue#0#1#0;
+diag_log format ["ITERATION ATTEMPT: %1 | %2 | %3", _queue, _unit, _vehicle];
 
-		if !(isNull _unit || {_unit in _vehicle}) exitWith { (_queue#0) call FUNC(moveInto); };
+if !(isNull _unit) exitWith { (_queue#0) call FUNC(moveInto); };
 
-		_queue deleteAt 0;
+_queue deleteAt 0;
 
-		diag_log format ["QUEUE REMOVAL: %1 | %2 | %3", _queue, _unit, _vehicle];
+diag_log format ["QUEUE REMOVAL: %1 | %2 | %3", _queue, _unit, _vehicle];
 
-		[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
-	},
-	[_queue],
-	60,
-	{
-		params ["_queue"];
-		_queue deleteAt 0;
-		diag_log format ["QUEUE TIMEOUT: %1", _queue];
-		[FUNC(request_iterate)] call CBA_fnc_execNextFrame;
-	}
-] call CBA_fnc_waitUntilAndExecute;
-
+[FUNC(request_iterate)] call CBA_fnc_execNextFrame;

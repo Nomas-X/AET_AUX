@@ -53,4 +53,3 @@ if (_queue isEqualTo "404") then {
 };
 
 _queue pushBack [_unit, _moveOptions];
-ZRN_LOG_MSG(QUEUE Item and iteration requested);

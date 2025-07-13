@@ -81,7 +81,7 @@ if (
 	}
 ) then _fallback else {
 
-	diag_log format ["ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
+	diag_log format ["ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _vehicle];
 	// Check if we want and if we can move a unit in a seat, if not, check next, if nothing, use fallback.
 	switch (true) do {
 		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):    { moveOut _unit; [ _unit, _vehicle ] remoteExec ["moveInDriver", _unit, false]; };		
