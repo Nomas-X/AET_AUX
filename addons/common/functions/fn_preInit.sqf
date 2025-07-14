@@ -26,6 +26,7 @@ Example:
         moveOut _unit;
 
         _unit moveInCargo [_vic, _index, false];
+		_unit action ["GetInCargo", _vic, _index];
         _unit assignAsCargoIndex [_vic, _index];
 		if !(_unit in _vic) then {
 			_unit allowDamage false;

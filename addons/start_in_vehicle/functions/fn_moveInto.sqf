@@ -84,12 +84,10 @@ if (
 	diag_log format ["ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _vehicle];
 	// Check if we want and if we can move a unit in a seat, if not, check next, if nothing, use fallback.
 	switch (true) do {
-		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):    { moveOut _unit; [ _unit, _vehicle ] remoteExec ["moveInDriver", _unit, false]; };		
-		case ( _gunner    && { 0 < _vehicle emptyPositions "Gunner"} ):    { moveOut _unit; [ _unit, _vehicle ] remoteExec ["moveInGunner", _unit, false]; };		
-		case ( _commander && { 0 < _vehicle emptyPositions "Commander"} ): { moveOut _unit; [ _unit, _vehicle ] remoteExec ["moveInCommander", _unit, false]; };	
-		case ( _cargo 	  && { 0 < _vehicle emptyPositions "Cargo"} ):     { moveOut _unit; [ _unit, _vehicle ] remoteExec ["moveInCargo", _unit, false]; };		
+		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):    { [QGVAR(EH_moveIn), [_unit, _vehicle, "Driver", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
+		case ( _gunner    && { 0 < _vehicle emptyPositions "Gunner"} ):    { [QGVAR(EH_moveIn), [_unit, _vehicle, "Gunner", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
+		case ( _commander && { 0 < _vehicle emptyPositions "Commander"} ): { [QGVAR(EH_moveIn), [_unit, _vehicle, "Commander", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
+		case ( _cargo 	  && { 0 < _vehicle emptyPositions "Cargo"} ):     { [QGVAR(EH_moveIn), [_unit, _vehicle, "Cargo", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
 		default { call _fallback; };
 	};
 };
-
-[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
