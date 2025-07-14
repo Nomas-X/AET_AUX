@@ -21,7 +21,6 @@ class CfgFunctions
 		{
 			file = PATH_TO_FUNC;
 			
-			class preInit  { preInit = 1;  };
 			class postInit { postInit = 1; };
 		};
 		class Players
@@ -44,12 +43,6 @@ class CfgFunctions
 			file = PATH_TO_FUNC_SUB(utility);
 
 			class compareAddonOptions {};
-		};
-		class vehicles
-		{
-			file = PATH_TO_FUNC_SUB(vehicles);
-			
-			class moveUnitsIntoVehicles {};
 		};
 	};
 };
