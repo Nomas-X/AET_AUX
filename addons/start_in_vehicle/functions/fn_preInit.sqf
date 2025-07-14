@@ -28,33 +28,33 @@ Example:
 	switch (_seatType) do {
 		case ("Driver"): {
 			_moveCode = {
-				// _unit moveInDriver _vehicle;
+				_unit moveInDriver _vehicle;
 				player actionNow ["getInDriver", _vehicle];
 			};
 		};
 		case ("Gunner"): {
 			_moveCode = {
-				// _unit moveInGunner _vehicle;
+				_unit moveInGunner _vehicle;
 				player actionNow ["getInGunner", _vehicle];
 
 			};
 		};
 		case ("Commander"): {
 			_moveCode = {
-				// _unit moveInCommander _vehicle;
+				_unit moveInCommander _vehicle;
 				player actionNow ["getInCommander", _vehicle];
 			};
 		};
 		case ("Turret"): {
 			_moveCode = {
-				// _unit moveInTurret _vehicle;
-				player actionNow ["getInTurret", _vehicle];
+				_unit moveInTurret _vehicle;
+				// player actionNow ["getInTurret", _vehicle];
 			};
 		};
 		case ("Cargo"): {
 			_moveCode = {
-				// _unit moveInCargo _vehicle;
-				player actionNow ["getInCargo", _vehicle];
+				_unit moveInCargo _vehicle;
+				// player actionNow ["getInCargo", _vehicle];
 			};
 		};
 		case ("Any"): {
