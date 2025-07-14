@@ -21,13 +21,29 @@ Example:
     QGVAR(EH_unitIntoVehicle),
     {
         params ["_unit", "_slot", "_fallbackPos"];
-        _slot params  ["_vic", "_index"];
+        _slot params  ["_vic", "_type", "_index", "_path"];
 		systemChat "TEST! #4";
-        moveOut _unit;
+        
+		private _moveCode = {};
+		switch (_type) do {
+			case ("cargo"): {
+				_moveCode = {
+					_unit assignAsCargoIndex [_vic, _index];
+					_unit moveInCargo [_vic, _index, false];
+					_unit actionNow ["GetInCargo", _vic, _index];
+				};
+			};
+			case ("turret"): {
+				_moveCode = {
+					_unit assignAsTurret [_vic, _path];
+					_unit moveInTurret [_vic, _path];
+					_unit actionNow ["GetInTurret", _vic, _path];
+				};
+			};
+		};
 
-        _unit moveInCargo [_vic, _index, false];
-		_unit action ["GetInCargo", _vic, _index];
-        _unit assignAsCargoIndex [_vic, _index];
+		moveOut _unit;
+        call _moveCode;
 		if !(_unit in _vic) then {
 			_unit allowDamage false;
 			_unit setPosASL _fallbackPos;

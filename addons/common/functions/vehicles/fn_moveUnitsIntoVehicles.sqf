@@ -27,7 +27,8 @@ private _slots = [];    // [vehicle, cargoIndex]
 {
     private _vic = _x;
     // get all cargo seats, select only the empty ones, then create the individual [vic,index] slot, append the full list to the main array
-    _slots append ( fullCrew [_vic, "cargo", true] select { isNull (_x select 0) } apply { [_vic, _x select 2] } );
+    _slots append ( fullCrew [_vic, "cargo", true] select { isNull (_x select 0) } apply { [_vic, "cargo", _x select 2, _x select 3] } );
+    _slots append ( fullCrew [_vic, "turret", true] select { isNull (_x select 0) } apply { [_vic, "turret", _x select 2, _x select 3] } );
 } forEach _vehicles;
 systemChat "TEST! #2";
 {

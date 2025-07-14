@@ -16,15 +16,15 @@ Arguments:
 
 		1.2. <Array> or <Boolean> Position of the location the player will be teleported to incase it was not possible to move him into the vehicle or if the value is boolean then the player will not be teleported anywhere in that case.
 
-		1.3. <Boolean> Use cargo seats
+		1.3. <Boolean> Use cargo seats.
 
-		1.4. <Boolean> Use commander seat
+		1.4. <Boolean> Use turret seats.
 
-		1.5. <Boolean> Use gunner seats
+		1.5. <Boolean> Use commander seat.
 
-		1.6. <Boolean> Use driver seat
+		1.6. <Boolean> Use gunner seats.
 
-		1.7. <String> The module deletion condition. Unused in this fucntion.
+		1.7. <Boolean> Use driver seat.
 
 Return Value:
 	<Nil>
@@ -48,6 +48,7 @@ _moveOptions params [
 	["_vehicle", "objNull", [""]],
 	["_backupLZ", false, [[], false]],
 	["_cargo", true, [true]],
+	["_turret", true, [true]],
 	["_commander", false, [false]],
 	["_gunner", false, [false]],
 	["_driver", false, [false]]
@@ -84,10 +85,12 @@ if (
 	diag_log format ["ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _vehicle];
 	// Check if we want and if we can move a unit in a seat, if not, check next, if nothing, use fallback.
 	switch (true) do {
-		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):    { [QGVAR(EH_moveIn), [_unit, _vehicle, "Driver", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
-		case ( _gunner    && { 0 < _vehicle emptyPositions "Gunner"} ):    { [QGVAR(EH_moveIn), [_unit, _vehicle, "Gunner", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
-		case ( _commander && { 0 < _vehicle emptyPositions "Commander"} ): { [QGVAR(EH_moveIn), [_unit, _vehicle, "Commander", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
-		case ( _cargo 	  && { 0 < _vehicle emptyPositions "Cargo"} ):     { [QGVAR(EH_moveIn), [_unit, _vehicle, "Cargo", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
+		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):       { [QGVAR(EH_moveIn), [_unit, _vehicle, "Driver", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
+		case ( _gunner    && { 0 < _vehicle emptyPositions "Gunner"} ):       { [QGVAR(EH_moveIn), [_unit, _vehicle, "Gunner", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
+		case ( _commander && { 0 < _vehicle emptyPositions "Commander"} ):    { [QGVAR(EH_moveIn), [_unit, _vehicle, "Commander", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
+		case ( _turret    && { 0 < _vehicle emptyPositions "Turret"} ):          { [QGVAR(EH_moveIn), [_unit, _vehicle, "Turret", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
+		case ( _cargo 	  && { 0 < _vehicle emptyPositions "Cargo"} ):        { [QGVAR(EH_moveIn), [_unit, _vehicle, "Cargo", _backupLZ], _unit] call CBA_fnc_targetEvent; };
+		case (_driver && {_gunner && {_commander && {_turret && {_cargo}}}}): { [QGVAR(EH_moveIn), [_unit, _vehicle, "Any", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
 		default { call _fallback; };
 	};
 };
