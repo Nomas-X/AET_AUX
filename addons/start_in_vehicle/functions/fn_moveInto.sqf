@@ -88,7 +88,7 @@ if (
 		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):       { [QGVAR(EH_moveIn), [_unit, _vehicle, "Driver", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
 		case ( _gunner    && { 0 < _vehicle emptyPositions "Gunner"} ):       { [QGVAR(EH_moveIn), [_unit, _vehicle, "Gunner", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
 		case ( _commander && { 0 < _vehicle emptyPositions "Commander"} ):    { [QGVAR(EH_moveIn), [_unit, _vehicle, "Commander", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
-		case ( _turret    && { 0 < _vehicle emptyPositions "Turret"} ):          { [QGVAR(EH_moveIn), [_unit, _vehicle, "Turret", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
+		case ( _turret    && { 0 < _vehicle emptyPositions "Turret"} ):       { [QGVAR(EH_moveIn), [_unit, _vehicle, "Turret", _backupLZ], _unit] call CBA_fnc_targetEvent; };	
 		case ( _cargo 	  && { 0 < _vehicle emptyPositions "Cargo"} ):        { [QGVAR(EH_moveIn), [_unit, _vehicle, "Cargo", _backupLZ], _unit] call CBA_fnc_targetEvent; };
 		case (_driver && {_gunner && {_commander && {_turret && {_cargo}}}}): { [QGVAR(EH_moveIn), [_unit, _vehicle, "Any", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
 		default { call _fallback; };

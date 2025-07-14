@@ -29,20 +29,20 @@ Example:
 		case ("Driver"): {
 			_moveCode = {
 				_unit moveInDriver _vehicle;
-				player actionNow ["getInDriver", _vehicle];
+				// player actionNow ["getInDriver", _vehicle];
 			};
 		};
 		case ("Gunner"): {
 			_moveCode = {
 				_unit moveInGunner _vehicle;
-				player actionNow ["getInGunner", _vehicle];
+				// player actionNow ["getInGunner", _vehicle];
 
 			};
 		};
 		case ("Commander"): {
 			_moveCode = {
 				_unit moveInCommander _vehicle;
-				player actionNow ["getInCommander", _vehicle];
+				// player actionNow ["getInCommander", _vehicle];
 			};
 		};
 		case ("Turret"): {
@@ -65,10 +65,20 @@ Example:
 	};
 	_unit moveOut _vehicle;
 	call _moveCode;
-	if !(_unit in _vehicle) then {
-		_unit allowDamage false;
-		_unit setPosASL _fallbackPos;
-		_unit allowDamage true; 
-	};
+
 	[QGVAR(EH_iterate), [true]] call CBA_fnc_serverEvent;
+	
+	[
+		{
+			params ["_unit", "_vehicle", "_fallbackPos"];
+
+			if !(_unit in _vehicle) then {
+				_unit allowDamage false;
+				_unit setPosASL _fallbackPos;
+				_unit allowDamage true; 
+			};
+		},
+		[_unit, _vehicle, _fallbackPos],
+		1
+	] call CBA_fnc_waitAndExecute;
 }] call CBA_fnc_addEventHandler;
