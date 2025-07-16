@@ -1900,4 +1900,3 @@ zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
 // END OF AET FILE
-#include "AET_Scripts\AET_settings.sqf"
