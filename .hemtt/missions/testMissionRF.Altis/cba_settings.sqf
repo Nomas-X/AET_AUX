@@ -15,6 +15,11 @@ force ace_advanced_fatigue_performanceFactor = 1;
 force ace_advanced_fatigue_recoveryFactor = 3;
 force ace_advanced_fatigue_terrainGradientFactor = 1;
 
+// ACE Advanced Missile Guidance
+force ace_missileguidance_chaffEffectivenessCoef = 1;
+force ace_missileguidance_flareAngleCoef = 1;
+force ace_missileguidance_flareEffectivenessCoef = 1;
+
 // ACE Advanced Throwing
 force force ace_advanced_throwing_enabled = true;
 force force ace_advanced_throwing_enablePickUp = true;
@@ -84,6 +89,8 @@ force ace_common_swayFactor = 0.5;
 // ACE Cook-off
 force ace_cookoff_ammoCookoffDuration = 0.5;
 force ace_cookoff_cookoffDuration = 1;
+force ace_cookoff_cookoffEnableProjectiles = true;
+force ace_cookoff_cookoffEnableSound = true;
 force ace_cookoff_destroyVehicleAfterCookoff = false;
 force ace_cookoff_enableAmmobox = false;
 force ace_cookoff_enableAmmoCookoff = false;
@@ -132,7 +139,7 @@ force acex_field_rations_waterSourceActions = 2;
 force ace_fire_dropWeapon = 1;
 force ace_fire_enabled = true;
 force ace_fire_enableFlare = false;
-force ace_fire_enableScreams = true;
+ace_fire_enableScreams = true;
 
 // ACE Fortify
 force ace_fortify_markObjectsOnMap = 1;
@@ -239,6 +246,7 @@ ace_interact_menu_more__ACE_TeamManagement = false;
 ace_interact_menu_more__ace_zeus_create = false;
 ace_interact_menu_more__ace_zeus_delete = false;
 ace_interact_menu_more__acex_sitting_Stand = false;
+ace_interact_menu_more__SwitchToCamera = false;
 ace_interact_menu_more__TFAR_Radio = false;
 
 // ACE Interaction Menu (Self) - Move to Root
@@ -353,6 +361,7 @@ ace_interact_menu_moveToRoot__ACE_Equipment__ace_trenches__grad_trenches_digEnve
 ace_interact_menu_moveToRoot__ACE_Equipment__ace_trenches__grad_trenches_digEnvelopeShort = false;
 ace_interact_menu_moveToRoot__ACE_Equipment__ace_trenches__grad_trenches_digEnvelopeVehicle = false;
 ace_interact_menu_moveToRoot__ACE_Equipment__ace_tripod_place = false;
+ace_interact_menu_moveToRoot__ACE_Equipment__ace_ui_checkWeaponZeroing = false;
 ace_interact_menu_moveToRoot__ACE_Equipment__bocr_main_cutLoweringLine = false;
 ace_interact_menu_moveToRoot__ACE_Equipment__bocr_main_lower = false;
 ace_interact_menu_moveToRoot__ACE_Equipment__bocr_main_onBack = false;
@@ -415,12 +424,6 @@ ace_interact_menu_moveToRoot__ACE_TeamManagement__ACE_LeaveGroup = false;
 ace_interact_menu_moveToRoot__ACE_TeamManagement__ACE_remoteTeamManagement = false;
 ace_interact_menu_moveToRoot__ACE_TeamManagement__ACE_RenameGroup = false;
 ace_interact_menu_moveToRoot__ACE_TeamManagement__diwako_dui_buddy_buddy_action_team_remove = false;
-ace_interact_menu_moveToRoot__ace_trenches__ace_trenches_digEnvelopeBig = false;
-ace_interact_menu_moveToRoot__ace_trenches__ace_trenches_digEnvelopeSmall = false;
-ace_interact_menu_moveToRoot__ace_trenches__grad_trenches_digEnvelopeGiant = false;
-ace_interact_menu_moveToRoot__ace_trenches__grad_trenches_digEnvelopeLongNameEmplacment = false;
-ace_interact_menu_moveToRoot__ace_trenches__grad_trenches_digEnvelopeShort = false;
-ace_interact_menu_moveToRoot__ace_trenches__grad_trenches_digEnvelopeVehicle = false;
 
 // ACE Kill Tracker
 force force ace_killtracker_showCrewKills = true;
@@ -495,6 +498,7 @@ ace_maptools_rotateModifierKey = 1;
 force force ace_medical_ai_enabledFor = 0;
 force force ace_medical_ai_requireItems = 0;
 force ace_medical_AIDamageThreshold = 0.1;
+force force ace_medical_alternateArmorPenetration = false;
 force ace_medical_bleedingCoefficient = 0.2;
 force force ace_medical_blood_bloodLifetime = 300;
 force ace_medical_blood_enabledFor = 2;
@@ -502,7 +506,6 @@ force force ace_medical_blood_maxBloodObjects = 500;
 force ace_medical_deathChance = 1;
 force force ace_medical_dropWeaponUnconsciousChance = 0;
 force ace_medical_enableVehicleCrashes = true;
-force ace_medical_engine_damagePassThroughEffect = 0;
 force ace_medical_fatalDamageSource = 2;
 force ace_medical_fractureChance = 0.2;
 force ace_medical_fractures = 2;
@@ -895,10 +898,10 @@ force AET_disclaimer_SET_text = "<t size='2'>Disclaimer: This is a work of ficti
 
 // AET Loadout Handler
 force AET_loadout_handler_SET_allowArsenalOverfilling = true;
-force AET_loadout_handler_SET_backpackInventory = "[
-		[""ACE_EntrenchingTool"", 0],
-		[""ACE_IR_Strobe_Item"", 0]
-	]";
+force AET_loadout_handler_SET_backpackInventory = "[ 
+  [""ACE_EntrenchingTool"", 0], 
+  [""ACE_IR_Strobe_Item"", 0] 
+ ]";
 force AET_loadout_handler_SET_binocularsForEveryone_className = "Binocular";
 force AET_loadout_handler_SET_binocularsForEveryone_enabled = true;
 force AET_loadout_handler_SET_compassesForEveryone_className = "ItemCompass";
@@ -916,31 +919,31 @@ force AET_loadout_handler_SET_radiosForEveryone_className = "TFAR_anprc148jem";
 force AET_loadout_handler_SET_radiosForEveryone_enabled = true;
 force AET_loadout_handler_SET_radiosInNeedOfProgrammer = "[""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]";
 force AET_loadout_handler_SET_TFARCompatibleRadios = "[""gm_radio_r126"", ""gm_radio_sem52a"", ""vn_o_item_radio_m252"", ""vn_b_item_radio_urc10"", ""TFAR_anprc148jem"", ""TFAR_anprc152"", ""TFAR_fadak"", ""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]";
-force AET_loadout_handler_SET_uniformInventory = "[
-		[""ACE_EarPlugs"", 1],
-		[""ACE_Flashlight_XL50"", 1],
-		[""ACE_MapTools"", 1],
-		[""ACE_CableTie"", 2],
-		[""ACE_Canteen"", 1],
-		[""acex_intelitems_notepad"", 1],
-		[""ACE_SpraypaintBlack"", 1],
-		[""ACE_SpraypaintBlue"", 1],
-		[""ACE_SpraypaintGreen"", 1],
-		[""ACE_SpraypaintRed"", 1],
-		[""ACE_SpraypaintWhite"", 1],
-		[""ACE_SpraypaintYellow"", 1],
-		[""ACE_elasticBandage"", 10],
-		[""ACE_packingBandage"", 10],
-		[""ACE_epinephrine"", 2],
-		[""ACE_morphine"", 2],
-		[""ACE_painkillers"", 1],
-		[""ACE_splint"", 2],
-		[""ACE_tourniquet"", 2]
-	]";
-force AET_loadout_handler_SET_vestInventory = "[
-		[""SmokeShell"", 0],
-		[""HandGrenade"", 0]
-	]";
+force AET_loadout_handler_SET_uniformInventory = "[ 
+  [""ACE_EarPlugs"", 1], 
+  [""ACE_Flashlight_XL50"", 1], 
+  [""ACE_MapTools"", 1], 
+  [""ACE_CableTie"", 2], 
+  [""ACE_Canteen"", 1], 
+  [""acex_intelitems_notepad"", 1], 
+  [""ACE_SpraypaintBlack"", 1], 
+  [""ACE_SpraypaintBlue"", 1], 
+  [""ACE_SpraypaintGreen"", 1], 
+  [""ACE_SpraypaintRed"", 1], 
+  [""ACE_SpraypaintWhite"", 1], 
+  [""ACE_SpraypaintYellow"", 1], 
+  [""ACE_elasticBandage"", 10], 
+  [""ACE_packingBandage"", 10], 
+  [""ACE_epinephrine"", 2], 
+  [""ACE_morphine"", 2], 
+  [""ACE_painkillers"", 1], 
+  [""ACE_splint"", 2], 
+  [""ACE_tourniquet"", 2] 
+ ]";
+force AET_loadout_handler_SET_vestInventory = "[ 
+  [""SmokeShell"", 0], 
+  [""HandGrenade"", 0] 
+ ]";
 
 // AET Plan Importer
 force AET_PI_core_SET_enabled = true;
@@ -1152,6 +1155,12 @@ force emr_main_staminaCoefficient = 1;
 force emr_main_whitelistStr = "";
 force emr_main_yeetCoefficient = 1.4;
 
+// Friendly Fire Phantom Protocol
+force force FFPP_main_SET_enabled = true;
+force force FFPP_main_SET_tellAdmin = true;
+force force FFPP_main_SET_tellInstigator = false;
+force force FFPP_main_SET_tellVictim = false;
+
 // GRAD Trenches
 force grad_trenches_functions_allowBigEnvelope = true;
 force force grad_trenches_functions_allowCamouflage = true;
@@ -1195,8 +1204,8 @@ force grad_trenches_functions_vehicleTrenchBuildSpeed = 5;
 
 // Heavy Weapons Framework
 force WBK_HWF_AllowProneShootSetting = true;
-force WBK_HWF_AllowRecoilSetting = true;
-force WBK_HWF_WeapsArraySetting = "['MMG_01_hex_F','MMG_01_hex_ARCO_LP_F','MMG_01_tan_F','MMG_02_black_F','MMG_02_black_RCO_BI_F','MMG_02_sand_F','MMG_02_sand_RCO_LP_F','MMG_02_camo_F','OPTRE_M247H_Etilka','OPTRE_M247H_Shield_Etilka','JLTS_Z6','SWLW_Z6','IDA_Z6','HLC_wp_M134Painless']";
+force WBK_HWF_AllowRecoilSetting = false;
+force WBK_HWF_WeapsArraySetting = "['MMG_01_hex_F','MMG_01_hex_ARCO_LP_F','MMG_01_tan_F','MMG_02_black_F','MMG_02_black_RCO_BI_F','MMG_02_sand_F','MMG_02_sand_RCO_LP_F','MMG_02_camo_F','OPTRE_M247H_Etilka','OPTRE_M247H_Shield_Etilka','JLTS_Z6','SWLW_Z6','IDA_Z6','HLC_wp_M134Painless', 'UK3CB_M1919A4_Browning', 'UK3CB_M1919A6_Browning', 'UK3CB_Bren_303', 'UK3CB_Bren_L4_LMG', 'UK3CB_M60', 'UK3CB_MG3_Railed', 'UK3CB_MG3', 'UK3CB_MG3_KWS_B', 'UK3CB_MG3_KWS_G', 'UK3CB_MG3_KWS_T', 'UK3CB_UKM2000P', 'Aegis_MMG_FNMAG_F', 'MMG_01_black_F', 'MMG_01_ghex_F', 'Aegis_MMG_FNMAG_240_F', 'MMG_02_khaki_F', 'LMG_S77_lxWS', 'LMG_S77_AAF_lxWS', 'LMG_S77_Desert_lxWS', 'LMG_S77_GHex_lxWS', 'LMG_S77_Hex_lxWS', 'LMG_S77_Compact_lxWS', 'LMG_S77_Compact_Snakeskin_lxWS', 'MMG_01_hex_F', 'MMG_01_tan_F', 'MMG_02_black_F', 'MMG_02_camo_F', 'MMG_02_sand_F', 'CUP_lmg_L7A2_Flat', 'CUP_lmg_L7A2', 'CUP_lmg_M240_norail', 'CUP_lmg_M240_B', 'CUP_lmg_M240', 'CUP_lmg_M60', 'CUP_lmg_M60E4_norail', 'CUP_lmg_M60E4_norail_desert', 'CUP_lmg_M60E4_norail_jungle', 'CUP_lmg_M60E4_jungle', 'CUP_lmg_M60E4', 'CUP_M60A4_EP1', 'CUP_lmg_M60E4_desert', 'CUP_lmg_M60E4_wood', 'CUP_lmg_M60E4_norail_wood', 'CUP_lmg_FNMAG', 'CUP_lmg_FNMAG_RIS', 'CUP_lmg_FNMAG_RIS_modern', 'CUP_lmg_MG3', 'CUP_lmg_MG3_rail', 'CUP_lmg_PKM', 'CUP_lmg_PKM_B50_vfg', 'CUP_lmg_PKM_front_rail_B50_vfg', 'CUP_lmg_PKM_top_rail', 'CUP_lmg_PKM_top_rail_B50_vfg', 'CUP_lmg_PKMN', 'CUP_lmg_Pecheneg', 'CUP_lmg_Pecheneg_B50_vfg', 'CUP_lmg_Pecheneg_desert', 'CUP_lmg_Pecheneg_top_rail', 'CUP_lmg_Pecheneg_top_rail_B50_vfg', 'CUP_lmg_Pecheneg_woodland', 'CUP_lmg_UK59', 'gm_hmgpkm_prp', 'gm_lmgm62_blk', 'gm_mg3_blk', 'hlc_rifle_L4A3', 'HLC_wp_M134Painless', 'hlc_lmg_m60', 'hlc_lmg_M60E4', 'hlc_lmg_MG3_optic', 'hlc_lmg_MG3', 'hlc_lmg_MG3KWS_b', 'hlc_lmg_MG3KWS_g', 'hlc_lmg_MG3KWS', 'hlc_lmg_MG42', 'hlc_lmg_mg42_bakelite', 'hlc_lmg_mg42kws_b', 'hlc_lmg_mg42kws_g', 'hlc_lmg_MG42KWS_t', 'rhs_weap_pkm', 'rhs_weap_pkp', 'rhs_weap_fnmag', 'rhs_weap_mg42', 'rhs_weap_m84', 'rhs_weap_m240B', 'rhs_weap_m240G', 'vnx_fm2429', 'vn_dp28', 'vn_l4', 'vn_m1918', 'vn_m60', 'vn_m60_shorty', 'vn_m60_shorty_camo', 'vn_m63a_cdo', 'vn_m63a_lmg', 'vn_mg42', 'vn_pk', 'fow_w_mg34', 'fow_w_mg42', 'fow_w_type99_lmg', 'fow_w_bren', 'fow_w_m1918a2', 'fow_w_m1918a2_bak', 'fow_w_m1919a4', 'fow_w_m1919a6', 'LIB_Bren_Mk2', 'LIB_DP28', 'LIB_DT', 'LIB_DT_OPTIC', 'LIB_M1918A2_BAR', 'LIB_M1919A4', 'LIB_M1919A6', 'LIB_M2_Flamethrower', 'LIB_MG42', 'LIB_MG34', 'NORTH_ls26', 'NORTH_Madsen1914', 'NORTH_Madsen1922', 'NORTH_dp27', 'NORTH_DT_hand', 'NORTH_KG21', 'SPEX_LMG_303_Mk1', 'SPE_LMG_303_Mk2', 'SPE_Flammenwerfer41', 'SPE_FM_24_M29', 'SPE_M1918A0_BAR', 'SPE_M1918A2_BAR', 'SPE_M1918A2_erla_BAR', 'SPE_M1919A4', 'SPE_M1919A6', 'SPE_M2_Flamethrower', 'SPE_MG34', 'SPE_MG42', 'OPTRE_M247', 'OPTRE_M247A1', 'OPTRE_M247A1_Stripped', 'OPTRE_M247H_Etilka', 'OPTRE_M247H_Shield_Etilka', 'OPTRE_M250', 'OPTRE_M250_Gold', 'OPTRE_M73', 'OPTRE_M739_SAW_F', 'OPTRE_M739_SAW_Black_F', 'OPTRE_M739_SAW_Foregrip_F', 'OPTRE_M739_SAW_Foregrip_Black_F', 'JLTS_Z6', 'ls_weapon_ls150', 'ls_weapon_z6', '3AS_Flamer_Base']";
 
 // LAxemann's Suppress
 force force L_Suppress_buildup = 0.5;
@@ -1850,7 +1859,7 @@ zen_faction_filter_2_UK3CB_CHD_W_I_groups = true;
 zen_faction_filter_2_UK3CB_CPD_I = true;
 zen_faction_filter_2_UK3CB_FIA_I = true;
 zen_faction_filter_2_UK3CB_GAF_I = true;
-zen_faction_filter_2_UK3CB_ION_I_Desert = false;
+zen_faction_filter_2_UK3CB_ION_I_Desert = true;
 zen_faction_filter_2_UK3CB_ION_I_Urban = true;
 zen_faction_filter_2_UK3CB_ION_I_Winter = true;
 zen_faction_filter_2_UK3CB_ION_I_Woodland = true;
@@ -1882,7 +1891,7 @@ zen_faction_filter_3_Aegis_CIV_HI_F = true;
 zen_faction_filter_3_Aegis_CIV_LIV_F = true;
 zen_faction_filter_3_Aegis_CIV_MA_F = true;
 zen_faction_filter_3_C_VIET = true;
-zen_faction_filter_3_CIV_F = false;
+zen_faction_filter_3_CIV_F = true;
 zen_faction_filter_3_CIV_IDAP_F = true;
 zen_faction_filter_3_CUP_C_CHERNARUS = true;
 zen_faction_filter_3_CUP_C_RU = true;
@@ -1891,8 +1900,8 @@ zen_faction_filter_3_CUP_C_TK = true;
 zen_faction_filter_3_EdCat_jbad_vehicles = true;
 zen_faction_filter_3_gm_fc_gc_civ = true;
 zen_faction_filter_3_gm_fc_ge_civ = true;
-zen_faction_filter_3_UK3CB_ADC_C = false;
-zen_faction_filter_3_UK3CB_CHC_C = false;
+zen_faction_filter_3_UK3CB_ADC_C = true;
+zen_faction_filter_3_UK3CB_CHC_C = true;
 zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
