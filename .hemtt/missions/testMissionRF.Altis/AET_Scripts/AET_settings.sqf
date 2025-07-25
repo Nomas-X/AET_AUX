@@ -51,7 +51,7 @@ force AET_common_SET_antiBounceSmokeGL_enabled = true;
 force AET_disclaimer_SET_customIntro_path = "AET_Scripts\AET_customIntro.sqf";
 
 // AET Disclaimer -> Disable Weapon Safety Bsed On = "NO_SAFETY", "DISCLAIMER_END", "TIME", "DISTANCE", "CUSTOM" //
-force AET_disclaimer_SET_disableSafetymode = "DISTANCE";
+force AET_disclaimer_SET_disableSafetymode = "DISCLAIMER_END";
 
 // AET Disclaimer -> Time Based Safety Removal (Mission Time) = 0 to 1200 //
 force AET_disclaimer_SET_disableSafetytime = 30;
