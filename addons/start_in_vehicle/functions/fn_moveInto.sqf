@@ -38,7 +38,7 @@ params [
 	["_moveOptions", "404", [[]]]
 ];
 
-diag_log format ["PLAYER MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
+diag_log format ["AET_start_in_vehicle | PLAYER MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
 
 if ( _unit isEqualTo objNull || { _moveOptions isEqualTo "404" } ) exitWith {
 	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
@@ -59,19 +59,25 @@ private _fallback = { if !( _backupLZ isEqualType false ) then {
 	_unit allowDamage false;
 	_unit setPosASL _backupLZ;
 	_unit allowDamage true; 
-	diag_log format ["FALLBACK!! FALLBACK!!: %1 | %2", _unit, _moveOptions];
+	diag_log format ["AET_start_in_vehicle | FALLBACK CODE: %1 | %2", _unit, _moveOptions];
 };};
 
 if (isNil _vehicle) exitWith {
 	call _fallback;
 	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
-	diag_log format ["VAR DOES NOT EXIST: %1 | %2", _unit, _moveOptions];
+	diag_log format ["AET_start_in_vehicle | VAR DOES NOT EXIST: %1 | %2", _unit, _moveOptions];
 };
 
-diag_log format ["VAR EXISTS....: %1 | %2", _unit, _moveOptions];
+
+diag_log format ["AET_start_in_vehicle | VAR EXISTS: %1 | %2", _unit, _moveOptions];
 
 _vehicle = call compile _vehicle;
 
+if (_vehicle getVariable [QGVAR(ignoreVehicle), false]) exitWith {
+	call _fallback;
+	[{ [true] call FUNC(request_iterate) }] call CBA_fnc_execNextFrame;
+	diag_log format ["AET_start_in_vehicle | VEHICLE IGNORED: %1 | %2", _unit, _moveOptions];
+};
 
 // Check if Vehicle exists and is not destroyed.
 if (
@@ -82,7 +88,7 @@ if (
 	}
 ) then _fallback else {
 
-	diag_log format ["ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _vehicle];
+	diag_log format ["AET_start_in_vehicle | ACTUAL MOVE ATTEMPT: %1 | %2", _unit, _vehicle];
 	// Check if we want and if we can move a unit in a seat, if not, check next, if nothing, use fallback.
 	switch (true) do {
 		case ( _driver    && { 0 < _vehicle emptyPositions "Driver"} ):       { [QGVAR(EH_moveIn), [_unit, _vehicle, "Driver", _backupLZ], _unit] call CBA_fnc_targetEvent; };		
