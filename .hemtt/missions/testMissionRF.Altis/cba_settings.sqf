@@ -7,9 +7,9 @@ force force ace_advanced_ballistics_muzzleVelocityVariationEnabled = true;
 force force ace_advanced_ballistics_simulationInterval = 0.05;
 
 // ACE Advanced Fatigue
-force ace_advanced_fatigue_enabled = true;
+force ace_advanced_fatigue_enabled = false;
 force force ace_advanced_fatigue_enableStaminaBar = true;
-force force ace_advanced_fatigue_fadeStaminaBar = true;
+force force ace_advanced_fatigue_fadeStaminaBar = false;
 force ace_advanced_fatigue_loadFactor = 0.8;
 force ace_advanced_fatigue_performanceFactor = 1;
 force ace_advanced_fatigue_recoveryFactor = 3;
@@ -1928,6 +1928,6 @@ zen_faction_filter_3_UK3CB_CHC_C = true;
 zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
-// LAST UPDATED 2025-07-30
+// LAST UPDATED 2025-07-31
 // END OF AET FILE
 #include "AET_Scripts\AET_settings.sqf"
