@@ -73,7 +73,7 @@ force force ace_common_allowFadeMusic = true;
 force force ace_common_checkExtensions = false;
 force ace_common_checkPBOsAction = 2;
 force ace_common_checkPBOsCheckAll = true;
-force force ace_common_checkPBOsWhitelist = "[""jsrs_soundmod_cup_vehicles"",""squad_ak19_cup"",""squad_ak15_cup"",""squad_ak12_cup"",""squad_vityaz_cup"",""squad_mp7_cup"",""squad_m3grease_cup"",""squad_xm8_cup"",""squad_sks_cup"",""squad_scar_cup"",""squad_sa58_cup"",""squad_cup_m4"",""squad_m16_cup"",""squad_m14_cup"",""squad_l85_cup"",""squad_hk416_cup"",""squad_g36_cup"",""squad_fnfal_cup"",""squad_cz805_cup"",""squad_rpk_cup"",""squad_aks_cup"",""squad_aks74u_cup"",""squad_aks74gl_cup"",""squad_aks74_cup"",""squad_akm_cup"",""squad_ak74m_gl"",""squad_ak74m_cup"",""squad_akgl_cup"",""squad_ak74_cup"",""squad_ak47_cup"",""squad_ak107gl_cup"",""squad_ak107_cup"",""squad_ak105_cup"",""squad_ak104_cup"",""squad_ak102_cup"",""squad_uzi_cup"",""squad_pm_cup"",""squad_m9shield_cup"",""squad_m9_cup"",""squad_m1911_cup"",""squad_m17_cup"",""squad_g17_cup"",""squad_cz75_cup"",""squad_pk_cup"",""squad_mk48_cup"",""squad_m60_cup"",""squad_m249_cup"",""squad_m240_cup"",""squad_l110_cup"",""squad_remington700_cup"",""squad_r11rsass_cup"",""squad_mosin_cup"",""squad_mk12_cup"",""squad_m24_cup"",""squad_m110_cup"",""squad_m107_cup"",""squad_l129a1_cup"",""squad_cz550"",""squad_awm_Cup"",""squad_as50_cup"",""squad_smaw_cup"",""squad_rshg2_cup"",""squad_rpg7_cup"",""squad_rpg26_cup"",""squad_rpg18_cup"",""squad_metis_cup"",""squad_m72_cup"",""jsrs_soundmod_cfg_cup_weapons"",""jsrs_soundmod_cup_weapons"",""squad_aug_cup"",""squad_pkt_cup"",""squad_mk19_cup"",""squad_m2_cup"",""squad_m134_cup"",""squad_kpvt_cup"",""squad_kord_cup"",""squad_dshk_cup"",""squad_ags30_cup"",""squad_svd_cup"",""squad_tow_cup"",""squad_spg9_cup"",""squad_at5_cup"",""squad_rh120_m256_cup"",""squad_m242_cup"",""squad_m168_cup"",""squad_m68_cup"",""squad_l30_cup"",""squad_gzh302_cup"",""squad_d10_d5_2a70_2a28_cup"",""squad_azp23_cup"",""squad_2a46_cup"",""squad_2a42_2a72_cup"",""squad_2a14_cup"",""squad_m230_cup"",""squad_M197_cup"",""squad_FFAR_CUP"",""squad_AIM9_cup"",""squad_agm65_cup"",""squad_AGM114_cup"",""crowsza_drawbuild"",""crowsza_ace"",""Reeveli_TFAR_SOGPF_scribbles"",""NVGJammer"",""squad_scorpion_cup"",""squad_mp5_cup"",""squad_galil_cup"",""squad_g3a3_cup"",""squad_famas_cup"",""squad_czbren2_cup"",""squad_acr_cup"",""squad_tt33_cup"",""squad_browning_cup"",""squad_mg3_cup"",""squad_lee_enfield_Cup"",""squad_cz750_cup"",""squad_maaws_cup"",""squad_m136_cup"",""squad_APILAS_cup"",""squad_shells_explosions_cup"",""squad_rockets_explosion_cup"",""squad_missiles_exp_cup"",""crowsza_zeus_text"",""crowsza_tfar"",""crowsza_teleport"",""crowsza_pingbox"",""crowsza_misc"",""crowsza_main"",""zeus_additions_main"",""UPSL_aime_inventory"",""UPSL_aime_group"",""UPSL_aime_change_ammo"",""tsp_animate_ace"",""MIRA_Vehicle_Medical"",""jsrs_soundmod_rhs_saf_weapons"",""jsrs_soundmod_rhs_gref_weapons"",""DIS_enhanced_map_ace"",""squad_scorpion_sound"",""squad_m84_sounds"",""squad_g36_sounds"",""squad_CZ99_sounds"",""squad_vhsd2_sounds"",""squad_sound_TT33"",""postscriptum_savz58_sounds"",""squad_sa61_sounds"",""postscriptum_stg44_sounds"",""squad_mosin_sounds"",""squad_mg42_sound"",""squad_m92_sounds"",""squad_m76_sounds"",""squad_m70_sounds"",""squad_m3grease_sounds"",""squad_m21_sounds"",""postscriptum_m1_garand_sounds"",""postscriptum_kar98k_sounds"",""squad_fnfal_sound"",""squad_mp5_3cbf"",""squad_stgw_3cbf"",""squad_aug_3cbf"",""squad_SKS_3cbf"",""squad_springfield_3cbf"",""squad_m14_3cbf"",""squad_g3_3cbf"",""squad_g36_3cbf"",""squad_famas_3cbf"",""squad_FAL_OSW_3cbf"",""squad_ACR_3cbf"",""squad_usp_3cbf"",""squad_pkmstatic_3cbf"",""squad_mg42_3cbf"",""squad_m60_3cbf"",""bettinv_main_ace"",""bettinv_main"",""UPSL_aime_vehicle_seats"",""UPSL_aime_vehicle_controls"",""UPSL_aime_uav_terminal"",""UPSL_aime"",""Reeveli_TFAR_scribbles"",""KKA3_ACE_Extension_Anim_dire"",""KKA3_ACE_Extension_Anim"",""squad_yakb_sound"",""squad_S5_missile_sounds"",""squad_r73_sound"",""squad_kh25_sounds"",""STUI_AutoBrightness"",""diwako_dui_linecompass"",""diwako_dui_indicators"",""diwako_dui_buddy"",""cem_movement"",""cem_common"",""sog_melee_bind"",""DynaSound_DS_w_DAGR"",""DynaSound_DS_w_ASRAAM"",""DynaSound_DS_w_Alamut"",""KKA3_ACE_Extension_Anim_A2"",""JSRS_soundmod_gm_support"",""hal_AutoPilot"",""squad_mp7_sounds"",""squad_m230_apache"",""squad_m197_sound"",""squad_sound_hellfirerocket"",""squad_sound_FFARrocket"",""squad_AIM9_Rocket"",""A3TI"",""STUI_Stamina"",""STUI_NameTags"",""STUI_GroupIndicators"",""STUI_GroupHUD"",""STUI_Core"",""PDT_ENVG"",""diwako_dui_radar"",""diwako_dui_nametags"",""diwako_dui_main"",""cem_main"",""tsp_animate_walk"",""tsp_animate_viper"",""tsp_animate_radio"",""tsp_animate_loose"",""tsp_animate_butt"",""tsp_animate"",""DynaSound_DS_w_Sting"",""DynaSound_DS_w_SPMG"",""DynaSound_DS_w_SPAR"",""DynaSound_DS_w_SPAR762"",""DynaSound_DS_w_SkyFire"",""DynaSound_DS_w_SDAR"",""DynaSound_DS_w_Scalpel"",""DynaSound_DS_w_RPG7"",""DynaSound_DS_w_Rahim"",""DynaSound_DS_w_Protector"",""DynaSound_DS_w_PlaneLaunchers"",""DynaSound_DS_w_PDW2000"",""DynaSound_DS_w_PCML"",""DynaSound_DS_w_Navid"",""DynaSound_DS_w_MX"",""DynaSound_DS_w_MLRS"",""DynaSound_DS_w_MK200"",""DynaSound_DS_w_MINIGUN762"",""DynaSound_DS_w_MINIGUN65"",""DynaSound_DS_w_MAR10"",""DynaSound_DS_w_M14"",""DynaSound_DS_w_Lynx"",""DynaSound_DS_w_LRR"",""DynaSound_DS_w_lim"",""DynaSound_DS_w_Launcher_Small"",""DynaSound_DS_w_Launcher_Big"",""DynaSound_DS_w_Katiba"",""DynaSound_DS_w_HMG"",""DynaSound_DS_w_F2000"",""DynaSound_DS_w_EMR"",""DynaSound_DS_w_EBR"",""DynaSound_DS_w_Cyrus"",""DynaSound_DS_w_CoaxMG"",""DynaSound_DS_w_CMR76"",""DynaSound_DS_w_CAR95"",""DynaSound_DS_w_Autocannon"",""DynaSound_DS_w_AKS"",""DynaSound_DS_w_AKM"",""DynaSound_DS_w_AK12"",""DynaSound_DS_w_30mmgatling"",""DynaSound_DS_w_20mmgatling"",""DynaSound_DS_w_155mm"",""DynaSound_DS_w_120mm"",""DynaSound_DS_m_Explosions"",""DynaSound_DS_m_Bullets"",""DynaSound_DS_lv_HatchBackSport"",""DynaSound_DS_a_Xiang"",""DynaSound_DS_a_Taru"",""DynaSound_DS_a_Merlin"",""DynaSound_DS_a_Lynx"",""DynaSound_DS_a_Littlebird"",""DynaSound_DS_a_Kasatka"",""DynaSound_DS_a_Kajman"",""DynaSound_DS_a_Comanche"",""DynaSound_DS_a_Chinook"",""DynaSound_DS_a_Blackhawk"",""jsrs_soundmod_cfg_rhs_usf_air_vehicles"",""jsrs_soundmod_cfg_rhs_usf_vehicles"",""jsrs_soundmod_cfg_rhs_usf_weapons"",""jsrs_soundmod_rhs_usf_weapons"",""jsrs_soundmod_cfg_rhs_afrf_air_vehicles"",""jsrs_soundmod_cfg_rhs_afrf_vehicles"",""jsrs_soundmod_cfg_rhs_afrf_weapons"",""jsrs_soundmod_rhs_afrf_weapons"",""squad_sound_smaw"",""squad_scar_sounds"",""squad_sound_mk19"",""squad_weapon_m9beretta"",""squad_sound_m107"",""squad_weapon_m4_m16"",""squad_sound_m3maaws"",""squad_sound_m27a7"",""squad_sound_m256"",""squad_sound_m252"",""squad_sound_m24"",""squad_sound_m249_m240"",""squad_sound_m242"",""squad_sound_m1911"",""squad_m14_sounds"",""squad_sound_m136at4"",""squad_M134_Minigun"",""squad_sound_m110_sr25"",""squad_sound_glock17"",""Squad_RHSUSAF_Explosions"",""squad_sound_bgm17TOW"",""squad_sound_50cal"",""squad_sound_t5000"",""squad_sound_SVD"",""squad_sound_russia_pistols"",""squad_sound_rpk"",""squad_sound_rpg7"",""squad_sound_rpg26"",""squad_sound_pkt_coax"",""squad_sound_PKP"",""squad_sound_pkm"",""squad_sound_metis"",""squad_sound_majutka"",""squad_sound_kpvt"",""squad_sound_kornet"",""squad_sound_dshk_kord_nsvt"",""squad_sound_d81_azp23_2a14_d10"",""squad_sound_aks74u"",""squad_sound_akm"",""squad_sound_ak74"",""squad_sound_ak103"",""squad_sound_ags30"",""squad_sound_2a70"",""squad_sound_2a42"",""squad_sound_2a28"",""squad_m203_3cbf"",""squad_m16_3cbf"",""squad_leeenfield_3cbf"",""squad_AK_3cbf"",""squad_cz75_3cbf"",""squad_browningpistol_3cbf"",""squad_rpk_3cbf"",""squad_s53_3cbf"",""tsp_core"",""Small_Ragdoll"",""L_Suppress_Suppress_sys"",""L_Suppress_Suppress_main"",""L_Immerse_Immerse_sys"",""L_Immerse_Immerse_main"",""L_ES_ES_sys"",""L_ES_ES_sounds"",""L_ES_ES_main"",""DynaSound_DS_w_Zubr"",""DynaSound_DS_w_Zafir"",""DynaSound_DS_w_Vermin"",""DynaSound_DS_w_UGL"",""DynaSound_DS_w_Type115_2"",""DynaSound_DS_w_Type115_1"",""DynaSound_DS_w_Titan"",""DynaSound_DS_w_Tavor"",""DynaSound_DS_w_Tails"",""DynaSound_DS_w_Shared"",""DynaSound_DS_w_rook"",""DynaSound_DS_w_P07"",""DynaSound_DS_w_Kir"",""DynaSound_DS_w_GMG"",""DynaSound_DS_w_Gau8"",""DynaSound_DS_w_acpc2"",""DynaSound_DS_w_AA"",""DynaSound_DS_w_4Five"",""DynaSound_DS_sys"",""DynaSound_DS_main"",""PLP_VTOLHoverController"",""AdvDevTools"",""OPTRE_JSRS"",""jsrs_soundmod_reloadingsounds"",""jsrs_soundmod_ce_reloadingsounds"",""jsrs_soundmod_helicopters"",""jsrs_soundmod_bullethits"",""jsrs_soundmod_movement"",""jsrs_soundmod_landvehicles"",""jsrs_soundmod_framework"",""jsrs_soundmod_explosions"",""jsrs_soundmod_environment"",""jsrs_soundmod_weapons"",""jsrs_soundmod_sonic_cracks"",""jsrs_soundmod_boats"",""jsrs_soundmod_complete_edition"",""amz_improved_weapon_rifles"",""AMZ_pistols_sounds"",""amz_improved_weapon_mbt"",""AMZ_minigun_v1"",""AMZ_minigun_v2"",""AMZ_coax_sounds"",""AMZ_50cal_sounds"",""AMZ_sniper_sounds"",""AMZ_LMG_sounds"",""AMZ_UGL_sounds"",""AMZ_smokelauncher_sounds"",""AMZ_rpg7_sounds"",""AMZ_rpg32_sounds"",""AMZ_mraws_sounds"",""AMZ_40mmgl_sounds"",""AMZ_20mmgl_sounds"",""amz_improved_weapon_ifv"",""AMZ_Vanilla_RocketsPods"",""AMZ_Vanilla_Cannons_Air"",""AMZ_Vanilla_ATLauncher"",""AMZ_Vanilla_AALauncher"",""squad_tankcrack_soundimpact"",""squad_ifvcannoncrack_soundimpact"",""squad_rocketcrack_soundimpact"",""squad_50calbulletcrack_soundimpact"",""squad_bulletcrack_soundimpact"",""PS_AMZ_Thompson"",""PS_AMZ_sten"",""PS_AMZ_MP40"",""PS_AMZ_greasegun"",""PS_AMZ_SVT"",""PS_AMZ_Springfield"",""PS_AMZ_PTRD41"",""PS_AMZ_MP44"",""PS_AMZ_Mosin"",""PS_AMZ_M1Garand"",""PS_AMZ_M1Carbine"",""PS_AMZ_Lee_enfield"",""PS_AMZ_K98k"",""PS_AMZ_G43"",""PS_AMZ_FG42"",""PS_AMZ_TT33"",""PS_AMZ_m1911"",""PS_AMZ_MG42"",""PS_AMZ_MG34"",""PS_AMZ_50cal"",""PS_AMZ_M1919V"",""PS_AMZ_M1919V2"",""PS_AMZ_M1919_COAX"",""PS_AMZ_M1919"",""PS_AMZ_Bren"",""PS_AMZ_BAR"",""PS_AMZ_V_QF17"",""PS_AMZ_Piat"",""PS_AMZ_Panzershreck"",""PS_AMZ_V_OQF_75"",""PS_AMZ_Bazooka"",""PS_AMZ_Rocket"",""PS_AMZ_grenadeimpacts"",""PS_AMZ_ImpactsBullets"",""PS_AMZ_ImpactsBullets_config"",""PS_AMZ_ifa3config"",""tsp_animate_swim"",""fxp_VehTank"",""WarFXPE_Weps"",""AMZ_SPG9_sounds"",""fxp_tracer"",""DIS_Enhanced_Gps"",""mrb_a3_airvisibility"",""fxp_VehPlane"",""squad_weapon_library_soundmod"",""squad_weapon_soundmod"",""squad_tank_explosions"",""squad_small_explosions"",""squad_helo_small_explosions"",""squad_helo_big_explosions"",""squad_missiles_exp_sounds"",""squad_explosion_config"",""squad_explosion_soundmod"",""squad_sound_spg9"",""ZECCUP"",""GF_Deformer"",""ZEI"",""Blastcore_VEP"",""fxp_VehHeli"",""blast_refract"",""Blastcore_MainCore"",""Vile_HUD"",""PH_TacSwap"",""AdvDevTools_Fonts"",""fxp_VehExpEffectBig"",""fxp_VehExpEffect"",""A3_Anims_F_Config_Sdr"",""WarFXPE"",""SA_AdvancedTowing"",""jsrs_soundmod_complete_edition_soundfiles"",""Ca"",""BW_adaptive_roadway"",""fxp_GrenadeSmoke"",""compositions_a3"", ""clv_trigger_debugger"", ""tsp_common"", ""female3_ICEMAN"", ""Radio_Animations"", ""tsp_sound"", ""tsp_throw"", ""fxp_BombGBU12"", ""fxp_LauncherExp"", ""fxp_LauncherSmo"", ""fxp_ArtyCanFired"", ""fxp_ArtySmokShell"", ""fxp_CannonFired"", ""fxp_VehExpEffectSmall"", ""fxp_adat"", ""female3_ICEMAN"", ""fxp_VehCar"", ""mrb_a3_seavesselvisibility"", ""fxp_VehTankWhe"", ""fxp_Arty155mm"", ""fxp_Arty82mm"", ""fxp_VehCarAmmo"", ""fxp_VehCarFuel"", ""fxp_BombClust"", ""fxp_HitEfe"", ""fxp_RPGthru"", ""fxp_MisRocSmo"", ""jsrs_soundmod_ifa3_aio_sounds"", ""squad_Milan_gm"", ""squad_2a28_gm"", ""squad_L7"", ""squad_kba_gm"", ""squad_rh202_gm"", ""squad_pt76_gm"", ""squad_shilka_gm"", ""squad_d10_gm"", ""squad_m72_gm"", ""squad_pzf3"", ""squad_pzf44_gm"", ""squad_pzf84"", ""squad_rpg18_gm"", ""squad_rpg7_gm"", ""squad_50cal_gm"", ""squad_mg3_gm"", ""squad_pkm_gm"", ""squad_pkt_gm"", ""squad_pm_gm"", ""squad_ak_gm"", ""squad_g11_gm"", ""squad_g36_gm"", ""squad_g3_gm"", ""squad_hk33_gm"", ""squad_m16_gm"", ""squad_sg542_gm"", ""squad_sg552_gm"", ""squad_svd_gm"", ""squad_mp2_gm"", ""squad_FAGOT_gm"", ""squad_majutka_gm"", ""squad_spg9_gm"", ""squad_dshk_gm"", ""squad_kpvt_gm"", ""Blastcore_vanilla_smoke"", ""tsp_animate_aim"", ""tsp_animate_retro"", ""mbg_hotfix_content"", ""mbg_hotfix_anims""]";
+force force ace_common_checkPBOsWhitelist = "[""jsrs_soundmod_cup_vehicles"",""squad_ak19_cup"",""squad_ak15_cup"",""squad_ak12_cup"",""squad_vityaz_cup"",""squad_mp7_cup"",""squad_m3grease_cup"",""squad_xm8_cup"",""squad_sks_cup"",""squad_scar_cup"",""squad_sa58_cup"",""squad_cup_m4"",""squad_m16_cup"",""squad_m14_cup"",""squad_l85_cup"",""squad_hk416_cup"",""squad_g36_cup"",""squad_fnfal_cup"",""squad_cz805_cup"",""squad_rpk_cup"",""squad_aks_cup"",""squad_aks74u_cup"",""squad_aks74gl_cup"",""squad_aks74_cup"",""squad_akm_cup"",""squad_ak74m_gl"",""squad_ak74m_cup"",""squad_akgl_cup"",""squad_ak74_cup"",""squad_ak47_cup"",""squad_ak107gl_cup"",""squad_ak107_cup"",""squad_ak105_cup"",""squad_ak104_cup"",""squad_ak102_cup"",""squad_uzi_cup"",""squad_pm_cup"",""squad_m9shield_cup"",""squad_m9_cup"",""squad_m1911_cup"",""squad_m17_cup"",""squad_g17_cup"",""squad_cz75_cup"",""squad_pk_cup"",""squad_mk48_cup"",""squad_m60_cup"",""squad_m249_cup"",""squad_m240_cup"",""squad_l110_cup"",""squad_remington700_cup"",""squad_r11rsass_cup"",""squad_mosin_cup"",""squad_mk12_cup"",""squad_m24_cup"",""squad_m110_cup"",""squad_m107_cup"",""squad_l129a1_cup"",""squad_cz550"",""squad_awm_Cup"",""squad_as50_cup"",""squad_smaw_cup"",""squad_rshg2_cup"",""squad_rpg7_cup"",""squad_rpg26_cup"",""squad_rpg18_cup"",""squad_metis_cup"",""squad_m72_cup"",""jsrs_soundmod_cfg_cup_weapons"",""jsrs_soundmod_cup_weapons"",""squad_aug_cup"",""squad_pkt_cup"",""squad_mk19_cup"",""squad_m2_cup"",""squad_m134_cup"",""squad_kpvt_cup"",""squad_kord_cup"",""squad_dshk_cup"",""squad_ags30_cup"",""squad_svd_cup"",""squad_tow_cup"",""squad_spg9_cup"",""squad_at5_cup"",""squad_rh120_m256_cup"",""squad_m242_cup"",""squad_m168_cup"",""squad_m68_cup"",""squad_l30_cup"",""squad_gzh302_cup"",""squad_d10_d5_2a70_2a28_cup"",""squad_azp23_cup"",""squad_2a46_cup"",""squad_2a42_2a72_cup"",""squad_2a14_cup"",""squad_m230_cup"",""squad_M197_cup"",""squad_FFAR_CUP"",""squad_AIM9_cup"",""squad_agm65_cup"",""squad_AGM114_cup"",""crowsza_drawbuild"",""crowsza_ace"",""Reeveli_TFAR_SOGPF_scribbles"",""NVGJammer"",""squad_scorpion_cup"",""squad_mp5_cup"",""squad_galil_cup"",""squad_g3a3_cup"",""squad_famas_cup"",""squad_czbren2_cup"",""squad_acr_cup"",""squad_tt33_cup"",""squad_browning_cup"",""squad_mg3_cup"",""squad_lee_enfield_Cup"",""squad_cz750_cup"",""squad_maaws_cup"",""squad_m136_cup"",""squad_APILAS_cup"",""squad_shells_explosions_cup"",""squad_rockets_explosion_cup"",""squad_missiles_exp_cup"",""crowsza_zeus_text"",""crowsza_tfar"",""crowsza_teleport"",""crowsza_pingbox"",""crowsza_misc"",""crowsza_main"",""zeus_additions_main"",""UPSL_aime_inventory"",""UPSL_aime_group"",""UPSL_aime_change_ammo"",""tsp_animate_ace"",""MIRA_Vehicle_Medical"",""jsrs_soundmod_rhs_saf_weapons"",""jsrs_soundmod_rhs_gref_weapons"",""DIS_enhanced_map_ace"",""squad_scorpion_sound"",""squad_m84_sounds"",""squad_g36_sounds"",""squad_CZ99_sounds"",""squad_vhsd2_sounds"",""squad_sound_TT33"",""postscriptum_savz58_sounds"",""squad_sa61_sounds"",""postscriptum_stg44_sounds"",""squad_mosin_sounds"",""squad_mg42_sound"",""squad_m92_sounds"",""squad_m76_sounds"",""squad_m70_sounds"",""squad_m3grease_sounds"",""squad_m21_sounds"",""postscriptum_m1_garand_sounds"",""postscriptum_kar98k_sounds"",""squad_fnfal_sound"",""squad_mp5_3cbf"",""squad_stgw_3cbf"",""squad_aug_3cbf"",""squad_SKS_3cbf"",""squad_springfield_3cbf"",""squad_m14_3cbf"",""squad_g3_3cbf"",""squad_g36_3cbf"",""squad_famas_3cbf"",""squad_FAL_OSW_3cbf"",""squad_ACR_3cbf"",""squad_usp_3cbf"",""squad_pkmstatic_3cbf"",""squad_mg42_3cbf"",""squad_m60_3cbf"",""bettinv_main_ace"",""bettinv_main"",""UPSL_aime_vehicle_seats"",""UPSL_aime_vehicle_controls"",""UPSL_aime_uav_terminal"",""UPSL_aime"",""Reeveli_TFAR_scribbles"",""KKA3_ACE_Extension_Anim_dire"",""KKA3_ACE_Extension_Anim"",""squad_yakb_sound"",""squad_S5_missile_sounds"",""squad_r73_sound"",""squad_kh25_sounds"",""STUI_AutoBrightness"",""diwako_dui_linecompass"",""diwako_dui_indicators"",""diwako_dui_buddy"",""cem_movement"",""cem_common"",""sog_melee_bind"",""DynaSound_DS_w_DAGR"",""DynaSound_DS_w_ASRAAM"",""DynaSound_DS_w_Alamut"",""KKA3_ACE_Extension_Anim_A2"",""JSRS_soundmod_gm_support"",""hal_AutoPilot"",""squad_mp7_sounds"",""squad_m230_apache"",""squad_m197_sound"",""squad_sound_hellfirerocket"",""squad_sound_FFARrocket"",""squad_AIM9_Rocket"",""A3TI"",""STUI_Stamina"",""STUI_NameTags"",""STUI_GroupIndicators"",""STUI_GroupHUD"",""STUI_Core"",""PDT_ENVG"",""diwako_dui_radar"",""diwako_dui_nametags"",""diwako_dui_main"",""cem_main"",""tsp_animate_walk"",""tsp_animate_viper"",""tsp_animate_radio"",""tsp_animate_loose"",""tsp_animate_butt"",""tsp_animate"",""DynaSound_DS_w_Sting"",""DynaSound_DS_w_SPMG"",""DynaSound_DS_w_SPAR"",""DynaSound_DS_w_SPAR762"",""DynaSound_DS_w_SkyFire"",""DynaSound_DS_w_SDAR"",""DynaSound_DS_w_Scalpel"",""DynaSound_DS_w_RPG7"",""DynaSound_DS_w_Rahim"",""DynaSound_DS_w_Protector"",""DynaSound_DS_w_PlaneLaunchers"",""DynaSound_DS_w_PDW2000"",""DynaSound_DS_w_PCML"",""DynaSound_DS_w_Navid"",""DynaSound_DS_w_MX"",""DynaSound_DS_w_MLRS"",""DynaSound_DS_w_MK200"",""DynaSound_DS_w_MINIGUN762"",""DynaSound_DS_w_MINIGUN65"",""DynaSound_DS_w_MAR10"",""DynaSound_DS_w_M14"",""DynaSound_DS_w_Lynx"",""DynaSound_DS_w_LRR"",""DynaSound_DS_w_lim"",""DynaSound_DS_w_Launcher_Small"",""DynaSound_DS_w_Launcher_Big"",""DynaSound_DS_w_Katiba"",""DynaSound_DS_w_HMG"",""DynaSound_DS_w_F2000"",""DynaSound_DS_w_EMR"",""DynaSound_DS_w_EBR"",""DynaSound_DS_w_Cyrus"",""DynaSound_DS_w_CoaxMG"",""DynaSound_DS_w_CMR76"",""DynaSound_DS_w_CAR95"",""DynaSound_DS_w_Autocannon"",""DynaSound_DS_w_AKS"",""DynaSound_DS_w_AKM"",""DynaSound_DS_w_AK12"",""DynaSound_DS_w_30mmgatling"",""DynaSound_DS_w_20mmgatling"",""DynaSound_DS_w_155mm"",""DynaSound_DS_w_120mm"",""DynaSound_DS_m_Explosions"",""DynaSound_DS_m_Bullets"",""DynaSound_DS_lv_HatchBackSport"",""DynaSound_DS_a_Xiang"",""DynaSound_DS_a_Taru"",""DynaSound_DS_a_Merlin"",""DynaSound_DS_a_Lynx"",""DynaSound_DS_a_Littlebird"",""DynaSound_DS_a_Kasatka"",""DynaSound_DS_a_Kajman"",""DynaSound_DS_a_Comanche"",""DynaSound_DS_a_Chinook"",""DynaSound_DS_a_Blackhawk"",""jsrs_soundmod_cfg_rhs_usf_air_vehicles"",""jsrs_soundmod_cfg_rhs_usf_vehicles"",""jsrs_soundmod_cfg_rhs_usf_weapons"",""jsrs_soundmod_rhs_usf_weapons"",""jsrs_soundmod_cfg_rhs_afrf_air_vehicles"",""jsrs_soundmod_cfg_rhs_afrf_vehicles"",""jsrs_soundmod_cfg_rhs_afrf_weapons"",""jsrs_soundmod_rhs_afrf_weapons"",""squad_sound_smaw"",""squad_scar_sounds"",""squad_sound_mk19"",""squad_weapon_m9beretta"",""squad_sound_m107"",""squad_weapon_m4_m16"",""squad_sound_m3maaws"",""squad_sound_m27a7"",""squad_sound_m256"",""squad_sound_m252"",""squad_sound_m24"",""squad_sound_m249_m240"",""squad_sound_m242"",""squad_sound_m1911"",""squad_m14_sounds"",""squad_sound_m136at4"",""squad_M134_Minigun"",""squad_sound_m110_sr25"",""squad_sound_glock17"",""Squad_RHSUSAF_Explosions"",""squad_sound_bgm17TOW"",""squad_sound_50cal"",""squad_sound_t5000"",""squad_sound_SVD"",""squad_sound_russia_pistols"",""squad_sound_rpk"",""squad_sound_rpg7"",""squad_sound_rpg26"",""squad_sound_pkt_coax"",""squad_sound_PKP"",""squad_sound_pkm"",""squad_sound_metis"",""squad_sound_majutka"",""squad_sound_kpvt"",""squad_sound_kornet"",""squad_sound_dshk_kord_nsvt"",""squad_sound_d81_azp23_2a14_d10"",""squad_sound_aks74u"",""squad_sound_akm"",""squad_sound_ak74"",""squad_sound_ak103"",""squad_sound_ags30"",""squad_sound_2a70"",""squad_sound_2a42"",""squad_sound_2a28"",""squad_m203_3cbf"",""squad_m16_3cbf"",""squad_leeenfield_3cbf"",""squad_AK_3cbf"",""squad_cz75_3cbf"",""squad_browningpistol_3cbf"",""squad_rpk_3cbf"",""squad_s53_3cbf"",""tsp_core"",""Small_Ragdoll"",""L_Suppress_Suppress_sys"",""L_Suppress_Suppress_main"",""L_Immerse_Immerse_sys"",""L_Immerse_Immerse_main"",""L_ES_ES_sys"",""L_ES_ES_sounds"",""L_ES_ES_main"",""DynaSound_DS_w_Zubr"",""DynaSound_DS_w_Zafir"",""DynaSound_DS_w_Vermin"",""DynaSound_DS_w_UGL"",""DynaSound_DS_w_Type115_2"",""DynaSound_DS_w_Type115_1"",""DynaSound_DS_w_Titan"",""DynaSound_DS_w_Tavor"",""DynaSound_DS_w_Tails"",""DynaSound_DS_w_Shared"",""DynaSound_DS_w_rook"",""DynaSound_DS_w_P07"",""DynaSound_DS_w_Kir"",""DynaSound_DS_w_GMG"",""DynaSound_DS_w_Gau8"",""DynaSound_DS_w_acpc2"",""DynaSound_DS_w_AA"",""DynaSound_DS_w_4Five"",""DynaSound_DS_sys"",""DynaSound_DS_main"",""PLP_VTOLHoverController"",""AdvDevTools"",""OPTRE_JSRS"",""jsrs_soundmod_reloadingsounds"",""jsrs_soundmod_ce_reloadingsounds"",""jsrs_soundmod_helicopters"",""jsrs_soundmod_bullethits"",""jsrs_soundmod_movement"",""jsrs_soundmod_landvehicles"",""jsrs_soundmod_framework"",""jsrs_soundmod_explosions"",""jsrs_soundmod_environment"",""jsrs_soundmod_weapons"",""jsrs_soundmod_sonic_cracks"",""jsrs_soundmod_boats"",""jsrs_soundmod_complete_edition"",""amz_improved_weapon_rifles"",""AMZ_pistols_sounds"",""amz_improved_weapon_mbt"",""AMZ_minigun_v1"",""AMZ_minigun_v2"",""AMZ_coax_sounds"",""AMZ_50cal_sounds"",""AMZ_sniper_sounds"",""AMZ_LMG_sounds"",""AMZ_UGL_sounds"",""AMZ_smokelauncher_sounds"",""AMZ_rpg7_sounds"",""AMZ_rpg32_sounds"",""AMZ_mraws_sounds"",""AMZ_40mmgl_sounds"",""AMZ_20mmgl_sounds"",""amz_improved_weapon_ifv"",""AMZ_Vanilla_RocketsPods"",""AMZ_Vanilla_Cannons_Air"",""AMZ_Vanilla_ATLauncher"",""AMZ_Vanilla_AALauncher"",""squad_tankcrack_soundimpact"",""squad_ifvcannoncrack_soundimpact"",""squad_rocketcrack_soundimpact"",""squad_50calbulletcrack_soundimpact"",""squad_bulletcrack_soundimpact"",""PS_AMZ_Thompson"",""PS_AMZ_sten"",""PS_AMZ_MP40"",""PS_AMZ_greasegun"",""PS_AMZ_SVT"",""PS_AMZ_Springfield"",""PS_AMZ_PTRD41"",""PS_AMZ_MP44"",""PS_AMZ_Mosin"",""PS_AMZ_M1Garand"",""PS_AMZ_M1Carbine"",""PS_AMZ_Lee_enfield"",""PS_AMZ_K98k"",""PS_AMZ_G43"",""PS_AMZ_FG42"",""PS_AMZ_TT33"",""PS_AMZ_m1911"",""PS_AMZ_MG42"",""PS_AMZ_MG34"",""PS_AMZ_50cal"",""PS_AMZ_M1919V"",""PS_AMZ_M1919V2"",""PS_AMZ_M1919_COAX"",""PS_AMZ_M1919"",""PS_AMZ_Bren"",""PS_AMZ_BAR"",""PS_AMZ_V_QF17"",""PS_AMZ_Piat"",""PS_AMZ_Panzershreck"",""PS_AMZ_V_OQF_75"",""PS_AMZ_Bazooka"",""PS_AMZ_Rocket"",""PS_AMZ_grenadeimpacts"",""PS_AMZ_ImpactsBullets"",""PS_AMZ_ImpactsBullets_config"",""PS_AMZ_ifa3config"",""tsp_animate_swim"",""fxp_VehTank"",""WarFXPE_Weps"",""AMZ_SPG9_sounds"",""fxp_tracer"",""DIS_Enhanced_Gps"",""mrb_a3_airvisibility"",""fxp_VehPlane"",""squad_weapon_library_soundmod"",""squad_weapon_soundmod"",""squad_tank_explosions"",""squad_small_explosions"",""squad_helo_small_explosions"",""squad_helo_big_explosions"",""squad_missiles_exp_sounds"",""squad_explosion_config"",""squad_explosion_soundmod"",""squad_sound_spg9"",""ZECCUP"",""GF_Deformer"",""ZEI"",""Blastcore_VEP"",""fxp_VehHeli"",""blast_refract"",""Blastcore_MainCore"",""Vile_HUD"",""PH_TacSwap"",""AdvDevTools_Fonts"",""fxp_VehExpEffectBig"",""fxp_VehExpEffect"",""A3_Anims_F_Config_Sdr"",""WarFXPE"",""SA_AdvancedTowing"",""jsrs_soundmod_complete_edition_soundfiles"",""Ca"",""BW_adaptive_roadway"",""fxp_GrenadeSmoke"",""compositions_a3"", ""clv_trigger_debugger"", ""tsp_common"", ""female3_ICEMAN"", ""Radio_Animations"", ""tsp_sound"", ""tsp_throw"", ""fxp_BombGBU12"", ""fxp_LauncherExp"", ""fxp_LauncherSmo"", ""fxp_ArtyCanFired"", ""fxp_ArtySmokShell"", ""fxp_CannonFired"", ""fxp_VehExpEffectSmall"", ""fxp_adat"", ""female3_ICEMAN"", ""fxp_VehCar"", ""mrb_a3_seavesselvisibility"", ""fxp_VehTankWhe"", ""fxp_Arty155mm"", ""fxp_Arty82mm"", ""fxp_VehCarAmmo"", ""fxp_VehCarFuel"", ""fxp_BombClust"", ""fxp_HitEfe"", ""fxp_RPGthru"", ""fxp_MisRocSmo"", ""jsrs_soundmod_ifa3_aio_sounds"", ""squad_Milan_gm"", ""squad_2a28_gm"", ""squad_L7"", ""squad_kba_gm"", ""squad_rh202_gm"", ""squad_pt76_gm"", ""squad_shilka_gm"", ""squad_d10_gm"", ""squad_m72_gm"", ""squad_pzf3"", ""squad_pzf44_gm"", ""squad_pzf84"", ""squad_rpg18_gm"", ""squad_rpg7_gm"", ""squad_50cal_gm"", ""squad_mg3_gm"", ""squad_pkm_gm"", ""squad_pkt_gm"", ""squad_pm_gm"", ""squad_ak_gm"", ""squad_g11_gm"", ""squad_g36_gm"", ""squad_g3_gm"", ""squad_hk33_gm"", ""squad_m16_gm"", ""squad_sg542_gm"", ""squad_sg552_gm"", ""squad_svd_gm"", ""squad_mp2_gm"", ""squad_FAGOT_gm"", ""squad_majutka_gm"", ""squad_spg9_gm"", ""squad_dshk_gm"", ""squad_kpvt_gm"", ""Blastcore_vanilla_smoke"", ""tsp_animate_aim"", ""tsp_animate_retro"", ""mbg_hotfix_content"", ""mbg_hotfix_anims"", ""dirt_main"", ""dirt_compat_blood"", ""dirt_compat_ace_field_rations""]";
 force ace_common_deployedSwayFactor = 1;
 ace_common_displayTextColor = [0,0,0,0.1];
 ace_common_displayTextFontColor = [1,1,1,1];
@@ -300,9 +300,16 @@ ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_emotes__tsp_animate_sc
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_emotes__tsp_animate_thumbsdown = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_emotes__tsp_animate_thumbsup = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_abort = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_bang = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_breach = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_column = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_frag = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_halt = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_line = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_peek = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_ready = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_shotgun = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_formations__tsp_animate_wedge = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_inspect = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_suicide = false;
@@ -498,7 +505,7 @@ ace_maptools_rotateModifierKey = 1;
 force force ace_medical_ai_enabledFor = 0;
 force force ace_medical_ai_requireItems = 0;
 force ace_medical_AIDamageThreshold = 0.1;
-force force ace_medical_alternateArmorPenetration = false;
+force ace_medical_alternateArmorPenetration = false;
 force ace_medical_bleedingCoefficient = 0.2;
 force force ace_medical_blood_bloodLifetime = 300;
 force ace_medical_blood_enabledFor = 2;
@@ -885,11 +892,11 @@ force AET_common_SET_compareAddonOptions_mode = "ADMIN";
 force AET_common_SET_dynamicGroups = true;
 
 // AET Disclaimer
-force AET_disclaimer_SET_customIntro_path = "";
+force AET_disclaimer_SET_customIntro_path = "AET_Scripts\AET_customIntro.sqf";
 force AET_disclaimer_SET_disable_for_admin = true;
 force AET_disclaimer_SET_disable_in_editor = true;
 force AET_disclaimer_SET_disableSafetydistance = 250;
-force AET_disclaimer_SET_disableSafetymode = "DISCLAIMER_END";
+force AET_disclaimer_SET_disableSafetymode = "DISTANCE";
 force AET_disclaimer_SET_disableSafetytime = 30;
 force AET_disclaimer_SET_enabled = true;
 force AET_disclaimer_SET_enabled_logo = true;
@@ -898,9 +905,9 @@ force AET_disclaimer_SET_text = "<t size='2'>Disclaimer: This is a work of ficti
 
 // AET Loadout Handler
 force AET_loadout_handler_SET_allowArsenalOverfilling = true;
-force AET_loadout_handler_SET_backpackInventory = "[ 
-  [""ACE_EntrenchingTool"", 0], 
-  [""ACE_IR_Strobe_Item"", 0] 
+force AET_loadout_handler_SET_backpackInventory = "[  
+  [""ACE_EntrenchingTool"", 0],  
+  [""ACE_IR_Strobe_Item"", 0]  
  ]";
 force AET_loadout_handler_SET_binocularsForEveryone_className = "Binocular";
 force AET_loadout_handler_SET_binocularsForEveryone_enabled = true;
@@ -919,30 +926,30 @@ force AET_loadout_handler_SET_radiosForEveryone_className = "TFAR_anprc148jem";
 force AET_loadout_handler_SET_radiosForEveryone_enabled = true;
 force AET_loadout_handler_SET_radiosInNeedOfProgrammer = "[""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]";
 force AET_loadout_handler_SET_TFARCompatibleRadios = "[""gm_radio_r126"", ""gm_radio_sem52a"", ""vn_o_item_radio_m252"", ""vn_b_item_radio_urc10"", ""TFAR_anprc148jem"", ""TFAR_anprc152"", ""TFAR_fadak"", ""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]";
-force AET_loadout_handler_SET_uniformInventory = "[ 
-  [""ACE_EarPlugs"", 1], 
-  [""ACE_Flashlight_XL50"", 1], 
-  [""ACE_MapTools"", 1], 
-  [""ACE_CableTie"", 2], 
-  [""ACE_Canteen"", 1], 
-  [""acex_intelitems_notepad"", 1], 
-  [""ACE_SpraypaintBlack"", 1], 
-  [""ACE_SpraypaintBlue"", 1], 
-  [""ACE_SpraypaintGreen"", 1], 
-  [""ACE_SpraypaintRed"", 1], 
-  [""ACE_SpraypaintWhite"", 1], 
-  [""ACE_SpraypaintYellow"", 1], 
-  [""ACE_elasticBandage"", 10], 
-  [""ACE_packingBandage"", 10], 
-  [""ACE_epinephrine"", 2], 
-  [""ACE_morphine"", 2], 
-  [""ACE_painkillers"", 1], 
-  [""ACE_splint"", 2], 
-  [""ACE_tourniquet"", 2] 
+force AET_loadout_handler_SET_uniformInventory = "[  
+  [""ACE_EarPlugs"", 1],  
+  [""ACE_Flashlight_XL50"", 1],  
+  [""ACE_MapTools"", 1],  
+  [""ACE_CableTie"", 2],  
+  [""ACE_Canteen"", 1],  
+  [""acex_intelitems_notepad"", 1],  
+  [""ACE_SpraypaintBlack"", 1],  
+  [""ACE_SpraypaintBlue"", 1],  
+  [""ACE_SpraypaintGreen"", 1],  
+  [""ACE_SpraypaintRed"", 1],  
+  [""ACE_SpraypaintWhite"", 1],  
+  [""ACE_SpraypaintYellow"", 1],  
+  [""ACE_elasticBandage"", 10],  
+  [""ACE_packingBandage"", 10],  
+  [""ACE_epinephrine"", 2],  
+  [""ACE_morphine"", 2],  
+  [""ACE_painkillers"", 1],  
+  [""ACE_splint"", 2],  
+  [""ACE_tourniquet"", 2]  
  ]";
-force AET_loadout_handler_SET_vestInventory = "[ 
-  [""SmokeShell"", 0], 
-  [""HandGrenade"", 0] 
+force AET_loadout_handler_SET_vestInventory = "[  
+  [""SmokeShell"", 0],  
+  [""HandGrenade"", 0]  
  ]";
 
 // AET Plan Importer
@@ -1309,6 +1316,7 @@ force force TFAR_voiceCone = true;
 
 // TSP Animate
 tsp_cba_animate_Abort = true;
+tsp_cba_animate_Advance = true;
 tsp_cba_animate_attachment = true;
 tsp_cba_animate_Bang = true;
 tsp_cba_animate_Bird = true;
@@ -1318,24 +1326,34 @@ tsp_cba_animate_Cancel = true;
 tsp_cba_animate_cant = true;
 tsp_cba_animate_captive = true;
 tsp_cba_animate_carry = 2;
+tsp_cba_animate_Cease Fire = true;
 tsp_cba_animate_clacker = true;
 tsp_cba_animate_Column = true;
+tsp_cba_animate_commands = true;
 tsp_cba_animate_compass = true;
 tsp_cba_animate_Contact = true;
+tsp_cba_animate_Cover = true;
 force force tsp_cba_animate_Dab = false;
 force force tsp_cba_animate_door = true;
 tsp_cba_animate_Duo = true;
+tsp_cba_animate_Engage = true;
+tsp_cba_animate_Follow = true;
+tsp_cba_animate_Forward = true;
 tsp_cba_animate_Frag = true;
+tsp_cba_animate_Freeze = true;
 tsp_cba_animate_friend = 2;
+tsp_cba_animate_Go = true;
 tsp_cba_animate_grenade = true;
 tsp_cba_animate_Halt = true;
 tsp_cba_animate_Heart = true;
+tsp_cba_animate_Hold = true;
 tsp_cba_animate_Horns = true;
 tsp_cba_animate_Inspect = true;
 tsp_cba_animate_Ivan = true;
 force force tsp_cba_animate_Jackoff = false;
 tsp_cba_animate_Kata = true;
 tsp_cba_animate_ladder = true;
+tsp_cba_animate_lift = true;
 tsp_cba_animate_Line = true;
 tsp_cba_animate_Loser = true;
 force force tsp_cba_animate_Mahalo = false;
@@ -1347,10 +1365,12 @@ tsp_cba_animate_Ok = true;
 tsp_cba_animate_Paper = true;
 tsp_cba_animate_Peace = true;
 tsp_cba_animate_Peek = true;
+tsp_cba_animate_Point = true;
 tsp_cba_animate_poll = 0.25;
 tsp_cba_animate_port = true;
 tsp_cba_animate_Pushups = true;
 tsp_cba_animate_Ready = true;
+tsp_cba_animate_Regroup = true;
 tsp_cba_animate_Rock = true;
 tsp_cba_animate_Scissors = true;
 tsp_cba_animate_shake = 1;
@@ -1367,6 +1387,7 @@ tsp_cba_animate_sound = 1;
 tsp_cba_animate_sprint = true;
 tsp_cba_animate_Squats = true;
 tsp_cba_animate_Stefan = true;
+tsp_cba_animate_Stop = true;
 tsp_cba_animate_style = "";
 tsp_cba_animate_style_autorifle = "loose_";
 tsp_cba_animate_style_shotgun = "butt_";
@@ -1378,10 +1399,12 @@ tsp_cba_animate_throw = true;
 tsp_cba_animate_ThumbsDown = true;
 tsp_cba_animate_ThumbsUp = true;
 tsp_cba_animate_uav = true;
+tsp_cba_animate_Up = true;
 force force tsp_cba_animate_walk = true;
 tsp_cba_animate_walk_default = 1;
 tsp_cba_animate_walk_lower = 1;
 tsp_cba_animate_walk_max = 1.6;
+tsp_cba_animate_Warning = true;
 tsp_cba_animate_watch = true;
 tsp_cba_animate_Wedge = true;
 tsp_cba_animate_Zozo = true;
@@ -1905,5 +1928,6 @@ zen_faction_filter_3_UK3CB_CHC_C = true;
 zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
+// LAST UPDATED 2025-07-30
 // END OF AET FILE
 #include "AET_Scripts\AET_settings.sqf"
