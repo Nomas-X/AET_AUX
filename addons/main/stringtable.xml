@@ -2,7 +2,7 @@
 <Project name="aet">
     <Package name="Main">
         <Key ID="STR_aet_URL">
-            <English>https://github.com/Nomas-X/aet/</English>
+            <English>https://github.com/Nomas-X/AET_AUX/</English>
         </Key>
         <Key ID="STR_aet_author">
             <English>Antistasi Event Team</English>
