@@ -27,5 +27,5 @@ if (!((toLower _ai) in _ais)) exitWith {
 };
 
 {
-	[_x, _ai] remoteExec ["disableAI"];
+	[_x, _ai] remoteExec ["disableAI", 0, true];
 } forEach _units;
