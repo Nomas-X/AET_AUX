@@ -13,18 +13,31 @@ jobs:
     steps:
         - name: Set VERSION env
           run: echo VERSION=${GITHUB_REF#refs/tags/${{ env.VERSION }}} >> $GITHUB_ENV
+
         - name: Checkout the source code
           uses: actions/checkout@v2
+
+        - name: Update timestamp in meta.cpp
+          shell: pwsh
+          run: |
+            $ticks = [DateTime]::UtcNow.Ticks
+            $filePath = "${{ github.workspace }}/meta.cpp"
+            (Get-Content $filePath) -replace 'timestamp\s*=\s*;', "timestamp = $ticks;" | Set-Content $filePath
+
         - name: Setup HEMTT
           uses: arma-actions/hemtt@v1
+
         - name: Run HEMTT build
           run: hemtt release --no-archive
+
         - name: Move release to releases folder
           run:
             version="${{ github.event.release.tag_name }}"
             mv .hemttout/release "@AET_AUX-${{ env.VERSION }}"
+
         - name: Zip release
           run: zip -r "@AET_AUX-${{ env.VERSION }}.zip" ./@AET_AUX-${{ env.VERSION }}
+
         - name: Update Release with Files
           uses: softprops/action-gh-release@v1
           with:
@@ -32,6 +45,7 @@ jobs:
             draft: true
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
         - name: Update to Steam Workshop (stable)
           uses: arma-actions/workshop-upload@v1
           with:
