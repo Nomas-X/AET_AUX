@@ -3,25 +3,26 @@
 workshop = [
     "450814997",  # CBA_A3's Workshop ID
     "463939057",  # ACE3
-	"1508091616", # Metis Marker
-	"894678801",  # TFAR BETA
-	"1673595418", # User Input Menus
+    "1508091616", # Metis Marker
+    "894678801",  # TFAR BETA
+    "1673595418", # User Input Menus
     "3499977893", # Advanced Developer Tools
     "1779063631", # ZEN
-	"623475643",  # 3den Enhanced
+    "623475643",  # 3den Enhanced
+]
+
+[jca]
+extends = "default"
+workshop = [
+    "2991684121", # JCA - Hand Flares
 ]
 
 dlc = []
 optionals = []
 
-parameters = [
-    "-noPause",
-    "-noPauseAudio",
-	"-debug",
-	"-showScriptErrors",
-]
+parameters = ["-noPause", "-noPauseAudio", "-debug", "-showScriptErrors"]
 
 [Altis]
 extends = "default"
-dlc = ["ws","rf", "vn"]
+dlc = ["ws", "rf", "vn"]
 mission = "testMissionRF.Altis"
