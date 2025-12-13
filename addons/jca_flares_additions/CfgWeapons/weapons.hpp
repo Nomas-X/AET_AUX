@@ -1,15 +1,15 @@
 class GrenadeLauncher;
 class Throw: GrenadeLauncher
 {
-    muzzles[] += {"JCA_HandFlare_white_Muzzle", "JCA_SignalFlare_white_Muzzle"};
+    muzzles[] += {"AET_JCA_HandFlare_white_Muzzle", "AET_JCA_SignalFlare_white_Muzzle"};
     class ThrowMuzzle;
-    class JCA_HandFlare_white_Muzzle: ThrowMuzzle
+    class AET_JCA_HandFlare_white_Muzzle: ThrowMuzzle
     {
-        magazines[] = {"JCA_HandFlare_White"};
+        magazines[] = {"AET_JCA_HandFlare_White"};
     };
-    class JCA_SignalFlare_white_Muzzle: ThrowMuzzle
+    class AET_JCA_SignalFlare_white_Muzzle: ThrowMuzzle
     {
-        magazines[] = {"JCA_SignalFlare_White"};
+        magazines[] = {"AET_JCA_SignalFlare_White"};
     };
 };
 

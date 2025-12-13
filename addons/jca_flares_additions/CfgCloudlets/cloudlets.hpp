@@ -1,34 +1,34 @@
 class JCA_HandFlare_Effect_Smoke_Base;
 class JCA_HandFlare_Effect_Smoke_Base_UW;
-class JCA_HandFlare_Effect_Smoke_White: JCA_HandFlare_Effect_Smoke_Base
+class AET_JCA_HandFlare_Effect_Smoke_White: JCA_HandFlare_Effect_Smoke_Base
 {
     color[] =
     {
         {0.5, 0.5, 0.5, 0.2}
     };
 };
-class JCA_HandFlare_Effect_Smoke_White_UW: JCA_HandFlare_Effect_Smoke_Base_UW
+class AET_JCA_HandFlare_Effect_Smoke_White_UW: JCA_HandFlare_Effect_Smoke_Base_UW
 {
 };
 
 class JCA_SignalFlare_Effect_Smoke_Base;
-class JCA_SignalFlare_Effect_Smoke_Base_UW: JCA_HandFlare_Effect_Smoke_Base_UW
+class AET_JCA_SignalFlare_Effect_Smoke_Base_UW: JCA_HandFlare_Effect_Smoke_Base_UW
 {
 };
 
-class JCA_SignalFlare_Effect_Smoke_White: JCA_SignalFlare_Effect_Smoke_Base
+class AET_JCA_SignalFlare_Effect_Smoke_White: JCA_SignalFlare_Effect_Smoke_Base
 {
     color[] =
     {
         {0.5, 0.5, 0.5, 0.2}
     };
 };
-class JCA_SignalFlare_Effect_Smoke_White_UW: JCA_SignalFlare_Effect_Smoke_Base_UW
+class AET_JCA_SignalFlare_Effect_Smoke_White_UW: AET_JCA_SignalFlare_Effect_Smoke_Base_UW
 {
 };
 
 class JCA_HandFlare_Effect_Sparks_Base;
-class JCA_HandFlare_Effect_Sparks_White: JCA_HandFlare_Effect_Sparks_Base
+class AET_JCA_HandFlare_Effect_Sparks_White: JCA_HandFlare_Effect_Sparks_Base
 {
     color[] =
     {
@@ -42,7 +42,7 @@ class JCA_HandFlare_Effect_Sparks_White: JCA_HandFlare_Effect_Sparks_Base
 };
 
 class JCA_HandFlare_Effect_Flame_Base;
-class JCA_HandFlare_Effect_Flame_White: JCA_HandFlare_Effect_Flame_Base
+class AET_JCA_HandFlare_Effect_Flame_White: JCA_HandFlare_Effect_Flame_Base
 {
     color[] =
     {
