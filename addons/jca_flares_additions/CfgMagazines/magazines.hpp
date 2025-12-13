@@ -6,7 +6,7 @@ class JCA_HandFlare_White: JCA_HandFlare_Base
     displayName = "Hand Flare (White)";
     displayNameShort = "Hand Flare (White)";
     picture = "\weapons_f_JCA_HF\Explosives\data\UI\Icon_HandFlare_red_CA.paa";
-    model = "\weapons_f_JCA_HF\Explosives\HandFlare_Red_F";
+    model = "\weapons_f_JCA_HF\Explosives\HandFlare_Red_F.p3d";
     ammo = "JCA_GrenadeAmmo_HandFlare_White";
 };
 
@@ -20,6 +20,6 @@ class JCA_SignalFlare_White: JCA_SignalFlare_Base
     displayName = "Signal Flare (White)";
     displayNameShort = "Signal Flare (White)";
     picture = "\weapons_f_JCA_HF\Explosives\data\UI\Icon_HandFlare_red_CA.paa";
-    model = "\weapons_f_JCA_HF\Explosives\HandFlare_Red_F";
+    model = "\weapons_f_JCA_HF\Explosives\HandFlare_Red_F.p3d";
     ammo = "JCA_GrenadeAmmo_SignalFlare_White";
 };
