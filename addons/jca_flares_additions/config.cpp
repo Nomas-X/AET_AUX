@@ -39,9 +39,9 @@ class CfgPatches {
     };
 };
 
-#include "effects.hpp"
 #include "CfgCloudlets.hpp"
 #include "CfgLights.hpp"
+#include "effects.hpp"
 #include "CfgAmmo.hpp"
 #include "CfgMagazines.hpp"
 #include "CfgWeapons.hpp"
