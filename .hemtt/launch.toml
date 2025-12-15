@@ -16,6 +16,7 @@ extends = "default"
 workshop = [
     "2991684121", # JCA - Hand Flares
 ]
+mission = "JCA_HandFlares_Testing.VR"
 
 dlc = []
 optionals = []
