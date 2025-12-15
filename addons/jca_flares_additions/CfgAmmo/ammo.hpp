@@ -1,4 +1,10 @@
-class JCA_GrenadeAmmo_HandFlare_Base;
+class GrenadeHand;
+class JCA_GrenadeAmmo_HandFlare_Base: GrenadeHand
+{
+    ace_frag_skip=1;
+    ace_frag_force=0;
+};
+
 class AET_JCA_GrenadeAmmo_HandFlare_White: JCA_GrenadeAmmo_HandFlare_Base
 {
     model = "\weapons_f_JCA_HF\Explosives\HandFlare_Red_throw_F.p3d";
