@@ -45,7 +45,7 @@ private _containerItemsArray = parseSimpleArray _loadoutArray;
 {
 	private _mass = getNumber (configFile >> "CfgWeapons" >> (_x#0) >> "ItemInfo" >> "mass");
 	if (_mass == 0) then { _mass = getNumber (configFile >> "CfgMagazines" >> (_x#0) >> "mass") };
-	_x set [2, _mass max 0.1];
+	_x set [2, _mass max 0.2];
 } forEach _containerItemsArray;
 
 // Compute required mass
