@@ -49,7 +49,7 @@ private _containerItemsArray = parseSimpleArray _loadoutArray;
 } forEach _containerItemsArray;
 
 // Compute required mass
-private _totalMass = 0;
+private _totalMass = 0.0;
 private _itemsToAdd = [];
 {
 	_x params ["_classname", "_quantity", "_itemMass"];
