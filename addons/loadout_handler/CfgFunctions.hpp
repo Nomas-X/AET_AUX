@@ -9,11 +9,14 @@ class CfgFunctions
 
             class preInit { preInit = 1; };
             class postInit { postInit = 1; };
-			
+
 			class addItems {};
 
 			class basicEquipment {};
 			class containerBasedEquipment {};
+
+			class itemChangedStart {};
+			class itemChangedEnd {};
 
         };
     };
