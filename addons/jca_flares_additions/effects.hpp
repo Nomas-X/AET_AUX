@@ -33,3 +33,7 @@ SKY_DEFINE_EFFECT(SignalFlare,Purple)
 // Blue Flares
 SKY_DEFINE_EFFECT(HandFlare,Blue)
 SKY_DEFINE_EFFECT(SignalFlare,Blue)
+
+// Yellow Flares
+SKY_DEFINE_EFFECT(HandFlare,Yellow)
+SKY_DEFINE_EFFECT(SignalFlare,Yellow)

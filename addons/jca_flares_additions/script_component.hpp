@@ -34,4 +34,54 @@
 	}; \
 };
 
-#define AET_DEFINE_CLOUDLET(R,G,B)
+#define SKY_DEFINE_CLOUDLET(COLOR,R,G,B) class AET_JCA_HandFlare_Effect_Smoke_##COLOR: JCA_HandFlare_Effect_Smoke_Base \
+{ \
+    color[] = \
+    { \
+        {R, G, B, 0.2} \
+    }; \
+}; \
+class AET_JCA_HandFlare_Effect_Smoke_##COLOR##_UW: JCA_HandFlare_Effect_Smoke_Base_UW \
+{ \
+}; \
+class AET_JCA_SignalFlare_Effect_Smoke_##COLOR: JCA_SignalFlare_Effect_Smoke_Base \
+{ \
+    color[] = \
+    { \
+        {R, G, B, 0.2} \
+    }; \
+}; \
+class AET_JCA_SignalFlare_Effect_Smoke_##COLOR##_UW: JCA_HandFlare_Effect_Smoke_Base_UW \
+{ \
+}; \
+class AET_JCA_HandFlare_Effect_Sparks_##COLOR: JCA_HandFlare_Effect_Sparks_Base \
+{ \
+    color[] = \
+    { \
+        {0.5, 0.5, 0.5, -6.5}, \
+        {0.5, 0.5, 0.5, -6}, \
+        {0.5, 0.5, 0.5, -5.5}, \
+        {0.5, 0.5, 0.5, -4.5} \
+    }; \
+    colorVar[] = {1, 1, 1, 5}; \
+    colorCoef[] = {1, 1, 1, 1}; \
+}; \
+class AET_JCA_HandFlare_Effect_Flame_##COLOR: JCA_HandFlare_Effect_Flame_Base \
+{ \
+    color[] = \
+    { \
+        {R, G, B, -80} \
+    }; \
+};
+
+#define SKY_DEFINE_MUZZLES(COLOR) class AET_JCA_HandFlare_##COLOR##_Muzzle: ThrowMuzzle \
+{ \
+	magazines[] = {QUOTE(AET_JCA_HandFlare_##COLOR##)}; \
+}; \
+class AET_JCA_SignalFlare_##COLOR##_Muzzle: ThrowMuzzle \
+{ \
+	magazines[] = {QUOTE(AET_JCA_SignalFlare_##COLOR##)}; \
+};
+
+#define SKY_HANDFLARE_MUZZLE(COLOR) QUOTE(AET_JCA_HandFlare_##COLOR##_Muzzle)
+#define SKY_SIGNALFLARE_MUZZLE(COLOR) QUOTE(AET_JCA_SignalFlare_##COLOR##_Muzzle)
