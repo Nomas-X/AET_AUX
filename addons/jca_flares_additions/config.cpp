@@ -7,7 +7,7 @@ class CfgPatches {
         name = ADDON_NAME;
 
         author = "$STR_aet_author";
-        authors[] = {"Nomas / Redwan S. [AET]", "Esmeray [AET]"};
+        authors[] = {"Nomas / Redwan S. [AET]", "Sky [AET]"};
 
         url = "$STR_aet_URL";
 
@@ -25,18 +25,39 @@ class CfgPatches {
         skipWhenMissingDependencies = 1;
         
         // List of objects (CfgVehicles classes) contained in the addon. Important also for Zeus content (units and groups)
-        units[] =
-        {
-            // "JCA_ModuleHandFlare_Red_F",
-            // "JCA_ModuleHandFlare_Green_F",
-            // "JCA_ModuleSignalFlare_Red_F",
-            // "JCA_ModuleSignalFlare_Green_F"
-        };
+        units[] = {};
 
         // List of weapons (CfgWeapons classes) contained in the addon.
         weapons[] = {};
-
     };
+
+	class ADDON##_modules
+	{
+        name = QUOTE(PREFIX_BEAUTIFIED COMPONENT_BEAUTIFIED Modules);
+
+        author = "$STR_aet_author";
+        authors[] = {"Nomas / Redwan S. [AET]", "Sky [AET]"};
+
+        url = "$STR_aet_URL";
+        VERSION_CONFIG;
+
+		addonRootClass = "A3_Modules_F_Curator";
+		units[] = {
+            "AET_JCA_ModuleHandFlare_White_F",
+            "AET_JCA_ModuleHandFlare_Purple_F",
+            "AET_JCA_ModuleHandFlare_Blue_F",
+            "AET_JCA_ModuleHandFlare_Yellow_F",
+            "AET_JCA_ModuleSignalFlare_White_F",
+            "AET_JCA_ModuleSignalFlare_Purple_F",
+            "AET_JCA_ModuleSignalFlare_Blue_F",
+            "AET_JCA_ModuleSignalFlare_Yellow_F"
+        };
+		weapons[] = {};
+        requiredVersion = 2.02;
+        skipWhenMissingDependencies = 1;
+        requiredAddons[] = {QPVAR(main), "cba_main", "Weapons_F_JCA_HF_Explosives", "A3_Modules_F_Curator"};
+
+	};
 };
 
 #include "CfgCloudlets.hpp"
