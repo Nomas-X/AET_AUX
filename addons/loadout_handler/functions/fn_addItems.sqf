@@ -72,7 +72,8 @@ private _addItemsFunc = {
 	params ["_unitContainer", "_items"];
 	diag_log format ["%1 Loadout handler the items that will be added are: %2", getPlayerUID player, _items];
 	{
-		[_unitContainer, _x] call CBA_fnc_addItemCargo;
+		// [_unitContainer, _x] call CBA_fnc_addItemCargo;
+		_unitContainer addItemCargoGlobal [_x, 1];
 		diag_log format ["%1 Loadout handler added item [ %2 ]", getPlayerUID player, _x];
 	} forEach _items;
 };
