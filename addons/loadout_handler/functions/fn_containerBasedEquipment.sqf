@@ -47,6 +47,7 @@ params [
 			};
 
 			[_unit, _unitContainer, _x, _loadoutArray] call FUNC(addItems);
+			diag_log format ["%1 has triggered the container based for: %2", getPlayerUID player, _x];
 			
 		} forEach ["Uniform", "Vest", "Backpack"];
 
