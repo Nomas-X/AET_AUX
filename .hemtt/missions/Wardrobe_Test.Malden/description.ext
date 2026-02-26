@@ -1,0 +1,44 @@
+class Header
+{
+	gameType =  Zeus;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 64;	// maximum number of players the mission supports
+};
+
+// Section 1
+author= "Sky [Antistasi Event Team]"; // Name of the creator(s)
+OnLoadName = "QTE Test"; // Mission name in the loading screen, keep it short without operation
+OnLoadMission = "Powered by Open Group"; // Bottom of the loading screen, don't change
+loadScreen = "\z\aet\addons\common\images\Antistasi_event_team_2048x1024.paa"; // The picture displayed during loading screen
+overviewPicture = "\z\aet\addons\common\images\Antistasi_event_team_2048x1024.paa"; // The picture displayed in the mission selection screen
+briefingName = "Operation QTE Test"; // The Mission name with operation displayed in the mission selection men
+overviewText = "QTE Test mission by Sky, made to also test ACE Wardrobe support"; // The text above the picture in the mission selection menu
+
+// Section 2
+respawn = 3; // Sets respawn type, current is BASE
+respawnOnStart = 0; // (Disabled) Respawn player when he joins the game. Available only for INSTANT and BASE respawn types
+respawnDelay = 99999; // Sets respawn time for players
+respawnVehicleDelay = 99999;// Sets respawn time for vehicles
+respawnButton = 1; // 0: disabled  1: enabled. Default: 1
+respawnTemplates[] = {"ace_spectator"}; //Sets the spectator type once a person is dead, delete if no spectator needed or if respawns are enabled.
+respawnDialog = 0; // Show the scoreboard and respawn countdown timer for a player if he is killed with respawn type 3
+enableDebugConsole = 1; // Sets debug consol to logged in admin
+aiKills = 0; // Does not add AI to the scoreboard
+disabledAI = 1; //Disables AI in lobby slots
+allowFunctionsLog = 1;
+
+cba_settings_hasSettingsFile = 1;
+
+disableChannels[] =
+{
+	{
+		0,		// channel ID {Global}
+		true,	// Disable Text Chat
+		false	// Disable Voice Chat
+	},
+	{
+		1,		// channel ID {Side}
+		true,	// Disable Text Chat
+		false	// Disable Voice Chat
+	}
+};
