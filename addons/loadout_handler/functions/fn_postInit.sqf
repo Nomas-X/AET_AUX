@@ -24,6 +24,7 @@ private _code = {
 
 		[player] call FUNC(basicEquipment);
 		[player] call FUNC(containerBasedEquipment);
+		diag_log format ["%1 has triggered the loadout handler", getPlayerUID player];
 
 		player addEventHandler ["Respawn", {
 			params ["_unit", "_corpse"];
