@@ -47,7 +47,7 @@ private _containerItemsArray = parseSimpleArray _loadoutArray;
 	if (_mass == 0) then { _mass = getNumber (configFile >> "CfgMagazines" >> (_x#0) >> "mass") };
 	_x set [2, _mass max 0.1];
 } forEach _containerItemsArray;
-
+diag_log format ["%1 %2 Loadout handler addItems function first mark: %3", getPlayerUID player, _containerType, _containerItemsArray];
 // Compute required mass
 private _totalMass = 0;
 private _itemsToAdd = [];
@@ -56,7 +56,7 @@ private _itemsToAdd = [];
 	_totalMass = _totalMass + _quantity * _itemMass;
 	for "_i" from 1 to _quantity do { _itemsToAdd pushBack _classname };
 } forEach _containerItemsArray;
-
+diag_log format ["%1 %2 Loadout handler addItems function second mark: %3", getPlayerUID player, _containerType, _itemsToAdd];
 // Check load capacity
 private _currentMaxLimit = maxLoad _unitContainer;
 private _currentLoad = loadAbs _unitContainer;
@@ -64,7 +64,7 @@ private _neededMaxLimit = _currentLoad + _totalMass;
 
 // Request bigger container if needed
 if (_neededMaxLimit > _currentMaxLimit) then {
-	[QGVAR(EH_setMaxLoad), [_unitContainer, _neededMaxLimit]] call CBA_fnc_serverEvent;
+	[_unitContainer, _neededMaxLimit] remoteExec ["setMaxLoad"];
 };
 
 // Function to add items to the container
@@ -73,7 +73,6 @@ private _addItemsFunc = {
 	diag_log format ["%1 Loadout handler the items that will be added are: %2", getPlayerUID player, _items];
 	{
 		_unitContainer addItemCargoGlobal [_x, 1];
-		diag_log format ["%1 Loadout handler added item [ %2 ]", getPlayerUID player, _x];
 	} forEach _items;
 };
 

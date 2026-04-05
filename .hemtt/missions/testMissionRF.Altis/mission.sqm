@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14819.257,58.288551,16434.422};
-		dir[]={0.50776905,-0.7257688,-0.46415097};
-		up[]={0.53568804,0.68793875,-0.48967159};
-		aside[]={-0.67469627,-2.8172508e-08,-0.73809922};
+		pos[]={14823.603,40.515652,16429.145};
+		dir[]={0.47954822,-0.63605911,-0.60454196};
+		up[]={0.39528686,0.77163947,-0.49831811};
+		aside[]={-0.78344905,-1.5215483e-07,-0.62146342};
 	};
 };
 binarizationWanted=0;
@@ -42,10 +42,11 @@ addons[]=
 	"A3_Weapons_F_Pistols_P07",
 	"ace_nightvision",
 	"ace_hearing",
-	"A3_Weapons_F_Items",
-	"ace_medical_treatment",
+	"ace_grenades",
 	"ace_attach",
 	"ace_chemlights",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
 	"A3_Weapons_F_Mark",
 	"ace_reload",
 	"A3_Weapons_F_Mark_Acc",
@@ -55,7 +56,6 @@ addons[]=
 	"A3_Characters_F_Heads",
 	"ace_goggles",
 	"weapons_f_vietnam_c",
-	"ace_grenades",
 	"A3_Ui_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Modules_F",
@@ -125,8 +125,8 @@ class AddonsMetaData
 		};
 		class Item8
 		{
-			className="ace_medical_treatment";
-			name="ACE3 - Medical Treatment";
+			className="ace_grenades";
+			name="ACE3 - Grenades";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
@@ -146,59 +146,59 @@ class AddonsMetaData
 		};
 		class Item11
 		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item12
+		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item14
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item15
 		{
 			className="Characters_f_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Characters and Clothing";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item15
+		class Item16
 		{
 			className="Vehicles_F_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Vehicles";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item16
+		class Item17
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item18
 		{
 			className="weapons_f_vietnam_c";
 			name="weapons_f_vietnam_c";
 			author="Savage Game Design";
 			url="https://www.arma3.com";
-		};
-		class Item18
-		{
-			className="ace_grenades";
-			name="ACE3 - Grenades";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
 		};
 		class Item19
 		{
@@ -343,12 +343,30 @@ class Mission
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=1;
+									items=4;
 									class Item0
 									{
 										name="30Rnd_65x39_caseless_mag";
 										count=2;
 										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="30Rnd_65x39_caseless_khaki_mag";
+										count=1;
+										ammoLeft=30;
+									};
+									class Item2
+									{
+										name="ACE_M14";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="Chemlight_blue";
+										count=1;
+										ammoLeft=1;
 									};
 								};
 								class ItemCargo
