@@ -35,7 +35,7 @@ Example:
 
 params [
 	["_unit", objNull, [objNull]],
-	["_moveOptions", "404", [[]]]
+	["_moveOptions", "404", []]
 ];
 
 diag_log format ["AET_start_in_vehicle | PLAYER MOVE ATTEMPT: %1 | %2", _unit, _moveOptions];
