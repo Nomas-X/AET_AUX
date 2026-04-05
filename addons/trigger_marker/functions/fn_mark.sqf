@@ -64,7 +64,7 @@ private _triggersArray = 8 allObjects 7;
 	_pointMarker setMarkerColorLocal "ColorBlack";
 	_pointMarker setMarkerTypeLocal "mil_dot";
 
-	if (_triggerText == "") then { _triggerText = ["Trigger",_tag,_forEachIndex + 1] joinString "_" };
+	if (_triggerText == "") then { _triggerText = ["Trigger",_forEachIndex + 1] joinString "_" };
 	_pointMarker setMarkerTextLocal _triggerText;
 
 	GVAR(triggerMarkers) pushBack _areaMarker;
