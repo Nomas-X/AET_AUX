@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=162;
+		nextID=168;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14829.95,26.113131,16417.502};
-		dir[]={0.57413322,-0.46020833,-0.67724437};
-		up[]={0.29759967,0.88780534,-0.3510465};
-		aside[]={-0.762815,-2.5762711e-07,-0.64667821};
+		pos[]={14819.257,58.288551,16434.422};
+		dir[]={0.50776905,-0.7257688,-0.46415097};
+		up[]={0.53568804,0.68793875,-0.48967159};
+		aside[]={-0.67469627,-2.8172508e-08,-0.73809922};
 	};
 };
 binarizationWanted=0;
@@ -52,6 +52,9 @@ addons[]=
 	"A3_Modules_F_Curator_Curator",
 	"Characters_f_lxWS",
 	"vehicles_1_F_lxWS_APC_Wheeled_02",
+	"A3_Characters_F_Heads",
+	"ace_goggles",
+	"weapons_f_vietnam_c",
 	"ace_grenades",
 	"A3_Ui_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
@@ -63,7 +66,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=21;
+		items=23;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -178,33 +181,47 @@ class AddonsMetaData
 		};
 		class Item16
 		{
+			className="ace_goggles";
+			name="ACE3 - Goggles";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item17
+		{
+			className="weapons_f_vietnam_c";
+			name="weapons_f_vietnam_c";
+			author="Savage Game Design";
+			url="https://www.arma3.com";
+		};
+		class Item18
+		{
 			className="ace_grenades";
 			name="ACE3 - Grenades";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item19
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item20
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item21
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item22
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
@@ -216,7 +233,9 @@ class AddonsMetaData
 dlcs[]=
 {
 	"Mark",
-	"ws"
+	"ws",
+	"Kart",
+	"VN"
 };
 randomSeed=1951784;
 class ScenarioData
@@ -684,6 +703,188 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						description="NEW TEST";
+						isPlayable=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="arifle_MX_ACO_pointer_F";
+								optics="optic_Aco";
+								flashlight="acc_pointer_IR";
+								firemode="arifle_MX_ACO_pointer_F:Single";
+								class primaryMuzzleMag
+								{
+									name="30Rnd_65x39_caseless_mag";
+									ammoLeft=30;
+								};
+							};
+							class handgun
+							{
+								name="hgun_P07_F";
+								class primaryMuzzleMag
+								{
+									name="16Rnd_9x21_Mag";
+									ammoLeft=17;
+								};
+							};
+							class binocular
+							{
+								name="Rangefinder";
+							};
+							class uniform
+							{
+								typeName="U_C_Driver_4";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=2;
+										ammoLeft=30;
+									};
+								};
+								class ItemCargo
+								{
+									items=2;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+									class Item1
+									{
+										name="vn_o_item_firstaidkit";
+										count=58;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_Rangemaster_belt";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=7;
+									class Item0
+									{
+										name="30Rnd_65x39_caseless_mag";
+										count=5;
+										ammoLeft=30;
+									};
+									class Item1
+									{
+										name="16Rnd_9x21_Mag";
+										count=2;
+										ammoLeft=17;
+									};
+									class Item2
+									{
+										name="HandGrenade";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="B_IR_Grenade";
+										count=2;
+										ammoLeft=1;
+									};
+									class Item4
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item5
+									{
+										name="SmokeShellGreen";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item6
+									{
+										name="Chemlight_green";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="vn_o_item_firstaidkit";
+										count=3;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_Kitbag_mcamo";
+								isBackpack=1;
+								class MagazineCargo
+								{
+									items=3;
+									class Item0
+									{
+										name="100Rnd_65x39_caseless_mag";
+										count=2;
+										ammoLeft=100;
+									};
+									class Item1
+									{
+										name="100Rnd_65x39_caseless_mag_Tracer";
+										count=2;
+										ammoLeft=100;
+									};
+									class Item2
+									{
+										name="130Rnd_338_Mag";
+										count=2;
+										ammoLeft=130;
+									};
+								};
+								class ItemCargo
+								{
+									items=5;
+									class Item0
+									{
+										name="optic_tws_mg";
+										count=1;
+									};
+									class Item1
+									{
+										name="bipod_01_F_snd";
+										count=1;
+									};
+									class Item2
+									{
+										name="muzzle_snds_338_sand";
+										count=1;
+									};
+									class Item3
+									{
+										name="muzzle_snds_H";
+										count=1;
+									};
+									class Item4
+									{
+										name="vn_o_item_firstaidkit";
+										count=24;
+									};
+								};
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							goggles="G_Tactical_Clear";
+							hmd="NVGoggles";
+							headgear="H_HelmetB_light";
+						};
 					};
 					id=35;
 					type="B_soldier_AAR_F";
@@ -724,7 +925,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="B_female_bun_03";
+									value="";
 								};
 							};
 						};

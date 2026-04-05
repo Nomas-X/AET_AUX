@@ -71,16 +71,10 @@ if (_neededMaxLimit > _currentMaxLimit) then {
 private _addItemsFunc = {
 	params ["_unitContainer", "_items"];
 	diag_log format ["%1 Loadout handler the items that will be added are: %2", getPlayerUID player, _items];
-	[_unitContainer, _items] spawn
 	{
-		params ["_unitContainer", "_items"];
-		{
-			// [_unitContainer, _x] call CBA_fnc_addItemCargo;
-			_unitContainer addItemCargoGlobal [_x, 1];
-			diag_log format ["%1 Loadout handler added item [ %2 ]", getPlayerUID player, _x];
-		} forEach _items;
-		sleep 0.1;
-	};
+		_unitContainer addItemCargoGlobal [_x, 1];
+		diag_log format ["%1 Loadout handler added item [ %2 ]", getPlayerUID player, _x];
+	} forEach _items;
 };
 
 // If container size change is needed, wait until it updates before adding items
@@ -88,7 +82,7 @@ if (_neededMaxLimit > _currentMaxLimit) then {
 	[{
 		maxLoad (_this#0) == (_this#3)
 	}, {
-		params ["_unit", "_unitContainer", "_containerCommand", "_itemsToAdd", "_addItemsFunc", "_neededMaxLimit"];
+		params ["_unitContainer", "_itemsToAdd", "_addItemsFunc", "_neededMaxLimit"];
 		[_this#0, _this#1] call _this#2;
 	}, [_unitContainer, _itemsToAdd, _addItemsFunc, _neededMaxLimit], 10] call CBA_fnc_waitUntilAndExecute;
 } else {

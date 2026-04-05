@@ -353,17 +353,8 @@ switch (GVAR(currentLeftPanel)) do {
 					private _currentLoad = loadAbs _unitContainer;
 
 					if (_currentLoad > _currentMaxLimit) then {
-						["AET_loadout_handler_EH_setMaxLoad", [_unitContainer, _currentLoad]] call CBA_fnc_serverEvent;
-						[
-							{
-								(maxLoad (_this select 0)) == (_this select 2)
-							},
-							{
-								[] call ace_arsenal_fnc_refresh;
-							},
-							[GVAR(center), _currentLoad]
-						] call CBA_fnc_waitUntilAndExecute;
-						
+						[_unitContainer, _currentLoad] remoteExec ["setMaxLoad"];
+						[] call ace_arsenal_fnc_refresh;
 					};
 				};
 
@@ -408,17 +399,8 @@ switch (GVAR(currentLeftPanel)) do {
 					private _currentLoad = loadAbs _unitContainer;
 
 					if (_currentLoad > _currentMaxLimit) then {
-						["AET_loadout_handler_EH_setMaxLoad", [_unitContainer, _currentLoad]] call CBA_fnc_serverEvent;
-						[
-							{
-								(maxLoad (_this select 0)) == (_this select 2)
-							},
-							{
-								[] call ace_arsenal_fnc_refresh;
-							},
-							[GVAR(center), _currentLoad]
-						] call CBA_fnc_waitUntilAndExecute;
-						
+						[_unitContainer, _currentLoad] remoteExec ["setMaxLoad"];
+						[] call ace_arsenal_fnc_refresh;					
 					};
 				};
 				
@@ -463,17 +445,8 @@ switch (GVAR(currentLeftPanel)) do {
 					private _currentLoad = loadAbs _unitContainer;
 
 					if (_currentLoad > _currentMaxLimit) then {
-						["AET_loadout_handler_EH_setMaxLoad", [_unitContainer, _currentLoad]] call CBA_fnc_serverEvent;
-						[
-							{
-								(maxLoad (_this select 0)) == (_this select 2)
-							},
-							{
-								[] call ace_arsenal_fnc_refresh;
-							},
-							[GVAR(center), _currentLoad]
-						] call CBA_fnc_waitUntilAndExecute;
-						
+						[_unitContainer, _currentLoad] remoteExec ["setMaxLoad"];
+						[] call ace_arsenal_fnc_refresh;
 					};
 				};
 
