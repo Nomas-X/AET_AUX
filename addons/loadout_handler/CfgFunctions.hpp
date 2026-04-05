@@ -17,12 +17,4 @@ class CfgFunctions
 
         };
     };
-	class ace_arsenal
-	{
-		class Misc
-		{
-			file = PATH_TO_FUNC;
-			class onselchangedleft {};
-		};
-	};
 };

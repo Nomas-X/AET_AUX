@@ -37,7 +37,6 @@ params [
 			private _unitContainer = call compile format ["%1Container _unit", toLower(_x)];
 			private _currentLoad = loadAbs _unitContainer;
 			[_unitContainer, _currentLoad] remoteExec ["setMaxLoad"];
-			systemChat "I FIRED!";
 			if (
 				(_unit getVariable [_isExcludedVariableName, false])
 				||
