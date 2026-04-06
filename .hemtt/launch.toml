@@ -40,6 +40,11 @@ workshop = [
 	"1572627279", # Operation TREBUCHET First Contact
 	"1508091616", # Metis Marker
 	"1673595418", # User Input Menus
+	"1659590037", # A2 Declassified: Fireteam Zulu
+	"2598549968", # The Carver Findings
+	"1508091616", # Metis Marker
+	"1673595418", # User Input Menus
+	"2888477598", # 1st MEU Aux Mod
 ]
 dlc = ["ws","rf", "vn"]
 mission = "testMissionOPTRE.Altis"

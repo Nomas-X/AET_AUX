@@ -1,7 +1,7 @@
-#define COMPONENT TCF_OPTRE_Fixes
+#define COMPONENT optre_modifications
 
 // This is being used for the Addon's Name and can be "My Addon Template Framework"
-#define COMPONENT_BEAUTIFIED The Carver Findings Operation Trebuchet AET Fixes
+#define COMPONENT_BEAUTIFIED Operation TREBUCHET Modifications
 
 
 #include "\z\aet\addons\main\script_mod.hpp"
