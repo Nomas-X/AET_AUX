@@ -20,14 +20,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={15059.762,246.11357,16273.571};
-		dir[]={-0.6501708,-0.56285965,0.51058102};
-		up[]={-0.44268176,0.82655168,0.34764147};
-		aside[]={0.61768669,2.2817403e-07,0.78655899};
+		pos[]={14828.09,25.376303,16413.041};
+		dir[]={-0.81537777,-0.56724542,0.11572348};
+		up[]={-0.56161731,0.82354879,0.079708211};
+		aside[]={0.14051804,7.4505806e-09,0.99007821};
 	};
 };
 binarizationWanted=0;
-sourceName="testmissionrf";
+sourceName="testmissionoptre";
 addons[]=
 {
 	"A3_Characters_F",
@@ -47,15 +47,18 @@ addons[]=
 	"ace_chemlights",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
-	"A3_Weapons_F_Mark",
-	"ace_reload",
-	"A3_Weapons_F_Mark_Acc",
+	"AET_OPTRE_modifications",
 	"A3_Modules_F_Curator_Curator",
 	"Characters_f_lxWS",
 	"vehicles_1_F_lxWS_APC_Wheeled_02",
 	"A3_Characters_F_Heads",
 	"ace_goggles",
 	"weapons_f_vietnam_c",
+	"1st_MEU_patch_weapons_IR_Strobe",
+	"OPTRE_Hud",
+	"A3_Weapons_F_Mark",
+	"ace_reload",
+	"A3_Weapons_F_Mark_Acc",
 	"A3_Ui_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Modules_F",
@@ -66,7 +69,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=23;
+		items=26;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -153,75 +156,94 @@ class AddonsMetaData
 		};
 		class Item12
 		{
-			className="A3_Weapons_F_Mark";
-			name="Arma 3 Marksmen - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="AET_OPTRE_modifications";
+			name="AET Auxiliaries Operation TREBUCHET Modifications";
+			author="Antistasi Event Team";
+			url="https://github.com/Nomas-X/AET_AUX/";
 		};
 		class Item13
-		{
-			className="ace_reload";
-			name="ACE3 - Reload";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item14
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item14
 		{
 			className="Characters_f_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Characters and Clothing";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item16
+		class Item15
 		{
 			className="Vehicles_F_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Vehicles";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item17
+		class Item16
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item17
 		{
 			className="weapons_f_vietnam_c";
 			name="weapons_f_vietnam_c";
 			author="Savage Game Design";
 			url="https://www.arma3.com";
 		};
+		class Item18
+		{
+			className="1st_MEU_patch_weapons";
+			name="1st_MEU_patch_weapons_IR_Strobe";
+			author="1st MEU Mod Team";
+		};
 		class Item19
+		{
+			className="OPTRE_Hud";
+			name="OPTRE_Hud";
+			author="Article 2 Studios";
+		};
+		class Item20
+		{
+			className="A3_Weapons_F_Mark";
+			name="Arma 3 Marksmen - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item21
+		{
+			className="ace_reload";
+			name="ACE3 - Reload";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item22
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item20
+		class Item23
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item24
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item25
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
@@ -232,10 +254,11 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"Mark",
+	"OPTRE",
 	"ws",
 	"Kart",
-	"VN"
+	"VN",
+	"Mark"
 };
 randomSeed=1951784;
 class ScenarioData
@@ -383,101 +406,28 @@ class Mission
 							{
 								typeName="V_Chestrig_rgr";
 								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=5;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="16Rnd_9x21_Mag";
-										count=2;
-										ammoLeft=17;
-									};
-									class Item2
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="B_IR_Grenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShell";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="SmokeShellGreen";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item6
-									{
-										name="Chemlight_green";
-										count=2;
-										ammoLeft=1;
-									};
-								};
 							};
 							class backpack
 							{
 								typeName="B_Kitbag_mcamo";
 								isBackpack=1;
-								class MagazineCargo
+								class ItemCargo
 								{
 									items=3;
 									class Item0
 									{
-										name="100Rnd_65x39_caseless_mag";
-										count=2;
-										ammoLeft=100;
+										name="AET_OPTRE_modifications_Medigel";
+										count=10;
 									};
 									class Item1
 									{
-										name="100Rnd_65x39_caseless_mag_Tracer";
-										count=2;
-										ammoLeft=100;
+										name="AET_OPTRE_modifications_Emergency_MedKit";
+										count=10;
 									};
 									class Item2
 									{
-										name="130Rnd_338_Mag";
-										count=2;
-										ammoLeft=130;
-									};
-								};
-								class ItemCargo
-								{
-									items=4;
-									class Item0
-									{
-										name="optic_tws_mg";
-										count=1;
-									};
-									class Item1
-									{
-										name="bipod_01_F_snd";
-										count=1;
-									};
-									class Item2
-									{
-										name="muzzle_snds_338_sand";
-										count=1;
-									};
-									class Item3
-									{
-										name="muzzle_snds_H";
-										count=1;
+										name="AET_OPTRE_modifications_Biofoam";
+										count=10;
 									};
 								};
 							};
