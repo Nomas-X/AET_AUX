@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14828.09,25.376303,16413.041};
-		dir[]={-0.81537777,-0.56724542,0.11572348};
-		up[]={-0.56161731,0.82354879,0.079708211};
-		aside[]={0.14051804,7.4505806e-09,0.99007821};
+		pos[]={14840.599,19.851351,16410.098};
+		dir[]={-0.47482377,-0.47161093,0.74305892};
+		up[]={-0.25394699,0.88180554,0.39740536};
+		aside[]={0.842655,7.0140231e-08,0.53846604};
 	};
 };
 binarizationWanted=0;
@@ -31,15 +31,16 @@ sourceName="testmissionoptre";
 addons[]=
 {
 	"A3_Characters_F",
-	"A3_Weapons_F_Rifles_MX",
+	"OPTRE_Weapons_MG_M247a1",
 	"A3_Weapons_F_Acc",
 	"ace_realisticnames",
 	"ace_scopes",
 	"ace_laserpointer",
+	"OPTRE_Weapons_MG",
+	"A3_Weapons_F_Pistols_P07",
+	"ace_ballistics",
 	"A3_Weapons_F",
 	"ace_smallarms",
-	"ace_ballistics",
-	"A3_Weapons_F_Pistols_P07",
 	"ace_nightvision",
 	"ace_hearing",
 	"ace_grenades",
@@ -47,10 +48,11 @@ addons[]=
 	"ace_chemlights",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
-	"AET_OPTRE_modifications",
+	"AET_optre_modifications",
 	"A3_Modules_F_Curator_Curator",
 	"Characters_f_lxWS",
 	"vehicles_1_F_lxWS_APC_Wheeled_02",
+	"A3_Weapons_F_Rifles_MX",
 	"A3_Characters_F_Heads",
 	"ace_goggles",
 	"weapons_f_vietnam_c",
@@ -69,7 +71,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -79,29 +81,28 @@ class AddonsMetaData
 		};
 		class Item1
 		{
+			className="OPTRE_Weapons_MG";
+			name="OPTRE_Weapons_MG_M247a1";
+			author="Article 2 Studios";
+		};
+		class Item2
+		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
+		class Item3
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item3
+		class Item4
 		{
 			className="ace_laserpointer";
 			name="ACE3 - Laser Pointer";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item4
-		{
-			className="ace_smallarms";
-			name="ACE3 - Small Arms";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
@@ -114,136 +115,143 @@ class AddonsMetaData
 		};
 		class Item6
 		{
+			className="ace_smallarms";
+			name="ACE3 - Small Arms";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item7
+		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item7
+		class Item8
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item8
+		class Item9
 		{
 			className="ace_grenades";
 			name="ACE3 - Grenades";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item9
+		class Item10
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item11
 		{
 			className="ace_chemlights";
 			name="ACE3 - Chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item12
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item13
 		{
-			className="AET_OPTRE_modifications";
+			className="AET_optre_modifications";
 			name="AET Auxiliaries Operation TREBUCHET Modifications";
 			author="Antistasi Event Team";
 			url="https://github.com/Nomas-X/AET_AUX/";
 		};
-		class Item13
+		class Item14
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item15
 		{
 			className="Characters_f_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Characters and Clothing";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item15
+		class Item16
 		{
 			className="Vehicles_F_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Vehicles";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item16
+		class Item17
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item18
 		{
 			className="weapons_f_vietnam_c";
 			name="weapons_f_vietnam_c";
 			author="Savage Game Design";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item19
 		{
 			className="1st_MEU_patch_weapons";
 			name="1st_MEU_patch_weapons_IR_Strobe";
 			author="1st MEU Mod Team";
 		};
-		class Item19
+		class Item20
 		{
 			className="OPTRE_Hud";
 			name="OPTRE_Hud";
 			author="Article 2 Studios";
 		};
-		class Item20
+		class Item21
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item22
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item23
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item24
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item25
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item26
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
@@ -267,7 +275,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -337,14 +345,14 @@ class Mission
 						{
 							class primaryWeapon
 							{
-								name="arifle_MX_ACO_pointer_F";
+								name="OPTRE_M247A1";
 								optics="optic_Aco";
 								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_ACO_pointer_F:Single";
+								firemode="OPTRE_M247A1:FullAuto";
 								class primaryMuzzleMag
 								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
+									name="OPTRE_400Rnd_762x51_M118_M247A1_Box";
+									ammoLeft=400;
 								};
 							};
 							class handgun
@@ -366,26 +374,14 @@ class Mission
 								isBackpack=0;
 								class MagazineCargo
 								{
-									items=4;
+									items=2;
 									class Item0
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=2;
-										ammoLeft=30;
-									};
-									class Item1
-									{
-										name="30Rnd_65x39_caseless_khaki_mag";
-										count=1;
-										ammoLeft=30;
-									};
-									class Item2
 									{
 										name="ACE_M14";
 										count=1;
 										ammoLeft=1;
 									};
-									class Item3
+									class Item1
 									{
 										name="Chemlight_blue";
 										count=1;
@@ -409,25 +405,70 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="B_Kitbag_mcamo";
+								typeName="OPTRE_UNSC_Rucksack_Medic";
 								isBackpack=1;
 								class ItemCargo
 								{
-									items=3;
+									items=12;
 									class Item0
 									{
-										name="AET_OPTRE_modifications_Medigel";
-										count=10;
+										name="ACE_surgicalKit";
+										count=1;
 									};
 									class Item1
 									{
-										name="AET_OPTRE_modifications_Emergency_MedKit";
+										name="ACE_tourniquet";
 										count=10;
 									};
 									class Item2
 									{
-										name="AET_OPTRE_modifications_Biofoam";
+										name="ACE_splint";
 										count=10;
+									};
+									class Item3
+									{
+										name="ACE_personalAidKit";
+										count=5;
+									};
+									class Item4
+									{
+										name="ACE_plasmaIV";
+										count=5;
+									};
+									class Item5
+									{
+										name="ACE_plasmaIV_250";
+										count=5;
+									};
+									class Item6
+									{
+										name="ACE_plasmaIV_500";
+										count=5;
+									};
+									class Item7
+									{
+										name="ACE_morphine";
+										count=10;
+									};
+									class Item8
+									{
+										name="ACE_epinephrine";
+										count=10;
+									};
+									class Item9
+									{
+										name="AET_optre_modifications_Biofoam";
+										count=30;
+									};
+									class Item10
+									{
+										name="AET_optre_modifications_Medigel";
+										count=30;
+									};
+									class Item11
+									{
+										name="AET_optre_modifications_EmergencyMedKit";
+										count=3;
 									};
 								};
 							};

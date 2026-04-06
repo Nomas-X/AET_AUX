@@ -1,4 +1,4 @@
-#define COMPONENT OPTRE_modifications
+#define COMPONENT optre_modifications
 
 // This is being used for the Addon's Name and can be "My Addon Template Framework"
 #define COMPONENT_BEAUTIFIED Operation TREBUCHET Modifications

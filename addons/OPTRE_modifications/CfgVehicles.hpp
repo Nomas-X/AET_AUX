@@ -2,6 +2,7 @@ class CfgVehicles
 {
 	class OPTRE_BiofoamItem;
 	class OPTRE_MediGelItem;
+	class OPTRE_MedKitItem;
 	class GVAR(BiofoamItem) : OPTRE_BiofoamItem
 	{
 		scope=2;
@@ -12,9 +13,9 @@ class CfgVehicles
 		vehicleClass="Items";
 		class TransportItems
 		{
-			MACRO_ADDITEM(GVAR(BiofoamItem),1);
+			MACRO_ADDITEM(GVAR(Biofoam),1);
 		};
-		mass=2;
+		mass=0.7;
 	};
 	class GVAR(MediGelItem) : OPTRE_MediGelItem
 	{
@@ -26,8 +27,22 @@ class CfgVehicles
 		vehicleClass="Items";
 		class TransportItems
 		{
-			MACRO_ADDITEM(GVAR(MediGelItem),1);
+			MACRO_ADDITEM(GVAR(MediGel),1);
 		};
-		mass=2;
+		mass=0.7;
+	};
+	class GVAR(EmergencyMedKitItem) : OPTRE_MedKitItem
+	{
+		scope=2;
+		scopeCurator=2;
+		scopeArsenal=2;
+		displayName="[AET] Emergency Medkit";
+		author="Nomas / Redwan S.";
+		vehicleClass="Items";
+		class TransportItems
+		{
+			MACRO_ADDITEM(GVAR(EmergencyMedKit),1);
+		};
+		mass=30;	
 	};
 };

@@ -4,7 +4,7 @@ class CfgWeapons
 	class OPTRE_Medigel;
 	class CBA_MiscItem_ItemInfo;
 
-	class GVAR(Emergency_MedKit) : OPTRE_Biofoam
+	class GVAR(EmergencyMedKit) : OPTRE_Biofoam
 	{
 		scope=2;
 		author="Nomas / Redwan S.";
@@ -13,7 +13,7 @@ class CfgWeapons
 		model="\OPTRE_Weapons\items\MedKit.p3d";
 		class ItemInfo : CBA_MiscItem_ItemInfo
 		{
-			mass = 0.5;
+			mass = 30;
 		};
 	};
 	class GVAR(Biofoam) : OPTRE_Biofoam
@@ -25,7 +25,7 @@ class CfgWeapons
 		model="\OPTRE_Weapons\items\Biofoam.p3d";
 		class ItemInfo : CBA_MiscItem_ItemInfo
 		{
-			mass = 0.5;
+			mass = 0.7;
 		};
 	};
 	class GVAR(Medigel) : OPTRE_Medigel
@@ -37,7 +37,7 @@ class CfgWeapons
 		model="\OPTRE_Weapons\items\Medigel.p3d";
 		class ItemInfo : CBA_MiscItem_ItemInfo
 		{
-			mass = 0.5;
+			mass = 0.7;
 		};
 	};
 };

@@ -25,10 +25,10 @@ class ACE_Medical_Treatment_Actions
 		callbackSuccess="AET_OPTRE_MODIFICATIONS_fnc_biomed";
 	};
 
-	class GVAR(Emergency_MedKit) : OPTRE_Medigel
+	class GVAR(EmergencyMedKit) : OPTRE_Medigel
 	{
 		displayName="Emergency MedKit";
-		displayNameProgress="Hope this works";
+		displayNameProgress="Using Emergency Medkit";
 		icon="";
 		consumeItem=1;
 		treatmentTime=10;
@@ -37,7 +37,7 @@ class ACE_Medical_Treatment_Actions
 		category="advanced";
 		items[]=
 		{
-			QGVAR(Emergency_MedKit)
+			QGVAR(EmergencyMedKit)
 		};
 		callbackStart="";
 		callbackSuccess="AET_OPTRE_MODIFICATIONS_fnc_medkit";
