@@ -43,6 +43,7 @@ class CfgFunctions
 			file = PATH_TO_FUNC_SUB(utility);
 
 			class compareAddonOptions {};
+			class compareFileVersions {};
 		};
 	};
 };
