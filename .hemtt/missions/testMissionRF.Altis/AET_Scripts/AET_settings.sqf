@@ -1,3 +1,4 @@
+// LAST UPDATED 2026-04-07
 // MISSION MAKERS ONLY TOUCH THIS //
 // ACE Advanced Balistics -> Advanced Ballistics = true or false //
 force ace_advanced_ballistics_enabled = true;
@@ -109,6 +110,12 @@ force AET_loadout_handler_SET_uniformInventory = "[
 		[""ACE_SpraypaintRed"", 1],
 		[""ACE_SpraypaintWhite"", 1],
 		[""ACE_SpraypaintYellow"", 1],
+		[""ACE_ChalkBlack"", 0],
+		[""ACE_ChalkBlue"", 0],
+		[""ACE_ChalkGreen"", 0],
+		[""ACE_ChalkRed"", 0],
+		[""ACE_ChalkWhite"", 0],
+		[""ACE_ChalkYellow"", 0],
 		[""ACE_elasticBandage"", 10],
 		[""ACE_packingBandage"", 10],
 		[""ACE_epinephrine"", 2],
