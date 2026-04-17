@@ -19,7 +19,6 @@ Example:
 private _code = {
 
 	player createDiarySubject ["AntistasiEventTeamActions","AET Actions"];
-	player createDiarySubject ["AntistasiEventTeam","Antistasi Event Team"];
 
 	if (SET(antiBounceSmokeGL_enabled)) then {
 
@@ -39,6 +38,16 @@ private _code = {
 	if (hasInterface) then {
 
 		GVAR(settingsDiary) = player createDiaryRecord ["AntistasiEventTeamActions", ["CBA Settings Comparison Request", "<execute expression='[player] call " + QFUNC(compareAddonOptions) + ";'>Execute!</execute>"]];
+
+		[
+			{!isNull (findDisplay 46)},
+			{
+				private _versionRegex = "\/\/ LAST UPDATED \d\d\d\d-\d\d-\d\d";
+				[PATH_TO_ADDON_2(data,master_cba_settings.sqf), "cba_settings.sqf", _versionRegex] call AET_common_fnc_compareFileVersions;
+				[PATH_TO_ADDON_2(data,master_AET_settings.sqf), "AET_Scripts\AET_settings.sqf", _versionRegex] call AET_common_fnc_compareFileVersions;
+				[PATH_TO_ADDON_2(data,master_description.txt), "description.ext", _versionRegex] call AET_common_fnc_compareFileVersions;
+			}
+		] call CBA_fnc_waitUntilAndExecute;
 	};
 };
 

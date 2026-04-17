@@ -1,4 +1,4 @@
-// LAST UPDATED 2026-04-07
+// LAST UPDATED 2026-04-18
 // MISSION MAKERS ONLY TOUCH THIS //
 // ACE Advanced Balistics -> Advanced Ballistics = true or false //
 force ace_advanced_ballistics_enabled = true;

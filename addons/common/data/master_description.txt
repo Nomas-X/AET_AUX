@@ -1,4 +1,4 @@
-// LAST UPDATED 2026-04-16
+// LAST UPDATED 2026-04-18
 class Header
 {
 	gameType =  "Zeus";	// Game type
