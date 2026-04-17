@@ -5,11 +5,13 @@ Authors:
 	Redwan S. / Nomas
 
 Description:
-    This function is used to determine if there is a difference between the cba_settings.sqf file from mission side and the master settings as well as the versions of AET_Settings.sqf files.
+    This function is used to determine if there is a difference between a file from the mission and the master file.
 	If differences are found it will create a pop-up.
 
 Arguments:
-	0. <Object> The player that will have the diary created for.
+	0. <String> The path of the master file.
+	1. <String> The path of the mission side file.
+	2. <String> The regex used to find the version / last edit line and compare. 
 
 Return Value:
 	<Nil>
