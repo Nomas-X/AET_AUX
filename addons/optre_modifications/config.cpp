@@ -42,7 +42,6 @@ class CfgPatches {
 };
 
 #include "CfgFunctions.hpp"
-#include "XEH\CfgXEH.hpp"
 #include "CfgWeapons.hpp"
 #include "CfgVehicles.hpp"
 #include "ACE_Medical_Treatment.hpp"
