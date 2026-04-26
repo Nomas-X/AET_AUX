@@ -260,3 +260,14 @@
 	{},
 	false
 ] call CBA_fnc_addSetting;
+
+[
+	QSET(allowArsenalOverfilling),
+	"CHECKBOX",
+	["Allow Overfill On Container Switch (ACE Arsenal)", "If enabled the player's container (uniform, vest, backpack) in the arsenal will have its space increased when switching from a larger container to a smaller container to fit all items currently in the container."],
+	["AET Loadout Handler", "Other"],
+	true,
+	1,
+	{},
+	false
+] call CBA_fnc_addSetting;
