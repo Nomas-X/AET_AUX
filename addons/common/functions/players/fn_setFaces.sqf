@@ -7,9 +7,7 @@ Description:
 Arguments:
 	0. <Object> Unit to change the face of
 
-	1. <Array> Includes a list of players that the unit must be in to have its face changed
-
-	2. <Array> Includes a list of faces to have as the unit's new face
+	1. <Array> Includes a list of faces to have as the unit's new face
 
 Return Value: <nil>
 

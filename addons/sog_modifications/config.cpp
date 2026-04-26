@@ -33,9 +33,6 @@ class CfgPatches {
 	};
 };
 
-#include "CfgFunctions.hpp"
-#include "XEH\CfgXEH.hpp"
-
 
 #include "CfgMagazines.hpp"
 #include "CfgWeapons.hpp"
