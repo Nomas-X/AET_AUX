@@ -924,9 +924,10 @@ force AET_disclaimer_SET_logoPath = "<img size='8' shadow='0' image='z\aet\addon
 force AET_disclaimer_SET_text = "<t size='2'>Disclaimer: This is a work of fiction. Names, characters, businesses, places, events and incidents are either the products of the author's imagination or used in a fictitious manner. Any resemblance to actual persons, living or dead, or actual events is purely coincidental.</t>";
 
 // AET Loadout Handler
-force AET_loadout_handler_SET_backpackInventory = "[    
-  [""ACE_EntrenchingTool"", 0],    
-  [""ACE_IR_Strobe_Item"", 0]    
+force AET_loadout_handler_SET_allowArsenalOverfilling = true;
+force AET_loadout_handler_SET_backpackInventory = "[     
+  [""ACE_EntrenchingTool"", 0],     
+  [""ACE_IR_Strobe_Item"", 0]     
  ]";
 force AET_loadout_handler_SET_binocularsForEveryone_className = "Binocular";
 force AET_loadout_handler_SET_binocularsForEveryone_enabled = true;
@@ -945,30 +946,30 @@ force AET_loadout_handler_SET_radiosForEveryone_className = "TFAR_anprc148jem";
 force AET_loadout_handler_SET_radiosForEveryone_enabled = true;
 force AET_loadout_handler_SET_radiosInNeedOfProgrammer = "[""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]";
 force AET_loadout_handler_SET_TFARCompatibleRadios = "[""gm_radio_r126"", ""gm_radio_sem52a"", ""vn_o_item_radio_m252"", ""vn_b_item_radio_urc10"", ""TFAR_anprc148jem"", ""TFAR_anprc152"", ""TFAR_fadak"", ""TFAR_anprc154"", ""TFAR_pnr1000a"", ""TFAR_rf7800str""]";
-force AET_loadout_handler_SET_uniformInventory = "[    
-  [""ACE_EarPlugs"", 1],    
-  [""ACE_Flashlight_XL50"", 1],    
-  [""ACE_MapTools"", 1],    
-  [""ACE_CableTie"", 2],    
-  [""ACE_Canteen"", 1],    
-  [""acex_intelitems_notepad"", 1],    
-  [""ACE_SpraypaintBlack"", 1],    
-  [""ACE_SpraypaintBlue"", 1],    
-  [""ACE_SpraypaintGreen"", 1],    
-  [""ACE_SpraypaintRed"", 1],    
-  [""ACE_SpraypaintWhite"", 1],    
-  [""ACE_SpraypaintYellow"", 1],    
-  [""ACE_elasticBandage"", 10],    
-  [""ACE_packingBandage"", 10],    
-  [""ACE_epinephrine"", 2],    
-  [""ACE_morphine"", 2],    
-  [""ACE_painkillers"", 1],    
-  [""ACE_splint"", 2],    
-  [""ACE_tourniquet"", 2]    
+force AET_loadout_handler_SET_uniformInventory = "[     
+  [""ACE_EarPlugs"", 1],     
+  [""ACE_Flashlight_XL50"", 1],     
+  [""ACE_MapTools"", 1],     
+  [""ACE_CableTie"", 2],     
+  [""ACE_Canteen"", 1],     
+  [""acex_intelitems_notepad"", 1],     
+  [""ACE_SpraypaintBlack"", 1],     
+  [""ACE_SpraypaintBlue"", 1],     
+  [""ACE_SpraypaintGreen"", 1],     
+  [""ACE_SpraypaintRed"", 1],     
+  [""ACE_SpraypaintWhite"", 1],     
+  [""ACE_SpraypaintYellow"", 1],     
+  [""ACE_elasticBandage"", 10],     
+  [""ACE_packingBandage"", 10],     
+  [""ACE_epinephrine"", 2],     
+  [""ACE_morphine"", 2],     
+  [""ACE_painkillers"", 1],     
+  [""ACE_splint"", 2],     
+  [""ACE_tourniquet"", 2]     
  ]";
-force AET_loadout_handler_SET_vestInventory = "[    
-  [""SmokeShell"", 0],    
-  [""HandGrenade"", 0]    
+force AET_loadout_handler_SET_vestInventory = "[     
+  [""SmokeShell"", 0],     
+  [""HandGrenade"", 0]     
  ]";
 
 // AET Plan Importer
@@ -1563,7 +1564,7 @@ zen_editor_removeWatermark = true;
 zen_editor_unitRadioMessages = 0;
 zen_placement_enabled = true;
 zen_remote_control_cameraExitPosition = 2;
-zen_visibility_enabled = 0;
+zen_visibility_enabled = 1;
 zen_visibility_maxDistance = 5000;
 zen_vision_enableBlackHot = false;
 zen_vision_enableBlackHotGreenCold = false;
