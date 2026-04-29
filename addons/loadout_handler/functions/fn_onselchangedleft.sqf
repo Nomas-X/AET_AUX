@@ -345,7 +345,7 @@ switch (GVAR(currentLeftPanel)) do {
                 GVAR(center) setUnitLoadout _loadout;
 
                 // Remove any items that can't fit in the container (this prevents overloading)
-				if !(AET_loadout_handler_SET_allowArsenalOverfilling) then {
+				if (!AET_loadout_handler_SET_allowArsenalOverfilling || is3DEN) then {
 	                [GVAR(center), uniformContainer GVAR(center)] call FUNC(preventOverfilling);
 				} else {
 					private _unitContainer = uniformContainer GVAR(center);
@@ -391,7 +391,7 @@ switch (GVAR(currentLeftPanel)) do {
                 GVAR(center) setUnitLoadout _loadout;
 
                 // Remove any items that can't fit in the container (this prevents overloading)
-				if !(AET_loadout_handler_SET_allowArsenalOverfilling) then {
+				if (!AET_loadout_handler_SET_allowArsenalOverfilling || is3DEN) then {
 	                [GVAR(center), vestContainer GVAR(center)] call FUNC(preventOverfilling);
 				} else {
 					private _unitContainer = vestContainer GVAR(center);
@@ -437,7 +437,7 @@ switch (GVAR(currentLeftPanel)) do {
                 GVAR(center) setUnitLoadout _loadout;
 
                 // Remove any items that can't fit in the container (this prevents overloading)
-				if !(AET_loadout_handler_SET_allowArsenalOverfilling) then {
+				if (!AET_loadout_handler_SET_allowArsenalOverfilling || is3DEN) then {
                 	[GVAR(center), backpackContainer GVAR(center)] call FUNC(preventOverfilling);
 				} else {
 					private _unitContainer = backpackContainer GVAR(center);
