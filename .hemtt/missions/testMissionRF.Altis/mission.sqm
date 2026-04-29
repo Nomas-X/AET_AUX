@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=13;
+	toggles=1037;
 	mods[]=
 	{
 		"3denEnhanced"
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14699.543,51.526501,16495.758};
-		dir[]={0.86769485,-0.4330911,0.24429941};
-		up[]={0.41688243,0.90134913,0.1173733};
-		aside[]={0.27102709,6.6746725e-07,-0.96263295};
+		pos[]={14832.514,30.056854,16427.984};
+		dir[]={0.0013375767,-0.56050348,-0.82815099};
+		up[]={0.00090528833,0.82815206,-0.56050277};
+		aside[]={-0.99999869,0,-0.0016151341};
 	};
 };
 binarizationWanted=0;
@@ -47,15 +47,15 @@ addons[]=
 	"ace_chemlights",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
-	"A3_Weapons_F_Mark",
-	"ace_reload",
-	"A3_Weapons_F_Mark_Acc",
 	"A3_Modules_F_Curator_Curator",
 	"Characters_f_lxWS",
 	"vehicles_1_F_lxWS_APC_Wheeled_02",
 	"A3_Characters_F_Heads",
 	"ace_goggles",
 	"weapons_f_vietnam_c",
+	"A3_Weapons_F_Mark",
+	"ace_reload",
+	"A3_Weapons_F_Mark_Acc",
 	"A3_Ui_F",
 	"A3_Air_F_Beta_Heli_Transport_01",
 	"A3_Modules_F",
@@ -153,52 +153,52 @@ class AddonsMetaData
 		};
 		class Item12
 		{
-			className="A3_Weapons_F_Mark";
-			name="Arma 3 Marksmen - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item13
-		{
-			className="ace_reload";
-			name="ACE3 - Reload";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item14
-		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item13
 		{
 			className="Characters_f_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Characters and Clothing";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item16
+		class Item14
 		{
 			className="Vehicles_F_lxWS";
 			name="Arma 3 Creator DLC: Western Sahara - Vehicles";
 			author="Rotators Collective";
 			url="https://sahara.rotators.net/";
 		};
-		class Item17
+		class Item15
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item16
 		{
 			className="weapons_f_vietnam_c";
 			name="weapons_f_vietnam_c";
 			author="Savage Game Design";
 			url="https://www.arma3.com";
+		};
+		class Item17
+		{
+			className="A3_Weapons_F_Mark";
+			name="Arma 3 Marksmen - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item18
+		{
+			className="ace_reload";
+			name="ACE3 - Reload";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 		class Item19
 		{
@@ -232,10 +232,10 @@ class AddonsMetaData
 };
 dlcs[]=
 {
-	"Mark",
 	"ws",
 	"Kart",
-	"VN"
+	"VN",
+	"Mark"
 };
 randomSeed=1951784;
 class ScenarioData
@@ -244,7 +244,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -432,52 +432,16 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="B_Kitbag_mcamo";
+								typeName="B_Kitbag_cbr";
 								isBackpack=1;
 								class MagazineCargo
 								{
-									items=3;
+									items=1;
 									class Item0
 									{
-										name="100Rnd_65x39_caseless_mag";
-										count=2;
+										name="100Rnd_65x39_caseless_black_mag_tracer";
+										count=1;
 										ammoLeft=100;
-									};
-									class Item1
-									{
-										name="100Rnd_65x39_caseless_mag_Tracer";
-										count=2;
-										ammoLeft=100;
-									};
-									class Item2
-									{
-										name="130Rnd_338_Mag";
-										count=2;
-										ammoLeft=130;
-									};
-								};
-								class ItemCargo
-								{
-									items=4;
-									class Item0
-									{
-										name="optic_tws_mg";
-										count=1;
-									};
-									class Item1
-									{
-										name="bipod_01_F_snd";
-										count=1;
-									};
-									class Item2
-									{
-										name="muzzle_snds_338_sand";
-										count=1;
-									};
-									class Item3
-									{
-										name="muzzle_snds_H";
-										count=1;
 									};
 								};
 							};

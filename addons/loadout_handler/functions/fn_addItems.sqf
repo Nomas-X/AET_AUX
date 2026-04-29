@@ -48,6 +48,7 @@ private _containerItemsArray = parseSimpleArray _loadoutArray;
 	_x set [2, _mass max 0.1];
 } forEach _containerItemsArray;
 diag_log format ["%1 %2 Loadout handler addItems function first mark: %3", getPlayerUID player, _containerType, _containerItemsArray];
+
 // Compute required mass
 private _totalMass = 0;
 private _itemsToAdd = [];
@@ -57,6 +58,7 @@ private _itemsToAdd = [];
 	for "_i" from 1 to _quantity do { _itemsToAdd pushBack _classname };
 } forEach _containerItemsArray;
 diag_log format ["%1 %2 Loadout handler addItems function second mark: %3", getPlayerUID player, _containerType, _itemsToAdd];
+
 // Check load capacity
 private _currentMaxLimit = maxLoad _unitContainer;
 private _currentLoad = loadAbs _unitContainer;
