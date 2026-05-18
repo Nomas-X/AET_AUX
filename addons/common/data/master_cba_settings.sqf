@@ -586,7 +586,7 @@ force ace_medical_treatment_allowLitterCreation = true;
 force force ace_medical_treatment_allowSelfIV = 1;
 force ace_medical_treatment_allowSelfPAK = 0;
 force ace_medical_treatment_allowSelfStitch = 0;
-force ace_medical_treatment_allowSharedEquipment = 0;
+force force ace_medical_treatment_allowSharedEquipment = 0;
 force force ace_medical_treatment_bandageEffectiveness = 1;
 force force ace_medical_treatment_bandageRollover = true;
 force force ace_medical_treatment_clearTrauma = 1;
@@ -1966,5 +1966,5 @@ zen_faction_filter_3_UK3CB_CHC_C = true;
 zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
-// LAST UPDATED 2026-04-26
+// LAST UPDATED 2026-05-18
 // END OF AET FILE
