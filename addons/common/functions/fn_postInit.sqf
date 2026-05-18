@@ -42,7 +42,7 @@ private _code = {
 		[
 			{!isNull (findDisplay 46)},
 			{
-				if !(isServer) {
+				if !(isServer) then {
 					private _versionRegex = "\/\/ LAST UPDATED \d\d\d\d-\d\d-\d\d";
 					[PATH_TO_ADDON_2(data,master_cba_settings.sqf), "cba_settings.sqf", _versionRegex] call AET_common_fnc_compareFileVersions;
 					[PATH_TO_ADDON_2(data,master_AET_settings.sqf), "AET_Scripts\AET_settings.sqf", _versionRegex] call AET_common_fnc_compareFileVersions;
