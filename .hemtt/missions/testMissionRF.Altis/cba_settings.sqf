@@ -10,7 +10,7 @@ force force ace_advanced_ballistics_simulationInterval = 0.05;
 force ace_advanced_fatigue_enabled = true;
 force force ace_advanced_fatigue_enableStaminaBar = true;
 force force ace_advanced_fatigue_fadeStaminaBar = true;
-force ace_advanced_fatigue_loadFactor = 0.8;
+force ace_advanced_fatigue_loadFactor = 0.7;
 force ace_advanced_fatigue_performanceFactor = 1;
 force ace_advanced_fatigue_recoveryFactor = 3;
 force ace_advanced_fatigue_terrainGradientFactor = 1;
@@ -279,13 +279,13 @@ ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_dances__tsp_animate_sq
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_dances__tsp_animate_stefan = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_dances__tsp_animate_zozo = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors = false;
-ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_abort = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_ballistic = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_bang = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_breach = false;
+ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_danger = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_frag = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_peek = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_ready = false;
-ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_doors__tsp_animate_shotgun = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_emotes = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_emotes__tsp_animate_bird = false;
 ace_interact_menu_moveToRoot__ACE_Animations__tsp_animate_emotes__tsp_animate_dab = false;
@@ -1341,9 +1341,9 @@ force tfar_terrain_interception_coefficient = 7;
 force force TFAR_voiceCone = true;
 
 // TSP Animate
-tsp_cba_animate_Abort = true;
 tsp_cba_animate_Advance = true;
 tsp_cba_animate_attachment = true;
+tsp_cba_animate_Ballistic = true;
 tsp_cba_animate_Bang = true;
 tsp_cba_animate_Bird = true;
 tsp_cba_animate_black = "[""optic_tws_mg""]";
@@ -1360,10 +1360,11 @@ tsp_cba_animate_compass = true;
 tsp_cba_animate_Contact = true;
 tsp_cba_animate_Cover = true;
 force force tsp_cba_animate_Dab = false;
+tsp_cba_animate_Danger = true;
 force force tsp_cba_animate_door = true;
-tsp_cba_animate_drop = "[[""Green Chemlight"",""Chemlight_green""],[""Red Chemlight"",""Chemlight_red""],[""IR Chemlight"",""ACE_Chemlight_IR""]]";
+force tsp_cba_animate_drop = "[[""Green Chemlight"",""Chemlight_green""],[""Red Chemlight"",""Chemlight_red""],[""IR Chemlight"",""ACE_Chemlight_IR""]]";
 tsp_cba_animate_drop_ace = false;
-tsp_cba_animate_drop_infinite = false;
+force force tsp_cba_animate_drop_infinite = false;
 tsp_cba_animate_Duo = true;
 tsp_cba_animate_Engage = true;
 tsp_cba_animate_Follow = true;
@@ -1403,7 +1404,6 @@ tsp_cba_animate_Regroup = true;
 tsp_cba_animate_Rock = true;
 tsp_cba_animate_Scissors = true;
 tsp_cba_animate_shake = 1;
-tsp_cba_animate_Shotgun = true;
 tsp_cba_animate_sling = true;
 tsp_cba_animate_sling_arsenal = false;
 tsp_cba_animate_sling_default = "";
@@ -1412,6 +1412,11 @@ tsp_cba_animate_sling_scroll = true;
 tsp_cba_animate_sling_sprint = false;
 tsp_cba_animate_sling_style = "adhd";
 tsp_cba_animate_sound = 1;
+tsp_cba_animate_sound_inv = 3;
+tsp_cba_animate_sound_map = 2;
+tsp_cba_animate_sound_other = 0.1;
+tsp_cba_animate_sound_put = 3;
+tsp_cba_animate_sound_uav = 1;
 tsp_cba_animate_sprint = true;
 tsp_cba_animate_Squats = true;
 tsp_cba_animate_Stefan = true;
@@ -1426,9 +1431,10 @@ tsp_cba_animate_tap = true;
 tsp_cba_animate_throw = true;
 tsp_cba_animate_ThumbsDown = true;
 tsp_cba_animate_ThumbsUp = true;
-tsp_cba_animate_tsp_sling = "[[-0.65,0.85,0.72],[-90,40,70]]";
-tsp_cba_animate_tsp_sling_1point = "[[-0.75,1.07,0.07],[-80,8,75]]";
-tsp_cba_animate_tsp_sling_lanyard = "[[1.05,0.8,-0.1],[10,20,90]]";
+tsp_cba_animate_tsp_sling = "[""Spine3"",[-0.9,0.53,0.5],[80,50,-180],""tsp_animate_sling_sling"",""""]";
+tsp_cba_animate_tsp_sling_1point = "[""Spine3"",[-0.8,0.9,0],[10,75,-90],""tsp_animate_sling_sling"",""""]";
+tsp_cba_animate_tsp_sling_3point = "[""Spine3"",[0.7,0.15,-0.8],[80,130,-20],""tsp_animate_sling_3point"",""""]";
+tsp_cba_animate_tsp_sling_lanyard = "[""Pelvis"",[0.72,0.85,-0.2],[-90,80,90],""tsp_animate_sling_lanyard"",""""]";
 tsp_cba_animate_uav = true;
 tsp_cba_animate_Up = true;
 force force tsp_cba_animate_walk = true;
@@ -1443,11 +1449,11 @@ tsp_cba_animate_Zozo = true;
 // TSP Core
 force tsp_cba_angle = -0.1;
 force tsp_cba_compat = false;
-force tsp_cba_core_chvd = false;
-force tsp_cba_core_pause = false;
+force force tsp_cba_core_chvd = false;
+force force tsp_cba_core_pause = false;
 force tsp_cba_hint = "Subtitle (Top)";
 force tsp_cba_hint_distance = 20;
-force tsp_param_faction = false;
+force force tsp_param_faction = false;
 
 // UK3CB Factions
 uk3cb_pipstretchfactor = 0;
@@ -1966,6 +1972,6 @@ zen_faction_filter_3_UK3CB_CHC_C = true;
 zen_faction_filter_3_UK3CB_MEC_C = true;
 zen_faction_filter_3_UK3CB_TKC_C = true;
 
-// LAST UPDATED 2026-05-18
+// LAST UPDATED 2026-05-24
 // END OF AET FILE
 #include "AET_Scripts\AET_settings.sqf"
