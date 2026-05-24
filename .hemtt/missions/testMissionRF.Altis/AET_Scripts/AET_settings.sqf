@@ -1,10 +1,22 @@
-// LAST UPDATED 2026-05-18
+// LAST UPDATED 2026-05-24
 // MISSION MAKERS ONLY TOUCH THIS //
 // ACE Advanced Balistics -> Advanced Ballistics = true or false //
 force ace_advanced_ballistics_enabled = true;
 
 // ACE Advanced Fatigue -> Enabled = true or false //
 force ace_advanced_fatigue_enabled = true;
+
+// ACE Advanced Fatigue -> Performance Factor = 0.00 to 10.00 //
+force ace_advanced_fatigue_performanceFactor = 1;
+
+// ACE Advanced Fatigue -> Recovery Factor = 0.00 to 10.00 //
+force ace_advanced_fatigue_recoveryFactor = 3;
+
+// ACE Advanced Fatigue -> Load Factor = 0.00 to 5.00 
+force ace_advanced_fatigue_loadFactor = 0.7;
+
+// ACE Advanced Fatigue -> Terrain Gradient Factor = 0.00 to 5.00 //
+force ace_advanced_fatigue_terrainGradientFactor = 1;
 
 // ACE Artillery -> Artillery Computer Disabled = true or false //
 force ace_artillerytables_disableArtilleryComputer = false;
@@ -41,6 +53,24 @@ force ace_medical_treatment_allowSelfPAK = 0;
 
 // ACE Medical Treatment -> Self Stitching = 0, 1, or 2 [0 = No, 1 = Yes, 2 = Doctor] //
 force ace_medical_treatment_allowSelfStitch = 0;
+
+// ACE Nightvision -> NVG Effect Scale = 0.0 to 2.0 //
+force ace_nightvision_effectScaling = 0.3;
+
+// ACE Nightvision -> NVG Fog Scale = 0.0 to 2.0 //
+force ace_nightvision_fogScaling = 0.2;
+
+// ACE Nightvision -> NVG Noise Scale = 0.0 to 2.0 //
+force ace_nightvision_noiseScaling = 0.2;
+
+// ACE Nightvision -> Aim Down Sights Blur = 0.0 to 2.0 //
+force ace_nightvision_aimDownSightsBlur = 0.1;
+
+// ACE Nightvision -> Disable NVGs in scope = true or false //
+force force ace_nightvision_disableNVGsWithSights = false;
+
+// ACE Nightvision -> Shutter Effect = true or false //
+force ace_nightvision_shutterEffects = false;
 
 // ACE Overheating -> Suppressor Coefficient = 0.00 to 5.00 //
 force ace_overheating_suppressorCoef = 1;
