@@ -1,4 +1,4 @@
-// LAST UPDATED 2026-05-24
+// LAST UPDATED 2026-06-03
 // MISSION MAKERS ONLY TOUCH THIS //
 // ACE Advanced Balistics -> Advanced Ballistics = true or false //
 force ace_advanced_ballistics_enabled = true;
@@ -30,6 +30,9 @@ force ace_fortify_timeMin = 0;
 // ACE Headless -> Enabled = true or false //
 force acex_headless_enabled = false;
 
+// ACE Hearing -> Enable Combat Deafness = true or false //
+force ace_hearing_enableCombatDeafness = true;
+
 // ACE Logistics -> Rearm Amount = 0, 1, or 2 [0 = Entire Vehicle, 1 = Entire Magazine, 2 = Amount based on caliber] //
 force ace_rearm_level = 1;
 
@@ -47,6 +50,18 @@ force ace_map_BFT_ShowPlayerNames = false;
 
 // ACE Map -> Hide AI groups = true or false //
 force ace_map_BFT_HideAiGroups = true;
+
+// ACE Medical -> Player Critical Damage Threshold = 0.00 to 25.00 //
+force ace_medical_playerDamageThreshold = 1.6;
+
+// ACE Medical -> AI Critical Damage Threshold = 0.00 to 25.00 //
+force ace_medical_AIDamageThreshold = 0.1;
+
+// ACE Medical -> Player Fatal Injuries = 0, 1, or 2 [0 = Always, 1 = In Cardiac Arrest, 2 = Never] //
+force ace_medical_statemachine_fatalInjuriesPlayer = 2;
+
+// ACE Medical -> AI Unconsciousness = true or false //
+force ace_medical_statemachine_AIUnconsciousness = true;
 
 // ACE Medical Treatment -> Self PAK Usage = 0, 1, or 2 [0 = No, 1 = Yes, 2 = Doctor] //
 force ace_medical_treatment_allowSelfPAK = 0;
@@ -193,6 +208,24 @@ force AET_loadout_handler_SET_backpackInventory = "[
 		[""ACE_EntrenchingTool"", 0],
 		[""ACE_IR_Strobe_Item"", 0]
 	]";
+
+// Armor Modifier - ACE -> AI hitpoint damage reduction - head = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
+force armor_modifier_ace_main_hitPointMultiplierSetting_AI_head = "[1, 0, 0]";
+
+// Armor Modifier - ACE -> AI hitpoint damage reduction - chest = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
+force armor_modifier_ace_main_hitPointMultiplierSetting_AI_chest = "[1, 0, 0]";
+
+// Armor Modifier - ACE -> AI hitpoint damage reduction - limb = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
+force armor_modifier_ace_main_hitPointMultiplierSetting_AI_limb = "[1, 0, 0]";
+
+// Armor Modifier - ACE -> Player hitpoint damage reduction - head = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
+force armor_modifier_ace_main_hitPointMultiplierSetting_Player_head = "[1, 0, 0]";
+
+// Armor Modifier - ACE -> Player hitpoint damage reduction - chest = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
+force armor_modifier_ace_main_hitPointMultiplierSetting_Player_chest = "[1, 13.5, 13.5]";
+
+// Armor Modifier - ACE -> Player hitpoint damage reduction - limb = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
+force armor_modifier_ace_main_hitPointMultiplierSetting_Player_limb = "[1, 0, 0]";
 
 // Diwako's Punish unknown weapon -> Add more weapons = "" or "arifle_Mk20_plain_F,arifle_CTAR_blk_F" using weapon class names seperated by comma //
 force diwako_unknownwp_add_weapons = "";
