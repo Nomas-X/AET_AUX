@@ -59,7 +59,7 @@ private _triggersArray = 8 allObjects 7;
 
 
 	// Creates the trigger point marker and sets its settings
-	private _pointMarker = [Q(PREFIX),"trigger","Point",_forEachIndex + 1] joinString "_";
+	private _pointMarker = [Q(PREFIX),"Trigger","Point",_forEachIndex + 1] joinString "_";
 	createMarkerLocal [_pointMarker, _triggerPosition];
 	_pointMarker setMarkerColorLocal "ColorBlack";
 	_pointMarker setMarkerTypeLocal "mil_dot";
