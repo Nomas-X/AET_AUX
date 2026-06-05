@@ -28,7 +28,9 @@ switch (_mode) do {
     case "REQUEST": {
         if !(_uid in _array) then {
             [QGVAR(EH_play), [], _player] call CBA_fnc_targetEvent;
-        };
+        } else {
+            [QGVAR(EH_handleSafety), [false], _player] call CBA_fnc_targetEvent;
+		};
 
     };
     case "DONE": { _array pushBackUnique _uid; };

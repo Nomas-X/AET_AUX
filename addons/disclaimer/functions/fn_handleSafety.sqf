@@ -14,7 +14,7 @@ Return Value:
 	<Nil>
 
 Example:
-	[] call AET_disclaimer_fnc_handlesafety;
+	[] call AET_disclaimer_fnc_handleSafety;
 */
 
 params ["_safetyStatus"];
@@ -38,7 +38,7 @@ switch (SET(disableSafetymode)) do {
 		[
 			{CBA_missionTime > SET(disableSafetytime) },
 			{
-				[false] call FUNC(handlesafety)
+				[false] call FUNC(handleSafety)
 			}
 		] call CBA_fnc_waitUntilAndExecute;
 	};
@@ -50,7 +50,7 @@ switch (SET(disableSafetymode)) do {
 				private _spawnPos = getPosASL player;
 				[
 					{ (player distance2D _this) >= SET(disableSafetydistance)},	// Condition
-					{ [false] call FUNC(handlesafety) },							// Statement
+					{ [false] call FUNC(handleSafety) },							// Statement
 					_spawnPos
 				] call CBA_fnc_waitUntilAndExecute;
 			}
