@@ -84,6 +84,6 @@ if !(hasInterface) exitWith {};
     // Gun safety off once disclaimer is done.
 	if (SET(disableSafetymode) == "DISCLAIMER_END") then {
     
-		[false] call FUNC(handlesafety);
+		[false] call FUNC(handleSafety);
 	};
 }] call CBA_fnc_addEventHandler;
