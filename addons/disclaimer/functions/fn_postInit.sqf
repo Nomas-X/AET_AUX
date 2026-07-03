@@ -48,8 +48,9 @@ private _code = {
 
 			[true] call FUNC(handleSafety);
 		};
+		
+		[QGVAR(EH_done), []] call CBA_fnc_localEvent;
 	};
-
 };
 
 if (missionNamespace getVariable ["cba_settings_ready",false]) then _code else { ["CBA_settingsInitialized",_code,[]] call CBA_fnc_addEventHandler; };
