@@ -29,8 +29,12 @@ Example:
 		player,
 		uniformContainer player,
 		"Uniform",
-		[["ACE_EarPlugs", 1], ["ACE_elasticBandage", 10], ["HandGrenade", 3]]
-	] call AET_loadout_handler_addItems;
+		"[
+			[""ACE_EarPlugs"", 1],
+			[""ACE_elasticBandage"", 10],
+			[""HandGrenade"", 3]
+		]"
+	] call AET_loadout_handler_fnc_addItems;
 */
 
 params [

@@ -29,6 +29,7 @@ switch (_mode) do {
         if !(_uid in _array) then {
             [QGVAR(EH_play), [], _player] call CBA_fnc_targetEvent;
         } else {
+			[QGVAR(EH_done), [], _player] call CBA_fnc_targetEvent;
             [QGVAR(EH_handleSafety), [false], _player] call CBA_fnc_targetEvent;
 		};
 
