@@ -44,7 +44,8 @@ Example:
 		};
 		case ("Turret"): {
 			_moveCode = {
-				_unit moveInTurret _vehicle;
+				private _emptyTurrets = fullCrew [_vehicle, "turret", true] select {isNull (_x#0)}; // "guaranteed" by earlier emptyPositions check
+				_unit moveInTurret [_vehicle, _emptyTurrets#0#3];
 			};
 		};
 		case ("Cargo"): {
