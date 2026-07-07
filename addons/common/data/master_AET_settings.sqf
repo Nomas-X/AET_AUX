@@ -88,7 +88,7 @@ force force ace_nightvision_disableNVGsWithSights = false;
 force ace_nightvision_shutterEffects = false;
 
 // ACE Overheating -> Suppressor Coefficient = 0.00 to 5.00 //
-force ace_overheating_suppressorCoef = 1;
+force ace_overheating_suppressorCoef = 0;
 
 // ACE Pylons -> Enable Pylons Menu from Ammo Trucks = true or false //
 force ace_pylons_enabledFromAmmoTrucks = true;
