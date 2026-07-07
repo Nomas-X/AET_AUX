@@ -1,4 +1,4 @@
-// LAST UPDATED 2026-06-03
+// LAST UPDATED 2026-07-08
 // MISSION MAKERS ONLY TOUCH THIS //
 // ACE Advanced Balistics -> Advanced Ballistics = true or false //
 force ace_advanced_ballistics_enabled = true;
@@ -226,6 +226,9 @@ force armor_modifier_ace_main_hitPointMultiplierSetting_Player_chest = "[1, 13.5
 
 // Armor Modifier - ACE -> Player hitpoint damage reduction - limb = [1, 0, 0] where [armorMultiplier, minimumArmor, maximumArmor] //
 force armor_modifier_ace_main_hitPointMultiplierSetting_Player_limb = "[1, 0, 0]";
+
+// Diwako's Punish unknown weapon -> Enable = true or false //
+force diwako_unknownwp_enable = true;
 
 // Diwako's Punish unknown weapon -> Add more weapons = "" or "arifle_Mk20_plain_F,arifle_CTAR_blk_F" using weapon class names seperated by comma //
 force diwako_unknownwp_add_weapons = "";

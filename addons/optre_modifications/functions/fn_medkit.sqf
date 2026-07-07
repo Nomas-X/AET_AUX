@@ -11,14 +11,12 @@ params ["_caller", "_target", "_selection", "_className"];
 		&&
 		{
 			_medicalParams#2 != "head"
-			&&
-			{
-				["", _target, _selection] call ace_medical_treatment_fnc_cansplint
-			}
 		}
 	) then {
 		_medicalParams call ace_medical_treatment_fnc_ivBag;
-		_medicalParams call ace_medical_treatment_fnc_splint;
+		if ([_caller, _target, _x] call ace_medical_treatment_fnc_cansplint) then {
+			_medicalParams call ace_medical_treatment_fnc_splint;
+		}; 
 		
 	};
 } forEach [
