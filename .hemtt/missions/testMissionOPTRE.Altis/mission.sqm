@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14840.599,19.851351,16410.098};
-		dir[]={-0.47482377,-0.47161093,0.74305892};
-		up[]={-0.25394699,0.88180554,0.39740536};
-		aside[]={0.842655,7.0140231e-08,0.53846604};
+		pos[]={14839.387,22.702162,16405.857};
+		dir[]={-0.065584548,-0.51050282,0.85738063};
+		up[]={-0.038937159,0.85987371,0.50901973};
+		aside[]={0.99709588,1.1918019e-08,0.076271586};
 	};
 };
 binarizationWanted=0;
@@ -56,7 +56,6 @@ addons[]=
 	"A3_Characters_F_Heads",
 	"ace_goggles",
 	"weapons_f_vietnam_c",
-	"1st_MEU_patch_weapons_IR_Strobe",
 	"OPTRE_Hud",
 	"A3_Weapons_F_Mark",
 	"ace_reload",
@@ -71,7 +70,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=27;
+		items=26;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -206,52 +205,46 @@ class AddonsMetaData
 		};
 		class Item19
 		{
-			className="1st_MEU_patch_weapons";
-			name="1st_MEU_patch_weapons_IR_Strobe";
-			author="1st MEU Mod Team";
-		};
-		class Item20
-		{
 			className="OPTRE_Hud";
 			name="OPTRE_Hud";
 			author="Article 2 Studios";
 		};
-		class Item21
+		class Item20
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item22
+		class Item21
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item23
+		class Item22
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item23
 		{
 			className="A3_Air_F_Beta";
 			name="Arma 3 Beta - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item24
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item25
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
@@ -275,7 +268,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
